@@ -1,0 +1,16 @@
+receta_id_original,paciente_id_original,medico_id_original,camilla_id_original,medicamento_id_original,fecha_prescripcion,dosis,via_administracion,observaciones,receta_id_destino,paciente_id_destino,medico_id_destino
+1,101,1,1,1,2026-10-10,500 mg cada 8 horas,Oral,Monitorear temperatura corporal.,26,6,9
+2,102,2,3,5,2026-10-10,30 mg cada 12 horas,Intravenosa,Administrar lentamente por vía IV.,27,7,10
+3,103,3,9,9,2026-10-10,50 mg cada 24 horas,Oral,Tomar en ayunas por la mañana.,28,8,11
+4,104,4,5,3,2026-10-10,10 ml cada 8 horas,Oral,Completar tratamiento de 7 días.,29,9,12
+5,105,5,13,2,2026-10-10,400 mg cada 6 horas condicional,Oral,Usar en caso de dolor agudo.,30,10,13
+6,106,6,11,4,2026-10-10,20 mg cada 24 horas,Oral,Antes del primer alimento del día.,31,11,14
+7,107,7,7,13,2026-10-10,10 mg dosis única,Intramuscular,Vigilar estado de conciencia.,32,12,15
+8,108,8,2,7,2026-10-10,10 mg cada 24 horas,Oral,Indicado para cuadro alérgico.,33,13,16
+9,109,9,10,8,2026-10-10,850 mg cada 12 horas,Oral,Acompañar con los alimentos principales.,34,14,17
+10,110,10,8,6,2026-10-10,2 disparos cada 4 horas,Inhalatoria,Usar espaciador en caso de disnea.,35,15,18
+11,111,11,4,12,2026-10-10,1 g cada 12 horas,Intravenosa,Diluir en solución salina al 0.9%.,36,16,19
+12,112,12,6,14,2026-10-10,100 mg cada 8 horas,Intravenosa,Controlar niveles de glucosa.,37,17,20
+13,113,13,12,15,2026-10-10,40 mg cada 24 horas,Oral,Vigilar gasto urinario y presión arterial.,38,18,21
+14,114,14,14,11,2026-10-10,15 UI por la noche,Subcutánea,Rotar sitio de punción diariamente.,39,19,22
+15,115,15,15,10,2026-10-10,Aplicar cantidad moderada,Tópico,Frotar suavemente sobre la zona afectada.,40,20,23

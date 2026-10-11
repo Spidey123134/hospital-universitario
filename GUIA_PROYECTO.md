@@ -4,6 +4,8 @@ Propuesta académica integral con **36 tablas**, diagramas físicos, diccionario
 
 ## Empieza aquí
 
+**Demostración ampliada y aporte del equipo:** para una instalación nueva con más registros, usa `hospital_demostracion.sql`. Si ya cargaste la muestra inicial, agrega `05_datos_demo_ampliados.sql` una vez. [DATOS_DEMOSTRACION.md](DATOS_DEMOSTRACION.md) explica la carga y sus conteos; [aporte_equipo/README.md](aporte_equipo/README.md) documenta la fusión de las capturas. Los diagramas y el diccionario describen la misma estructura de 36 tablas. Los números del reporte y del tutorial corresponden a la muestra inicial; las 122 comprobaciones de la ampliación están en `VALIDACION_DATOS_AMPLIADOS.json`.
+
 Para empezar sin experiencia, abre `tutorial/tutorial_hospital_principiantes.docx` o su versión PDF. La guía de 27 páginas explica instalación, conexión, consultas, modificaciones, diagramas, respaldo y exposición. `tutorial/hospital_practica.sql` crea una base ficticia independiente para sus ejercicios. Su SQL pasó 28 de 28 comprobaciones; la interfaz de Workbench se describe según documentación oficial.
 
 1. Lee `REVISION.md` para entender qué había y qué se corrigió.

@@ -1,0 +1,817 @@
+{
+  "proyecto": "Hospital universitario: fusion del equipo",
+  "inicio_utc": "2026-10-11T19:03:28+00:00",
+  "bases_temporales": [
+    "hospital_prueba_2020d2b9367f4349836fd181da633fa4",
+    "hospital_prueba_a6d19a4c818a453b973787ee10b12d98"
+  ],
+  "mysql_version": "8.0.45",
+  "filas_por_tabla": {
+    "departamentos": 8,
+    "especialidades": 16,
+    "personal": 25,
+    "medicos": 18,
+    "medico_especialidad": 19,
+    "pacientes": 30,
+    "contactos_emergencia": 31,
+    "aseguradoras": 5,
+    "polizas": 18,
+    "habitaciones": 9,
+    "camillas": 15,
+    "citas": 54,
+    "consultas": 45,
+    "diagnosticos": 8,
+    "consulta_diagnosticos": 40,
+    "alergias_paciente": 9,
+    "hospitalizaciones": 11,
+    "asignaciones_camilla": 12,
+    "notas_enfermeria": 21,
+    "medicamentos": 15,
+    "proveedores": 4,
+    "lotes_medicamento": 16,
+    "recetas": 40,
+    "receta_detalle": 64,
+    "dispensaciones": 11,
+    "dispensacion_detalle": 22,
+    "movimientos_inventario": 38,
+    "procedimientos": 8,
+    "ordenes_procedimiento": 29,
+    "resultados_procedimiento": 15,
+    "facturas": 29,
+    "factura_detalle": 60,
+    "pagos": 24,
+    "roles": 6,
+    "usuarios": 7,
+    "usuario_roles": 7
+  },
+  "huellas_sha256": {
+    "01_esquema.sql": "bbe9ed69d896dfbfbb60c9aaec783b4116ec07cf3266eeaba03c2383ca4dfec1",
+    "02_reglas.sql": "a506582fb8fa5c142520acabfc336ab720dee06e196445e8d8b32b1902a3b484",
+    "03_datos_demo.sql": "4bc2db6498289ac806c98c3bbda631454cd88c8b2f5ab313194568c0fe781593",
+    "hospital_completo.sql": "65637e2fb21cea83a794b7115301841259efeecb45c0592b5127b52160be44cc",
+    "05_datos_demo_ampliados.sql": "855824bed3ef8ee0a4a8c2b558038477142b270063c7dff01ecfdabe35ac122f",
+    "hospital_demostracion.sql": "11e23a5c61b6c6a92331c01e0f6849f717b9adf9736d91fcff383b8605dd0cb0",
+    "06_ver_datos.sql": "b064394d5bcd6c022ddc3377232b73f421546e056551d80fe9f6f8d0ac874aad",
+    "generar_datos_ampliados.py": "c1a4cad96ebbf6399a34ecc9f67148ecbdf7025e903b38651fd8c5cfd3d3b469",
+    "validar_datos_ampliados.py": "caf671506aa4f6a1c4249dcea5a82da3e291e186976ca64dd7c055d6e3e54426",
+    "aporte_equipo/medicos_captura.csv": "8559a76b9df94eb48d91323e3c1e0597e7a38674a009a99bcded64f4041f6245",
+    "aporte_equipo/recetas_captura.csv": "93d355537338b12eb9f8c446921bfc6908e2bce1701baa4f9647090c42cc2661"
+  },
+  "filas_iniciales": 143,
+  "filas_agregadas": 646,
+  "filas_totales": 789,
+  "fin_utc": "2026-10-11T19:03:39+00:00",
+  "estado": "APROBADO",
+  "resumen": {
+    "total": 122,
+    "correctas": 122,
+    "fallidas": 0
+  },
+  "limpieza": [
+    {
+      "correcta": true,
+      "detalle": "Base temporal eliminada.",
+      "error_mysql": null
+    },
+    {
+      "correcta": true,
+      "detalle": "Base temporal eliminada.",
+      "error_mysql": null
+    }
+  ],
+  "pruebas": [
+    {
+      "nombre": "Carga de 01_esquema.sql",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Carga de 02_reglas.sql",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Carga de 03_datos_demo.sql",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Instalador combinado igual a 01 + 02 + 03",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "El contenido ejecutable coincide, incluido su orden."
+    },
+    {
+      "nombre": "Cantidad de tablas",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 36; obtenido: 36."
+    },
+    {
+      "nombre": "Datos ficticios en las 36 tablas",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Todas contienen datos."
+    },
+    {
+      "nombre": "Seis vistas",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 6; obtenido: 6."
+    },
+    {
+      "nombre": "Seis procedimientos",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 6; obtenido: 6."
+    },
+    {
+      "nombre": "Veintitrés triggers",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 23; obtenido: 23."
+    },
+    {
+      "nombre": "Stock demo: A=142, B=57 y C=40",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 1:142,2:57,3:40; obtenido: 1:142,2:57,3:40."
+    },
+    {
+      "nombre": "Facturas demo: totales, pagos y saldos",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 1:850.00:500.00:350.00,2:800.00:800.00:0.00,3:1200.00:400.00:800.00,4:750.00:0.00:750.00; obtenido: 1:850.00:500.00:350.00,2:800.00:800.00:0.00,3:1200.00:400.00:800.00,4:750.00:0.00:750.00."
+    },
+    {
+      "nombre": "Datos de demostración: ningún lote con stock negativo",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Datos de demostración: entregas con su salida exacta",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Datos de demostración: importes de factura correctos",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Datos de demostración: pagos sin exceder factura emitida",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Ejecución de las 20 consultas de 04_consultas.sql",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Ampliacion 05 sobre la muestra existente",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Estructura conservada: 36 tablas",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 36; obtenido: 36."
+    },
+    {
+      "nombre": "Registros de departamentos",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 8; obtenidos: 8."
+    },
+    {
+      "nombre": "Registros de especialidades",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 16; obtenidos: 16."
+    },
+    {
+      "nombre": "Registros de personal",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 25; obtenidos: 25."
+    },
+    {
+      "nombre": "Registros de medicos",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 18; obtenidos: 18."
+    },
+    {
+      "nombre": "Registros de medico_especialidad",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 19; obtenidos: 19."
+    },
+    {
+      "nombre": "Registros de pacientes",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 30; obtenidos: 30."
+    },
+    {
+      "nombre": "Registros de contactos_emergencia",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 31; obtenidos: 31."
+    },
+    {
+      "nombre": "Registros de aseguradoras",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 5; obtenidos: 5."
+    },
+    {
+      "nombre": "Registros de polizas",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 18; obtenidos: 18."
+    },
+    {
+      "nombre": "Registros de habitaciones",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 9; obtenidos: 9."
+    },
+    {
+      "nombre": "Registros de camillas",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 15; obtenidos: 15."
+    },
+    {
+      "nombre": "Registros de citas",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 54; obtenidos: 54."
+    },
+    {
+      "nombre": "Registros de consultas",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 45; obtenidos: 45."
+    },
+    {
+      "nombre": "Registros de diagnosticos",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 8; obtenidos: 8."
+    },
+    {
+      "nombre": "Registros de consulta_diagnosticos",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 40; obtenidos: 40."
+    },
+    {
+      "nombre": "Registros de alergias_paciente",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 9; obtenidos: 9."
+    },
+    {
+      "nombre": "Registros de hospitalizaciones",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 11; obtenidos: 11."
+    },
+    {
+      "nombre": "Registros de asignaciones_camilla",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 12; obtenidos: 12."
+    },
+    {
+      "nombre": "Registros de notas_enfermeria",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 21; obtenidos: 21."
+    },
+    {
+      "nombre": "Registros de medicamentos",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 15; obtenidos: 15."
+    },
+    {
+      "nombre": "Registros de proveedores",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 4; obtenidos: 4."
+    },
+    {
+      "nombre": "Registros de lotes_medicamento",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 16; obtenidos: 16."
+    },
+    {
+      "nombre": "Registros de recetas",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 40; obtenidos: 40."
+    },
+    {
+      "nombre": "Registros de receta_detalle",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 64; obtenidos: 64."
+    },
+    {
+      "nombre": "Registros de dispensaciones",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 11; obtenidos: 11."
+    },
+    {
+      "nombre": "Registros de dispensacion_detalle",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 22; obtenidos: 22."
+    },
+    {
+      "nombre": "Registros de movimientos_inventario",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 38; obtenidos: 38."
+    },
+    {
+      "nombre": "Registros de procedimientos",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 8; obtenidos: 8."
+    },
+    {
+      "nombre": "Registros de ordenes_procedimiento",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 29; obtenidos: 29."
+    },
+    {
+      "nombre": "Registros de resultados_procedimiento",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 15; obtenidos: 15."
+    },
+    {
+      "nombre": "Registros de facturas",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 29; obtenidos: 29."
+    },
+    {
+      "nombre": "Registros de factura_detalle",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 60; obtenidos: 60."
+    },
+    {
+      "nombre": "Registros de pagos",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 24; obtenidos: 24."
+    },
+    {
+      "nombre": "Registros de roles",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 6; obtenidos: 6."
+    },
+    {
+      "nombre": "Registros de usuarios",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 7; obtenidos: 7."
+    },
+    {
+      "nombre": "Registros de usuario_roles",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Esperados: 7; obtenidos: 7."
+    },
+    {
+      "nombre": "Total de filas de demostracion",
+      "categoria": "conteos",
+      "correcta": true,
+      "detalle": "Total obtenido: 789."
+    },
+    {
+      "nombre": "Demostracion fusionada: ningún lote con stock negativo",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Demostracion fusionada: entregas con su salida exacta",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Demostracion fusionada: importes de factura correctos",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Demostracion fusionada: pagos sin exceder factura emitida",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Agenda sin citas solapadas",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Consultas dentro de su cita",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Recetas posteriores a su consulta",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Camillas sin ocupaciones solapadas",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Asignaciones dentro de la estancia",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Camillas ocupadas operativas",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Notas dentro de la estancia",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Entregas no exceden lo prescrito",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Entregas posteriores a la receta",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Lotes coinciden con medicamento dispensado",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Existencias historicas nunca negativas",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Procedimientos posteriores a consulta",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Resultados posteriores a solicitud",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Pagos posteriores a factura",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Siete hospitalizaciones abiertas",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 7; obtenido: 7."
+    },
+    {
+      "nombre": "Saldo del ejercicio inicial conservado",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 850.00:500.00:350.00; obtenido: 850.00:500.00:350.00."
+    },
+    {
+      "nombre": "Existencias iniciales conservadas",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 92:57:40:50; obtenido: 92:57:40:50."
+    },
+    {
+      "nombre": "Medico del equipo 1",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Medico del equipo 2",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Medico del equipo 3",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Medico del equipo 4",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Medico del equipo 5",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Medico del equipo 6",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Medico del equipo 7",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Medico del equipo 8",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Medico del equipo 9",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Medico del equipo 10",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Medico del equipo 11",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Medico del equipo 12",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Medico del equipo 13",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Medico del equipo 14",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Medico del equipo 15",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 1",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 2",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 3",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 4",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 5",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 6",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 7",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 8",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 9",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 10",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 11",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 12",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 13",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 14",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Receta del equipo 15",
+      "categoria": "transcripcion",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Diez consultas para ver datos",
+      "categoria": "consultas",
+      "correcta": true,
+      "detalle": "Consultas encontradas: 10."
+    },
+    {
+      "nombre": "Consulta visual 1",
+      "categoria": "consultas",
+      "correcta": true,
+      "detalle": "Filas esperadas: 18; obtenidas: 18."
+    },
+    {
+      "nombre": "Consulta visual 2",
+      "categoria": "consultas",
+      "correcta": true,
+      "detalle": "Filas esperadas: 30; obtenidas: 30."
+    },
+    {
+      "nombre": "Consulta visual 3",
+      "categoria": "consultas",
+      "correcta": true,
+      "detalle": "Filas esperadas: 15; obtenidas: 15."
+    },
+    {
+      "nombre": "Consulta visual 4",
+      "categoria": "consultas",
+      "correcta": true,
+      "detalle": "Filas esperadas: 64; obtenidas: 64."
+    },
+    {
+      "nombre": "Consulta visual 5",
+      "categoria": "consultas",
+      "correcta": true,
+      "detalle": "Filas esperadas: 15; obtenidas: 15."
+    },
+    {
+      "nombre": "Consulta visual 6",
+      "categoria": "consultas",
+      "correcta": true,
+      "detalle": "Filas esperadas: 11; obtenidas: 11."
+    },
+    {
+      "nombre": "Consulta visual 7",
+      "categoria": "consultas",
+      "correcta": true,
+      "detalle": "Filas esperadas: 29; obtenidas: 29."
+    },
+    {
+      "nombre": "Consulta visual 8",
+      "categoria": "consultas",
+      "correcta": true,
+      "detalle": "Filas esperadas: 8; obtenidas: 8."
+    },
+    {
+      "nombre": "Consulta visual 9",
+      "categoria": "consultas",
+      "correcta": true,
+      "detalle": "Filas esperadas: 15; obtenidas: 15."
+    },
+    {
+      "nombre": "Consulta visual 10",
+      "categoria": "consultas",
+      "correcta": true,
+      "detalle": "Filas esperadas: 15; obtenidas: 15."
+    },
+    {
+      "nombre": "Las 20 consultas originales siguen funcionando",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Una segunda carga rechaza duplicados",
+      "categoria": "repeticion",
+      "correcta": true,
+      "detalle": "Se detiene en el primer INSERT duplicado.",
+      "error_mysql": 1062
+    },
+    {
+      "nombre": "La segunda carga no cambia ningun registro",
+      "categoria": "repeticion",
+      "correcta": true,
+      "detalle": "Comparacion de todas las filas de las 36 tablas."
+    },
+    {
+      "nombre": "Instalacion nueva y ampliacion producen datos identicos",
+      "categoria": "equivalencia",
+      "correcta": true,
+      "detalle": "Comparacion completa por tabla, incluidos campos calculados."
+    },
+    {
+      "nombre": "Instalacion nueva con hospital_demostracion.sql",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    }
+  ]
+}

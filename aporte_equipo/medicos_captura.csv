@@ -1,0 +1,16 @@
+medico_id_original,cedula_profesional,nombre,apellido_paterno,especialidad,horario_entrada,horario_salida,medico_id_destino
+1,CP-1001,Carlos,Mendoza,Medicina General,07:00:00,15:00:00,9
+2,CP-1002,Ana,Gómez,Urgencias,20:00:00,08:00:00,10
+3,CP-1003,Luis,Hernández,Cardiología,14:00:00,21:30:00,11
+4,CP-1004,María,López,Pediatría,08:00:00,16:00:00,12
+5,CP-1005,Jorge,Martínez,Traumatología,07:00:00,15:00:00,13
+6,CP-1006,Sofía,Ramírez,Ginecología,15:00:00,23:00:00,14
+7,CP-1007,Miguel,Torres,Neurología,09:00:00,17:00:00,15
+8,CP-1008,Lucía,Flores,Dermatología,10:00:00,18:00:00,16
+9,CP-1009,David,Rivera,Oftalmología,08:30:00,14:30:00,17
+10,CP-1010,Elena,Vargas,Otorrinolaringología,12:00:00,20:00:00,18
+11,CP-1011,Fernando,Castro,Oncología,07:30:00,15:30:00,19
+12,CP-1012,Carmen,Morales,Psiquiatría,14:00:00,22:00:00,20
+13,CP-1013,Javier,Jiménez,Nefrología,06:00:00,14:00:00,21
+14,CP-1014,Patricia,Ruiz,Endocrinología,09:00:00,17:00:00,22
+15,CP-1015,Roberto,Díaz,Urología,13:00:00,21:00:00,23
