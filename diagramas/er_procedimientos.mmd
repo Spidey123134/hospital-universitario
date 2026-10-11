@@ -1,0 +1,58 @@
+erDiagram
+    procedimientos {
+        INT_UNSIGNED procedimiento_id PK "NOT NULL"
+        VARCHAR_30 codigo UK "NOT NULL"
+        VARCHAR_150 nombre "NOT NULL"
+        ENUM tipo "NOT NULL"
+        DECIMAL_12_2 precio_referencia "NOT NULL"
+    }
+    ordenes_procedimiento {
+        INT_UNSIGNED orden_id PK "NOT NULL"
+        INT_UNSIGNED consulta_id FK "NOT NULL"
+        INT_UNSIGNED procedimiento_id FK "NOT NULL"
+        DATETIME fecha_solicitud "NOT NULL"
+        DATETIME fecha_programada "NULL"
+        ENUM estado "NOT NULL"
+        TEXT indicaciones "NULL"
+    }
+    resultados_procedimiento {
+        INT_UNSIGNED resultado_id PK "NOT NULL"
+        INT_UNSIGNED orden_id FK, UK "NOT NULL"
+        INT_UNSIGNED personal_id FK "NOT NULL"
+        DATETIME fecha_resultado "NOT NULL"
+        TEXT informe "NOT NULL"
+    }
+    consultas {
+        INT_UNSIGNED consulta_id PK, UK "NOT NULL"
+        INT_UNSIGNED cita_id FK, UK "NULL"
+        INT_UNSIGNED paciente_id FK, UK "NOT NULL"
+        INT_UNSIGNED medico_id FK "NOT NULL"
+        DATETIME fecha "NOT NULL"
+        ENUM tipo "NOT NULL"
+        VARCHAR_250 motivo "NOT NULL"
+        TEXT notas "NULL"
+        DECIMAL_6_2 peso_kg "NULL"
+        DECIMAL_5_2 talla_cm "NULL"
+        DECIMAL_4_1 temperatura_c "NULL"
+    }
+    personal {
+        INT_UNSIGNED personal_id PK "NOT NULL"
+        VARCHAR_25 numero_empleado UK "NOT NULL"
+        INT_UNSIGNED departamento_id FK "NOT NULL"
+        VARCHAR_100 nombre "NOT NULL"
+        VARCHAR_100 apellido_paterno "NOT NULL"
+        VARCHAR_100 apellido_materno "NULL"
+        ENUM puesto "NOT NULL"
+        VARCHAR_25 telefono "NULL"
+        VARCHAR_150 email "NULL"
+        BOOLEAN activo "NOT NULL"
+    }
+    consultas ||..o{ ordenes_procedimiento : "fk_orden_consulta"
+    procedimientos ||..o{ ordenes_procedimiento : "fk_orden_procedimiento"
+    ordenes_procedimiento ||..o| resultados_procedimiento : "fk_resultado_orden"
+    personal ||..o{ resultados_procedimiento : "fk_resultado_personal"
+
+%% PK=clave primaria; FK=foránea; UK=participa en restricción única (puede ser compuesta).
+%% Opcionalidad y cardinalidad se calculan de NULL y claves únicas declaradas.
+%% Un padre puede tener cero hijos: la FK no obliga a crear filas dependientes.
+%% Consulte DICCIONARIO.md para ENUM, claves compuestas y expresiones completas.

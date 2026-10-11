@@ -1,0 +1,58 @@
+erDiagram
+    facturas {
+        INT_UNSIGNED factura_id PK "NOT NULL"
+        VARCHAR_40 folio UK "NOT NULL"
+        INT_UNSIGNED paciente_id FK "NOT NULL"
+        INT_UNSIGNED poliza_id FK "NULL"
+        DATETIME fecha "NOT NULL"
+        ENUM estado "NOT NULL"
+    }
+    factura_detalle {
+        INT_UNSIGNED factura_id PK, FK "NOT NULL"
+        SMALLINT_UNSIGNED renglon PK "NOT NULL"
+        VARCHAR_250 descripcion "NOT NULL"
+        DECIMAL_10_2 cantidad "NOT NULL"
+        DECIMAL_12_2 precio_unitario "NOT NULL"
+        DECIMAL_12_2 descuento "NOT NULL"
+        DECIMAL_14_2 importe "NULL; GENERATED STORED"
+    }
+    pagos {
+        INT_UNSIGNED pago_id PK "NOT NULL"
+        INT_UNSIGNED factura_id FK "NOT NULL"
+        DATETIME fecha "NOT NULL"
+        DECIMAL_14_2 monto "NOT NULL"
+        ENUM metodo "NOT NULL"
+        VARCHAR_100 referencia "NULL"
+    }
+    pacientes {
+        INT_UNSIGNED paciente_id PK "NOT NULL"
+        VARCHAR_30 expediente_clinico UK "NOT NULL"
+        VARCHAR_100 nombre "NOT NULL"
+        VARCHAR_100 apellido_paterno "NOT NULL"
+        VARCHAR_100 apellido_materno "NULL"
+        DATE fecha_nacimiento "NOT NULL"
+        ENUM sexo "NOT NULL"
+        VARCHAR_25 telefono "NULL"
+        VARCHAR_150 email "NULL"
+        VARCHAR_250 domicilio "NULL"
+        DATETIME fecha_registro "NOT NULL"
+        BOOLEAN activo "NOT NULL"
+    }
+    polizas {
+        INT_UNSIGNED poliza_id PK, UK "NOT NULL"
+        INT_UNSIGNED paciente_id FK, UK "NOT NULL"
+        INT_UNSIGNED aseguradora_id FK, UK "NOT NULL"
+        VARCHAR_60 numero_poliza UK "NOT NULL"
+        DATE fecha_inicio "NOT NULL"
+        DATE fecha_fin "NOT NULL"
+    }
+    pacientes ||..o{ facturas : "fk_factura_paciente"
+    polizas |o..o{ facturas : "fk_factura_poliza"
+    facturas ||--o{ factura_detalle : "fk_fd_factura"
+    facturas ||..o{ pagos : "fk_pago_factura"
+    pacientes ||..o{ polizas : "fk_poliza_paciente"
+
+%% PK=clave primaria; FK=foránea; UK=participa en restricción única (puede ser compuesta).
+%% Opcionalidad y cardinalidad se calculan de NULL y claves únicas declaradas.
+%% Un padre puede tener cero hijos: la FK no obliga a crear filas dependientes.
+%% Consulte DICCIONARIO.md para ENUM, claves compuestas y expresiones completas.

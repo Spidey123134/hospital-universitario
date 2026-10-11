@@ -1,0 +1,37 @@
+erDiagram
+    roles {
+        INT_UNSIGNED rol_id PK "NOT NULL"
+        VARCHAR_50 nombre UK "NOT NULL"
+        VARCHAR_250 descripcion "NOT NULL"
+    }
+    usuarios {
+        INT_UNSIGNED usuario_id PK "NOT NULL"
+        INT_UNSIGNED personal_id FK, UK "NOT NULL"
+        VARCHAR_80 nombre_usuario UK "NOT NULL"
+        VARCHAR_255 password_hash "NOT NULL"
+        BOOLEAN activo "NOT NULL"
+    }
+    usuario_roles {
+        INT_UNSIGNED usuario_id PK, FK "NOT NULL"
+        INT_UNSIGNED rol_id PK, FK "NOT NULL"
+    }
+    personal {
+        INT_UNSIGNED personal_id PK "NOT NULL"
+        VARCHAR_25 numero_empleado UK "NOT NULL"
+        INT_UNSIGNED departamento_id FK "NOT NULL"
+        VARCHAR_100 nombre "NOT NULL"
+        VARCHAR_100 apellido_paterno "NOT NULL"
+        VARCHAR_100 apellido_materno "NULL"
+        ENUM puesto "NOT NULL"
+        VARCHAR_25 telefono "NULL"
+        VARCHAR_150 email "NULL"
+        BOOLEAN activo "NOT NULL"
+    }
+    personal ||..o| usuarios : "fk_usuario_personal"
+    usuarios ||--o{ usuario_roles : "fk_ur_usuario"
+    roles ||--o{ usuario_roles : "fk_ur_rol"
+
+%% PK=clave primaria; FK=foránea; UK=participa en restricción única (puede ser compuesta).
+%% Opcionalidad y cardinalidad se calculan de NULL y claves únicas declaradas.
+%% Un padre puede tener cero hijos: la FK no obliga a crear filas dependientes.
+%% Consulte DICCIONARIO.md para ENUM, claves compuestas y expresiones completas.

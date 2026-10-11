@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1795" height="835" viewBox="0 0 1795 835">
+<defs><marker id="many" markerWidth="16" markerHeight="20" refX="14" refY="10" orient="auto" overflow="visible"><path d="M 2 2 L 14 10 L 2 18 M 2 10 L 14 10" fill="none" stroke="#64748b" stroke-width="1.6"/><circle cx="0" cy="10" r="2.5" fill="white" stroke="#64748b"/></marker><marker id="one" markerWidth="16" markerHeight="20" refX="14" refY="10" orient="auto" overflow="visible"><path d="M 8 2 L 8 18" stroke="#64748b" stroke-width="1.6"/><circle cx="0" cy="10" r="2.5" fill="white" stroke="#64748b"/></marker></defs>
+<rect width="1795" height="835" fill="#f8fafc"/>
+<text x="55" y="50" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" fill="#0f172a">Infraestructura - relaciones físicas</text>
+<text x="55" y="84" font-family="Segoe UI,Arial,sans-serif" font-size="17" fill="#475569">MySQL · PK primaria · FK foránea · UK* participa en UNIQUE (puede ser compuesto) · G generado · ? permite NULL</text>
+<text x="55" y="112" font-family="Segoe UI,Arial,sans-serif" font-size="16" fill="#475569">Las conexiones van de padre a hijo. Círculo + pata de cuervo = 0..N hijos; círculo + barra = 0..1 hijo.</text>
+<path d="M1230,225 H1210 V180 H550 V225 H530" fill="none" stroke="#64748b" stroke-opacity="0.54" stroke-width="1.7" marker-end="url(#many)"/>
+<text x="880.0" y="177" font-family="Arial,sans-serif" font-size="12" fill="#334155" paint-order="stroke" stroke="#f8fafc" stroke-width="4">F01</text>
+<path d="M530,232 H550 V170 H655 V232 H675" fill="none" stroke="#64748b" stroke-opacity="0.54" stroke-width="1.7" marker-end="url(#many)"/>
+<text x="602.5" y="167" font-family="Arial,sans-serif" font-size="12" fill="#334155" paint-order="stroke" stroke="#f8fafc" stroke-width="4">F02</text>
+<g data-table="habitaciones" data-x="120" data-y="200" data-width="410" data-height="194">
+<rect x="120" y="200" width="410" height="194" rx="9" fill="white" stroke="#4D7C0F" stroke-width="2"/>
+<path d="M129 200 H521 Q530 200 530 209 V238 H120 V209 Q120 200 129 200" fill="#4D7C0F"/>
+<text x="132" y="226" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="19" fill="white">habitaciones</text>
+<rect x="121" y="244" width="408" height="24" fill="#f1f5f9"/>
+<text x="130" y="261" font-family="Consolas,monospace" font-size="14" fill="#0f172a">habitacion_id</text>
+<text x="408" y="261" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT PK/AI</text>
+<text x="130" y="285" font-family="Consolas,monospace" font-size="14" fill="#0f172a">departamento_id</text>
+<text x="408" y="285" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT FK</text>
+<rect x="121" y="292" width="408" height="24" fill="#f1f5f9"/>
+<text x="130" y="309" font-family="Consolas,monospace" font-size="14" fill="#0f172a">codigo</text>
+<text x="408" y="309" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR UK*</text>
+<text x="130" y="333" font-family="Consolas,monospace" font-size="14" fill="#0f172a">edificio</text>
+<text x="408" y="333" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR -</text>
+<rect x="121" y="340" width="408" height="24" fill="#f1f5f9"/>
+<text x="130" y="357" font-family="Consolas,monospace" font-size="14" fill="#0f172a">piso</text>
+<text x="408" y="357" font-family="Arial,sans-serif" font-size="11" fill="#475569">SMALLINT -</text>
+<text x="130" y="381" font-family="Consolas,monospace" font-size="14" fill="#0f172a">tipo</text>
+<text x="408" y="381" font-family="Arial,sans-serif" font-size="11" fill="#475569">ENUM -</text>
+</g>
+<g data-table="camillas" data-x="675" data-y="200" data-width="410" data-height="146">
+<rect x="675" y="200" width="410" height="146" rx="9" fill="white" stroke="#4D7C0F" stroke-width="2"/>
+<path d="M684 200 H1076 Q1085 200 1085 209 V238 H675 V209 Q675 200 684 200" fill="#4D7C0F"/>
+<text x="687" y="226" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="19" fill="white">camillas</text>
+<rect x="676" y="244" width="408" height="24" fill="#f1f5f9"/>
+<text x="685" y="261" font-family="Consolas,monospace" font-size="14" fill="#0f172a">camilla_id</text>
+<text x="963" y="261" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT PK/AI</text>
+<text x="685" y="285" font-family="Consolas,monospace" font-size="14" fill="#0f172a">habitacion_id</text>
+<text x="963" y="285" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT FK</text>
+<rect x="676" y="292" width="408" height="24" fill="#f1f5f9"/>
+<text x="685" y="309" font-family="Consolas,monospace" font-size="14" fill="#0f172a">codigo</text>
+<text x="963" y="309" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR UK*</text>
+<text x="685" y="333" font-family="Consolas,monospace" font-size="14" fill="#0f172a">estado_operativo</text>
+<text x="963" y="333" font-family="Arial,sans-serif" font-size="11" fill="#475569">ENUM -</text>
+</g>
+<g data-table="departamentos" data-x="1230" data-y="200" data-width="410" data-height="122">
+<rect x="1230" y="200" width="410" height="122" rx="9" fill="white" stroke="#155E75" stroke-width="2"/>
+<path d="M1239 200 H1631 Q1640 200 1640 209 V238 H1230 V209 Q1230 200 1239 200" fill="#155E75"/>
+<text x="1242" y="226" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="19" fill="white">departamentos</text>
+<rect x="1231" y="244" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="261" font-family="Consolas,monospace" font-size="14" fill="#0f172a">departamento_id</text>
+<text x="1518" y="261" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT PK/AI</text>
+<text x="1240" y="285" font-family="Consolas,monospace" font-size="14" fill="#0f172a">codigo</text>
+<text x="1518" y="285" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR UK*</text>
+<rect x="1231" y="292" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="309" font-family="Consolas,monospace" font-size="14" fill="#0f172a">nombre</text>
+<text x="1518" y="309" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR UK*</text>
+</g>
+<text x="55" y="680" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">3 entidades · 2 claves foráneas visibles · zoom recomendado: 100% o más.</text>
+<text x="55" y="708" font-family="Arial,sans-serif" font-size="15" fill="#475569">El catálogo numerado de relaciones está en el archivo er_infraestructura_relaciones.md; Mermaid conserva nombres completos de FK.</text>
+<text x="55" y="735" font-family="Arial,sans-serif" font-size="15" fill="#475569">La obligatoriedad del padre se ve en el FK del hijo: ? = referencia opcional; sin ? = obligatoria. Tipos completos en DICCIONARIO.md.</text>
+</svg>

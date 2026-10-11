@@ -1,0 +1,331 @@
+erDiagram
+    departamentos {
+        INT_UNSIGNED departamento_id PK "NOT NULL"
+        VARCHAR_20 codigo UK "NOT NULL"
+        VARCHAR_100 nombre UK "NOT NULL"
+    }
+    especialidades {
+        INT_UNSIGNED especialidad_id PK "NOT NULL"
+        VARCHAR_100 nombre UK "NOT NULL"
+    }
+    personal {
+        INT_UNSIGNED personal_id PK "NOT NULL"
+        VARCHAR_25 numero_empleado UK "NOT NULL"
+        INT_UNSIGNED departamento_id FK "NOT NULL"
+        VARCHAR_100 nombre "NOT NULL"
+        VARCHAR_100 apellido_paterno "NOT NULL"
+        VARCHAR_100 apellido_materno "NULL"
+        ENUM puesto "NOT NULL"
+        VARCHAR_25 telefono "NULL"
+        VARCHAR_150 email "NULL"
+        BOOLEAN activo "NOT NULL"
+    }
+    medicos {
+        INT_UNSIGNED medico_id PK, FK "NOT NULL"
+        VARCHAR_50 cedula_profesional UK "NOT NULL"
+    }
+    medico_especialidad {
+        INT_UNSIGNED medico_id PK, FK "NOT NULL"
+        INT_UNSIGNED especialidad_id PK, FK "NOT NULL"
+    }
+    pacientes {
+        INT_UNSIGNED paciente_id PK "NOT NULL"
+        VARCHAR_30 expediente_clinico UK "NOT NULL"
+        VARCHAR_100 nombre "NOT NULL"
+        VARCHAR_100 apellido_paterno "NOT NULL"
+        VARCHAR_100 apellido_materno "NULL"
+        DATE fecha_nacimiento "NOT NULL"
+        ENUM sexo "NOT NULL"
+        VARCHAR_25 telefono "NULL"
+        VARCHAR_150 email "NULL"
+        VARCHAR_250 domicilio "NULL"
+        DATETIME fecha_registro "NOT NULL"
+        BOOLEAN activo "NOT NULL"
+    }
+    contactos_emergencia {
+        INT_UNSIGNED contacto_id PK "NOT NULL"
+        INT_UNSIGNED paciente_id FK, UK "NOT NULL"
+        VARCHAR_200 nombre "NOT NULL"
+        VARCHAR_50 parentesco "NOT NULL"
+        VARCHAR_25 telefono "NOT NULL"
+        TINYINT_UNSIGNED prioridad UK "NOT NULL"
+    }
+    aseguradoras {
+        INT_UNSIGNED aseguradora_id PK "NOT NULL"
+        VARCHAR_150 nombre UK "NOT NULL"
+        VARCHAR_25 telefono "NULL"
+    }
+    polizas {
+        INT_UNSIGNED poliza_id PK, UK "NOT NULL"
+        INT_UNSIGNED paciente_id FK, UK "NOT NULL"
+        INT_UNSIGNED aseguradora_id FK, UK "NOT NULL"
+        VARCHAR_60 numero_poliza UK "NOT NULL"
+        DATE fecha_inicio "NOT NULL"
+        DATE fecha_fin "NOT NULL"
+    }
+    habitaciones {
+        INT_UNSIGNED habitacion_id PK "NOT NULL"
+        INT_UNSIGNED departamento_id FK "NOT NULL"
+        VARCHAR_30 codigo UK "NOT NULL"
+        VARCHAR_50 edificio "NOT NULL"
+        SMALLINT piso "NOT NULL"
+        ENUM tipo "NOT NULL"
+    }
+    camillas {
+        INT_UNSIGNED camilla_id PK "NOT NULL"
+        INT_UNSIGNED habitacion_id FK "NOT NULL"
+        VARCHAR_30 codigo UK "NOT NULL"
+        ENUM estado_operativo "NOT NULL"
+    }
+    citas {
+        INT_UNSIGNED cita_id PK, UK "NOT NULL"
+        INT_UNSIGNED paciente_id FK, UK "NOT NULL"
+        INT_UNSIGNED medico_id FK, UK "NOT NULL"
+        DATETIME inicio UK "NOT NULL"
+        DATETIME fin "NOT NULL"
+        VARCHAR_250 motivo "NOT NULL"
+        ENUM estado "NOT NULL"
+        INT_UNSIGNED medico_agenda UK "NULL; GENERATED STORED"
+        INT_UNSIGNED paciente_agenda UK "NULL; GENERATED STORED"
+    }
+    consultas {
+        INT_UNSIGNED consulta_id PK, UK "NOT NULL"
+        INT_UNSIGNED cita_id FK, UK "NULL"
+        INT_UNSIGNED paciente_id FK, UK "NOT NULL"
+        INT_UNSIGNED medico_id FK "NOT NULL"
+        DATETIME fecha "NOT NULL"
+        ENUM tipo "NOT NULL"
+        VARCHAR_250 motivo "NOT NULL"
+        TEXT notas "NULL"
+        DECIMAL_6_2 peso_kg "NULL"
+        DECIMAL_5_2 talla_cm "NULL"
+        DECIMAL_4_1 temperatura_c "NULL"
+    }
+    diagnosticos {
+        INT_UNSIGNED diagnostico_id PK "NOT NULL"
+        VARCHAR_20 codigo UK "NOT NULL"
+        VARCHAR_250 descripcion "NOT NULL"
+    }
+    consulta_diagnosticos {
+        INT_UNSIGNED consulta_id PK, FK "NOT NULL"
+        INT_UNSIGNED diagnostico_id PK, FK "NOT NULL"
+        BOOLEAN es_principal "NOT NULL"
+        INT_UNSIGNED diagnostico_principal UK "NULL; GENERATED STORED"
+        VARCHAR_250 observaciones "NULL"
+    }
+    alergias_paciente {
+        INT_UNSIGNED alergia_id PK "NOT NULL"
+        INT_UNSIGNED paciente_id FK, UK "NOT NULL"
+        VARCHAR_150 sustancia UK "NOT NULL"
+        VARCHAR_250 reaccion "NOT NULL"
+        DATE fecha_registro "NOT NULL"
+    }
+    hospitalizaciones {
+        INT_UNSIGNED hospitalizacion_id PK "NOT NULL"
+        INT_UNSIGNED consulta_ingreso_id FK, UK "NOT NULL"
+        INT_UNSIGNED paciente_id FK "NOT NULL"
+        INT_UNSIGNED medico_responsable_id FK "NOT NULL"
+        DATETIME fecha_ingreso "NOT NULL"
+        DATETIME fecha_alta "NULL"
+        VARCHAR_250 motivo "NOT NULL"
+        TEXT resumen_alta "NULL"
+        INT_UNSIGNED paciente_internado UK "NULL; GENERATED STORED"
+    }
+    asignaciones_camilla {
+        INT_UNSIGNED asignacion_id PK "NOT NULL"
+        INT_UNSIGNED hospitalizacion_id FK "NOT NULL"
+        INT_UNSIGNED camilla_id FK "NOT NULL"
+        DATETIME inicio "NOT NULL"
+        DATETIME fin "NULL"
+        INT_UNSIGNED camilla_ocupada UK "NULL; GENERATED STORED"
+        INT_UNSIGNED hospitalizacion_asignada UK "NULL; GENERATED STORED"
+    }
+    notas_enfermeria {
+        INT_UNSIGNED nota_id PK "NOT NULL"
+        INT_UNSIGNED hospitalizacion_id FK "NOT NULL"
+        INT_UNSIGNED personal_id FK "NOT NULL"
+        DATETIME fecha "NOT NULL"
+        TEXT observacion "NOT NULL"
+    }
+    medicamentos {
+        INT_UNSIGNED medicamento_id PK "NOT NULL"
+        VARCHAR_30 codigo UK "NOT NULL"
+        VARCHAR_150 principio_activo "NOT NULL"
+        VARCHAR_60 concentracion "NOT NULL"
+        VARCHAR_100 presentacion "NOT NULL"
+        VARCHAR_40 unidad_inventario "NOT NULL"
+        INT_UNSIGNED stock_minimo "NOT NULL"
+    }
+    proveedores {
+        INT_UNSIGNED proveedor_id PK "NOT NULL"
+        VARCHAR_150 nombre UK "NOT NULL"
+        VARCHAR_25 telefono "NULL"
+        VARCHAR_150 email "NULL"
+    }
+    lotes_medicamento {
+        INT_UNSIGNED lote_id PK, UK "NOT NULL"
+        INT_UNSIGNED medicamento_id FK, UK "NOT NULL"
+        INT_UNSIGNED proveedor_id FK, UK "NOT NULL"
+        VARCHAR_50 numero_lote UK "NOT NULL"
+        DATE fecha_recepcion "NOT NULL"
+        DATE fecha_caducidad "NOT NULL"
+        DECIMAL_12_2 costo_unitario "NOT NULL"
+    }
+    recetas {
+        INT_UNSIGNED receta_id PK "NOT NULL"
+        INT_UNSIGNED consulta_id FK "NOT NULL"
+        DATETIME fecha_prescripcion "NOT NULL"
+        TEXT observaciones "NULL"
+    }
+    receta_detalle {
+        INT_UNSIGNED receta_id PK, FK, UK "NOT NULL"
+        SMALLINT_UNSIGNED renglon PK, UK "NOT NULL"
+        INT_UNSIGNED medicamento_id FK, UK "NOT NULL"
+        VARCHAR_100 dosis "NOT NULL"
+        VARCHAR_100 frecuencia "NOT NULL"
+        SMALLINT_UNSIGNED duracion_dias "NOT NULL"
+        VARCHAR_50 via_administracion "NOT NULL"
+        INT_UNSIGNED cantidad_prescrita "NOT NULL"
+    }
+    dispensaciones {
+        INT_UNSIGNED dispensacion_id PK, UK "NOT NULL"
+        INT_UNSIGNED receta_id FK, UK "NOT NULL"
+        INT_UNSIGNED personal_id FK "NOT NULL"
+        DATETIME fecha "NOT NULL"
+    }
+    dispensacion_detalle {
+        INT_UNSIGNED dispensacion_detalle_id PK, UK "NOT NULL"
+        INT_UNSIGNED dispensacion_id FK "NOT NULL"
+        INT_UNSIGNED receta_id FK "NOT NULL"
+        SMALLINT_UNSIGNED renglon FK "NOT NULL"
+        INT_UNSIGNED medicamento_id FK "NOT NULL"
+        INT_UNSIGNED lote_id FK, UK "NOT NULL"
+        INT_UNSIGNED cantidad "NOT NULL"
+    }
+    movimientos_inventario {
+        INT_UNSIGNED movimiento_id PK "NOT NULL"
+        INT_UNSIGNED lote_id FK "NOT NULL"
+        INT_UNSIGNED dispensacion_detalle_id FK, UK "NULL"
+        INT_UNSIGNED personal_id FK "NOT NULL"
+        DATETIME fecha "NOT NULL"
+        ENUM tipo "NOT NULL"
+        INT cantidad "NOT NULL"
+        VARCHAR_250 motivo "NOT NULL"
+    }
+    procedimientos {
+        INT_UNSIGNED procedimiento_id PK "NOT NULL"
+        VARCHAR_30 codigo UK "NOT NULL"
+        VARCHAR_150 nombre "NOT NULL"
+        ENUM tipo "NOT NULL"
+        DECIMAL_12_2 precio_referencia "NOT NULL"
+    }
+    ordenes_procedimiento {
+        INT_UNSIGNED orden_id PK "NOT NULL"
+        INT_UNSIGNED consulta_id FK "NOT NULL"
+        INT_UNSIGNED procedimiento_id FK "NOT NULL"
+        DATETIME fecha_solicitud "NOT NULL"
+        DATETIME fecha_programada "NULL"
+        ENUM estado "NOT NULL"
+        TEXT indicaciones "NULL"
+    }
+    resultados_procedimiento {
+        INT_UNSIGNED resultado_id PK "NOT NULL"
+        INT_UNSIGNED orden_id FK, UK "NOT NULL"
+        INT_UNSIGNED personal_id FK "NOT NULL"
+        DATETIME fecha_resultado "NOT NULL"
+        TEXT informe "NOT NULL"
+    }
+    facturas {
+        INT_UNSIGNED factura_id PK "NOT NULL"
+        VARCHAR_40 folio UK "NOT NULL"
+        INT_UNSIGNED paciente_id FK "NOT NULL"
+        INT_UNSIGNED poliza_id FK "NULL"
+        DATETIME fecha "NOT NULL"
+        ENUM estado "NOT NULL"
+    }
+    factura_detalle {
+        INT_UNSIGNED factura_id PK, FK "NOT NULL"
+        SMALLINT_UNSIGNED renglon PK "NOT NULL"
+        VARCHAR_250 descripcion "NOT NULL"
+        DECIMAL_10_2 cantidad "NOT NULL"
+        DECIMAL_12_2 precio_unitario "NOT NULL"
+        DECIMAL_12_2 descuento "NOT NULL"
+        DECIMAL_14_2 importe "NULL; GENERATED STORED"
+    }
+    pagos {
+        INT_UNSIGNED pago_id PK "NOT NULL"
+        INT_UNSIGNED factura_id FK "NOT NULL"
+        DATETIME fecha "NOT NULL"
+        DECIMAL_14_2 monto "NOT NULL"
+        ENUM metodo "NOT NULL"
+        VARCHAR_100 referencia "NULL"
+    }
+    roles {
+        INT_UNSIGNED rol_id PK "NOT NULL"
+        VARCHAR_50 nombre UK "NOT NULL"
+        VARCHAR_250 descripcion "NOT NULL"
+    }
+    usuarios {
+        INT_UNSIGNED usuario_id PK "NOT NULL"
+        INT_UNSIGNED personal_id FK, UK "NOT NULL"
+        VARCHAR_80 nombre_usuario UK "NOT NULL"
+        VARCHAR_255 password_hash "NOT NULL"
+        BOOLEAN activo "NOT NULL"
+    }
+    usuario_roles {
+        INT_UNSIGNED usuario_id PK, FK "NOT NULL"
+        INT_UNSIGNED rol_id PK, FK "NOT NULL"
+    }
+    departamentos ||..o{ personal : "fk_personal_departamento"
+    personal ||--o| medicos : "fk_medico_personal"
+    medicos ||--o{ medico_especialidad : "fk_me_medico"
+    especialidades ||--o{ medico_especialidad : "fk_me_especialidad"
+    pacientes ||..o{ contactos_emergencia : "fk_contacto_paciente"
+    pacientes ||..o{ polizas : "fk_poliza_paciente"
+    aseguradoras ||..o{ polizas : "fk_poliza_aseguradora"
+    departamentos ||..o{ habitaciones : "fk_habitacion_departamento"
+    habitaciones ||..o{ camillas : "fk_camilla_habitacion"
+    pacientes ||..o{ citas : "fk_cita_paciente"
+    medicos ||..o{ citas : "fk_cita_medico"
+    citas |o..o| consultas : "fk_consulta_cita"
+    pacientes ||..o{ consultas : "fk_consulta_paciente"
+    medicos ||..o{ consultas : "fk_consulta_medico"
+    consultas ||--o{ consulta_diagnosticos : "fk_cd_consulta"
+    diagnosticos ||--o{ consulta_diagnosticos : "fk_cd_diagnostico"
+    pacientes ||..o{ alergias_paciente : "fk_alergia_paciente"
+    consultas ||..o| hospitalizaciones : "fk_hosp_consulta"
+    pacientes ||..o{ hospitalizaciones : "fk_hosp_paciente"
+    medicos ||..o{ hospitalizaciones : "fk_hosp_medico"
+    hospitalizaciones ||..o{ asignaciones_camilla : "fk_asignacion_hosp"
+    camillas ||..o{ asignaciones_camilla : "fk_asignacion_camilla"
+    hospitalizaciones ||..o{ notas_enfermeria : "fk_nota_hosp"
+    personal ||..o{ notas_enfermeria : "fk_nota_personal"
+    medicamentos ||..o{ lotes_medicamento : "fk_lote_medicamento"
+    proveedores ||..o{ lotes_medicamento : "fk_lote_proveedor"
+    consultas ||..o{ recetas : "fk_receta_consulta"
+    recetas ||--o{ receta_detalle : "fk_rd_receta"
+    medicamentos ||..o{ receta_detalle : "fk_rd_medicamento"
+    recetas ||..o{ dispensaciones : "fk_disp_receta"
+    personal ||..o{ dispensaciones : "fk_disp_personal"
+    dispensaciones ||..o{ dispensacion_detalle : "fk_dd_dispensacion"
+    receta_detalle ||..o{ dispensacion_detalle : "fk_dd_receta_detalle"
+    lotes_medicamento ||..o{ dispensacion_detalle : "fk_dd_lote"
+    lotes_medicamento ||..o{ movimientos_inventario : "fk_mov_lote"
+    personal ||..o{ movimientos_inventario : "fk_mov_personal"
+    dispensacion_detalle |o..o| movimientos_inventario : "fk_mov_disp"
+    consultas ||..o{ ordenes_procedimiento : "fk_orden_consulta"
+    procedimientos ||..o{ ordenes_procedimiento : "fk_orden_procedimiento"
+    ordenes_procedimiento ||..o| resultados_procedimiento : "fk_resultado_orden"
+    personal ||..o{ resultados_procedimiento : "fk_resultado_personal"
+    pacientes ||..o{ facturas : "fk_factura_paciente"
+    polizas |o..o{ facturas : "fk_factura_poliza"
+    facturas ||--o{ factura_detalle : "fk_fd_factura"
+    facturas ||..o{ pagos : "fk_pago_factura"
+    personal ||..o| usuarios : "fk_usuario_personal"
+    usuarios ||--o{ usuario_roles : "fk_ur_usuario"
+    roles ||--o{ usuario_roles : "fk_ur_rol"
+
+%% PK=clave primaria; FK=foránea; UK=participa en restricción única (puede ser compuesta).
+%% Opcionalidad y cardinalidad se calculan de NULL y claves únicas declaradas.
+%% Un padre puede tener cero hijos: la FK no obliga a crear filas dependientes.
+%% Consulte DICCIONARIO.md para ENUM, claves compuestas y expresiones completas.

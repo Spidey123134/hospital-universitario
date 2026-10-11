@@ -1,0 +1,27 @@
+erDiagram
+    habitaciones {
+        INT_UNSIGNED habitacion_id PK "NOT NULL"
+        INT_UNSIGNED departamento_id FK "NOT NULL"
+        VARCHAR_30 codigo UK "NOT NULL"
+        VARCHAR_50 edificio "NOT NULL"
+        SMALLINT piso "NOT NULL"
+        ENUM tipo "NOT NULL"
+    }
+    camillas {
+        INT_UNSIGNED camilla_id PK "NOT NULL"
+        INT_UNSIGNED habitacion_id FK "NOT NULL"
+        VARCHAR_30 codigo UK "NOT NULL"
+        ENUM estado_operativo "NOT NULL"
+    }
+    departamentos {
+        INT_UNSIGNED departamento_id PK "NOT NULL"
+        VARCHAR_20 codigo UK "NOT NULL"
+        VARCHAR_100 nombre UK "NOT NULL"
+    }
+    departamentos ||..o{ habitaciones : "fk_habitacion_departamento"
+    habitaciones ||..o{ camillas : "fk_camilla_habitacion"
+
+%% PK=clave primaria; FK=foránea; UK=participa en restricción única (puede ser compuesta).
+%% Opcionalidad y cardinalidad se calculan de NULL y claves únicas declaradas.
+%% Un padre puede tener cero hijos: la FK no obliga a crear filas dependientes.
+%% Consulte DICCIONARIO.md para ENUM, claves compuestas y expresiones completas.

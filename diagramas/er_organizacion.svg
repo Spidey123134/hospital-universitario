@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1795" height="1765" viewBox="0 0 1795 1765">
+<defs><marker id="many" markerWidth="16" markerHeight="20" refX="14" refY="10" orient="auto" overflow="visible"><path d="M 2 2 L 14 10 L 2 18 M 2 10 L 14 10" fill="none" stroke="#64748b" stroke-width="1.6"/><circle cx="0" cy="10" r="2.5" fill="white" stroke="#64748b"/></marker><marker id="one" markerWidth="16" markerHeight="20" refX="14" refY="10" orient="auto" overflow="visible"><path d="M 8 2 L 8 18" stroke="#64748b" stroke-width="1.6"/><circle cx="0" cy="10" r="2.5" fill="white" stroke="#64748b"/></marker></defs>
+<rect width="1795" height="1765" fill="#f8fafc"/>
+<text x="55" y="50" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" fill="#0f172a">Organización y personas - relaciones físicas</text>
+<text x="55" y="84" font-family="Segoe UI,Arial,sans-serif" font-size="17" fill="#475569">MySQL · PK primaria · FK foránea · UK* participa en UNIQUE (puede ser compuesto) · G generado · ? permite NULL</text>
+<text x="55" y="112" font-family="Segoe UI,Arial,sans-serif" font-size="16" fill="#475569">Las conexiones van de padre a hijo. Círculo + pata de cuervo = 0..N hijos; círculo + barra = 0..1 hijo.</text>
+<path d="M530,225 H550 V180 H1210 V225 H1230" fill="none" stroke="#64748b" stroke-opacity="0.54" stroke-width="1.7" marker-end="url(#many)"/>
+<text x="880.0" y="177" font-family="Arial,sans-serif" font-size="12" fill="#334155" paint-order="stroke" stroke="#f8fafc" stroke-width="4">F01</text>
+<path d="M1230,232 H887.0 V697 H530" fill="none" stroke="#64748b" stroke-opacity="0.54" stroke-width="1.7" marker-end="url(#one)"/>
+<text x="892.0" y="464.5" font-family="Arial,sans-serif" font-size="12" fill="#334155" paint-order="stroke" stroke="#f8fafc" stroke-width="4">F02</text>
+<path d="M530,704 H550 V625 H655 V704 H675" fill="none" stroke="#64748b" stroke-opacity="0.54" stroke-width="1.7" marker-end="url(#many)"/>
+<text x="602.5" y="622" font-family="Arial,sans-serif" font-size="12" fill="#334155" paint-order="stroke" stroke="#f8fafc" stroke-width="4">F03</text>
+<path d="M1085,246 H1143 V711 H1085" fill="none" stroke="#64748b" stroke-opacity="0.54" stroke-width="1.7" marker-end="url(#many)"/>
+<text x="1147" y="478.5" font-family="Arial,sans-serif" font-size="12" fill="#334155" paint-order="stroke" stroke="#f8fafc" stroke-width="4">F04</text>
+<path d="M1230,718 H908.0 V1183 H530" fill="none" stroke="#64748b" stroke-opacity="0.54" stroke-width="1.7" marker-end="url(#many)"/>
+<text x="913.0" y="950.5" font-family="Arial,sans-serif" font-size="12" fill="#334155" paint-order="stroke" stroke="#f8fafc" stroke-width="4">F05</text>
+<path d="M1640,725 H1665 V1190 H1640" fill="none" stroke="#64748b" stroke-opacity="0.54" stroke-width="1.7" marker-end="url(#many)"/>
+<text x="1669" y="957.5" font-family="Arial,sans-serif" font-size="12" fill="#334155" paint-order="stroke" stroke="#f8fafc" stroke-width="4">F06</text>
+<path d="M1085,1197 H1105 V1100 H1210 V1197 H1230" fill="none" stroke="#64748b" stroke-opacity="0.54" stroke-width="1.7" marker-end="url(#many)"/>
+<text x="1157.5" y="1097" font-family="Arial,sans-serif" font-size="12" fill="#334155" paint-order="stroke" stroke="#f8fafc" stroke-width="4">F07</text>
+<g data-table="departamentos" data-x="120" data-y="200" data-width="410" data-height="122">
+<rect x="120" y="200" width="410" height="122" rx="9" fill="white" stroke="#155E75" stroke-width="2"/>
+<path d="M129 200 H521 Q530 200 530 209 V238 H120 V209 Q120 200 129 200" fill="#155E75"/>
+<text x="132" y="226" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="19" fill="white">departamentos</text>
+<rect x="121" y="244" width="408" height="24" fill="#f1f5f9"/>
+<text x="130" y="261" font-family="Consolas,monospace" font-size="14" fill="#0f172a">departamento_id</text>
+<text x="408" y="261" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT PK/AI</text>
+<text x="130" y="285" font-family="Consolas,monospace" font-size="14" fill="#0f172a">codigo</text>
+<text x="408" y="285" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR UK*</text>
+<rect x="121" y="292" width="408" height="24" fill="#f1f5f9"/>
+<text x="130" y="309" font-family="Consolas,monospace" font-size="14" fill="#0f172a">nombre</text>
+<text x="408" y="309" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR UK*</text>
+</g>
+<g data-table="especialidades" data-x="675" data-y="200" data-width="410" data-height="98">
+<rect x="675" y="200" width="410" height="98" rx="9" fill="white" stroke="#155E75" stroke-width="2"/>
+<path d="M684 200 H1076 Q1085 200 1085 209 V238 H675 V209 Q675 200 684 200" fill="#155E75"/>
+<text x="687" y="226" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="19" fill="white">especialidades</text>
+<rect x="676" y="244" width="408" height="24" fill="#f1f5f9"/>
+<text x="685" y="261" font-family="Consolas,monospace" font-size="14" fill="#0f172a">especialidad_id</text>
+<text x="963" y="261" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT PK/AI</text>
+<text x="685" y="285" font-family="Consolas,monospace" font-size="14" fill="#0f172a">nombre</text>
+<text x="963" y="285" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR UK*</text>
+</g>
+<g data-table="personal" data-x="1230" data-y="200" data-width="410" data-height="290">
+<rect x="1230" y="200" width="410" height="290" rx="9" fill="white" stroke="#155E75" stroke-width="2"/>
+<path d="M1239 200 H1631 Q1640 200 1640 209 V238 H1230 V209 Q1230 200 1239 200" fill="#155E75"/>
+<text x="1242" y="226" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="19" fill="white">personal</text>
+<rect x="1231" y="244" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="261" font-family="Consolas,monospace" font-size="14" fill="#0f172a">personal_id</text>
+<text x="1518" y="261" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT PK/AI</text>
+<text x="1240" y="285" font-family="Consolas,monospace" font-size="14" fill="#0f172a">numero_empleado</text>
+<text x="1518" y="285" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR UK*</text>
+<rect x="1231" y="292" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="309" font-family="Consolas,monospace" font-size="14" fill="#0f172a">departamento_id</text>
+<text x="1518" y="309" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT FK</text>
+<text x="1240" y="333" font-family="Consolas,monospace" font-size="14" fill="#0f172a">nombre</text>
+<text x="1518" y="333" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR -</text>
+<rect x="1231" y="340" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="357" font-family="Consolas,monospace" font-size="14" fill="#0f172a">apellido_paterno</text>
+<text x="1518" y="357" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR -</text>
+<text x="1240" y="381" font-family="Consolas,monospace" font-size="14" fill="#0f172a">apellido_materno</text>
+<text x="1518" y="381" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR - ?</text>
+<rect x="1231" y="388" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="405" font-family="Consolas,monospace" font-size="14" fill="#0f172a">puesto</text>
+<text x="1518" y="405" font-family="Arial,sans-serif" font-size="11" fill="#475569">ENUM -</text>
+<text x="1240" y="429" font-family="Consolas,monospace" font-size="14" fill="#0f172a">telefono</text>
+<text x="1518" y="429" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR - ?</text>
+<rect x="1231" y="436" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="453" font-family="Consolas,monospace" font-size="14" fill="#0f172a">email</text>
+<text x="1518" y="453" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR - ?</text>
+<text x="1240" y="477" font-family="Consolas,monospace" font-size="14" fill="#0f172a">activo</text>
+<text x="1518" y="477" font-family="Arial,sans-serif" font-size="11" fill="#475569">BOOLEAN -</text>
+</g>
+<g data-table="medicos" data-x="120" data-y="665" data-width="410" data-height="98">
+<rect x="120" y="665" width="410" height="98" rx="9" fill="white" stroke="#155E75" stroke-width="2"/>
+<path d="M129 665 H521 Q530 665 530 674 V703 H120 V674 Q120 665 129 665" fill="#155E75"/>
+<text x="132" y="691" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="19" fill="white">medicos</text>
+<rect x="121" y="709" width="408" height="24" fill="#f1f5f9"/>
+<text x="130" y="726" font-family="Consolas,monospace" font-size="14" fill="#0f172a">medico_id</text>
+<text x="408" y="726" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT PK/FK</text>
+<text x="130" y="750" font-family="Consolas,monospace" font-size="14" fill="#0f172a">cedula_profesional</text>
+<text x="408" y="750" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR UK*</text>
+</g>
+<g data-table="medico_especialidad" data-x="675" data-y="665" data-width="410" data-height="98">
+<rect x="675" y="665" width="410" height="98" rx="9" fill="white" stroke="#155E75" stroke-width="2"/>
+<path d="M684 665 H1076 Q1085 665 1085 674 V703 H675 V674 Q675 665 684 665" fill="#155E75"/>
+<text x="687" y="691" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="19" fill="white">medico_especialidad</text>
+<rect x="676" y="709" width="408" height="24" fill="#f1f5f9"/>
+<text x="685" y="726" font-family="Consolas,monospace" font-size="14" fill="#0f172a">medico_id</text>
+<text x="963" y="726" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT PK/FK</text>
+<text x="685" y="750" font-family="Consolas,monospace" font-size="14" fill="#0f172a">especialidad_id</text>
+<text x="963" y="750" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT PK/FK</text>
+</g>
+<g data-table="pacientes" data-x="1230" data-y="665" data-width="410" data-height="338">
+<rect x="1230" y="665" width="410" height="338" rx="9" fill="white" stroke="#155E75" stroke-width="2"/>
+<path d="M1239 665 H1631 Q1640 665 1640 674 V703 H1230 V674 Q1230 665 1239 665" fill="#155E75"/>
+<text x="1242" y="691" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="19" fill="white">pacientes</text>
+<rect x="1231" y="709" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="726" font-family="Consolas,monospace" font-size="14" fill="#0f172a">paciente_id</text>
+<text x="1518" y="726" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT PK/AI</text>
+<text x="1240" y="750" font-family="Consolas,monospace" font-size="14" fill="#0f172a">expediente_clinico</text>
+<text x="1518" y="750" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR UK*</text>
+<rect x="1231" y="757" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="774" font-family="Consolas,monospace" font-size="14" fill="#0f172a">nombre</text>
+<text x="1518" y="774" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR -</text>
+<text x="1240" y="798" font-family="Consolas,monospace" font-size="14" fill="#0f172a">apellido_paterno</text>
+<text x="1518" y="798" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR -</text>
+<rect x="1231" y="805" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="822" font-family="Consolas,monospace" font-size="14" fill="#0f172a">apellido_materno</text>
+<text x="1518" y="822" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR - ?</text>
+<text x="1240" y="846" font-family="Consolas,monospace" font-size="14" fill="#0f172a">fecha_nacimiento</text>
+<text x="1518" y="846" font-family="Arial,sans-serif" font-size="11" fill="#475569">DATE -</text>
+<rect x="1231" y="853" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="870" font-family="Consolas,monospace" font-size="14" fill="#0f172a">sexo</text>
+<text x="1518" y="870" font-family="Arial,sans-serif" font-size="11" fill="#475569">ENUM -</text>
+<text x="1240" y="894" font-family="Consolas,monospace" font-size="14" fill="#0f172a">telefono</text>
+<text x="1518" y="894" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR - ?</text>
+<rect x="1231" y="901" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="918" font-family="Consolas,monospace" font-size="14" fill="#0f172a">email</text>
+<text x="1518" y="918" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR - ?</text>
+<text x="1240" y="942" font-family="Consolas,monospace" font-size="14" fill="#0f172a">domicilio</text>
+<text x="1518" y="942" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR - ?</text>
+<rect x="1231" y="949" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="966" font-family="Consolas,monospace" font-size="14" fill="#0f172a">fecha_registro</text>
+<text x="1518" y="966" font-family="Arial,sans-serif" font-size="11" fill="#475569">DATETIME -</text>
+<text x="1240" y="990" font-family="Consolas,monospace" font-size="14" fill="#0f172a">activo</text>
+<text x="1518" y="990" font-family="Arial,sans-serif" font-size="11" fill="#475569">BOOLEAN -</text>
+</g>
+<g data-table="contactos_emergencia" data-x="120" data-y="1130" data-width="410" data-height="194">
+<rect x="120" y="1130" width="410" height="194" rx="9" fill="white" stroke="#155E75" stroke-width="2"/>
+<path d="M129 1130 H521 Q530 1130 530 1139 V1168 H120 V1139 Q120 1130 129 1130" fill="#155E75"/>
+<text x="132" y="1156" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="19" fill="white">contactos_emergencia</text>
+<rect x="121" y="1174" width="408" height="24" fill="#f1f5f9"/>
+<text x="130" y="1191" font-family="Consolas,monospace" font-size="14" fill="#0f172a">contacto_id</text>
+<text x="408" y="1191" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT PK/AI</text>
+<text x="130" y="1215" font-family="Consolas,monospace" font-size="14" fill="#0f172a">paciente_id</text>
+<text x="408" y="1215" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT FK/UK*</text>
+<rect x="121" y="1222" width="408" height="24" fill="#f1f5f9"/>
+<text x="130" y="1239" font-family="Consolas,monospace" font-size="14" fill="#0f172a">nombre</text>
+<text x="408" y="1239" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR -</text>
+<text x="130" y="1263" font-family="Consolas,monospace" font-size="14" fill="#0f172a">parentesco</text>
+<text x="408" y="1263" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR -</text>
+<rect x="121" y="1270" width="408" height="24" fill="#f1f5f9"/>
+<text x="130" y="1287" font-family="Consolas,monospace" font-size="14" fill="#0f172a">telefono</text>
+<text x="408" y="1287" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR -</text>
+<text x="130" y="1311" font-family="Consolas,monospace" font-size="14" fill="#0f172a">prioridad</text>
+<text x="408" y="1311" font-family="Arial,sans-serif" font-size="11" fill="#475569">TINYINT UK*</text>
+</g>
+<g data-table="aseguradoras" data-x="675" data-y="1130" data-width="410" data-height="122">
+<rect x="675" y="1130" width="410" height="122" rx="9" fill="white" stroke="#155E75" stroke-width="2"/>
+<path d="M684 1130 H1076 Q1085 1130 1085 1139 V1168 H675 V1139 Q675 1130 684 1130" fill="#155E75"/>
+<text x="687" y="1156" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="19" fill="white">aseguradoras</text>
+<rect x="676" y="1174" width="408" height="24" fill="#f1f5f9"/>
+<text x="685" y="1191" font-family="Consolas,monospace" font-size="14" fill="#0f172a">aseguradora_id</text>
+<text x="963" y="1191" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT PK/AI</text>
+<text x="685" y="1215" font-family="Consolas,monospace" font-size="14" fill="#0f172a">nombre</text>
+<text x="963" y="1215" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR UK*</text>
+<rect x="676" y="1222" width="408" height="24" fill="#f1f5f9"/>
+<text x="685" y="1239" font-family="Consolas,monospace" font-size="14" fill="#0f172a">telefono</text>
+<text x="963" y="1239" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR - ?</text>
+</g>
+<g data-table="polizas" data-x="1230" data-y="1130" data-width="410" data-height="194">
+<rect x="1230" y="1130" width="410" height="194" rx="9" fill="white" stroke="#155E75" stroke-width="2"/>
+<path d="M1239 1130 H1631 Q1640 1130 1640 1139 V1168 H1230 V1139 Q1230 1130 1239 1130" fill="#155E75"/>
+<text x="1242" y="1156" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="19" fill="white">polizas</text>
+<rect x="1231" y="1174" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="1191" font-family="Consolas,monospace" font-size="14" fill="#0f172a">poliza_id</text>
+<text x="1518" y="1191" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT PK/UK*/AI</text>
+<text x="1240" y="1215" font-family="Consolas,monospace" font-size="14" fill="#0f172a">paciente_id</text>
+<text x="1518" y="1215" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT FK/UK*</text>
+<rect x="1231" y="1222" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="1239" font-family="Consolas,monospace" font-size="14" fill="#0f172a">aseguradora_id</text>
+<text x="1518" y="1239" font-family="Arial,sans-serif" font-size="11" fill="#475569">INT FK/UK*</text>
+<text x="1240" y="1263" font-family="Consolas,monospace" font-size="14" fill="#0f172a">numero_poliza</text>
+<text x="1518" y="1263" font-family="Arial,sans-serif" font-size="11" fill="#475569">VARCHAR UK*</text>
+<rect x="1231" y="1270" width="408" height="24" fill="#f1f5f9"/>
+<text x="1240" y="1287" font-family="Consolas,monospace" font-size="14" fill="#0f172a">fecha_inicio</text>
+<text x="1518" y="1287" font-family="Arial,sans-serif" font-size="11" fill="#475569">DATE -</text>
+<text x="1240" y="1311" font-family="Consolas,monospace" font-size="14" fill="#0f172a">fecha_fin</text>
+<text x="1518" y="1311" font-family="Arial,sans-serif" font-size="11" fill="#475569">DATE -</text>
+</g>
+<text x="55" y="1610" font-family="Arial,sans-serif" font-size="17" fill="#0f172a">9 entidades · 7 claves foráneas visibles · zoom recomendado: 100% o más.</text>
+<text x="55" y="1638" font-family="Arial,sans-serif" font-size="15" fill="#475569">El catálogo numerado de relaciones está en el archivo er_organizacion_relaciones.md; Mermaid conserva nombres completos de FK.</text>
+<text x="55" y="1665" font-family="Arial,sans-serif" font-size="15" fill="#475569">La obligatoriedad del padre se ve en el FK del hijo: ? = referencia opcional; sin ? = obligatoria. Tipos completos en DICCIONARIO.md.</text>
+</svg>

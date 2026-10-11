@@ -1,0 +1,92 @@
+erDiagram
+    hospitalizaciones {
+        INT_UNSIGNED hospitalizacion_id PK "NOT NULL"
+        INT_UNSIGNED consulta_ingreso_id FK, UK "NOT NULL"
+        INT_UNSIGNED paciente_id FK "NOT NULL"
+        INT_UNSIGNED medico_responsable_id FK "NOT NULL"
+        DATETIME fecha_ingreso "NOT NULL"
+        DATETIME fecha_alta "NULL"
+        VARCHAR_250 motivo "NOT NULL"
+        TEXT resumen_alta "NULL"
+        INT_UNSIGNED paciente_internado UK "NULL; GENERATED STORED"
+    }
+    asignaciones_camilla {
+        INT_UNSIGNED asignacion_id PK "NOT NULL"
+        INT_UNSIGNED hospitalizacion_id FK "NOT NULL"
+        INT_UNSIGNED camilla_id FK "NOT NULL"
+        DATETIME inicio "NOT NULL"
+        DATETIME fin "NULL"
+        INT_UNSIGNED camilla_ocupada UK "NULL; GENERATED STORED"
+        INT_UNSIGNED hospitalizacion_asignada UK "NULL; GENERATED STORED"
+    }
+    notas_enfermeria {
+        INT_UNSIGNED nota_id PK "NOT NULL"
+        INT_UNSIGNED hospitalizacion_id FK "NOT NULL"
+        INT_UNSIGNED personal_id FK "NOT NULL"
+        DATETIME fecha "NOT NULL"
+        TEXT observacion "NOT NULL"
+    }
+    consultas {
+        INT_UNSIGNED consulta_id PK, UK "NOT NULL"
+        INT_UNSIGNED cita_id FK, UK "NULL"
+        INT_UNSIGNED paciente_id FK, UK "NOT NULL"
+        INT_UNSIGNED medico_id FK "NOT NULL"
+        DATETIME fecha "NOT NULL"
+        ENUM tipo "NOT NULL"
+        VARCHAR_250 motivo "NOT NULL"
+        TEXT notas "NULL"
+        DECIMAL_6_2 peso_kg "NULL"
+        DECIMAL_5_2 talla_cm "NULL"
+        DECIMAL_4_1 temperatura_c "NULL"
+    }
+    pacientes {
+        INT_UNSIGNED paciente_id PK "NOT NULL"
+        VARCHAR_30 expediente_clinico UK "NOT NULL"
+        VARCHAR_100 nombre "NOT NULL"
+        VARCHAR_100 apellido_paterno "NOT NULL"
+        VARCHAR_100 apellido_materno "NULL"
+        DATE fecha_nacimiento "NOT NULL"
+        ENUM sexo "NOT NULL"
+        VARCHAR_25 telefono "NULL"
+        VARCHAR_150 email "NULL"
+        VARCHAR_250 domicilio "NULL"
+        DATETIME fecha_registro "NOT NULL"
+        BOOLEAN activo "NOT NULL"
+    }
+    medicos {
+        INT_UNSIGNED medico_id PK, FK "NOT NULL"
+        VARCHAR_50 cedula_profesional UK "NOT NULL"
+    }
+    camillas {
+        INT_UNSIGNED camilla_id PK "NOT NULL"
+        INT_UNSIGNED habitacion_id FK "NOT NULL"
+        VARCHAR_30 codigo UK "NOT NULL"
+        ENUM estado_operativo "NOT NULL"
+    }
+    personal {
+        INT_UNSIGNED personal_id PK "NOT NULL"
+        VARCHAR_25 numero_empleado UK "NOT NULL"
+        INT_UNSIGNED departamento_id FK "NOT NULL"
+        VARCHAR_100 nombre "NOT NULL"
+        VARCHAR_100 apellido_paterno "NOT NULL"
+        VARCHAR_100 apellido_materno "NULL"
+        ENUM puesto "NOT NULL"
+        VARCHAR_25 telefono "NULL"
+        VARCHAR_150 email "NULL"
+        BOOLEAN activo "NOT NULL"
+    }
+    consultas ||..o| hospitalizaciones : "fk_hosp_consulta"
+    pacientes ||..o{ hospitalizaciones : "fk_hosp_paciente"
+    medicos ||..o{ hospitalizaciones : "fk_hosp_medico"
+    hospitalizaciones ||..o{ asignaciones_camilla : "fk_asignacion_hosp"
+    camillas ||..o{ asignaciones_camilla : "fk_asignacion_camilla"
+    hospitalizaciones ||..o{ notas_enfermeria : "fk_nota_hosp"
+    personal ||..o{ notas_enfermeria : "fk_nota_personal"
+    pacientes ||..o{ consultas : "fk_consulta_paciente"
+    medicos ||..o{ consultas : "fk_consulta_medico"
+    personal ||--o| medicos : "fk_medico_personal"
+
+%% PK=clave primaria; FK=foránea; UK=participa en restricción única (puede ser compuesta).
+%% Opcionalidad y cardinalidad se calculan de NULL y claves únicas declaradas.
+%% Un padre puede tener cero hijos: la FK no obliga a crear filas dependientes.
+%% Consulte DICCIONARIO.md para ENUM, claves compuestas y expresiones completas.

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1850" height="1000" viewBox="0 0 1850 1000"><defs><marker id="arrow" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10" fill="#64748b"/></marker></defs><rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="65" y="68" font-family="Segoe UI,Arial,sans-serif" font-size="42" font-weight="700" fill="#0f172a">Hospital universitario</text>
+<text x="65" y="110" font-family="Segoe UI,Arial,sans-serif" font-size="25" fill="#475569">36 tablas · 8 módulos · modelo académico de punta a punta</text>
+<rect x="65" y="170" width="515" height="205" rx="18" fill="white" stroke="#155E75" stroke-width="3"/>
+<rect x="65" y="170" width="8" height="205" rx="4" fill="#155E75"/>
+<text x="90" y="212" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" fill="#155E75">Organización y personas (9)</text>
+<text x="90" y="248" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">departamentos · especialidades · personal</text>
+<text x="90" y="273" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">medicos · medico especialidad · pacientes</text>
+<text x="90" y="298" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">contactos emergencia · aseguradoras · polizas</text>
+<rect x="670" y="170" width="515" height="205" rx="18" fill="white" stroke="#4D7C0F" stroke-width="3"/>
+<rect x="670" y="170" width="8" height="205" rx="4" fill="#4D7C0F"/>
+<text x="695" y="212" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" fill="#4D7C0F">Infraestructura (2)</text>
+<text x="695" y="248" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">habitaciones · camillas</text>
+<rect x="1275" y="170" width="515" height="205" rx="18" fill="white" stroke="#2563EB" stroke-width="3"/>
+<rect x="1275" y="170" width="8" height="205" rx="4" fill="#2563EB"/>
+<text x="1300" y="212" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" fill="#2563EB">Atención clínica (5)</text>
+<text x="1300" y="248" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">citas · consultas · diagnosticos</text>
+<text x="1300" y="273" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">consulta diagnosticos · alergias paciente</text>
+<rect x="65" y="425" width="515" height="205" rx="18" fill="white" stroke="#7C3AED" stroke-width="3"/>
+<rect x="65" y="425" width="8" height="205" rx="4" fill="#7C3AED"/>
+<text x="90" y="467" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" fill="#7C3AED">Hospitalización (3)</text>
+<text x="90" y="503" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">hospitalizaciones · asignaciones camilla</text>
+<text x="90" y="528" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">notas enfermeria</text>
+<rect x="670" y="425" width="515" height="205" rx="18" fill="white" stroke="#B45309" stroke-width="3"/>
+<rect x="670" y="425" width="8" height="205" rx="4" fill="#B45309"/>
+<text x="695" y="467" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" fill="#B45309">Farmacia e inventario (8)</text>
+<text x="695" y="503" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">medicamentos · proveedores · lotes medicamento</text>
+<text x="695" y="528" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">recetas · receta detalle · dispensaciones</text>
+<text x="695" y="553" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">dispensacion detalle · movimientos inventario</text>
+<rect x="1275" y="425" width="515" height="205" rx="18" fill="white" stroke="#BE185D" stroke-width="3"/>
+<rect x="1275" y="425" width="8" height="205" rx="4" fill="#BE185D"/>
+<text x="1300" y="467" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" fill="#BE185D">Estudios y procedimientos (3)</text>
+<text x="1300" y="503" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">procedimientos · ordenes procedimiento</text>
+<text x="1300" y="528" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">resultados procedimiento</text>
+<rect x="65" y="680" width="515" height="205" rx="18" fill="white" stroke="#047857" stroke-width="3"/>
+<rect x="65" y="680" width="8" height="205" rx="4" fill="#047857"/>
+<text x="90" y="722" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" fill="#047857">Cobros (3)</text>
+<text x="90" y="758" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">facturas · factura detalle · pagos</text>
+<rect x="670" y="680" width="515" height="205" rx="18" fill="white" stroke="#475569" stroke-width="3"/>
+<rect x="670" y="680" width="8" height="205" rx="4" fill="#475569"/>
+<text x="695" y="722" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" fill="#475569">Acceso de la aplicación (3)</text>
+<text x="695" y="758" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#334155">roles · usuarios · usuario roles</text>
+<text x="1275" y="748" font-family="Segoe UI,Arial,sans-serif" font-size="22" fill="#0f172a">Recorrido demostrable</text>
+<text x="1275" y="790" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475569">Paciente → cita → consulta</text>
+<text x="1275" y="821" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475569">Diagnóstico → receta / orden</text>
+<text x="1275" y="852" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475569">Entrega / resultado → cargo → pago</text>
+<text x="65" y="950" font-family="Segoe UI,Arial,sans-serif" font-size="21" fill="#475569">Prescripción ≠ entrega · Operación de camilla ≠ ocupación · Tarifa actual ≠ precio histórico</text></svg>

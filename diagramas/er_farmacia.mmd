@@ -1,0 +1,109 @@
+erDiagram
+    medicamentos {
+        INT_UNSIGNED medicamento_id PK "NOT NULL"
+        VARCHAR_30 codigo UK "NOT NULL"
+        VARCHAR_150 principio_activo "NOT NULL"
+        VARCHAR_60 concentracion "NOT NULL"
+        VARCHAR_100 presentacion "NOT NULL"
+        VARCHAR_40 unidad_inventario "NOT NULL"
+        INT_UNSIGNED stock_minimo "NOT NULL"
+    }
+    proveedores {
+        INT_UNSIGNED proveedor_id PK "NOT NULL"
+        VARCHAR_150 nombre UK "NOT NULL"
+        VARCHAR_25 telefono "NULL"
+        VARCHAR_150 email "NULL"
+    }
+    lotes_medicamento {
+        INT_UNSIGNED lote_id PK, UK "NOT NULL"
+        INT_UNSIGNED medicamento_id FK, UK "NOT NULL"
+        INT_UNSIGNED proveedor_id FK, UK "NOT NULL"
+        VARCHAR_50 numero_lote UK "NOT NULL"
+        DATE fecha_recepcion "NOT NULL"
+        DATE fecha_caducidad "NOT NULL"
+        DECIMAL_12_2 costo_unitario "NOT NULL"
+    }
+    recetas {
+        INT_UNSIGNED receta_id PK "NOT NULL"
+        INT_UNSIGNED consulta_id FK "NOT NULL"
+        DATETIME fecha_prescripcion "NOT NULL"
+        TEXT observaciones "NULL"
+    }
+    receta_detalle {
+        INT_UNSIGNED receta_id PK, FK, UK "NOT NULL"
+        SMALLINT_UNSIGNED renglon PK, UK "NOT NULL"
+        INT_UNSIGNED medicamento_id FK, UK "NOT NULL"
+        VARCHAR_100 dosis "NOT NULL"
+        VARCHAR_100 frecuencia "NOT NULL"
+        SMALLINT_UNSIGNED duracion_dias "NOT NULL"
+        VARCHAR_50 via_administracion "NOT NULL"
+        INT_UNSIGNED cantidad_prescrita "NOT NULL"
+    }
+    dispensaciones {
+        INT_UNSIGNED dispensacion_id PK, UK "NOT NULL"
+        INT_UNSIGNED receta_id FK, UK "NOT NULL"
+        INT_UNSIGNED personal_id FK "NOT NULL"
+        DATETIME fecha "NOT NULL"
+    }
+    dispensacion_detalle {
+        INT_UNSIGNED dispensacion_detalle_id PK, UK "NOT NULL"
+        INT_UNSIGNED dispensacion_id FK "NOT NULL"
+        INT_UNSIGNED receta_id FK "NOT NULL"
+        SMALLINT_UNSIGNED renglon FK "NOT NULL"
+        INT_UNSIGNED medicamento_id FK "NOT NULL"
+        INT_UNSIGNED lote_id FK, UK "NOT NULL"
+        INT_UNSIGNED cantidad "NOT NULL"
+    }
+    movimientos_inventario {
+        INT_UNSIGNED movimiento_id PK "NOT NULL"
+        INT_UNSIGNED lote_id FK "NOT NULL"
+        INT_UNSIGNED dispensacion_detalle_id FK, UK "NULL"
+        INT_UNSIGNED personal_id FK "NOT NULL"
+        DATETIME fecha "NOT NULL"
+        ENUM tipo "NOT NULL"
+        INT cantidad "NOT NULL"
+        VARCHAR_250 motivo "NOT NULL"
+    }
+    consultas {
+        INT_UNSIGNED consulta_id PK, UK "NOT NULL"
+        INT_UNSIGNED cita_id FK, UK "NULL"
+        INT_UNSIGNED paciente_id FK, UK "NOT NULL"
+        INT_UNSIGNED medico_id FK "NOT NULL"
+        DATETIME fecha "NOT NULL"
+        ENUM tipo "NOT NULL"
+        VARCHAR_250 motivo "NOT NULL"
+        TEXT notas "NULL"
+        DECIMAL_6_2 peso_kg "NULL"
+        DECIMAL_5_2 talla_cm "NULL"
+        DECIMAL_4_1 temperatura_c "NULL"
+    }
+    personal {
+        INT_UNSIGNED personal_id PK "NOT NULL"
+        VARCHAR_25 numero_empleado UK "NOT NULL"
+        INT_UNSIGNED departamento_id FK "NOT NULL"
+        VARCHAR_100 nombre "NOT NULL"
+        VARCHAR_100 apellido_paterno "NOT NULL"
+        VARCHAR_100 apellido_materno "NULL"
+        ENUM puesto "NOT NULL"
+        VARCHAR_25 telefono "NULL"
+        VARCHAR_150 email "NULL"
+        BOOLEAN activo "NOT NULL"
+    }
+    medicamentos ||..o{ lotes_medicamento : "fk_lote_medicamento"
+    proveedores ||..o{ lotes_medicamento : "fk_lote_proveedor"
+    consultas ||..o{ recetas : "fk_receta_consulta"
+    recetas ||--o{ receta_detalle : "fk_rd_receta"
+    medicamentos ||..o{ receta_detalle : "fk_rd_medicamento"
+    recetas ||..o{ dispensaciones : "fk_disp_receta"
+    personal ||..o{ dispensaciones : "fk_disp_personal"
+    dispensaciones ||..o{ dispensacion_detalle : "fk_dd_dispensacion"
+    receta_detalle ||..o{ dispensacion_detalle : "fk_dd_receta_detalle"
+    lotes_medicamento ||..o{ dispensacion_detalle : "fk_dd_lote"
+    lotes_medicamento ||..o{ movimientos_inventario : "fk_mov_lote"
+    personal ||..o{ movimientos_inventario : "fk_mov_personal"
+    dispensacion_detalle |o..o| movimientos_inventario : "fk_mov_disp"
+
+%% PK=clave primaria; FK=foránea; UK=participa en restricción única (puede ser compuesta).
+%% Opcionalidad y cardinalidad se calculan de NULL y claves únicas declaradas.
+%% Un padre puede tener cero hijos: la FK no obliga a crear filas dependientes.
+%% Consulte DICCIONARIO.md para ENUM, claves compuestas y expresiones completas.

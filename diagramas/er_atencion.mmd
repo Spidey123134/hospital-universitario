@@ -1,0 +1,75 @@
+erDiagram
+    citas {
+        INT_UNSIGNED cita_id PK, UK "NOT NULL"
+        INT_UNSIGNED paciente_id FK, UK "NOT NULL"
+        INT_UNSIGNED medico_id FK, UK "NOT NULL"
+        DATETIME inicio UK "NOT NULL"
+        DATETIME fin "NOT NULL"
+        VARCHAR_250 motivo "NOT NULL"
+        ENUM estado "NOT NULL"
+        INT_UNSIGNED medico_agenda UK "NULL; GENERATED STORED"
+        INT_UNSIGNED paciente_agenda UK "NULL; GENERATED STORED"
+    }
+    consultas {
+        INT_UNSIGNED consulta_id PK, UK "NOT NULL"
+        INT_UNSIGNED cita_id FK, UK "NULL"
+        INT_UNSIGNED paciente_id FK, UK "NOT NULL"
+        INT_UNSIGNED medico_id FK "NOT NULL"
+        DATETIME fecha "NOT NULL"
+        ENUM tipo "NOT NULL"
+        VARCHAR_250 motivo "NOT NULL"
+        TEXT notas "NULL"
+        DECIMAL_6_2 peso_kg "NULL"
+        DECIMAL_5_2 talla_cm "NULL"
+        DECIMAL_4_1 temperatura_c "NULL"
+    }
+    diagnosticos {
+        INT_UNSIGNED diagnostico_id PK "NOT NULL"
+        VARCHAR_20 codigo UK "NOT NULL"
+        VARCHAR_250 descripcion "NOT NULL"
+    }
+    consulta_diagnosticos {
+        INT_UNSIGNED consulta_id PK, FK "NOT NULL"
+        INT_UNSIGNED diagnostico_id PK, FK "NOT NULL"
+        BOOLEAN es_principal "NOT NULL"
+        INT_UNSIGNED diagnostico_principal UK "NULL; GENERATED STORED"
+        VARCHAR_250 observaciones "NULL"
+    }
+    alergias_paciente {
+        INT_UNSIGNED alergia_id PK "NOT NULL"
+        INT_UNSIGNED paciente_id FK, UK "NOT NULL"
+        VARCHAR_150 sustancia UK "NOT NULL"
+        VARCHAR_250 reaccion "NOT NULL"
+        DATE fecha_registro "NOT NULL"
+    }
+    pacientes {
+        INT_UNSIGNED paciente_id PK "NOT NULL"
+        VARCHAR_30 expediente_clinico UK "NOT NULL"
+        VARCHAR_100 nombre "NOT NULL"
+        VARCHAR_100 apellido_paterno "NOT NULL"
+        VARCHAR_100 apellido_materno "NULL"
+        DATE fecha_nacimiento "NOT NULL"
+        ENUM sexo "NOT NULL"
+        VARCHAR_25 telefono "NULL"
+        VARCHAR_150 email "NULL"
+        VARCHAR_250 domicilio "NULL"
+        DATETIME fecha_registro "NOT NULL"
+        BOOLEAN activo "NOT NULL"
+    }
+    medicos {
+        INT_UNSIGNED medico_id PK, FK "NOT NULL"
+        VARCHAR_50 cedula_profesional UK "NOT NULL"
+    }
+    pacientes ||..o{ citas : "fk_cita_paciente"
+    medicos ||..o{ citas : "fk_cita_medico"
+    citas |o..o| consultas : "fk_consulta_cita"
+    pacientes ||..o{ consultas : "fk_consulta_paciente"
+    medicos ||..o{ consultas : "fk_consulta_medico"
+    consultas ||--o{ consulta_diagnosticos : "fk_cd_consulta"
+    diagnosticos ||--o{ consulta_diagnosticos : "fk_cd_diagnostico"
+    pacientes ||..o{ alergias_paciente : "fk_alergia_paciente"
+
+%% PK=clave primaria; FK=foránea; UK=participa en restricción única (puede ser compuesta).
+%% Opcionalidad y cardinalidad se calculan de NULL y claves únicas declaradas.
+%% Un padre puede tener cero hijos: la FK no obliga a crear filas dependientes.
+%% Consulte DICCIONARIO.md para ENUM, claves compuestas y expresiones completas.

@@ -1,0 +1,258 @@
+{
+  "estado": "APROBADO",
+  "fecha_utc": "2026-10-11T05:16:29+00:00",
+  "fecha_didactica": "2026-10-10",
+  "servidor": {
+    "version": "MySQL 8.0.45",
+    "host": "127.0.0.1",
+    "puerto": 33087,
+    "aislado": true,
+    "servicio_instalado": false
+  },
+  "base_temporal": "hospital_tutorial_2b9e156007fb4647a105de0b5bb1fe91",
+  "base_temporal_eliminada": true,
+  "instancia_detenida_al_final": true,
+  "total": 28,
+  "correctas": 28,
+  "fallidas": 0,
+  "alcance": "SQL del tutorial sobre copia UUID propia; no valida la interfaz de Workbench ni Reverse Engineer.",
+  "huellas_sha256_originales": {
+    "hospital_completo.sql": "65637e2fb21cea83a794b7115301841259efeecb45c0592b5127b52160be44cc",
+    "01_esquema.sql": "bbe9ed69d896dfbfbb60c9aaec783b4116ec07cf3266eeaba03c2383ca4dfec1",
+    "02_reglas.sql": "a506582fb8fa5c142520acabfc336ab720dee06e196445e8d8b32b1902a3b484",
+    "03_datos_demo.sql": "4bc2db6498289ac806c98c3bbda631454cd88c8b2f5ab313194568c0fe781593",
+    "04_consultas.sql": "34b39f2b0ec66dc37792fc2f9a0a6b5fc96eaa362062a4b144939fe2bf02e86d"
+  },
+  "resultados": [
+    {
+      "nombre": "Identidad de instancia aislada",
+      "categoria": "entorno",
+      "correcta": true,
+      "detalle": "MySQL 8.0.45; datadir temporal esperado; puerto TCP local 33087."
+    },
+    {
+      "nombre": "Instalación completa en base UUID propia",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": null,
+      "obtenido": "",
+      "error_mysql": null
+    },
+    {
+      "nombre": "01: USE y SELECT DATABASE",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "hospital_tutorial_2b9e156007fb4647a105de0b5bb1fe91",
+      "obtenido": "hospital_tutorial_2b9e156007fb4647a105de0b5bb1fe91",
+      "error_mysql": null
+    },
+    {
+      "nombre": "02: 36 tablas y 6 vistas",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "BASE TABLE\t36\nVIEW\t6",
+      "obtenido": "BASE TABLE\t36\nVIEW\t6",
+      "error_mysql": null
+    },
+    {
+      "nombre": "03: DESCRIBE y SHOW CREATE TABLE pacientes",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "AUTO_INCREMENT y CHECK del paciente presentes."
+    },
+    {
+      "nombre": "04: cinco pacientes originales",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "1\tEXP-DEMO-001\n2\tEXP-DEMO-002\n3\tEXP-DEMO-003\n4\tEXP-DEMO-004\n5\tEXP-DEMO-005",
+      "obtenido": "1\tEXP-DEMO-001\n2\tEXP-DEMO-002\n3\tEXP-DEMO-003\n4\tEXP-DEMO-004\n5\tEXP-DEMO-005",
+      "error_mysql": null
+    },
+    {
+      "nombre": "05a: filtro pacientes activos sexo F",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "1\n4",
+      "obtenido": "1\n4",
+      "error_mysql": null
+    },
+    {
+      "nombre": "05b: LIKE encuentra Paciente Tres",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "3",
+      "obtenido": "3",
+      "error_mysql": null
+    },
+    {
+      "nombre": "06: LEFT JOIN conserva cinco pacientes",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "1\t1\n2\t3\n3\t4\n4\t5\n5\t6",
+      "obtenido": "1\t1\n2\t3\n3\t4\n4\t5\n5\t6",
+      "error_mysql": null
+    },
+    {
+      "nombre": "07: INSERT con AUTO_INCREMENT y LAST_INSERT_ID",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Un paciente ficticio nuevo, ID mayor que 5, capturado en la misma conexión.",
+      "sql_safe_updates": 1,
+      "error_mysql": null
+    },
+    {
+      "nombre": "08: UPDATE con WHERE y ROLLBACK",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "El teléfono cambia dentro de la transacción y regresa al original.",
+      "sql_safe_updates": 1
+    },
+    {
+      "nombre": "09: DELETE restringido al paciente nuevo",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Se elimina una fila propia; permanecen los cinco pacientes originales.",
+      "sql_safe_updates": 1
+    },
+    {
+      "nombre": "10: sp_agendar_cita y parámetro OUT",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "1\n4\t1\t2026-10-15 15:00:00\t2026-10-15 15:30:00\tPROGRAMADA",
+      "obtenido": "1\n4\t1\t2026-10-15 15:00:00\t2026-10-15 15:30:00\tPROGRAMADA",
+      "error_mysql": null
+    },
+    {
+      "nombre": "10: horario repetido rechazado",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "La operación inválida se rechazó con el código esperado.",
+      "esperado": 1644,
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "11a: ocupación registrada de camillas",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "DISPONIBLE\t4\nMANTENIMIENTO\t1\nOCUPADA\t1",
+      "obtenido": "DISPONIBLE\t4\nMANTENIMIENTO\t1\nOCUPADA\t1",
+      "error_mysql": null
+    },
+    {
+      "nombre": "11b: hospitalización cerrada y abierta",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "1\t0\n2\t1",
+      "obtenido": "1\t0\n2\t1",
+      "error_mysql": null
+    },
+    {
+      "nombre": "12a: farmacia antes de entrega",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "4\t0\t4\n40",
+      "obtenido": "4\t0\t4\n40",
+      "error_mysql": null
+    },
+    {
+      "nombre": "12b: sp_dispensar registra una unidad",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "1\n4\t1\t3\n39",
+      "obtenido": "1\n4\t1\t3\n39",
+      "error_mysql": null
+    },
+    {
+      "nombre": "13a: factura antes del abono",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "850.00\t500.00\t350.00",
+      "obtenido": "850.00\t500.00\t350.00",
+      "error_mysql": null
+    },
+    {
+      "nombre": "13b: sp_registrar_pago registra 25",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "1\n850.00\t525.00\t325.00",
+      "obtenido": "1\n850.00\t525.00\t325.00",
+      "error_mysql": null
+    },
+    {
+      "nombre": "14a: código UNIQUE repetido",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "La operación inválida se rechazó con el código esperado.",
+      "esperado": 1062,
+      "error_mysql": 1062
+    },
+    {
+      "nombre": "14b: CHECK prioridad mayor que cero",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "La operación inválida se rechazó con el código esperado.",
+      "esperado": 3819,
+      "error_mysql": 3819
+    },
+    {
+      "nombre": "14c: FK de paciente inexistente",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "La operación inválida se rechazó con el código esperado.",
+      "esperado": 1452,
+      "error_mysql": 1452
+    },
+    {
+      "nombre": "15: CREATE y ALTER de tabla de práctica",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "observaciones\tvarchar\t200\tYES",
+      "obtenido": "observaciones\tvarchar\t200\tYES",
+      "error_mysql": null
+    },
+    {
+      "nombre": "Usuarios demo inactivos sin autenticación",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Resultado esperado confirmado.",
+      "esperado": "0\n3",
+      "obtenido": "0\n3",
+      "error_mysql": null
+    },
+    {
+      "nombre": "Instalación no repetible encima de base existente",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "La operación inválida se rechazó con el código esperado.",
+      "esperado": 1007,
+      "error_mysql": 1007
+    },
+    {
+      "nombre": "Las 20 consultas siguen siendo ejecutables tras ejercicios",
+      "categoria": "ejercicio",
+      "correcta": true,
+      "detalle": "Consultas de lectura ejecutadas; los resultados incorporan la cita, entrega y abono del tutorial."
+    },
+    {
+      "nombre": "Limpieza de base UUID propia",
+      "categoria": "limpieza",
+      "correcta": true,
+      "detalle": "Se eliminó exclusivamente la base creada para esta ejecución."
+    }
+  ]
+}

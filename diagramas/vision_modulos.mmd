@@ -1,0 +1,14 @@
+flowchart LR
+    P[Paciente y cobertura] --> C[Cita o urgencia]
+    C --> Q[Consulta y diagnóstico]
+    Q --> H[Hospitalización y camilla]
+    H --> N[Notas de enfermería]
+    Q --> R[Receta y detalle]
+    R --> D[Dispensación]
+    L[Lotes y movimientos] --> D
+    D --> I[Salida de inventario]
+    Q --> O[Orden de procedimiento]
+    O --> E[Resultado]
+    Q --> F[Factura académica]
+    F --> G[Pagos parciales]
+    A[Personal y roles de aplicación] -. operación .-> Q

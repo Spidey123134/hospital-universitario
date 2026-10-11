@@ -1,0 +1,32 @@
+[
+  {
+    "archivo": "camillas.ibd",
+    "bytes": 114688,
+    "sha256": "b5f03a0be7ba6a8f6179aae05fa60080cfc2bd6f0f137a98b2606106aff89e2c",
+    "version_metadatos": 80029
+  },
+  {
+    "archivo": "medicamentos.ibd",
+    "bytes": 114688,
+    "sha256": "f064709449c29857ac33203e84caf7ef2f032d3e2e65012c7ff19a161963b5bd",
+    "version_metadatos": 80029
+  },
+  {
+    "archivo": "medicos.ibd",
+    "bytes": 131072,
+    "sha256": "e560ca54a3b9eebb78d28acf2985d11b64901f23152a699d16ce1ebffe61ab57",
+    "version_metadatos": 80029
+  },
+  {
+    "archivo": "pacientes.ibd",
+    "bytes": 147456,
+    "sha256": "9b8a6330676bb62c1c5a6fb15540093aaf0d5d66d3c1c27cfba32282e892287c",
+    "version_metadatos": 80029
+  },
+  {
+    "archivo": "recetas.ibd",
+    "bytes": 180224,
+    "sha256": "dfe725e3b7d98ece1dfcc33a4ed019e0f57027ae2b4f84fc50511b6cb0b89d85",
+    "version_metadatos": 80029
+  }
+]

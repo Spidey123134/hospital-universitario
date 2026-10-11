@@ -1,0 +1,555 @@
+{
+  "proyecto": "Hospital universitario",
+  "base_temporal": "hospital_prueba_b460c8dec8634e6e9471a5384131d805",
+  "inicio_utc": "2026-10-10T23:30:49+00:00",
+  "servidor": {
+    "host": "127.0.0.1",
+    "port": 33087
+  },
+  "limpieza": {
+    "correcta": true,
+    "detalle": "Base temporal eliminada.",
+    "error_mysql": null
+  },
+  "fin_utc": "2026-10-10T23:31:04+00:00",
+  "estado": "APROBADO",
+  "resumen": {
+    "total": 82,
+    "correctas": 82,
+    "fallidas": 0
+  },
+  "pruebas": [
+    {
+      "nombre": "Carga de 01_esquema.sql",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Carga de 02_reglas.sql",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Carga de 03_datos_demo.sql",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Instalador combinado igual a 01 + 02 + 03",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "El contenido ejecutable coincide, incluido su orden."
+    },
+    {
+      "nombre": "Cantidad de tablas",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 36; obtenido: 36."
+    },
+    {
+      "nombre": "Datos ficticios en las 36 tablas",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Todas contienen datos."
+    },
+    {
+      "nombre": "Seis vistas",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 6; obtenido: 6."
+    },
+    {
+      "nombre": "Seis procedimientos",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 6; obtenido: 6."
+    },
+    {
+      "nombre": "Veintitrés triggers",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 23; obtenido: 23."
+    },
+    {
+      "nombre": "Stock demo: A=142, B=57 y C=40",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 1:142,2:57,3:40; obtenido: 1:142,2:57,3:40."
+    },
+    {
+      "nombre": "Facturas demo: totales, pagos y saldos",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 1:850.00:500.00:350.00,2:800.00:800.00:0.00,3:1200.00:400.00:800.00,4:750.00:0.00:750.00; obtenido: 1:850.00:500.00:350.00,2:800.00:800.00:0.00,3:1200.00:400.00:800.00,4:750.00:0.00:750.00."
+    },
+    {
+      "nombre": "Datos de demostración: ningún lote con stock negativo",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Datos de demostración: entregas con su salida exacta",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Datos de demostración: importes de factura correctos",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Datos de demostración: pagos sin exceder factura emitida",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Ejecución de las 20 consultas de 04_consultas.sql",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Creación de fixtures independientes",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Agendar cita válida con sp_agendar_cita",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "La cita válida se guardó",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Entrada válida de inventario",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Stock después de la entrada",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 100; obtenido: 100."
+    },
+    {
+      "nombre": "Primera entrega parcial válida",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Segunda entrega parcial válida",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Stock luego de entregar 4 y 3 unidades",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 93; obtenido: 93."
+    },
+    {
+      "nombre": "Receta parcialmente dispensada: quedan 3 unidades",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 3; obtenido: 3."
+    },
+    {
+      "nombre": "Pago parcial válido",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Saldo después del abono",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 175.00; obtenido: 175.00."
+    },
+    {
+      "nombre": "Primera asignación válida",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "La camilla está ocupada",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: OCUPADA; obtenido: OCUPADA."
+    },
+    {
+      "nombre": "PK duplicada",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1062
+    },
+    {
+      "nombre": "FK a paciente inexistente",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1452
+    },
+    {
+      "nombre": "CHECK de prioridad positiva",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 3819
+    },
+    {
+      "nombre": "Consulta con paciente distinto de la cita",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1452
+    },
+    {
+      "nombre": "Póliza de otro paciente",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1452
+    },
+    {
+      "nombre": "Médico con puesto incorrecto",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Consulta: identidad inmutable",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Receta: consulta inmutable",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Factura emitida: no insertar conceptos",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Factura emitida: no modificar conceptos",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Factura emitida: no borrar conceptos",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Factura emitida: no reabrir",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Factura con pagos: no anular",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Factura vacía: no emitir",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Factura nueva: debe iniciar abierta",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Pago: no modificar historial",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Pago: no borrar historial",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Receta dispensada: indicaciones inmutables",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Entrega: cantidad inmutable",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Movimiento: cantidad igual a entrega",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Movimiento: no actualizar historial",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Movimiento: no borrar historial",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Resultado de orden cancelada",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Orden con resultado: no cancelar",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Nota de enfermería con puesto incorrecto",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Cita duplicada",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Cita parcialmente solapada",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Salida que dejaría inventario negativo",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Entrega que supera lo prescrito",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Entrega con stock insuficiente",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Entrega desde lote de otro medicamento",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Entrega desde lote caducado",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Camilla ya ocupada",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Camilla en mantenimiento",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Asignación anterior al ingreso",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Pago mayor al saldo",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Pago sobre factura abierta",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Movimiento retroactivo anterior al último del lote",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Entrega retroactiva anterior al último movimiento del lote",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Traslado válido entre camillas",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Traslado: primera asignación cerrada y segunda abierta",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 1:1; obtenido: 1:1."
+    },
+    {
+      "nombre": "Alta hospitalaria válida",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "El alta cierra la estancia y libera la camilla",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Estancia cerrada: no asignar camilla",
+      "categoria": "rechazo",
+      "correcta": true,
+      "detalle": "Operación inválida rechazada por la regla esperada.",
+      "error_mysql": 1644
+    },
+    {
+      "nombre": "Dos citas simultáneas: solo una se registra",
+      "categoria": "concurrencia",
+      "correcta": true,
+      "detalle": "Operaciones aceptadas: 1; rechazos de negocio: 1."
+    },
+    {
+      "nombre": "Concurrencia de citas: una fila final",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1."
+    },
+    {
+      "nombre": "Stock inicial para prueba simultánea",
+      "categoria": "preparacion",
+      "correcta": true,
+      "detalle": "SQL ejecutado."
+    },
+    {
+      "nombre": "Dos salidas simultáneas de 7 con stock 10: solo una se acepta",
+      "categoria": "concurrencia",
+      "correcta": true,
+      "detalle": "Operaciones aceptadas: 1; rechazos de negocio: 1."
+    },
+    {
+      "nombre": "Concurrencia de stock: saldo final 3",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 3; obtenido: 3."
+    },
+    {
+      "nombre": "Estado final: ningún lote con stock negativo",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Estado final: entregas con su salida exacta",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Estado final: importes de factura correctos",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    },
+    {
+      "nombre": "Estado final: pagos sin exceder factura emitida",
+      "categoria": "consistencia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0."
+    }
+  ]
+}
