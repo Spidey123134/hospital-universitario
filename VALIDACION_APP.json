@@ -1,0 +1,1060 @@
+{
+  "inicio_utc": "2026-10-15T04:11:29+00:00",
+  "base_temporal": "hospital_prueba_f416d2f5544349af8472dd4192637113",
+  "mysql_version": "8.0.45",
+  "python_version": "3.12.14",
+  "pymysql_version": "1.2.3",
+  "filas_iniciales_por_tabla": {
+    "departamentos": 8,
+    "especialidades": 16,
+    "personal": 25,
+    "medicos": 18,
+    "medico_especialidad": 19,
+    "pacientes": 30,
+    "contactos_emergencia": 31,
+    "aseguradoras": 5,
+    "polizas": 18,
+    "habitaciones": 9,
+    "camillas": 15,
+    "citas": 54,
+    "consultas": 45,
+    "diagnosticos": 8,
+    "consulta_diagnosticos": 40,
+    "alergias_paciente": 9,
+    "hospitalizaciones": 11,
+    "asignaciones_camilla": 12,
+    "notas_enfermeria": 21,
+    "medicamentos": 15,
+    "proveedores": 4,
+    "lotes_medicamento": 16,
+    "recetas": 40,
+    "receta_detalle": 64,
+    "dispensaciones": 11,
+    "dispensacion_detalle": 22,
+    "movimientos_inventario": 38,
+    "procedimientos": 8,
+    "ordenes_procedimiento": 29,
+    "resultados_procedimiento": 15,
+    "facturas": 29,
+    "factura_detalle": 60,
+    "pagos": 24,
+    "roles": 6,
+    "usuarios": 7,
+    "usuario_roles": 7
+  },
+  "fin_utc": "2026-10-15T04:11:38+00:00",
+  "estado": "APROBADO",
+  "resumen": {
+    "total": 200,
+    "correctas": 200,
+    "fallidas": 0
+  },
+  "pruebas": [
+    {
+      "prueba": "Conexion antes de instalar: la base no existe",
+      "correcta": true,
+      "detalle": "Esperado: False; obtenido: False"
+    },
+    {
+      "prueba": "Instalador tambien protege una base existente vacia",
+      "correcta": true,
+      "detalle": "Esa base ya existe. No se sobrescribió. Use Abrir hospital para verla o elija otro nombre para una instalación nueva."
+    },
+    {
+      "prueba": "Base vacia preexistente no recibe tablas sin permiso",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0"
+    },
+    {
+      "prueba": "Instalacion desde un boton sin cliente SQL externo",
+      "correcta": true,
+      "detalle": "Respuesta de instalacion recibida."
+    },
+    {
+      "prueba": "Conexion despues de instalar: 36 tablas",
+      "correcta": true,
+      "detalle": "Esperado: 36; obtenido: 36"
+    },
+    {
+      "prueba": "Conteos de las 36 tablas coinciden con la demostracion",
+      "correcta": true,
+      "detalle": "Esperado: {'departamentos': 8, 'especialidades': 16, 'personal': 25, 'medicos': 18, 'medico_especialidad': 19, 'pacientes': 30, 'contactos_emergencia': 31, 'aseguradoras': 5, 'polizas': 18, 'habitaciones': 9, 'camillas': 15, 'citas': 54, 'consultas': 45, 'diagnosticos': 8, 'consulta_diagnosticos': 40, 'alergias_paciente': 9, 'hospitalizaciones': 11, 'asignaciones_camilla': 12, 'notas_enfermeria': 21, 'medicamentos': 15, 'proveedores': 4, 'lotes_medicamento': 16, 'recetas': 40, 'receta_detalle': 64, 'dispensaciones': 11, 'dispensacion_detalle': 22, 'movimientos_inventario': 38, 'procedimientos': 8, 'ordenes_procedimiento': 29, 'resultados_procedimiento': 15, 'facturas': 29, 'factura_detalle': 60, 'pagos': 24, 'roles': 6, 'usuarios': 7, 'usuario_roles': 7}; obtenido: {'departamentos': 8, 'especialidades': 16, 'personal': 25, 'medicos': 18, 'medico_especialidad': 19, 'pacientes': 30, 'contactos_emergencia': 31, 'aseguradoras': 5, 'polizas': 18, 'habitaciones': 9, 'camillas': 15, 'citas': 54, 'consultas': 45, 'diagnosticos': 8, 'consulta_diagnosticos': 40, 'alergias_paciente': 9, 'hospitalizaciones': 11, 'asignaciones_camilla': 12, 'notas_enfermeria': 21, 'medicamentos': 15, 'proveedores': 4, 'lotes_medicamento': 16, 'recetas': 40, 'receta_detalle': 64, 'dispensaciones': 11, 'dispensacion_detalle': 22, 'movimientos_inventario': 38, 'procedimientos': 8, 'ordenes_procedimiento': 29, 'resultados_procedimiento': 15, 'facturas': 29, 'factura_detalle': 60, 'pagos': 24, 'roles': 6, 'usuarios': 7, 'usuario_roles': 7}"
+    },
+    {
+      "prueba": "Todas las tablas tienen registros",
+      "correcta": true,
+      "detalle": "Esperado: True; obtenido: True"
+    },
+    {
+      "prueba": "Total inicial: 789 registros",
+      "correcta": true,
+      "detalle": "Esperado: 789; obtenido: 789"
+    },
+    {
+      "prueba": "Instalador rechaza sobrescribir una base existente",
+      "correcta": true,
+      "detalle": "Esa base ya existe. No se sobrescribió. Use Abrir hospital para verla o elija otro nombre para una instalación nueva."
+    },
+    {
+      "prueba": "Reinstalacion rechazada conserva todos los conteos",
+      "correcta": true,
+      "detalle": "Esperado: {'departamentos': 8, 'especialidades': 16, 'personal': 25, 'medicos': 18, 'medico_especialidad': 19, 'pacientes': 30, 'contactos_emergencia': 31, 'aseguradoras': 5, 'polizas': 18, 'habitaciones': 9, 'camillas': 15, 'citas': 54, 'consultas': 45, 'diagnosticos': 8, 'consulta_diagnosticos': 40, 'alergias_paciente': 9, 'hospitalizaciones': 11, 'asignaciones_camilla': 12, 'notas_enfermeria': 21, 'medicamentos': 15, 'proveedores': 4, 'lotes_medicamento': 16, 'recetas': 40, 'receta_detalle': 64, 'dispensaciones': 11, 'dispensacion_detalle': 22, 'movimientos_inventario': 38, 'procedimientos': 8, 'ordenes_procedimiento': 29, 'resultados_procedimiento': 15, 'facturas': 29, 'factura_detalle': 60, 'pagos': 24, 'roles': 6, 'usuarios': 7, 'usuario_roles': 7}; obtenido: {'departamentos': 8, 'especialidades': 16, 'personal': 25, 'medicos': 18, 'medico_especialidad': 19, 'pacientes': 30, 'contactos_emergencia': 31, 'aseguradoras': 5, 'polizas': 18, 'habitaciones': 9, 'camillas': 15, 'citas': 54, 'consultas': 45, 'diagnosticos': 8, 'consulta_diagnosticos': 40, 'alergias_paciente': 9, 'hospitalizaciones': 11, 'asignaciones_camilla': 12, 'notas_enfermeria': 21, 'medicamentos': 15, 'proveedores': 4, 'lotes_medicamento': 16, 'recetas': 40, 'receta_detalle': 64, 'dispensaciones': 11, 'dispensacion_detalle': 22, 'movimientos_inventario': 38, 'procedimientos': 8, 'ordenes_procedimiento': 29, 'resultados_procedimiento': 15, 'facturas': 29, 'factura_detalle': 60, 'pagos': 24, 'roles': 6, 'usuarios': 7, 'usuario_roles': 7}"
+    },
+    {
+      "prueba": "Catalogo contiene las 36 tablas",
+      "correcta": true,
+      "detalle": "Esperado: {'factura_detalle', 'receta_detalle', 'diagnosticos', 'dispensacion_detalle', 'usuario_roles', 'notas_enfermeria', 'camillas', 'contactos_emergencia', 'dispensaciones', 'citas', 'roles', 'procedimientos', 'asignaciones_camilla', 'resultados_procedimiento', 'consultas', 'personal', 'pagos', 'pacientes', 'polizas', 'usuarios', 'ordenes_procedimiento', 'recetas', 'proveedores', 'habitaciones', 'especialidades', 'medicos', 'medico_especialidad', 'medicamentos', 'aseguradoras', 'alergias_paciente', 'departamentos', 'lotes_medicamento', 'movimientos_inventario', 'facturas', 'hospitalizaciones', 'consulta_diagnosticos'}; obtenido: {'factura_detalle', 'receta_detalle', 'diagnosticos', 'dispensacion_detalle', 'usuario_roles', 'notas_enfermeria', 'camillas', 'contactos_emergencia', 'dispensaciones', 'citas', 'roles', 'procedimientos', 'asignaciones_camilla', 'resultados_procedimiento', 'consultas', 'personal', 'pagos', 'pacientes', 'polizas', 'usuarios', 'ordenes_procedimiento', 'recetas', 'proveedores', 'habitaciones', 'especialidades', 'medico_especialidad', 'medicos', 'medicamentos', 'alergias_paciente', 'aseguradoras', 'departamentos', 'lotes_medicamento', 'movimientos_inventario', 'facturas', 'hospitalizaciones', 'consulta_diagnosticos'}"
+    },
+    {
+      "prueba": "Lectura paginada de departamentos",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de departamentos",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de especialidades",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de especialidades",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de personal",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de personal",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de medicos",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de medicos",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de medico_especialidad",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de medico_especialidad",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de pacientes",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de pacientes",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de contactos_emergencia",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de contactos_emergencia",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de aseguradoras",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de aseguradoras",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de polizas",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de polizas",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de habitaciones",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de habitaciones",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de camillas",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de camillas",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de citas",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de citas",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de consultas",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de consultas",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de diagnosticos",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de diagnosticos",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de consulta_diagnosticos",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de consulta_diagnosticos",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de alergias_paciente",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de alergias_paciente",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de hospitalizaciones",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de hospitalizaciones",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de asignaciones_camilla",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de asignaciones_camilla",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de notas_enfermeria",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de notas_enfermeria",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de medicamentos",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de medicamentos",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de proveedores",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de proveedores",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de lotes_medicamento",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de lotes_medicamento",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de recetas",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de recetas",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de receta_detalle",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de receta_detalle",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de dispensaciones",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de dispensaciones",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de dispensacion_detalle",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de dispensacion_detalle",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de movimientos_inventario",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de movimientos_inventario",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de procedimientos",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de procedimientos",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de ordenes_procedimiento",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de ordenes_procedimiento",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de resultados_procedimiento",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de resultados_procedimiento",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de facturas",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de facturas",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de factura_detalle",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de factura_detalle",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de pagos",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de pagos",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de roles",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de roles",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de usuarios",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de usuarios",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Lectura paginada de usuario_roles",
+      "correcta": true,
+      "detalle": "Conteo y primeras filas correctos."
+    },
+    {
+      "prueba": "Metadatos de formulario de usuario_roles",
+      "correcta": true,
+      "detalle": "Campos de creacion y edicion identificados."
+    },
+    {
+      "prueba": "Paginacion respeta limite y desplazamiento",
+      "correcta": true,
+      "detalle": "Esperado: 5; obtenido: 5"
+    },
+    {
+      "prueba": "Segunda pagina contiene otras claves",
+      "correcta": true,
+      "detalle": "Esperado: True; obtenido: True"
+    },
+    {
+      "prueba": "Combobox de pacientes muestra 30 opciones",
+      "correcta": true,
+      "detalle": "Esperado: 30; obtenido: 30"
+    },
+    {
+      "prueba": "Combobox muestra nombres ademas del numero",
+      "correcta": true,
+      "detalle": "Esperado: True; obtenido: True"
+    },
+    {
+      "prueba": "Busqueda de combobox por nombre encuentra registros",
+      "correcta": true,
+      "detalle": "Esperado: True; obtenido: True"
+    },
+    {
+      "prueba": "Consulta de usuarios oculta los hashes guardados",
+      "correcta": true,
+      "detalle": "Esperado: True; obtenido: True"
+    },
+    {
+      "prueba": "Alta de usuario y hash desde tabla esta bloqueada",
+      "correcta": true,
+      "detalle": "Catálogo de acceso del modelo académico; esta aplicación no implementa inicio de sesión de empleados."
+    },
+    {
+      "prueba": "Identificador de tabla inyectado se rechaza",
+      "correcta": true,
+      "detalle": "Seleccione una tabla del catálogo del hospital."
+    },
+    {
+      "prueba": "Identificador de columna inyectado se rechaza",
+      "correcta": true,
+      "detalle": "Este campo no es una relación de la tabla."
+    },
+    {
+      "prueba": "Nombre de base inyectado se rechaza",
+      "correcta": true,
+      "detalle": "El nombre de la base debe empezar con una letra y contener solo letras sin acentos, números o guion bajo (máximo 64). No use un nombre de sistema."
+    },
+    {
+      "prueba": "Alta desde formulario devuelve clave y guarda texto literal con comillas",
+      "correcta": true,
+      "detalle": "Esperado: Ana O'Connor; DROP TABLE pacientes; --; obtenido: Ana O'Connor; DROP TABLE pacientes; --"
+    },
+    {
+      "prueba": "Texto con apariencia SQL no elimina pacientes",
+      "correcta": true,
+      "detalle": "Esperado: 31; obtenido: 31"
+    },
+    {
+      "prueba": "Busqueda acepta comillas como texto literal",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1"
+    },
+    {
+      "prueba": "Editar actualiza exactamente una fila",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1"
+    },
+    {
+      "prueba": "Telefono editado persiste",
+      "correcta": true,
+      "detalle": "Esperado: 555 010 9999; obtenido: 555 010 9999"
+    },
+    {
+      "prueba": "Fecha imposible se explica al usuario",
+      "correcta": true,
+      "detalle": "Formato inválido en Fecha nacimiento. Fechas: AAAA-MM-DD. Fecha y hora: AAAA-MM-DD HH:MM. Decimales: use punto."
+    },
+    {
+      "prueba": "Nacimiento posterior al registro se rechaza",
+      "correcta": true,
+      "detalle": "Los valores no cumplen una regla de la tabla. Revise cantidades positivas, fechas, intervalos y descuentos."
+    },
+    {
+      "prueba": "Expediente duplicado se rechaza",
+      "correcta": true,
+      "detalle": "Ya existe un registro con esa clave o dato único. Cambie el dato duplicado; no vuelva a insertar la misma fila."
+    },
+    {
+      "prueba": "Campo obligatorio ausente se rechaza",
+      "correcta": true,
+      "detalle": "Complete el campo Nombre."
+    },
+    {
+      "prueba": "Campo obligatorio vacio se rechaza",
+      "correcta": true,
+      "detalle": "Complete el campo Nombre."
+    },
+    {
+      "prueba": "Valor ENUM inexistente se rechaza",
+      "correcta": true,
+      "detalle": "Formato inválido en Sexo. Fechas: AAAA-MM-DD. Fecha y hora: AAAA-MM-DD HH:MM. Decimales: use punto."
+    },
+    {
+      "prueba": "Referencia a paciente inexistente se rechaza",
+      "correcta": true,
+      "detalle": "El registro relacionado no existe o está en uso. Elija una opción de los desplegables y compruebe que corresponde al mismo paciente o medicamento."
+    },
+    {
+      "prueba": "Campo desconocido no se convierte en SQL",
+      "correcta": true,
+      "detalle": "El campo no se puede editar desde este formulario: nombre`=NULL; --"
+    },
+    {
+      "prueba": "Edicion sin clave no modifica varias filas",
+      "correcta": true,
+      "detalle": "Seleccione exactamente un registro con su identificador completo."
+    },
+    {
+      "prueba": "Edicion no permite cambiar la clave",
+      "correcta": true,
+      "detalle": "El campo no se puede editar desde este formulario: paciente_id"
+    },
+    {
+      "prueba": "Errores de formulario no insertan pacientes incompletos",
+      "correcta": true,
+      "detalle": "Esperado: 31; obtenido: 31"
+    },
+    {
+      "prueba": "Alta directa de pago protegida",
+      "correcta": true,
+      "detalle": "Se registra desde Operaciones para comprobar las reglas del hospital."
+    },
+    {
+      "prueba": "Alta directa de movimiento protegida",
+      "correcta": true,
+      "detalle": "Se registra desde Operaciones para comprobar las reglas del hospital."
+    },
+    {
+      "prueba": "Alta directa de citas protegida",
+      "correcta": true,
+      "detalle": "Se registra desde Operaciones para comprobar las reglas del hospital."
+    },
+    {
+      "prueba": "Edicion directa de inventario protegida",
+      "correcta": true,
+      "detalle": "Se registra desde Operaciones para comprobar las reglas del hospital."
+    },
+    {
+      "prueba": "Edicion directa de pago protegida",
+      "correcta": true,
+      "detalle": "Se registra desde Operaciones para comprobar las reglas del hospital."
+    },
+    {
+      "prueba": "Alta de clave calculada protegida",
+      "correcta": true,
+      "detalle": "El campo no se puede editar desde este formulario: diagnostico_principal"
+    },
+    {
+      "prueba": "Workflow inexistente se rechaza",
+      "correcta": true,
+      "detalle": "Seleccione una operación del hospital."
+    },
+    {
+      "prueba": "Tutorial: alta de Daniela y contacto de emergencia",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1"
+    },
+    {
+      "prueba": "Tutorial: cita del 2 de noviembre creada",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1"
+    },
+    {
+      "prueba": "Tutorial: consulta de urgencia sin cita",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1"
+    },
+    {
+      "prueba": "Tutorial: receta con un medicamento simulado",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1"
+    },
+    {
+      "prueba": "Tutorial: factura de 100 menos abono de 40 deja 60",
+      "correcta": true,
+      "detalle": "Esperado: 60.00; obtenido: 60.00"
+    },
+    {
+      "prueba": "Tutorial: alta cierra estancia y libera camilla",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0"
+    },
+    {
+      "prueba": "Agendar cita mediante procedimiento devuelve un registro",
+      "correcta": true,
+      "detalle": "Sin SQL introducido por el usuario."
+    },
+    {
+      "prueba": "Cita que solapa al medico se rechaza",
+      "correcta": true,
+      "detalle": "La cita se solapa con otra del medico o paciente"
+    },
+    {
+      "prueba": "Cita con fin anterior al inicio se rechaza",
+      "correcta": true,
+      "detalle": "Intervalo de cita invalido"
+    },
+    {
+      "prueba": "Confirmar cita cambia su estado",
+      "correcta": true,
+      "detalle": "Esperado: CONFIRMADA; obtenido: CONFIRMADA"
+    },
+    {
+      "prueba": "Asignar camilla crea ocupacion abierta",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1"
+    },
+    {
+      "prueba": "Camilla en mantenimiento no se asigna",
+      "correcta": true,
+      "detalle": "Camilla inexistente o no operativa"
+    },
+    {
+      "prueba": "Traslado cierra camilla anterior y conserva historial",
+      "correcta": true,
+      "detalle": "Esperado: 2; obtenido: 2"
+    },
+    {
+      "prueba": "Solo queda una asignacion abierta tras traslado",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1"
+    },
+    {
+      "prueba": "Alta anterior a la estancia se rechaza",
+      "correcta": true,
+      "detalle": "Hospitalizacion cerrada, inexistente o fecha de alta invalida"
+    },
+    {
+      "prueba": "Alta libera todas las camillas de la estancia",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0"
+    },
+    {
+      "prueba": "Alta repetida se rechaza",
+      "correcta": true,
+      "detalle": "Hospitalizacion cerrada, inexistente o fecha de alta invalida"
+    },
+    {
+      "prueba": "Asignar camilla a estancia cerrada se rechaza",
+      "correcta": true,
+      "detalle": "Hospitalizacion cerrada, inexistente o fecha invalida"
+    },
+    {
+      "prueba": "Cancelar cita conserva historial y cambia estado",
+      "correcta": true,
+      "detalle": "Esperado: CANCELADA; obtenido: CANCELADA"
+    },
+    {
+      "prueba": "Confirmar una cita cancelada se rechaza",
+      "correcta": true,
+      "detalle": "Esta cita ya no está pendiente para esa operación."
+    },
+    {
+      "prueba": "Entrada de almacen suma existencias",
+      "correcta": true,
+      "detalle": "Esperado: 20; obtenido: 20"
+    },
+    {
+      "prueba": "Salida que deja stock negativo se rechaza",
+      "correcta": true,
+      "detalle": "El movimiento dejaria stock negativo"
+    },
+    {
+      "prueba": "Movimiento anterior al ultimo registro se rechaza",
+      "correcta": true,
+      "detalle": "Los movimientos del lote deben registrarse cronologicamente"
+    },
+    {
+      "prueba": "Personal ajeno a farmacia no mueve inventario",
+      "correcta": true,
+      "detalle": "El movimiento requiere personal de FARMACIA activo"
+    },
+    {
+      "prueba": "Entrega registra cabecera y detalle relacionados",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1"
+    },
+    {
+      "prueba": "Entrega resta existencias del lote",
+      "correcta": true,
+      "detalle": "Esperado: 17; obtenido: 17"
+    },
+    {
+      "prueba": "Receta conserva dos unidades pendientes",
+      "correcta": true,
+      "detalle": "Esperado: 2; obtenido: 2"
+    },
+    {
+      "prueba": "Entrega superior a lo recetado se rechaza",
+      "correcta": true,
+      "detalle": "La cantidad excede lo pendiente de la receta"
+    },
+    {
+      "prueba": "Entrega rechazada revierte cabecera detalle y movimiento",
+      "correcta": true,
+      "detalle": "Esperado: {'dispensaciones': 12, 'dispensacion_detalle': 23, 'movimientos_inventario': 40}; obtenido: {'dispensaciones': 12, 'dispensacion_detalle': 23, 'movimientos_inventario': 40}"
+    },
+    {
+      "prueba": "Lote de otro medicamento no se entrega",
+      "correcta": true,
+      "detalle": "El lote no corresponde al medicamento recetado"
+    },
+    {
+      "prueba": "Personal ajeno a farmacia no entrega recetas",
+      "correcta": true,
+      "detalle": "La entrega requiere personal de FARMACIA activo"
+    },
+    {
+      "prueba": "Detalle de receta ya entregada es inmutable",
+      "correcta": true,
+      "detalle": "No puede modificar una línea de receta ya entregada."
+    },
+    {
+      "prueba": "Emitir factura sin conceptos se rechaza",
+      "correcta": true,
+      "detalle": "No puede emitir una factura sin conceptos"
+    },
+    {
+      "prueba": "Importe se calcula automaticamente",
+      "correcta": true,
+      "detalle": "Esperado: 240.00; obtenido: 240.00"
+    },
+    {
+      "prueba": "Pago de factura aun abierta se rechaza",
+      "correcta": true,
+      "detalle": "Solo puede pagar una factura EMITIDA"
+    },
+    {
+      "prueba": "Emitir factura cambia a EMITIDA",
+      "correcta": true,
+      "detalle": "Esperado: EMITIDA; obtenido: EMITIDA"
+    },
+    {
+      "prueba": "Factura emitida no admite nuevos conceptos",
+      "correcta": true,
+      "detalle": "Solo se pueden modificar conceptos de una factura ABIERTA."
+    },
+    {
+      "prueba": "Factura emitida no admite cambio de importe",
+      "correcta": true,
+      "detalle": "Solo se pueden modificar conceptos de una factura ABIERTA."
+    },
+    {
+      "prueba": "Pago parcial deja saldo correcto",
+      "correcta": true,
+      "detalle": "Esperado: 140.00; obtenido: 140.00"
+    },
+    {
+      "prueba": "Pago superior al saldo se rechaza",
+      "correcta": true,
+      "detalle": "Monto invalido o superior al saldo pendiente"
+    },
+    {
+      "prueba": "Pago anterior a factura se rechaza",
+      "correcta": true,
+      "detalle": "Pago anterior a la factura"
+    },
+    {
+      "prueba": "Factura con pago no se anula",
+      "correcta": true,
+      "detalle": "No puede anular una factura con pagos registrados"
+    },
+    {
+      "prueba": "Segundo pago liquida la factura",
+      "correcta": true,
+      "detalle": "Esperado: 0.00; obtenido: 0.00"
+    },
+    {
+      "prueba": "Anular factura sin pagos conserva registro",
+      "correcta": true,
+      "detalle": "Esperado: ANULADA; obtenido: ANULADA"
+    },
+    {
+      "prueba": "Factura anulada no se emite de nuevo",
+      "correcta": true,
+      "detalle": "La factura no existe o ya está anulada."
+    },
+    {
+      "prueba": "Dos ventanas no pueden reservar la misma cita",
+      "correcta": true,
+      "detalle": "Esperado: ['aceptada', 'rechazada']; obtenido: ['aceptada', 'rechazada']"
+    },
+    {
+      "prueba": "Solo se registra una de las citas simultaneas",
+      "correcta": true,
+      "detalle": "Esperado: 1; obtenido: 1"
+    },
+    {
+      "prueba": "Dos cobros simultaneos no pueden exceder el saldo",
+      "correcta": true,
+      "detalle": "Esperado: ['aceptada', 'rechazada']; obtenido: ['aceptada', 'rechazada']"
+    },
+    {
+      "prueba": "Cobros simultaneos conservan el saldo correcto",
+      "correcta": true,
+      "detalle": "Esperado: 30.00; obtenido: 30.00"
+    },
+    {
+      "prueba": "Respaldo JSON incluye las 36 tablas",
+      "correcta": true,
+      "detalle": "Esperado: 36; obtenido: 36"
+    },
+    {
+      "prueba": "Respaldo JSON incluye todas las filas actuales",
+      "correcta": true,
+      "detalle": "Esperado: 824; obtenido: 824"
+    },
+    {
+      "prueba": "Respaldo no almacena ajustes ni contrasena de conexion",
+      "correcta": true,
+      "detalle": "Esperado: {'tables', 'created_at', 'format'}; obtenido: {'tables', 'created_at', 'format'}"
+    },
+    {
+      "prueba": "Guardar un respaldo no sobrescribe un archivo existente",
+      "correcta": true,
+      "detalle": "Ya existe un archivo con ese nombre. Guarde el respaldo con un nombre nuevo."
+    },
+    {
+      "prueba": "Respaldo existente conserva exactamente sus bytes",
+      "correcta": true,
+      "detalle": "Esperado: 15c2d2e8f6d12544092fb1682434a665c1f73c941feb6229c3a14bd80474ccfb; obtenido: 15c2d2e8f6d12544092fb1682434a665c1f73c941feb6229c3a14bd80474ccfb"
+    },
+    {
+      "prueba": "Base UUID de restauracion esta libre",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0"
+    },
+    {
+      "prueba": "Restauracion reconstruye las 36 tablas",
+      "correcta": true,
+      "detalle": "Esperado: 36; obtenido: 36"
+    },
+    {
+      "prueba": "Restauracion conserva todas las filas sin valores calculados perdidos",
+      "correcta": true,
+      "detalle": "Esperado: {'existia': True, 'huellas_tablas': {'alergias_paciente': '368ca614d8869d590bbe8fba028d9732db9c403d2b866ba457e120140c030d68', 'aseguradoras': 'a753aeb03516209459cd5f058786826cdadc72a2a0759bc997e72e684b1fbfbf', 'asignaciones_camilla': '90cee1835cdbafae9b4f11dbffa39200a9f11106b606082fab7a360b1b50fdd5', 'camillas': 'f91a150e14bdbee2c39ece8b96f027a5b328560588694f42d836a9c223d62f65', 'citas': '3704c3a3fb70fa02a71e17d530a8f9b8ca9011150e3591615c594f64a6064cbc', 'consulta_diagnosticos': 'c93f8f37676dd720117a1ebe5e1a8361001f90915a41c98982d71e39d9af4f6a', 'consultas': '3a05ff498ab4934ceb333cd79220b2145139048c49afaf9a76ad0ceead99c4e3', 'contactos_emergencia': 'c911871bcc839d98d20909c094d2bb2cda4e0eec021a7a9e13929a2b8f0b8fe7', 'departamentos': 'f3ae3b026b20dc999e020f419f8b23b9c4d3c8522f044e9b340796aa08a944c2', 'diagnosticos': '80813403e286bbf56e1c29ac358f70febe5df01379f087fd7948a6a816619ec3', 'dispensacion_detalle': '039a608360241833e6118b450bdfdd336233413a0302ea088efd3b48670fd3ca', 'dispensaciones': '99f3d5ec79e95efca21f2078d4706b261575b6122f7b7875103ee50f92e83ca2', 'especialidades': 'fa193dab18001a00d587f315640f3b5311a94a9552216e96d5daf51887136692', 'factura_detalle': '8cf61ec1637bab6285f7eb8eef4f2dc2a309a072f7fbbb7870d763d1e6c93c03', 'facturas': '64ac9142f62df8c7fa31cb9604f729756284d13a2e19c81e0de5809260c8bbfc', 'habitaciones': '5297ca5f7b7ecc3f57403ecf24c79e9bf3c91a0e9055ff3d0e882f3fc4c76986', 'hospitalizaciones': '9367d09ab78e5772efa7f34eb06f82d27ee0eb5e28a9e777c36f1630249fc011', 'lotes_medicamento': '787e7f5dbaa593d7e846907633f32173fe6786bcdea19a0bb681d3bfde020089', 'medicamentos': '2188895d2d94e43ae169e052ba72f6cc757865773145fb65249690962f99a3b0', 'medico_especialidad': 'c74e4e69adb405949e5bef623ebc3dd173ab930751754ffec40a2c7b85a92d6d', 'medicos': '4b9fc9cf5f86eed5a3dbb839ce722fa8e1a2a7e74669bda5cc55c4f0fa48626a', 'movimientos_inventario': 'f4fc722f2629a6f1046f2dd035819c298067b3bded44dcfa63b7f57a1fb04a5c', 'notas_enfermeria': '53de5dbd36e6ee6762bbe3367ade774fe5be869a34cace5148ea8d34e116ac04', 'ordenes_procedimiento': 'd4943c4ece43894f2edb5b49b139c7666a5f19b77cb57d856ca28a43bfa04d16', 'pacientes': 'd3f03024ede700236deda5dc218d18cf7c27c09e2e91b11d654cb3fff3c13a3e', 'pagos': '50cf2ea64ad0cb65b458bda8ccbec968be3d3011b96edca6821b54089726726e', 'personal': 'ead029ab95ade033344129b115c693397e6520a651f9490f079fc0be226319b3', 'polizas': '7e436017d3a848c00fa5ca4eb89229c34184cdd4fabd5b0f5a878bddc19a1bf8', 'procedimientos': '3a6f3494fe72166020eea219a4594670c259bd053392eedf194e3d9cb9ecedaa', 'proveedores': '28d0b0033b7ad2d8e3f1264480246da0a1ad1d836553d420ecfdc8d9d3c84841', 'receta_detalle': 'bc371bb57190d997876bddd6b22c7ee7c9d65f0189406b9296997c43b2db0a85', 'recetas': '26aa9aa32eef2a375d198a7ea12ad61f87fe94b49d43e2a03101393e5f66e167', 'resultados_procedimiento': 'e4346eb3f278649b9b325c6d61f2f7909369753bf0c583b7b3b5f8ddc397b959', 'roles': 'b1d45f7dd5d1a47ffc7236e8286a22e5c6657c796c7f5da687902d9432fa32a3', 'usuario_roles': '89b1b6fd07ab219ecb7a18e5c75a4faf48dc9f3a974d589decfbf87edd7b9510', 'usuarios': '0c7a3227511156e8c88929379beba172649786195185c702277d563947b84ee6'}}; obtenido: {'existia': True, 'huellas_tablas': {'alergias_paciente': '368ca614d8869d590bbe8fba028d9732db9c403d2b866ba457e120140c030d68', 'aseguradoras': 'a753aeb03516209459cd5f058786826cdadc72a2a0759bc997e72e684b1fbfbf', 'asignaciones_camilla': '90cee1835cdbafae9b4f11dbffa39200a9f11106b606082fab7a360b1b50fdd5', 'camillas': 'f91a150e14bdbee2c39ece8b96f027a5b328560588694f42d836a9c223d62f65', 'citas': '3704c3a3fb70fa02a71e17d530a8f9b8ca9011150e3591615c594f64a6064cbc', 'consulta_diagnosticos': 'c93f8f37676dd720117a1ebe5e1a8361001f90915a41c98982d71e39d9af4f6a', 'consultas': '3a05ff498ab4934ceb333cd79220b2145139048c49afaf9a76ad0ceead99c4e3', 'contactos_emergencia': 'c911871bcc839d98d20909c094d2bb2cda4e0eec021a7a9e13929a2b8f0b8fe7', 'departamentos': 'f3ae3b026b20dc999e020f419f8b23b9c4d3c8522f044e9b340796aa08a944c2', 'diagnosticos': '80813403e286bbf56e1c29ac358f70febe5df01379f087fd7948a6a816619ec3', 'dispensacion_detalle': '039a608360241833e6118b450bdfdd336233413a0302ea088efd3b48670fd3ca', 'dispensaciones': '99f3d5ec79e95efca21f2078d4706b261575b6122f7b7875103ee50f92e83ca2', 'especialidades': 'fa193dab18001a00d587f315640f3b5311a94a9552216e96d5daf51887136692', 'factura_detalle': '8cf61ec1637bab6285f7eb8eef4f2dc2a309a072f7fbbb7870d763d1e6c93c03', 'facturas': '64ac9142f62df8c7fa31cb9604f729756284d13a2e19c81e0de5809260c8bbfc', 'habitaciones': '5297ca5f7b7ecc3f57403ecf24c79e9bf3c91a0e9055ff3d0e882f3fc4c76986', 'hospitalizaciones': '9367d09ab78e5772efa7f34eb06f82d27ee0eb5e28a9e777c36f1630249fc011', 'lotes_medicamento': '787e7f5dbaa593d7e846907633f32173fe6786bcdea19a0bb681d3bfde020089', 'medicamentos': '2188895d2d94e43ae169e052ba72f6cc757865773145fb65249690962f99a3b0', 'medico_especialidad': 'c74e4e69adb405949e5bef623ebc3dd173ab930751754ffec40a2c7b85a92d6d', 'medicos': '4b9fc9cf5f86eed5a3dbb839ce722fa8e1a2a7e74669bda5cc55c4f0fa48626a', 'movimientos_inventario': 'f4fc722f2629a6f1046f2dd035819c298067b3bded44dcfa63b7f57a1fb04a5c', 'notas_enfermeria': '53de5dbd36e6ee6762bbe3367ade774fe5be869a34cace5148ea8d34e116ac04', 'ordenes_procedimiento': 'd4943c4ece43894f2edb5b49b139c7666a5f19b77cb57d856ca28a43bfa04d16', 'pacientes': 'd3f03024ede700236deda5dc218d18cf7c27c09e2e91b11d654cb3fff3c13a3e', 'pagos': '50cf2ea64ad0cb65b458bda8ccbec968be3d3011b96edca6821b54089726726e', 'personal': 'ead029ab95ade033344129b115c693397e6520a651f9490f079fc0be226319b3', 'polizas': '7e436017d3a848c00fa5ca4eb89229c34184cdd4fabd5b0f5a878bddc19a1bf8', 'procedimientos': '3a6f3494fe72166020eea219a4594670c259bd053392eedf194e3d9cb9ecedaa', 'proveedores': '28d0b0033b7ad2d8e3f1264480246da0a1ad1d836553d420ecfdc8d9d3c84841', 'receta_detalle': 'bc371bb57190d997876bddd6b22c7ee7c9d65f0189406b9296997c43b2db0a85', 'recetas': '26aa9aa32eef2a375d198a7ea12ad61f87fe94b49d43e2a03101393e5f66e167', 'resultados_procedimiento': 'e4346eb3f278649b9b325c6d61f2f7909369753bf0c583b7b3b5f8ddc397b959', 'roles': 'b1d45f7dd5d1a47ffc7236e8286a22e5c6657c796c7f5da687902d9432fa32a3', 'usuario_roles': '89b1b6fd07ab219ecb7a18e5c75a4faf48dc9f3a974d589decfbf87edd7b9510', 'usuarios': '0c7a3227511156e8c88929379beba172649786195185c702277d563947b84ee6'}}"
+    },
+    {
+      "prueba": "Restauracion reconstruye los 23 triggers",
+      "correcta": true,
+      "detalle": "Esperado: 23; obtenido: 23"
+    },
+    {
+      "prueba": "Restauracion reconstruye los 6 procedimientos",
+      "correcta": true,
+      "detalle": "Esperado: 6; obtenido: 6"
+    },
+    {
+      "prueba": "Restauracion reconstruye las 6 vistas",
+      "correcta": true,
+      "detalle": "Esperado: 6; obtenido: 6"
+    },
+    {
+      "prueba": "Restauracion rechaza sobrescribir una base existente",
+      "correcta": true,
+      "detalle": "Esa base ya existe. No se sobrescribió. Use Abrir hospital para verla o elija otro nombre para una instalación nueva."
+    },
+    {
+      "prueba": "Restauracion repetida conserva todos los registros",
+      "correcta": true,
+      "detalle": "Esperado: {'existia': True, 'huellas_tablas': {'alergias_paciente': '368ca614d8869d590bbe8fba028d9732db9c403d2b866ba457e120140c030d68', 'aseguradoras': 'a753aeb03516209459cd5f058786826cdadc72a2a0759bc997e72e684b1fbfbf', 'asignaciones_camilla': '90cee1835cdbafae9b4f11dbffa39200a9f11106b606082fab7a360b1b50fdd5', 'camillas': 'f91a150e14bdbee2c39ece8b96f027a5b328560588694f42d836a9c223d62f65', 'citas': '3704c3a3fb70fa02a71e17d530a8f9b8ca9011150e3591615c594f64a6064cbc', 'consulta_diagnosticos': 'c93f8f37676dd720117a1ebe5e1a8361001f90915a41c98982d71e39d9af4f6a', 'consultas': '3a05ff498ab4934ceb333cd79220b2145139048c49afaf9a76ad0ceead99c4e3', 'contactos_emergencia': 'c911871bcc839d98d20909c094d2bb2cda4e0eec021a7a9e13929a2b8f0b8fe7', 'departamentos': 'f3ae3b026b20dc999e020f419f8b23b9c4d3c8522f044e9b340796aa08a944c2', 'diagnosticos': '80813403e286bbf56e1c29ac358f70febe5df01379f087fd7948a6a816619ec3', 'dispensacion_detalle': '039a608360241833e6118b450bdfdd336233413a0302ea088efd3b48670fd3ca', 'dispensaciones': '99f3d5ec79e95efca21f2078d4706b261575b6122f7b7875103ee50f92e83ca2', 'especialidades': 'fa193dab18001a00d587f315640f3b5311a94a9552216e96d5daf51887136692', 'factura_detalle': '8cf61ec1637bab6285f7eb8eef4f2dc2a309a072f7fbbb7870d763d1e6c93c03', 'facturas': '64ac9142f62df8c7fa31cb9604f729756284d13a2e19c81e0de5809260c8bbfc', 'habitaciones': '5297ca5f7b7ecc3f57403ecf24c79e9bf3c91a0e9055ff3d0e882f3fc4c76986', 'hospitalizaciones': '9367d09ab78e5772efa7f34eb06f82d27ee0eb5e28a9e777c36f1630249fc011', 'lotes_medicamento': '787e7f5dbaa593d7e846907633f32173fe6786bcdea19a0bb681d3bfde020089', 'medicamentos': '2188895d2d94e43ae169e052ba72f6cc757865773145fb65249690962f99a3b0', 'medico_especialidad': 'c74e4e69adb405949e5bef623ebc3dd173ab930751754ffec40a2c7b85a92d6d', 'medicos': '4b9fc9cf5f86eed5a3dbb839ce722fa8e1a2a7e74669bda5cc55c4f0fa48626a', 'movimientos_inventario': 'f4fc722f2629a6f1046f2dd035819c298067b3bded44dcfa63b7f57a1fb04a5c', 'notas_enfermeria': '53de5dbd36e6ee6762bbe3367ade774fe5be869a34cace5148ea8d34e116ac04', 'ordenes_procedimiento': 'd4943c4ece43894f2edb5b49b139c7666a5f19b77cb57d856ca28a43bfa04d16', 'pacientes': 'd3f03024ede700236deda5dc218d18cf7c27c09e2e91b11d654cb3fff3c13a3e', 'pagos': '50cf2ea64ad0cb65b458bda8ccbec968be3d3011b96edca6821b54089726726e', 'personal': 'ead029ab95ade033344129b115c693397e6520a651f9490f079fc0be226319b3', 'polizas': '7e436017d3a848c00fa5ca4eb89229c34184cdd4fabd5b0f5a878bddc19a1bf8', 'procedimientos': '3a6f3494fe72166020eea219a4594670c259bd053392eedf194e3d9cb9ecedaa', 'proveedores': '28d0b0033b7ad2d8e3f1264480246da0a1ad1d836553d420ecfdc8d9d3c84841', 'receta_detalle': 'bc371bb57190d997876bddd6b22c7ee7c9d65f0189406b9296997c43b2db0a85', 'recetas': '26aa9aa32eef2a375d198a7ea12ad61f87fe94b49d43e2a03101393e5f66e167', 'resultados_procedimiento': 'e4346eb3f278649b9b325c6d61f2f7909369753bf0c583b7b3b5f8ddc397b959', 'roles': 'b1d45f7dd5d1a47ffc7236e8286a22e5c6657c796c7f5da687902d9432fa32a3', 'usuario_roles': '89b1b6fd07ab219ecb7a18e5c75a4faf48dc9f3a974d589decfbf87edd7b9510', 'usuarios': '0c7a3227511156e8c88929379beba172649786195185c702277d563947b84ee6'}}; obtenido: {'existia': True, 'huellas_tablas': {'alergias_paciente': '368ca614d8869d590bbe8fba028d9732db9c403d2b866ba457e120140c030d68', 'aseguradoras': 'a753aeb03516209459cd5f058786826cdadc72a2a0759bc997e72e684b1fbfbf', 'asignaciones_camilla': '90cee1835cdbafae9b4f11dbffa39200a9f11106b606082fab7a360b1b50fdd5', 'camillas': 'f91a150e14bdbee2c39ece8b96f027a5b328560588694f42d836a9c223d62f65', 'citas': '3704c3a3fb70fa02a71e17d530a8f9b8ca9011150e3591615c594f64a6064cbc', 'consulta_diagnosticos': 'c93f8f37676dd720117a1ebe5e1a8361001f90915a41c98982d71e39d9af4f6a', 'consultas': '3a05ff498ab4934ceb333cd79220b2145139048c49afaf9a76ad0ceead99c4e3', 'contactos_emergencia': 'c911871bcc839d98d20909c094d2bb2cda4e0eec021a7a9e13929a2b8f0b8fe7', 'departamentos': 'f3ae3b026b20dc999e020f419f8b23b9c4d3c8522f044e9b340796aa08a944c2', 'diagnosticos': '80813403e286bbf56e1c29ac358f70febe5df01379f087fd7948a6a816619ec3', 'dispensacion_detalle': '039a608360241833e6118b450bdfdd336233413a0302ea088efd3b48670fd3ca', 'dispensaciones': '99f3d5ec79e95efca21f2078d4706b261575b6122f7b7875103ee50f92e83ca2', 'especialidades': 'fa193dab18001a00d587f315640f3b5311a94a9552216e96d5daf51887136692', 'factura_detalle': '8cf61ec1637bab6285f7eb8eef4f2dc2a309a072f7fbbb7870d763d1e6c93c03', 'facturas': '64ac9142f62df8c7fa31cb9604f729756284d13a2e19c81e0de5809260c8bbfc', 'habitaciones': '5297ca5f7b7ecc3f57403ecf24c79e9bf3c91a0e9055ff3d0e882f3fc4c76986', 'hospitalizaciones': '9367d09ab78e5772efa7f34eb06f82d27ee0eb5e28a9e777c36f1630249fc011', 'lotes_medicamento': '787e7f5dbaa593d7e846907633f32173fe6786bcdea19a0bb681d3bfde020089', 'medicamentos': '2188895d2d94e43ae169e052ba72f6cc757865773145fb65249690962f99a3b0', 'medico_especialidad': 'c74e4e69adb405949e5bef623ebc3dd173ab930751754ffec40a2c7b85a92d6d', 'medicos': '4b9fc9cf5f86eed5a3dbb839ce722fa8e1a2a7e74669bda5cc55c4f0fa48626a', 'movimientos_inventario': 'f4fc722f2629a6f1046f2dd035819c298067b3bded44dcfa63b7f57a1fb04a5c', 'notas_enfermeria': '53de5dbd36e6ee6762bbe3367ade774fe5be869a34cace5148ea8d34e116ac04', 'ordenes_procedimiento': 'd4943c4ece43894f2edb5b49b139c7666a5f19b77cb57d856ca28a43bfa04d16', 'pacientes': 'd3f03024ede700236deda5dc218d18cf7c27c09e2e91b11d654cb3fff3c13a3e', 'pagos': '50cf2ea64ad0cb65b458bda8ccbec968be3d3011b96edca6821b54089726726e', 'personal': 'ead029ab95ade033344129b115c693397e6520a651f9490f079fc0be226319b3', 'polizas': '7e436017d3a848c00fa5ca4eb89229c34184cdd4fabd5b0f5a878bddc19a1bf8', 'procedimientos': '3a6f3494fe72166020eea219a4594670c259bd053392eedf194e3d9cb9ecedaa', 'proveedores': '28d0b0033b7ad2d8e3f1264480246da0a1ad1d836553d420ecfdc8d9d3c84841', 'receta_detalle': 'bc371bb57190d997876bddd6b22c7ee7c9d65f0189406b9296997c43b2db0a85', 'recetas': '26aa9aa32eef2a375d198a7ea12ad61f87fe94b49d43e2a03101393e5f66e167', 'resultados_procedimiento': 'e4346eb3f278649b9b325c6d61f2f7909369753bf0c583b7b3b5f8ddc397b959', 'roles': 'b1d45f7dd5d1a47ffc7236e8286a22e5c6657c796c7f5da687902d9432fa32a3', 'usuario_roles': '89b1b6fd07ab219ecb7a18e5c75a4faf48dc9f3a974d589decfbf87edd7b9510', 'usuarios': '0c7a3227511156e8c88929379beba172649786195185c702277d563947b84ee6'}}"
+    },
+    {
+      "prueba": "Restauracion no ejecuta identificadores SQL del archivo JSON",
+      "correcta": true,
+      "detalle": "El respaldo contiene nombres de campos inválidos."
+    },
+    {
+      "prueba": "Intento de archivo invalido conserva la base restaurada",
+      "correcta": true,
+      "detalle": "Esperado: {'existia': True, 'huellas_tablas': {'alergias_paciente': '368ca614d8869d590bbe8fba028d9732db9c403d2b866ba457e120140c030d68', 'aseguradoras': 'a753aeb03516209459cd5f058786826cdadc72a2a0759bc997e72e684b1fbfbf', 'asignaciones_camilla': '90cee1835cdbafae9b4f11dbffa39200a9f11106b606082fab7a360b1b50fdd5', 'camillas': 'f91a150e14bdbee2c39ece8b96f027a5b328560588694f42d836a9c223d62f65', 'citas': '3704c3a3fb70fa02a71e17d530a8f9b8ca9011150e3591615c594f64a6064cbc', 'consulta_diagnosticos': 'c93f8f37676dd720117a1ebe5e1a8361001f90915a41c98982d71e39d9af4f6a', 'consultas': '3a05ff498ab4934ceb333cd79220b2145139048c49afaf9a76ad0ceead99c4e3', 'contactos_emergencia': 'c911871bcc839d98d20909c094d2bb2cda4e0eec021a7a9e13929a2b8f0b8fe7', 'departamentos': 'f3ae3b026b20dc999e020f419f8b23b9c4d3c8522f044e9b340796aa08a944c2', 'diagnosticos': '80813403e286bbf56e1c29ac358f70febe5df01379f087fd7948a6a816619ec3', 'dispensacion_detalle': '039a608360241833e6118b450bdfdd336233413a0302ea088efd3b48670fd3ca', 'dispensaciones': '99f3d5ec79e95efca21f2078d4706b261575b6122f7b7875103ee50f92e83ca2', 'especialidades': 'fa193dab18001a00d587f315640f3b5311a94a9552216e96d5daf51887136692', 'factura_detalle': '8cf61ec1637bab6285f7eb8eef4f2dc2a309a072f7fbbb7870d763d1e6c93c03', 'facturas': '64ac9142f62df8c7fa31cb9604f729756284d13a2e19c81e0de5809260c8bbfc', 'habitaciones': '5297ca5f7b7ecc3f57403ecf24c79e9bf3c91a0e9055ff3d0e882f3fc4c76986', 'hospitalizaciones': '9367d09ab78e5772efa7f34eb06f82d27ee0eb5e28a9e777c36f1630249fc011', 'lotes_medicamento': '787e7f5dbaa593d7e846907633f32173fe6786bcdea19a0bb681d3bfde020089', 'medicamentos': '2188895d2d94e43ae169e052ba72f6cc757865773145fb65249690962f99a3b0', 'medico_especialidad': 'c74e4e69adb405949e5bef623ebc3dd173ab930751754ffec40a2c7b85a92d6d', 'medicos': '4b9fc9cf5f86eed5a3dbb839ce722fa8e1a2a7e74669bda5cc55c4f0fa48626a', 'movimientos_inventario': 'f4fc722f2629a6f1046f2dd035819c298067b3bded44dcfa63b7f57a1fb04a5c', 'notas_enfermeria': '53de5dbd36e6ee6762bbe3367ade774fe5be869a34cace5148ea8d34e116ac04', 'ordenes_procedimiento': 'd4943c4ece43894f2edb5b49b139c7666a5f19b77cb57d856ca28a43bfa04d16', 'pacientes': 'd3f03024ede700236deda5dc218d18cf7c27c09e2e91b11d654cb3fff3c13a3e', 'pagos': '50cf2ea64ad0cb65b458bda8ccbec968be3d3011b96edca6821b54089726726e', 'personal': 'ead029ab95ade033344129b115c693397e6520a651f9490f079fc0be226319b3', 'polizas': '7e436017d3a848c00fa5ca4eb89229c34184cdd4fabd5b0f5a878bddc19a1bf8', 'procedimientos': '3a6f3494fe72166020eea219a4594670c259bd053392eedf194e3d9cb9ecedaa', 'proveedores': '28d0b0033b7ad2d8e3f1264480246da0a1ad1d836553d420ecfdc8d9d3c84841', 'receta_detalle': 'bc371bb57190d997876bddd6b22c7ee7c9d65f0189406b9296997c43b2db0a85', 'recetas': '26aa9aa32eef2a375d198a7ea12ad61f87fe94b49d43e2a03101393e5f66e167', 'resultados_procedimiento': 'e4346eb3f278649b9b325c6d61f2f7909369753bf0c583b7b3b5f8ddc397b959', 'roles': 'b1d45f7dd5d1a47ffc7236e8286a22e5c6657c796c7f5da687902d9432fa32a3', 'usuario_roles': '89b1b6fd07ab219ecb7a18e5c75a4faf48dc9f3a974d589decfbf87edd7b9510', 'usuarios': '0c7a3227511156e8c88929379beba172649786195185c702277d563947b84ee6'}}; obtenido: {'existia': True, 'huellas_tablas': {'alergias_paciente': '368ca614d8869d590bbe8fba028d9732db9c403d2b866ba457e120140c030d68', 'aseguradoras': 'a753aeb03516209459cd5f058786826cdadc72a2a0759bc997e72e684b1fbfbf', 'asignaciones_camilla': '90cee1835cdbafae9b4f11dbffa39200a9f11106b606082fab7a360b1b50fdd5', 'camillas': 'f91a150e14bdbee2c39ece8b96f027a5b328560588694f42d836a9c223d62f65', 'citas': '3704c3a3fb70fa02a71e17d530a8f9b8ca9011150e3591615c594f64a6064cbc', 'consulta_diagnosticos': 'c93f8f37676dd720117a1ebe5e1a8361001f90915a41c98982d71e39d9af4f6a', 'consultas': '3a05ff498ab4934ceb333cd79220b2145139048c49afaf9a76ad0ceead99c4e3', 'contactos_emergencia': 'c911871bcc839d98d20909c094d2bb2cda4e0eec021a7a9e13929a2b8f0b8fe7', 'departamentos': 'f3ae3b026b20dc999e020f419f8b23b9c4d3c8522f044e9b340796aa08a944c2', 'diagnosticos': '80813403e286bbf56e1c29ac358f70febe5df01379f087fd7948a6a816619ec3', 'dispensacion_detalle': '039a608360241833e6118b450bdfdd336233413a0302ea088efd3b48670fd3ca', 'dispensaciones': '99f3d5ec79e95efca21f2078d4706b261575b6122f7b7875103ee50f92e83ca2', 'especialidades': 'fa193dab18001a00d587f315640f3b5311a94a9552216e96d5daf51887136692', 'factura_detalle': '8cf61ec1637bab6285f7eb8eef4f2dc2a309a072f7fbbb7870d763d1e6c93c03', 'facturas': '64ac9142f62df8c7fa31cb9604f729756284d13a2e19c81e0de5809260c8bbfc', 'habitaciones': '5297ca5f7b7ecc3f57403ecf24c79e9bf3c91a0e9055ff3d0e882f3fc4c76986', 'hospitalizaciones': '9367d09ab78e5772efa7f34eb06f82d27ee0eb5e28a9e777c36f1630249fc011', 'lotes_medicamento': '787e7f5dbaa593d7e846907633f32173fe6786bcdea19a0bb681d3bfde020089', 'medicamentos': '2188895d2d94e43ae169e052ba72f6cc757865773145fb65249690962f99a3b0', 'medico_especialidad': 'c74e4e69adb405949e5bef623ebc3dd173ab930751754ffec40a2c7b85a92d6d', 'medicos': '4b9fc9cf5f86eed5a3dbb839ce722fa8e1a2a7e74669bda5cc55c4f0fa48626a', 'movimientos_inventario': 'f4fc722f2629a6f1046f2dd035819c298067b3bded44dcfa63b7f57a1fb04a5c', 'notas_enfermeria': '53de5dbd36e6ee6762bbe3367ade774fe5be869a34cace5148ea8d34e116ac04', 'ordenes_procedimiento': 'd4943c4ece43894f2edb5b49b139c7666a5f19b77cb57d856ca28a43bfa04d16', 'pacientes': 'd3f03024ede700236deda5dc218d18cf7c27c09e2e91b11d654cb3fff3c13a3e', 'pagos': '50cf2ea64ad0cb65b458bda8ccbec968be3d3011b96edca6821b54089726726e', 'personal': 'ead029ab95ade033344129b115c693397e6520a651f9490f079fc0be226319b3', 'polizas': '7e436017d3a848c00fa5ca4eb89229c34184cdd4fabd5b0f5a878bddc19a1bf8', 'procedimientos': '3a6f3494fe72166020eea219a4594670c259bd053392eedf194e3d9cb9ecedaa', 'proveedores': '28d0b0033b7ad2d8e3f1264480246da0a1ad1d836553d420ecfdc8d9d3c84841', 'receta_detalle': 'bc371bb57190d997876bddd6b22c7ee7c9d65f0189406b9296997c43b2db0a85', 'recetas': '26aa9aa32eef2a375d198a7ea12ad61f87fe94b49d43e2a03101393e5f66e167', 'resultados_procedimiento': 'e4346eb3f278649b9b325c6d61f2f7909369753bf0c583b7b3b5f8ddc397b959', 'roles': 'b1d45f7dd5d1a47ffc7236e8286a22e5c6657c796c7f5da687902d9432fa32a3', 'usuario_roles': '89b1b6fd07ab219ecb7a18e5c75a4faf48dc9f3a974d589decfbf87edd7b9510', 'usuarios': '0c7a3227511156e8c88929379beba172649786195185c702277d563947b84ee6'}}"
+    },
+    {
+      "prueba": "Respaldar y restaurar conserva la base de origen",
+      "correcta": true,
+      "detalle": "Esperado: {'existia': True, 'huellas_tablas': {'alergias_paciente': '368ca614d8869d590bbe8fba028d9732db9c403d2b866ba457e120140c030d68', 'aseguradoras': 'a753aeb03516209459cd5f058786826cdadc72a2a0759bc997e72e684b1fbfbf', 'asignaciones_camilla': '90cee1835cdbafae9b4f11dbffa39200a9f11106b606082fab7a360b1b50fdd5', 'camillas': 'f91a150e14bdbee2c39ece8b96f027a5b328560588694f42d836a9c223d62f65', 'citas': '3704c3a3fb70fa02a71e17d530a8f9b8ca9011150e3591615c594f64a6064cbc', 'consulta_diagnosticos': 'c93f8f37676dd720117a1ebe5e1a8361001f90915a41c98982d71e39d9af4f6a', 'consultas': '3a05ff498ab4934ceb333cd79220b2145139048c49afaf9a76ad0ceead99c4e3', 'contactos_emergencia': 'c911871bcc839d98d20909c094d2bb2cda4e0eec021a7a9e13929a2b8f0b8fe7', 'departamentos': 'f3ae3b026b20dc999e020f419f8b23b9c4d3c8522f044e9b340796aa08a944c2', 'diagnosticos': '80813403e286bbf56e1c29ac358f70febe5df01379f087fd7948a6a816619ec3', 'dispensacion_detalle': '039a608360241833e6118b450bdfdd336233413a0302ea088efd3b48670fd3ca', 'dispensaciones': '99f3d5ec79e95efca21f2078d4706b261575b6122f7b7875103ee50f92e83ca2', 'especialidades': 'fa193dab18001a00d587f315640f3b5311a94a9552216e96d5daf51887136692', 'factura_detalle': '8cf61ec1637bab6285f7eb8eef4f2dc2a309a072f7fbbb7870d763d1e6c93c03', 'facturas': '64ac9142f62df8c7fa31cb9604f729756284d13a2e19c81e0de5809260c8bbfc', 'habitaciones': '5297ca5f7b7ecc3f57403ecf24c79e9bf3c91a0e9055ff3d0e882f3fc4c76986', 'hospitalizaciones': '9367d09ab78e5772efa7f34eb06f82d27ee0eb5e28a9e777c36f1630249fc011', 'lotes_medicamento': '787e7f5dbaa593d7e846907633f32173fe6786bcdea19a0bb681d3bfde020089', 'medicamentos': '2188895d2d94e43ae169e052ba72f6cc757865773145fb65249690962f99a3b0', 'medico_especialidad': 'c74e4e69adb405949e5bef623ebc3dd173ab930751754ffec40a2c7b85a92d6d', 'medicos': '4b9fc9cf5f86eed5a3dbb839ce722fa8e1a2a7e74669bda5cc55c4f0fa48626a', 'movimientos_inventario': 'f4fc722f2629a6f1046f2dd035819c298067b3bded44dcfa63b7f57a1fb04a5c', 'notas_enfermeria': '53de5dbd36e6ee6762bbe3367ade774fe5be869a34cace5148ea8d34e116ac04', 'ordenes_procedimiento': 'd4943c4ece43894f2edb5b49b139c7666a5f19b77cb57d856ca28a43bfa04d16', 'pacientes': 'd3f03024ede700236deda5dc218d18cf7c27c09e2e91b11d654cb3fff3c13a3e', 'pagos': '50cf2ea64ad0cb65b458bda8ccbec968be3d3011b96edca6821b54089726726e', 'personal': 'ead029ab95ade033344129b115c693397e6520a651f9490f079fc0be226319b3', 'polizas': '7e436017d3a848c00fa5ca4eb89229c34184cdd4fabd5b0f5a878bddc19a1bf8', 'procedimientos': '3a6f3494fe72166020eea219a4594670c259bd053392eedf194e3d9cb9ecedaa', 'proveedores': '28d0b0033b7ad2d8e3f1264480246da0a1ad1d836553d420ecfdc8d9d3c84841', 'receta_detalle': 'bc371bb57190d997876bddd6b22c7ee7c9d65f0189406b9296997c43b2db0a85', 'recetas': '26aa9aa32eef2a375d198a7ea12ad61f87fe94b49d43e2a03101393e5f66e167', 'resultados_procedimiento': 'e4346eb3f278649b9b325c6d61f2f7909369753bf0c583b7b3b5f8ddc397b959', 'roles': 'b1d45f7dd5d1a47ffc7236e8286a22e5c6657c796c7f5da687902d9432fa32a3', 'usuario_roles': '89b1b6fd07ab219ecb7a18e5c75a4faf48dc9f3a974d589decfbf87edd7b9510', 'usuarios': '0c7a3227511156e8c88929379beba172649786195185c702277d563947b84ee6'}}; obtenido: {'existia': True, 'huellas_tablas': {'alergias_paciente': '368ca614d8869d590bbe8fba028d9732db9c403d2b866ba457e120140c030d68', 'aseguradoras': 'a753aeb03516209459cd5f058786826cdadc72a2a0759bc997e72e684b1fbfbf', 'asignaciones_camilla': '90cee1835cdbafae9b4f11dbffa39200a9f11106b606082fab7a360b1b50fdd5', 'camillas': 'f91a150e14bdbee2c39ece8b96f027a5b328560588694f42d836a9c223d62f65', 'citas': '3704c3a3fb70fa02a71e17d530a8f9b8ca9011150e3591615c594f64a6064cbc', 'consulta_diagnosticos': 'c93f8f37676dd720117a1ebe5e1a8361001f90915a41c98982d71e39d9af4f6a', 'consultas': '3a05ff498ab4934ceb333cd79220b2145139048c49afaf9a76ad0ceead99c4e3', 'contactos_emergencia': 'c911871bcc839d98d20909c094d2bb2cda4e0eec021a7a9e13929a2b8f0b8fe7', 'departamentos': 'f3ae3b026b20dc999e020f419f8b23b9c4d3c8522f044e9b340796aa08a944c2', 'diagnosticos': '80813403e286bbf56e1c29ac358f70febe5df01379f087fd7948a6a816619ec3', 'dispensacion_detalle': '039a608360241833e6118b450bdfdd336233413a0302ea088efd3b48670fd3ca', 'dispensaciones': '99f3d5ec79e95efca21f2078d4706b261575b6122f7b7875103ee50f92e83ca2', 'especialidades': 'fa193dab18001a00d587f315640f3b5311a94a9552216e96d5daf51887136692', 'factura_detalle': '8cf61ec1637bab6285f7eb8eef4f2dc2a309a072f7fbbb7870d763d1e6c93c03', 'facturas': '64ac9142f62df8c7fa31cb9604f729756284d13a2e19c81e0de5809260c8bbfc', 'habitaciones': '5297ca5f7b7ecc3f57403ecf24c79e9bf3c91a0e9055ff3d0e882f3fc4c76986', 'hospitalizaciones': '9367d09ab78e5772efa7f34eb06f82d27ee0eb5e28a9e777c36f1630249fc011', 'lotes_medicamento': '787e7f5dbaa593d7e846907633f32173fe6786bcdea19a0bb681d3bfde020089', 'medicamentos': '2188895d2d94e43ae169e052ba72f6cc757865773145fb65249690962f99a3b0', 'medico_especialidad': 'c74e4e69adb405949e5bef623ebc3dd173ab930751754ffec40a2c7b85a92d6d', 'medicos': '4b9fc9cf5f86eed5a3dbb839ce722fa8e1a2a7e74669bda5cc55c4f0fa48626a', 'movimientos_inventario': 'f4fc722f2629a6f1046f2dd035819c298067b3bded44dcfa63b7f57a1fb04a5c', 'notas_enfermeria': '53de5dbd36e6ee6762bbe3367ade774fe5be869a34cace5148ea8d34e116ac04', 'ordenes_procedimiento': 'd4943c4ece43894f2edb5b49b139c7666a5f19b77cb57d856ca28a43bfa04d16', 'pacientes': 'd3f03024ede700236deda5dc218d18cf7c27c09e2e91b11d654cb3fff3c13a3e', 'pagos': '50cf2ea64ad0cb65b458bda8ccbec968be3d3011b96edca6821b54089726726e', 'personal': 'ead029ab95ade033344129b115c693397e6520a651f9490f079fc0be226319b3', 'polizas': '7e436017d3a848c00fa5ca4eb89229c34184cdd4fabd5b0f5a878bddc19a1bf8', 'procedimientos': '3a6f3494fe72166020eea219a4594670c259bd053392eedf194e3d9cb9ecedaa', 'proveedores': '28d0b0033b7ad2d8e3f1264480246da0a1ad1d836553d420ecfdc8d9d3c84841', 'receta_detalle': 'bc371bb57190d997876bddd6b22c7ee7c9d65f0189406b9296997c43b2db0a85', 'recetas': '26aa9aa32eef2a375d198a7ea12ad61f87fe94b49d43e2a03101393e5f66e167', 'resultados_procedimiento': 'e4346eb3f278649b9b325c6d61f2f7909369753bf0c583b7b3b5f8ddc397b959', 'roles': 'b1d45f7dd5d1a47ffc7236e8286a22e5c6657c796c7f5da687902d9432fa32a3', 'usuario_roles': '89b1b6fd07ab219ecb7a18e5c75a4faf48dc9f3a974d589decfbf87edd7b9510', 'usuarios': '0c7a3227511156e8c88929379beba172649786195185c702277d563947b84ee6'}}"
+    },
+    {
+      "prueba": "Hay reportes disponibles desde botones",
+      "correcta": true,
+      "detalle": "Reportes: 8"
+    },
+    {
+      "prueba": "Reporte de expedientes",
+      "correcta": true,
+      "detalle": "Filas recibidas: 47"
+    },
+    {
+      "prueba": "Reporte de medicos",
+      "correcta": true,
+      "detalle": "Filas recibidas: 18"
+    },
+    {
+      "prueba": "Reporte de recetas",
+      "correcta": true,
+      "detalle": "Filas recibidas: 50"
+    },
+    {
+      "prueba": "Reporte de camillas",
+      "correcta": true,
+      "detalle": "Filas recibidas: 15"
+    },
+    {
+      "prueba": "Reporte de stock",
+      "correcta": true,
+      "detalle": "Filas recibidas: 16"
+    },
+    {
+      "prueba": "Reporte de lotes",
+      "correcta": true,
+      "detalle": "Filas recibidas: 17"
+    },
+    {
+      "prueba": "Reporte de pendientes",
+      "correcta": true,
+      "detalle": "Filas recibidas: 50"
+    },
+    {
+      "prueba": "Reporte de saldos",
+      "correcta": true,
+      "detalle": "Filas recibidas: 33"
+    },
+    {
+      "prueba": "Reporte arbitrario no permite ejecutar SQL",
+      "correcta": true,
+      "detalle": "Seleccione un reporte del catálogo."
+    },
+    {
+      "prueba": "Todas las existencias siguen no negativas",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0"
+    },
+    {
+      "prueba": "Ninguna entrega excede lo prescrito",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0"
+    },
+    {
+      "prueba": "Ninguna factura tiene saldo negativo",
+      "correcta": true,
+      "detalle": "Esperado: 0; obtenido: 0"
+    },
+    {
+      "prueba": "Configuracion de puerto invalido se explica",
+      "correcta": true,
+      "detalle": "El puerto debe estar entre 1 y 65535."
+    },
+    {
+      "prueba": "Error de conexion no revela contrasena",
+      "correcta": true,
+      "detalle": "Esperado: True; obtenido: True"
+    },
+    {
+      "prueba": "Representacion de ajustes no revela contrasena",
+      "correcta": true,
+      "detalle": "Esperado: True; obtenido: True"
+    },
+    {
+      "prueba": "Base hospital_universitario original intacta",
+      "correcta": true,
+      "detalle": "Comparacion SHA-256 de todas las filas de sus tablas antes y despues."
+    },
+    {
+      "prueba": "Se elimina solamente la base UUID propia",
+      "correcta": true,
+      "detalle": "hospital_prueba_f416d2f5544349af8472dd4192637113"
+    },
+    {
+      "prueba": "Se eliminan solamente las bases UUID de restauracion propias",
+      "correcta": true,
+      "detalle": "Nombres generados y verificados libres antes de restaurar."
+    }
+  ],
+  "huellas_sha256": {
+    "app_hospital/db.py": "eb30f0d4c85824c206a29a2b79e4653f445e7edf9b60310f8b0ed4a05f4bd1f2",
+    "app_hospital/catalog.py": "a426735bb30b64de3ca2525820aeb57e802575850e30a6279e52bce0543ed6a2",
+    "app_hospital/tests/integration_mysql.py": "f479b73564cb779e65595fc6ca7a705175a870ed0cca050b690d2b1bfb6e4b55",
+    "hospital_demostracion.sql": "11e23a5c61b6c6a92331c01e0f6849f717b9adf9736d91fcff383b8605dd0cb0"
+  }
+}

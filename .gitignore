@@ -6,3 +6,8 @@ __pycache__/
 *.pem
 *.key
 *.ibd
+.venv_app/
+conexion_hospital.json
+respaldos/
+*.hospital.json
+app_hospital/capturas/

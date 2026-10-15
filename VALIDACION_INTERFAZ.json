@@ -1,0 +1,129 @@
+{
+  "fecha_utc": "2026-10-15T04:15:30.076921+00:00",
+  "estado": "APROBADO",
+  "resumen": {
+    "total": 23,
+    "correctas": 23,
+    "fallidas": 0
+  },
+  "pruebas": [
+    {
+      "nombre": "La base UUID esta libre",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Probar conexion desde boton funciona",
+      "correcta": true,
+      "detalle": "[('info', 'Conexión correcta', 'El servidor respondió. Si esta es la primera vez, pulsa Crear base con ejemplos. Si ya tienes la base, pulsa Abrir hospital.')]"
+    },
+    {
+      "nombre": "Crear base desde interfaz funciona",
+      "correcta": true,
+      "detalle": "[('info', 'Base lista', 'Se creó la demostración. Pulsa Abrir hospital. En Inicio verás cuántos registros tiene cada tabla.')]"
+    },
+    {
+      "nombre": "La interfaz abre 36 tablas",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Inicio muestra 789 registros",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Todas las tablas se muestran con registros",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Los botones de respaldo son visibles en Inicio",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "La tabla Pacientes muestra 30 filas",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Formulario guarda paciente en MySQL",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Buscador encuentra el paciente",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Edicion desde formulario persiste",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "No se cierra un formulario mientras guarda",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Selector conserva operacion durante una tarea",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Operacion de cita guarda desde ventana",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Consulta de recetas combina nombres y detalles",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Boton exporta CSV con cabecera y64renglones",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Boton crea respaldo completo",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "No hubo errores en el recorrido de ventanas",
+      "correcta": true,
+      "detalle": "[]"
+    },
+    {
+      "nombre": "La configuracion de prueba no guarda contrasena",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "El destino de restauracion UUID esta libre",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "La restauracion desde el boton conserva los datos",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Al abrir una base se limpian los formularios anteriores",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Solo se elimina la base UUID propia",
+      "correcta": true,
+      "detalle": "hospital_prueba_05504f360ff7414192b21534d62443e4"
+    }
+  ],
+  "huellas_sha256": {
+    "app_hospital/main.py": "e2e2b3b305c5c9d98a339ab270c1598d797f893c3e58e3fca9dcda47334d326b"
+  }
+}

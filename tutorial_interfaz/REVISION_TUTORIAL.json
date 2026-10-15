@@ -1,0 +1,38 @@
+{
+  "documento": "tutorial_interfaz_hospital",
+  "paginas": 16,
+  "tamano": "Carta 8.5 x 11 pulgadas",
+  "cuerpo_puntos": 11.5,
+  "capturas_reales": 6,
+  "png_revisadas_visualmente": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "titulo_negro_sin_borde": true,
+  "sin_paginas_vacias": true,
+  "sin_recortes_ni_solapamientos_en_revision_visual": true,
+  "notas": [
+    "Los escenarios del tutorial se probaron mediante el servicio de la aplicación en MySQL real dentro de las pruebas de interfaz.",
+    "Las capturas muestran una instancia aislada de prueba; el texto distingue su puerto, base y fechas de los datos que utilizará el lector.",
+    "La exportación CSV describe únicamente las filas visibles; respaldo y restauración usan JSON completo de las 36 tablas."
+  ],
+  "sha256": {
+    "TUTORIAL.md": "ca9871f890f34b35e63e4b1664ad45ee4050f3d4271d82f24fd2510a2154e328",
+    "tutorial_interfaz_hospital.docx": "f4676191380bbc7b87796bea1ee87e1fe2513d0f33c4c4cd4466ad789bc57487",
+    "tutorial_interfaz_hospital.pdf": "c02de8648f6a45fd13c893fb9b1ce3a4b334f238623d7376b2227d3fe402800a"
+  }
+}

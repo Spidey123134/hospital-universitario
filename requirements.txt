@@ -1,0 +1,2 @@
+# Interfaz Tkinter incluida con la instalacion oficial de Python.
+PyMySQL[rsa]==1.2.3
