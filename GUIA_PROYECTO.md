@@ -4,6 +4,8 @@ Propuesta académica integral con **36 tablas**, diagramas físicos, diccionario
 
 ## Empieza aquí
 
+**Primero la base MySQL:** sigue [BASE_DE_DATOS.md](BASE_DE_DATOS.md). Incluye el respaldo de la base creada con registros y los pasos para instalar una copia en cada computadora. La interfaz de Python queda como una etapa posterior y separada.
+
 **Uso con ventanas:** abre `ABRIR_HOSPITAL.bat` y sigue [el tutorial nuevo de la interfaz](tutorial_interfaz/TUTORIAL.md). La aplicación permite crear la base con ejemplos, consultar las 36 tablas y registrar información sin escribir SQL. Esta guía y el tutorial anterior conservan el material técnico del diseño.
 
 **Demostración ampliada y aporte del equipo:** para una instalación nueva con más registros, usa `hospital_demostracion.sql`. Si ya cargaste la muestra inicial, agrega `05_datos_demo_ampliados.sql` una vez. [DATOS_DEMOSTRACION.md](DATOS_DEMOSTRACION.md) explica la carga y sus conteos; [aporte_equipo/README.md](aporte_equipo/README.md) documenta la fusión de las capturas. Los diagramas y el diccionario describen la misma estructura de 36 tablas. Los números del reporte y del tutorial corresponden a la muestra inicial; las 122 comprobaciones de la ampliación están en `VALIDACION_DATOS_AMPLIADOS.json`.
