@@ -2,6 +2,8 @@
 
 La entrega principal es una **base de datos MySQL con 36 tablas relacionadas y 789 registros ficticios**, incluidos 30 pacientes, 18 médicos, 15 medicamentos y 40 recetas. Está creada en un servidor local permanente y se incluye su respaldo exportado para instalar una copia en la computadora de cada integrante.
 
+El respaldo incluye la actualización de nombres y contactos: **95 teléfonos de diez dígitos y 59 correos con nombres de persona o empresa**. Son datos ficticios para el proyecto. Se conservan los 15 médicos aportados por el compañero, con sus nombres y cédulas. [Qué se completó y cómo actualizar una copia anterior](DATOS_DEL_PROYECTO.md).
+
 ## La base para cada integrante
 
 1. Cada integrante necesita **MySQL Server y MySQL Workbench** en su computadora.
@@ -19,6 +21,7 @@ MySQL 8.0.16 o posterior; servidor local y respaldo verificados en MySQL 8.0.45.
 ## Documentación
 
 - [Cómo tener la base en cada computadora](BASE_DE_DATOS.md)
+- [Datos completados y actualización de una copia anterior](DATOS_DEL_PROYECTO.md)
 - [Respaldo exportado de la base](entrega_base/hospital_universitario_respaldo.sql)
 - [Reporte del proyecto](reporte_hospital.pdf)
 - [Modelo y relaciones](MODELO.md)

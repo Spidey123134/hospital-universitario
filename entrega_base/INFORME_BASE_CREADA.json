@@ -49,7 +49,7 @@
   "procedimientos": 6,
   "vistas": 6,
   "respaldo": "hospital_universitario_respaldo.sql",
-  "respaldo_sha256": "e30975f0dca20e0a89c2cdb117ff332d62325bd30477b8f8f236c01265073ba4",
+  "respaldo_sha256": "dc50e663e94731eb2253ba095ed5906161066055817e8f5ca7748338c681f015",
   "datos_fuera_de_tmp": true,
   "comprobado_tras_reiniciar": true,
   "respaldo_restaurado_y_comparado": true,
@@ -62,5 +62,8 @@
     "vistas": 6
   },
   "credenciales_servidor_excluidas_del_respaldo": true,
-  "copia_de_prueba_eliminada": true
+  "copia_de_prueba_eliminada": true,
+  "fecha_actualizacion_utc": "2026-10-17T04:35:48.326574+00:00",
+  "version_datos": "contactos_y_catalogos_2026_10_16",
+  "contactos_actualizados": true
 }

@@ -2,6 +2,8 @@
 
 La estructura mantiene sus **36 tablas**. La demostración ampliada contiene **789 filas** repartidas entre ellas. Incluye los 15 médicos y 15 recetas adaptadas de las capturas del equipo, además de casos ficticios de citas, hospitalización, farmacia, estudios y cobros.
 
+Para instalar la versión con nombres y contactos completados, utiliza el [respaldo actual](entrega_base/hospital_universitario_respaldo.sql) y sigue [BASE_DE_DATOS.md](BASE_DE_DATOS.md). Las instrucciones siguientes reconstruyen la muestra original usada en las comprobaciones del tutorial. Si eliges esa ruta, ejecuta también `07_contactos_y_catalogos.sql` después de la ampliación. [DATOS_DEL_PROYECTO.md](DATOS_DEL_PROYECTO.md) explica la actualización; no necesitas repetirla si importas el respaldo actual.
+
 | Datos | Muestra inicial del tutorial | Demostración ampliada |
 | --- | ---: | ---: |
 | Pacientes | 5 | 30 |

@@ -8,6 +8,8 @@ El archivo [hospital_universitario_respaldo.sql](entrega_base/hospital_universit
 
 GitHub sirve para compartir este respaldo y los archivos del proyecto. Descargarlo no instala MySQL ni crea automáticamente una base en el servidor de quien lo descarga. El respaldo es la forma de trasladar la misma base entre computadoras; no es necesario copiar archivos internos `.ibd`.
 
+El respaldo actual ya incluye los nombres, domicilios, teléfonos y correos completados. Conserva las mismas 36 tablas y 789 filas. Si lo importas, **no necesitas ejecutar `07_contactos_y_catalogos.sql` después**. [DATOS_DEL_PROYECTO.md](DATOS_DEL_PROYECTO.md) explica los datos ficticios y el caso de quienes instalaron una versión anterior.
+
 ## En la computadora donde se preparó la entrega
 
 En la computadora original se preparó un servidor local independiente en la carpeta `mysql_local`, junto a `propuesta_hospital`. Sus datos quedan guardados en `mysql_local/data`, fuera de las carpetas temporales y fuera del repositorio. Esa carpeta privada no viene en el ZIP ni se necesita para las copias de los demás: ellos siguen el apartado siguiente e importan el respaldo en su propio MySQL.
