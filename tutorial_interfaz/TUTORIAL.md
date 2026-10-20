@@ -1,6 +1,6 @@
 # Cómo usar la aplicación del hospital desde cero
 
-Esta guía enseña a abrir el proyecto, crear una base con ejemplos y trabajar mediante botones y formularios. Está escrita para alguien que nunca ha usado Python ni MySQL. Puedes practicar con datos inventados y presentar el proyecto sin escribir instrucciones SQL.
+Esta guía enseña a abrir la aplicación de Python, conectarla con tu base MySQL y trabajar mediante botones y formularios. Está escrita para alguien que nunca ha usado estas herramientas. Puedes registrar pacientes, citas, recetas y cobros de práctica sin escribir instrucciones SQL.
 
 La aplicación es un programa de escritorio hecho en Python. MySQL guarda la información y la aplicación presenta las pantallas para consultarla y modificarla. Ambos deben estar disponibles en la computadora donde harás la demostración.
 
@@ -10,7 +10,7 @@ La aplicación es un programa de escritorio hecho en Python. MySQL guarda la inf
 2. Instala Python y MySQL Server si todavía no los tienes.
 3. Abre `ABRIR_HOSPITAL.bat` desde la carpeta extraída.
 4. Escribe los datos de tu servidor y pulsa **Probar conexión**.
-5. Si la base todavía no existe, pulsa **Crear base con ejemplos**.
+5. Lee el resultado. Si ya existe una base compatible, consérvala. Si todavía no existe, pulsa **Crear base con ejemplos**.
 6. Pulsa **Abrir hospital**.
 7. Revisa los registros y practica el alta de un paciente ficticio.
 
@@ -24,7 +24,7 @@ Si el proyecto ya abre y muestra registros, empieza directamente en la parte de 
 | Python | Ejecuta la aplicación y dibuja sus ventanas. |
 | MySQL Server | Guarda los pacientes, recetas y demás datos. Debe estar encendido. |
 | Interfaz del hospital | Permite usar la base mediante campos, listas y botones. |
-| PDF o Word | Explica los pasos. Abrirlo no ejecuta la aplicación. |
+| PDF o tutorial de texto | Explica los pasos actuales. Abrirlo no ejecuta la aplicación. |
 | GitHub | Guarda los archivos del equipo. Su contraseña no es la contraseña del servidor MySQL. |
 
 ## Descargar y extraer el proyecto
@@ -40,7 +40,7 @@ Si el proyecto ya abre y muestra registros, empieza directamente en la parte de 
 
 Conserva esta carpeta en un lugar fácil de encontrar, por ejemplo Documentos. No necesitas abrir cada archivo `.py` ni los archivos `.sql`.
 
-Si GitHub muestra una página inexistente o no te deja entrar, comprueba que utilizas la cuenta con acceso al repositorio privado. El propietario del repositorio debe darte acceso o compartir contigo el ZIP.
+El [repositorio del equipo](https://github.com/Spidey123134/hospital-universitario) es público: puedes descargarlo sin iniciar sesión. Para subir cambios al código necesitas una cuenta de GitHub con permiso de colaboración. Si no encuentras la página, revisa la dirección o pide al equipo el ZIP completo.
 
 ## Instalar Python
 
@@ -59,6 +59,10 @@ La documentación oficial describe el instalador y sus opciones: [Python en Wind
 ## Instalar o localizar MySQL Server
 
 Si ya tienes un servidor MySQL funcionando, conserva ese servidor y usa sus datos. Instalar únicamente Workbench no instala necesariamente el servicio que guarda los datos.
+
+**En la laptop donde se creó el proyecto:** ya se preparó un MySQL local. Abre `F:\Base de Datos\mysql_local\INICIAR_BASE_LOCAL.bat` y espera el mensaje de inicio. Los datos de conexión están en `F:\Base de Datos\mysql_local\CONEXION_PRIVADA.txt`. Usa servidor `127.0.0.1`, puerto `3307` y base `hospital_universitario`. Esa contraseña es privada de esa computadora; el archivo no está en GitHub y no se comparte con los compañeros.
+
+**En la computadora de cada compañero:** utiliza su propia instalación de MySQL y la contraseña que él o ella configuró. El puerto suele ser `3306`. Cada persona tendrá su copia independiente del hospital. Descargar el proyecto no instala automáticamente MySQL Server.
 
 Para una instalación nueva en Windows:
 
@@ -92,18 +96,25 @@ Completa los campos de la ventana de conexión con los valores de tu instalació
 | Campo | Ejemplo para un servidor en tu computadora |
 | --- | --- |
 | Servidor | `127.0.0.1` o `localhost` |
-| Puerto | `3306`, salvo que configuraste otro |
+| Puerto | `3306` en una instalación habitual; `3307` en la laptop del proyecto |
 | Usuario | `root` o el usuario que te proporcionaron |
 | Contraseña | La que definiste al configurar MySQL |
 | Base de datos | `hospital_universitario` |
 
 ![Campos de conexión y botones de la aplicación](imagenes/01_conexion.png)
 
-Pulsa **Probar conexión** antes de crear o abrir la base. Si la prueba es correcta, la aplicación sí puede hablar con el servidor. Si aparece un error, resuélvelo con la sección de problemas antes de continuar.
+Pulsa **Probar conexión** antes de crear o abrir la base. Este botón revisa el servidor y la estructura de la base elegida; no instala, rellena ni cambia registros. Lee el resultado completo:
 
-La contraseña de GitHub, Windows o correo no sustituye la contraseña de MySQL. Los registros de la tabla `usuarios` son parte de la demostración del modelo y no son las credenciales de conexión al servidor.
+- **Base compatible:** el servidor responde y la estructura corresponde al proyecto. Pulsa **Abrir hospital** para usar los datos que ya tiene.
+- **Base inexistente:** la conexión al servidor funciona, pero todavía no existe una base con ese nombre. Puedes crearla con **Crear base con ejemplos**.
+- **Base incompatible o incompleta:** ese nombre existe, pero su estructura no coincide con la del proyecto. Conserva sus datos y pide revisión al equipo, o utiliza otro nombre para una práctica nueva.
+- **Error de conexión:** revisa servidor, puerto, usuario y contraseña antes de continuar.
 
-Las imágenes muestran la aplicación real durante una prueba. Algunas usan puerto **33087** y una base con nombre `hospital_prueba...`: eran un servidor aislado y una base temporal. En tu computadora utiliza tus propios datos, normalmente puerto **3306**. La contraseña no se muestra en las imágenes; escribe la que configuraste para tu servidor.
+La contraseña de GitHub, Windows o correo no sustituye la contraseña de MySQL. Los registros de la tabla `usuarios` son parte del modelo y no son las credenciales de conexión al servidor.
+
+Si la cuenta que te dieron solo tiene permisos de consulta, podrás abrir el hospital, buscar y ver registros. Los botones para escribir se deshabilitan. Para registrar o modificar información se necesita una cuenta MySQL con esos permisos; marcar un campo en la aplicación no cambia los permisos del servidor.
+
+Las imágenes muestran la aplicación real durante una prueba. Pueden mostrar un puerto o una base temporal distintos de los tuyos. Copia tus propios datos de conexión, no los valores de las capturas. La contraseña no se muestra; escribe la de tu instalación de MySQL.
 
 ## Crear la base con ejemplos una sola vez
 
@@ -115,9 +126,11 @@ Si es la primera instalación y todavía no existe `hospital_universitario`:
 4. Espera a que termine. No cierres la ventana durante el proceso.
 5. Pulsa **Abrir hospital**.
 
-**Resultado esperado:** la aplicación muestra el hospital con 36 tablas y una demostración de 789 filas en total, incluidas 30 personas en pacientes, 18 médicos, 15 medicamentos y 40 recetas.
+**Resultado esperado:** la aplicación muestra el hospital con 36 tablas y 789 filas en total, incluidas 30 personas en pacientes, 18 médicos, 15 medicamentos y 40 recetas. La creación también aplica la actualización de nombres y contactos: 95 teléfonos de diez dígitos y 59 correos personalizados bajo `example.com`.
 
 Esos números describen la carga inicial. Cambiarán cuando el equipo agregue sus registros. Todas las tablas contienen ejemplos; cada tabla tiene la cantidad que corresponde a sus relaciones. Una receta puede tener varios renglones de medicamentos.
+
+Los contactos son inventados para el proyecto. Un correo guardado en la tabla no crea una cuenta de correo, y un teléfono inventado no está verificado como libre. Los datos clínicos sirven para comprobar relaciones y formularios; no son indicaciones de tratamiento.
 
 Si la base ya existe, utiliza **Abrir hospital**. No necesitas borrar una base para entrar a la aplicación ni repetir la creación cada día. Conserva el trabajo que ya haya agregado tu equipo.
 
@@ -145,7 +158,7 @@ Si la base ya existe, utiliza **Abrir hospital**. No necesitas borrar una base p
 | Registros | Ver tablas, buscar y agregar datos mediante formularios. |
 | Operaciones | Agendar citas, asignar camillas, entregar medicamentos y registrar cobros con sus reglas. |
 | Consultas | Ver información reunida con nombres, existencias o saldos. |
-| Guía | Consultar ayuda y las instrucciones de la aplicación. |
+| Guía | Consultar ayuda y abrir el PDF o el tutorial de texto actualizado. |
 
 Empieza en **Inicio**. Una base recién creada contiene 30 pacientes y 18 médicos. Si un compañero ya agregó algo, el número puede ser mayor. Busca el resumen de las 36 tablas para comprobar que la demostración está cargada.
 
@@ -154,15 +167,15 @@ Empieza en **Inicio**. Una base recién creada contiene 30 pacientes y 18 médic
 ## Ver y buscar pacientes
 
 1. Pulsa **Registros**.
-2. En la lista **Tabla**, elige **Pacientes (pacientes)**.
+2. En **Área**, elige **Pacientes** para acortar la lista de tablas. Después, en **Tabla**, elige **Pacientes (pacientes)**. También puedes conservar **Todas las áreas** y buscar allí la tabla.
 3. Mira las filas del centro. Cada fila es un paciente y cada columna es un dato suyo.
-4. Si una columna queda fuera de la ventana, utiliza la barra de desplazamiento horizontal inferior.
+4. Si una columna queda fuera de la ventana, utiliza la barra de desplazamiento horizontal inferior. Para leer todos los campos en una ventana, selecciona una fila y pulsa **Ver registro**.
 5. En **Buscar**, escribe una parte del nombre o del expediente. Pulsa el botón **Buscar**.
 6. Para quitar el filtro, pulsa **Mostrar todos**.
 
 **Resultado esperado:** ves pacientes guardados en MySQL. Buscar filtra lo que se muestra; no elimina filas. Si no aparecen resultados, quita el filtro y revisa la escritura.
 
-La lista de tablas antepone el área del hospital al nombre. Por ejemplo, puedes ver **Pacientes · Pacientes (pacientes)**. El nombre entre paréntesis identifica la tabla para el equipo; no tienes que escribirlo como código.
+El selector **Área** organiza las tablas por la parte del hospital a la que pertenecen. Cambiar el área solo cambia las opciones de la lista; no mueve ni elimina datos. El nombre entre paréntesis identifica la tabla para el equipo y no tienes que escribirlo como código.
 
 La aplicación muestra hasta 200 filas por página. **Anterior** y **Siguiente** sirven para recorrer páginas cuando hay más registros. **Actualizar** vuelve a leer los datos del servidor.
 
@@ -182,14 +195,14 @@ Vamos a crear un paciente ficticio para practicar. No cambies la tabla a otra mi
 | --- | --- |
 | Expediente clínico | `UNI-PRUEBA-001` |
 | Nombre | `Daniela` |
-| Apellido paterno | `Ejemplo` |
-| Apellido materno | `Universitario` |
+| Apellido paterno | `Serrano` |
+| Apellido materno | `Molina` |
 | Fecha de nacimiento | `2004-05-20` |
 | Sexo | Selecciona `F` en la lista |
 | Teléfono | `5500000099` |
-| Email | `daniela@example.invalid` |
-| Domicilio | `Domicilio ficticio para clase` |
-| Activo | Conserva `1`, que significa activo |
+| Email | `daniela.serrano.clase@example.com` |
+| Domicilio | `Calle Magnolia 28, Colonia Jardines, Ciudad de México` |
+| Activo | Selecciona **Sí** |
 
 4. Si la fecha de registro ya tiene un valor, consérvalo. Si el campo está vacío y permite el valor predeterminado, déjalo así: MySQL pondrá la fecha de registro al guardar.
 5. No inventes el identificador automático del paciente. El programa lo obtiene al guardar.
@@ -199,6 +212,8 @@ Vamos a crear un paciente ficticio para practicar. No cambies la tabla a otra mi
 **Resultado esperado:** aparece una fila con Daniela y un identificador. Si partiste de los 30 pacientes de la demostración, ahora tendrás 31.
 
 Si no ves los campos de abajo, desplázate dentro del formulario con la rueda del ratón o la barra vertical derecha. Los botones **Guardar** y **Cancelar** están al pie de la ventana.
+
+Los campos como **Activo** se eligen con **Sí** o **No**. El programa convierte esa elección al valor que guarda MySQL. Al guardar también revisa el formato de las fechas, los números y el largo permitido de los textos; si hay un error, corrige el campo indicado y vuelve a guardar.
 
 ![Formulario real para agregar pacientes con datos ficticios de prueba](imagenes/04_nuevo_paciente.png)
 
@@ -212,14 +227,14 @@ Si te arrepientes antes de guardar, pulsa **Cancelar**. La ventana se cierra sin
 
 1. En **Pacientes**, busca `UNI-PRUEBA-001`.
 2. Haz un clic en la fila de Daniela para seleccionarla.
-3. Pulsa **Editar seleccionado**. También puedes abrir una fila con doble clic.
+3. Pulsa **Editar seleccionado**. El doble clic abre **Ver registro**, que sirve para leer todos los campos; para cambiar datos utiliza el botón de edición.
 4. Cambia el teléfono por `5500000088`.
 5. Pulsa **Guardar**.
 6. Revisa la columna del teléfono. Puedes pulsar **Actualizar** para volver a leerla.
 
 **Resultado esperado:** sigue existiendo el mismo paciente, con el mismo identificador y el teléfono corregido. Editar no crea otra persona.
 
-Algunas tablas guardan historia y permiten agregar, pero no editar registros anteriores. Otras se trabajan desde **Operaciones**. Lee el aviso situado junto a la tabla. Los botones deshabilitados indican que esa acción no corresponde a esa tabla.
+Algunas tablas guardan historia y permiten agregar, pero no editar registros anteriores. Otras se trabajan desde **Operaciones**. Lee el aviso situado junto a la tabla. **Ver registro** permite leer los campos aunque no se autorice editarlos; cierra esa ventana para volver a la lista. Los botones deshabilitados indican que esa acción no corresponde a esa tabla.
 
 Para dejar de utilizar un paciente o empleado cuando proceda, cambia su campo **activo** mediante el formulario. Las referencias históricas deben conservarse; el programa no ofrece borrar indiscriminadamente todos los registros.
 
@@ -230,7 +245,7 @@ Un contacto de emergencia pertenece a un paciente que ya está registrado. Lo se
 1. En **Registros**, cambia **Tabla** a **Contactos de emergencia (contactos_emergencia)**.
 2. Pulsa **Nuevo registro**.
 3. Abre la lista de **Paciente** y elige a Daniela, identificándola por su nombre o expediente `UNI-PRUEBA-001`. La opción también muestra su identificador.
-4. Escribe nombre `Rosa Ejemplo`, parentesco `Madre`, teléfono `5500000077` y prioridad `1`.
+4. Escribe nombre `Rosa Molina Campos`, parentesco `Madre`, teléfono `5500000077` y prioridad `1`.
 5. Pulsa **Guardar**.
 
 **Resultado esperado:** se guarda un contacto vinculado con Daniela. No necesitas escribir un número de paciente de memoria.
@@ -354,14 +369,14 @@ Para guardar lo que estás revisando:
 
 1. Abre una tabla en **Registros** o un resultado en **Consultas**.
 2. Si estás buscando un conjunto concreto, aplica primero el filtro correspondiente.
-3. Pulsa **Exportar CSV**, elige una carpeta, escribe un nombre y guarda.
+3. En Registros pulsa **Exportar página a CSV**. En Consultas el botón se llama **Exportar filas mostradas a CSV**. Elige una carpeta, escribe un nombre y guarda.
 4. Abre el archivo con una hoja de cálculo o un editor de texto.
 
 **Resultado esperado:** un archivo con las columnas y los registros de la página visible. En **Registros** hay hasta 200 filas por página y en **Consultas** hasta 500. Un CSV no conserva por sí solo las 36 tablas, sus relaciones, rutinas y reglas. Para trasladar toda la base utiliza el respaldo completo.
 
 ## Guardar un respaldo completo
 
-Un respaldo permite trasladar los datos de todas las tablas. Guardar el Word, copiar el ZIP de código o exportar un CSV de pacientes no guarda todo lo que el equipo ha registrado en MySQL.
+Un respaldo permite trasladar los datos de todas las tablas. Guardar el PDF, copiar el ZIP de código o exportar un CSV de pacientes no guarda todo lo que el equipo ha registrado en MySQL.
 
 1. Abre el hospital y comprueba que estás conectado a la base que quieres copiar.
 2. En **Inicio**, pulsa **Crear respaldo completo**.
@@ -378,11 +393,11 @@ Haz una copia antes de una práctica de todo el equipo y otra después de termin
 La recuperación crea una base nueva y conserva la base anterior. Para probar la copia en la misma computadora, usa un nombre nuevo como `hospital_copia_equipo`.
 
 1. Conserva el respaldo `.hospital.json` y toda la carpeta de la aplicación.
-2. Comprueba que MySQL Server esté iniciado y que la conexión tenga permiso para crear bases.
-3. En los datos de conexión, cambia **Base de datos** por `hospital_copia_equipo`, o por otro nombre que todavía no exista.
-4. Pulsa **Restaurar respaldo en base nueva** y elige el archivo `.hospital.json` que guardaste.
-5. Confirma la creación y espera a que termine.
-6. Abre la base restaurada y revisa en **Inicio** los conteos. Busca también el expediente `UNI-PRUEBA-001` si estaba incluido en la copia.
+2. Comprueba que MySQL Server esté iniciado y que la conexión tenga permiso para crear bases. Puedes seguir conectado al hospital original.
+3. En **Inicio**, pulsa **Restaurar respaldo en base nueva** y elige el archivo `.hospital.json` que guardaste.
+4. Cuando el programa pregunte el nombre de destino, escribe `hospital_copia_equipo`, u otro nombre que todavía no exista. No cambies el campo superior de conexión para preparar la restauración.
+5. Revisa el nombre de la nueva base, confirma la creación y espera a que termine.
+6. Al terminar, el programa coloca el nombre de la copia nueva en la conexión. Pulsa **Abrir hospital** para revisarla. En **Inicio**, compara los conteos y busca el expediente `UNI-PRUEBA-001` si estaba incluido en el respaldo.
 
 **Resultado esperado:** una base nueva con los datos que existían al crear el respaldo. Si después agregaste más pacientes al original, no aparecerán en una copia anterior.
 
@@ -398,13 +413,13 @@ El respaldo se recupera desde el botón de la aplicación. Dar doble clic en el 
 
 **No se puede instalar el conector.** Revisa internet y el mensaje de la ventana de preparación. Vuelve a abrir el iniciador después de resolver la conexión. Conserva el mensaje completo para quien mantiene el proyecto.
 
-**No conecta o aparece error 2003.** Comprueba que MySQL Server esté iniciado, que el servidor sea correcto y que usas su puerto TCP/IP. Para una instalación local normal es 3306; usa otro valor únicamente si así lo configuraron.
+**No conecta o aparece error 2003.** Comprueba que MySQL Server esté iniciado, que el servidor sea correcto y que usas su puerto TCP/IP. Para una instalación local normal suele ser 3306. El MySQL preparado en esta laptop usa 3307 y se inicia desde `mysql_local\INICIAR_BASE_LOCAL.bat`; no cambies entre ambos puertos al azar.
 
 Si instalaste MySQL como servicio de Windows, abre Inicio, busca **Servicios** y abre esa herramienta. Localiza el servicio que configuraste, por ejemplo **MySQL80** o **MySQL84**. Si está detenido, haz clic derecho y selecciona **Iniciar**; Windows puede solicitar una cuenta con permiso de administrador. Vuelve después a **Probar conexión**. Consulta la [documentación oficial del servicio MySQL](https://dev.mysql.com/doc/refman/8.0/en/windows-start-service.html) para esta forma de inicio.
 
 **Acceso denegado o error 1045.** Revisa usuario y contraseña de MySQL. La aplicación no puede adivinar ni recuperar la contraseña que se configuró en ese servidor.
 
-**La base ya existe.** Pulsa Abrir hospital. No repitas Crear base con ejemplos ni borres la base que está usando el equipo.
+**La base ya existe.** Pulsa Probar conexión y, si es compatible, Abrir hospital. No repitas Crear base con ejemplos ni borres la base que está usando el equipo.
 
 **La base existe pero faltan tablas.** Puede tratarse de otra base con el mismo nombre o de una instalación incompleta. Conserva el mensaje y solicita revisión; no mezcles a ciegas instaladores distintos sobre los datos del equipo.
 
@@ -420,7 +435,7 @@ Si instalaste MySQL como servicio de Windows, abre Inicio, busca **Servicios** y
 
 El código y los documentos se comparten mediante la carpeta o GitHub. Los cambios realizados en los formularios quedan en el servidor MySQL al que te conectaste. Si dos personas usan servidores distintos, cada una tiene su propia copia de los datos.
 
-Para trabajar con una sola base, el equipo debe acordar qué servidor usará. Para presentar en otra computadora, además de copiar la aplicación necesita trasladar una copia de sus datos. Exportar una sola tabla a CSV ayuda a revisar información, pero no reemplaza una copia completa de todas las relaciones.
+En este proyecto se eligió una copia en cada computadora. Cada integrante instala su base y usa su propia contraseña de MySQL. Para pasar a otra computadora el trabajo realizado, guarda un respaldo completo, compártelo con tu compañero y restáuralo allí con un nombre nuevo. La restauración conserva los datos que ya tenga esa otra computadora en su base anterior. Exportar una sola tabla a CSV ayuda a revisar información, pero no reemplaza el respaldo completo.
 
 ## Antes de presentar al profesor
 

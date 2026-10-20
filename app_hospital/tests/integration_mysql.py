@@ -5,7 +5,8 @@ Ejemplo (desde propuesta_hospital):
 
 Solo crea y elimina una base hospital_prueba_<UUID> de esta ejecucion.
 La contrasena se toma de MYSQL_PWD, no de argumentos ni archivos del proyecto.
-Requiere CREATE/DROP DATABASE en la instancia de pruebas. No usar datos reales.
+Requiere CREATE/DROP DATABASE y CREATE USER en la instancia de pruebas.
+La cuenta SELECT efímera se elimina al terminar su prueba. No usar datos reales.
 """
 from __future__ import annotations
 
@@ -17,6 +18,8 @@ import hashlib
 import importlib.metadata
 import json
 import os
+import re
+import secrets
 from pathlib import Path
 import sys
 import traceback
@@ -116,7 +119,7 @@ class IntegrationQA:
         self.reject('Instalador tambien protege una base existente vacia', self.service.install_demo)
         self.check('Base vacia preexistente no recibe tablas sin permiso', self.scalar("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema=%s", (self.database,)), 0)
         self.sql('DROP DATABASE `' + self.database + '`')
-        installed = self.service.install_demo()
+        installed = self.service.install_demo(personalized=False)
         self.record('Instalacion desde un boton sin cliente SQL externo', isinstance(installed, dict), 'Respuesta de instalacion recibida.')
         self.check('Conexion despues de instalar: 36 tablas', self.service.test_connection()['table_count'], 36)
         self.initial_counts = self.service.counts()
@@ -152,6 +155,89 @@ class IntegrationQA:
         self.reject('Identificador de tabla inyectado se rechaza', lambda: self.service.browse('pacientes`; DROP DATABASE mysql;--'))
         self.reject('Identificador de columna inyectado se rechaza', lambda: self.service.fk_options('contactos_emergencia', 'paciente_id`; SELECT 1;--'))
         self.reject('Nombre de base inyectado se rechaza', lambda: HospitalService(Settings(self.args.host, self.args.port, self.args.user, '', 'x`; DROP DATABASE mysql;--')).test_connection())
+
+    def current_data_and_schema(self):
+        """La instalación visible al usuario usa los contactos nuevos y reglas completas."""
+        name = 'hospital_prueba_' + uuid.uuid4().hex
+        self.check('Destino UUID de la version actual esta libre', self.scalar('SELECT COUNT(*) FROM information_schema.schemata WHERE schema_name=%s', (name,)), 0)
+        self.additional_databases.add(name)
+        current = HospitalService(Settings(self.args.host, self.args.port, self.args.user, os.environ.get('MYSQL_PWD', ''), name))
+        installed = current.install_demo()
+        self.check('Instalacion predeterminada mantiene 789 registros', installed['total_rows'], 789)
+        self.check('Contactos personalizados conservan conteos por tabla', current.counts(), self.initial_counts)
+        schema = current.validate_schema()
+        self.check('Validacion completa comprueba 205 columnas', schema['column_count'], 205)
+        self.check('Validacion completa comprueba 6 vistas, 6 procedimientos y 23 triggers',
+                   (schema['view_count'], schema['procedure_count'], schema['trigger_count']), (6, 6, 23))
+        self.check('Cuenta de pruebas puede comprobar reglas', schema['rules_verified'])
+        phone_tables = ('personal', 'pacientes', 'contactos_emergencia', 'aseguradoras', 'proveedores')
+        phones = [row['telefono'] for table in phone_tables for row in self.sql('SELECT telefono FROM `' + name + '`.`' + table + '`')]
+        emails = [row['email'] for table in ('personal', 'pacientes', 'proveedores') for row in self.sql('SELECT email FROM `' + name + '`.`' + table + '`')]
+        self.check('Instalacion desde Python incluye 95 telefonos completos', len(phones), 95)
+        self.check('Todos los telefonos tienen diez digitos', all(isinstance(v,str) and re.fullmatch(r'\d{10}',v) for v in phones))
+        self.check('Instalacion desde Python incluye 59 correos personalizados', len(emails), 59)
+        self.check('Correos usan un dominio de ejemplos y formato correcto', all(isinstance(v,str) and re.fullmatch(r'[a-z0-9]+(?:[._-][a-z0-9]+)*@example\.com',v) for v in emails))
+        first_names = ['Elena','Andrés','Gabriela','Laura','Héctor','Verónica','Óscar','Raquel']
+        first_staff = self.sql('SELECT personal_id,nombre,email FROM `' + name + '`.personal WHERE personal_id BETWEEN 1 AND 8 ORDER BY personal_id')
+        self.check('Personal inicial usa ocho nombres completos de presentacion',[row['nombre'] for row in first_staff],first_names)
+        email_names = ['elena','andres','gabriela','laura','hector','veronica','oscar','raquel']
+        self.check('Correos personalizados corresponden al nombre del personal',all(row['email'].startswith(expected + '.') for row,expected in zip(first_staff,email_names)))
+        doctor_sql = ('SELECT p.personal_id,p.nombre,p.apellido_paterno,m.cedula_profesional FROM `{}`.personal p '
+                      'JOIN `{}`.medicos m ON m.medico_id=p.personal_id WHERE m.medico_id BETWEEN 9 AND 23 ORDER BY m.medico_id')
+        self.check('Quince medicos del equipo conservan nombres y cedulas', self.sql(doctor_sql.format(name,name)), self.sql(doctor_sql.format(self.database,self.database)))
+        changed = {'departamentos','personal','medicos','pacientes','contactos_emergencia','aseguradoras','proveedores',
+                   'habitaciones','camillas','polizas','lotes_medicamento','usuarios'}
+        baseline = self.snapshot_database(self.database)['huellas_tablas']
+        actual = self.snapshot_database(name)['huellas_tablas']
+        self.check('Actualizacion conserva 24 tablas de historial y relaciones',
+                   {table: digest for table,digest in actual.items() if table not in changed},
+                   {table: digest for table,digest in baseline.items() if table not in changed})
+        patient_names = {row['nombre'] for row in self.sql('SELECT nombre FROM `' + name + '`.pacientes')}
+        for table, key in (('citas','cita_id'), ('consultas','consulta_id'), ('recetas','receta_id'), ('hospitalizaciones','hospitalizacion_id'), ('facturas','factura_id')):
+            pairs = current.reference_options(table,key)
+            self.record('Lista de ' + table + ' muestra nombres de pacientes', bool(pairs) and any(patient in pairs[0][1] for patient in patient_names), 'Relaciones elegibles por nombre y fecha o estado.')
+        lot = current.reference_options('lotes_medicamento','lote_id')[0][1]
+        self.check('Lista de lotes identifica medicamento y caducidad', 'Caduca ' in lot and ' | ' in lot)
+        expected_beds = {r['camilla_id'] for r in self.sql('SELECT camilla_id FROM `' + name + "`.v_camillas_estado WHERE disponibilidad='DISPONIBLE'")}
+        self.check('Operacion solo propone camillas operativas y libres', {key for key,label in current.workflow_options('asignar_camilla','camilla_id')}, expected_beds)
+        for workflow, states in (('confirmar_cita', ('PROGRAMADA',)), ('cancelar_cita', ('PROGRAMADA','CONFIRMADA'))):
+            expected = {r['cita_id'] for r in self.sql('SELECT cita_id FROM `' + name + '`.citas WHERE estado IN (' + ','.join(['%s']*len(states)) + ')', states)}
+            self.check('Lista ' + workflow + ' ofrece solo estados permitidos', {key for key,label in current.workflow_options(workflow,'cita_id')}, expected)
+        self.check('Buscador de relaciones admite nombres personalizados', bool(current.reference_options('citas','cita_id',search='Daniela')))
+        self.check('Buscador de relaciones conserva texto con apariencia SQL como dato', current.reference_options('citas','cita_id',search="' OR 1=1; --"), [])
+        self.sql('ALTER TABLE `' + name + '`.pacientes RENAME COLUMN domicilio TO domicilio_incompatible')
+        try:
+            self.reject('Validacion rechaza una copia con tabla presente y campo faltante',current.validate_schema)
+        finally:
+            self.sql('ALTER TABLE `' + name + '`.pacientes RENAME COLUMN domicilio_incompatible TO domicilio')
+        for kind, object_name in (('VIEW','v_stock_lotes'),('PROCEDURE','sp_agendar_cita'),('TRIGGER','tr_pago_delete')):
+            self.sql('DROP ' + kind + ' `' + name + '`.`' + object_name + '`')
+            try:
+                self.reject('Validacion rechaza falta de ' + kind.lower(),current.validate_schema)
+            finally:
+                statement = next(s for s in current._script('02_reglas.sql') if re.match(r'CREATE ' + kind + r'\s+' + re.escape(object_name) + r'\b',s))
+                self.sql('USE `' + name + '`')
+                self.sql(statement)
+        self.check('Estructura reparada de prueba vuelve a ser compatible', current.validate_schema()['rules_verified'])
+        # Cuenta efímera y exclusiva de esta prueba; no toca cuentas del equipo.
+        account = 'hospital_qa_' + uuid.uuid4().hex[:20]
+        account_host = self.scalar("SELECT SUBSTRING_INDEX(USER(),'@',-1)")
+        password = secrets.token_urlsafe(28)
+        owned_account = False
+        try:
+            self.sql('CREATE USER %s@%s IDENTIFIED BY %s', (account,account_host,password))
+            owned_account = True
+            self.sql('GRANT SELECT, SHOW VIEW ON `' + name + '`.* TO %s@%s', (account,account_host))
+            reader = HospitalService(Settings(self.args.host,self.args.port,account,password,name))
+            status = reader.validate_schema()
+            self.check('Cuenta SELECT puede abrir el hospital sin privilegio TRIGGER',status['read_only'])
+            self.check('Cuenta SELECT reconoce metadatos de reglas no visibles',status['rules_verified'],False)
+            self.check('Cuenta SELECT puede consultar los pacientes',reader.browse('pacientes')['total'],30)
+            self.reject('Cuenta SELECT no puede modificar pacientes',lambda:reader.update('pacientes',{'paciente_id':1},{'nombre':'No permitido'}))
+            self.check('Intento de cuenta SELECT conserva datos',current.browse('pacientes')['rows'][0]['nombre'],'Daniela')
+        finally:
+            if owned_account:
+                self.sql('DROP USER %s@%s',(account,account_host))
 
     def crud_and_validation(self):
         values = {'expediente_clinico': 'QA-' + uuid.uuid4().hex[:12], 'nombre': "Ana O'Connor; DROP TABLE pacientes; --",
@@ -357,7 +443,7 @@ class IntegrationQA:
 
     def run(self):
         try:
-            for phase in [self.install_and_browse, self.crud_and_validation, self.tutorial_example, self.appointments_and_hospital, self.pharmacy, self.billing, self.concurrency, self.backups, self.reports_and_safety]:
+            for phase in [self.install_and_browse, self.current_data_and_schema, self.crud_and_validation, self.tutorial_example, self.appointments_and_hospital, self.pharmacy, self.billing, self.concurrency, self.backups, self.reports_and_safety]:
                 try:
                     phase()
                 except Exception as error:
@@ -381,7 +467,7 @@ class IntegrationQA:
         self.report_data.update(fin_utc=utc(), estado='APROBADO' if passed == total else 'FALLIDO',
             resumen={'total':total,'correctas':passed,'fallidas':total-passed}, pruebas=self.checks,
             huellas_sha256={str(p.relative_to(PROJECT)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest()
-                for p in [APP/'db.py',APP/'catalog.py',Path(__file__).resolve(),PROJECT/'hospital_demostracion.sql'] if p.exists()})
+                for p in [APP/'db.py',APP/'catalog.py',Path(__file__).resolve(),PROJECT/'hospital_demostracion.sql',PROJECT/'07_contactos_y_catalogos.sql'] if p.exists()})
         self.args.output.write_text(json.dumps(self.report_data, ensure_ascii=False, indent=2, default=str)+'\n', encoding='utf-8')
         print(json.dumps({'estado':self.report_data['estado'],'resumen':self.report_data['resumen'],'evidencia':str(self.args.output)}, ensure_ascii=True))
         return 0 if passed == total else 1

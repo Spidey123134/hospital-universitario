@@ -5,7 +5,9 @@ Ejecutar desde la carpeta del proyecto: python -m app_hospital.main
 from __future__ import annotations
 
 import csv
+from dataclasses import replace
 from datetime import date, datetime, timedelta
+from decimal import Decimal, InvalidOperation
 import json
 import os
 from pathlib import Path
@@ -13,7 +15,7 @@ import queue
 import sys
 import threading
 import tkinter as tk
-from tkinter import filedialog, messagebox, ttk
+from tkinter import filedialog, messagebox, simpledialog, ttk
 import webbrowser
 
 from .db import HospitalService, ServiceError, Settings
@@ -87,6 +89,7 @@ class DataForm(ttk.Frame):
     def __init__(self, parent, fields, options, initial=None):
         super().__init__(parent, style='White.TFrame', padding=16)
         self.fields = fields; self.controls = {}; self.maps = {}; self.options = options
+        self.boolean_fields = set()
         self.initial = initial or {}
         self.columnconfigure(1, weight=1)
         for i, field in enumerate(fields):
@@ -98,6 +101,7 @@ class DataForm(ttk.Frame):
             box.columnconfigure(0, weight=1)
             ref = field.get('reference')
             dtype = field.get('data_type', field.get('type', 'varchar'))
+            boolean = dtype in ('boolean', 'bool', 'bit') or (dtype == 'tinyint' and field.get('column_type', '').lower().replace(' ', '').startswith('tinyint(1)'))
             enum = field.get('enum_values', field.get('choices', []))
             value = self.initial.get(name, field.get('default'))
             if isinstance(value, str) and ('CURRENT_TIMESTAMP' in value.upper() or value.upper() == 'NOW()'):
@@ -135,6 +139,14 @@ class DataForm(ttk.Frame):
                     except ServiceError as exc:
                         messagebox.showerror('No se pudo buscar', str(exc), parent=self.winfo_toplevel())
                 ttk.Button(box, text='Buscar en la lista', command=filter_reference).grid(row=1,column=1,padx=(6,0),pady=(5,0))
+            elif boolean:
+                choices = ['No', 'Sí']
+                if not required: choices.insert(0, '')
+                widget = ttk.Combobox(box, values=choices, state='readonly', width=55)
+                widget.grid(row=0,column=0,sticky='ew')
+                if isinstance(value, bytes): value = int.from_bytes(value, 'big')
+                widget.set('' if value is None else ('Sí' if str(value) in ('1','True') else 'No'))
+                self.boolean_fields.add(name)
             elif enum:
                 choices = [str(x) for x in enum]
                 if not required: choices = [''] + choices
@@ -165,15 +177,50 @@ class DataForm(ttk.Frame):
             if not value:
                 # On creation omit blank defaults, on editing nullable blanks clear them.
                 if required and field.get('default') is None:
+                    widget.focus_set()
                     raise ValueError('Completa el campo '+field.get('label',name)+'.')
                 if name in self.initial and field.get('nullable',False): result[name]=None
                 elif required and field.get('default') is None: result[name]=value
                 continue
             if field.get('reference'):
-                if value not in self.maps[name]: raise ValueError('Selecciona un registro de la lista de '+field.get('label',name)+'.')
+                if value not in self.maps[name]:
+                    widget.focus_set()
+                    raise ValueError('Selecciona un registro de la lista de '+field.get('label',name)+'.')
                 result[name]=self.maps[name][value]
-            else: result[name]=value
+            else:
+                try:
+                    result[name] = self._validate_value(field, value)
+                except ValueError:
+                    widget.focus_set()
+                    raise
         return result
+
+    def _validate_value(self, field, value):
+        name = field['name']; label = field.get('label', name.replace('_', ' ').capitalize())
+        dtype = field.get('data_type', field.get('type', 'varchar'))
+        if name in self.boolean_fields:
+            if value not in ('No', 'Sí'):
+                raise ValueError(label+': elige Sí o No.')
+            return int(value == 'Sí')
+        maximum = field.get('max_length')
+        if maximum is not None and len(value) > int(maximum):
+            raise ValueError(f'{label}: permite hasta {maximum} caracteres.')
+        choices = field.get('enum_values', field.get('choices', []))
+        if choices and value not in [str(choice) for choice in choices]:
+            raise ValueError(label+': elige una opción de la lista.')
+        try:
+            if dtype == 'date': datetime.strptime(value, '%Y-%m-%d')
+            elif dtype in ('datetime', 'timestamp'): datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
+            elif dtype == 'time': datetime.strptime(value, '%H:%M:%S')
+            elif dtype in ('tinyint','smallint','mediumint','int','bigint','integer'):
+                int(value)
+            elif dtype in ('decimal','float','double','numeric'):
+                if not Decimal(value).is_finite(): raise ValueError()
+        except (ValueError, InvalidOperation):
+            expected = {'date':'una fecha válida AAAA-MM-DD', 'datetime':'fecha y hora válidas AAAA-MM-DD HH:MM:SS',
+                        'timestamp':'fecha y hora válidas AAAA-MM-DD HH:MM:SS', 'time':'una hora válida HH:MM:SS'}
+            raise ValueError(label+': escribe '+expected.get(dtype, 'un número entero' if dtype in ('tinyint','smallint','mediumint','int','bigint','integer') else 'un número válido con punto decimal')+'.') from None
+        return value
 
 
 class HospitalApp(tk.Tk):
@@ -182,7 +229,7 @@ class HospitalApp(tk.Tk):
         self.title('Hospital universitario · Gestión de datos')
         self.geometry('1280x850'); self.minsize(1020,700)
         self.configure(bg=BG)
-        self.service=None; self.busy=False; self.current_table=None; self.offset=0
+        self.service=None; self.busy=False; self.read_only=False; self.current_table=None; self.offset=0
         self.catalog=[]; self.metadata={}; self.workflows_data=[]
         self._jobs=queue.Queue()
         self.style=ttk.Style(self); self.style.theme_use('clam')
@@ -220,7 +267,7 @@ class HospitalApp(tk.Tk):
         self.test_button=ttk.Button(actions,text='Probar conexión',command=self.test_connection); self.test_button.pack(side='left',padx=3)
         self.install_button=ttk.Button(actions,text='Crear base con ejemplos',command=self.install_demo); self.install_button.pack(side='left',padx=3)
         self.open_button=ttk.Button(actions,text='Abrir hospital',style='Accent.TButton',command=self.open_hospital); self.open_button.pack(side='left',padx=3)
-        self.status=tk.StringVar(value='Paso 1: revisa la conexión. Paso 2: crea la base una sola vez. Paso 3: abre el hospital.')
+        self.status=tk.StringVar(value='Prueba la conexión. Si tu base ya existe, pulsa Abrir hospital. Crea una base nueva solo si todavía no tienes una.')
         statusline=ttk.Frame(self,padding=(24,8)); statusline.pack(fill='x')
         ttk.Label(statusline,textvariable=self.status,wraplength=1100).pack(side='left')
         self.progress=ttk.Progressbar(statusline,mode='indeterminate',length=110); self.progress.pack(side='right')
@@ -233,10 +280,15 @@ class HospitalApp(tk.Tk):
         self.protocol('WM_DELETE_WINDOW',self.close)
 
     def _read_config(self):
-        try:
-            data=json.loads(CONFIG.read_text(encoding='utf-8'))
-            return {key:value for key,value in data.items() if key in ('host','port','user','database')}
-        except (OSError,ValueError,AttributeError): return {}
+        # El perfil local es opcional y vive fuera del repositorio. Nunca se
+        # copia su contraseña al formulario ni al archivo de preferencias.
+        for path in (CONFIG, ROOT.parent/'mysql_local'/'privado'/'configuracion.json'):
+            try:
+                data=json.loads(path.read_text(encoding='utf-8'))
+                result={key:value for key,value in data.items() if key in ('host','port','user','database') and isinstance(value,(str,int))}
+                if result: return result
+            except (OSError,ValueError,AttributeError): pass
+        return {}
 
     def _settings(self):
         values={key:var.get().strip() if key!='password' else var.get() for key,var in self.connection_vars.items()}
@@ -260,7 +312,7 @@ class HospitalApp(tk.Tk):
                 self.busy=False; self.progress.stop()
                 for button in (self.test_button,self.install_button,self.open_button): button.configure(state='normal')
                 for entry in self.connection_entries: entry.configure(state='normal')
-                for picker in (self.table_picker,self.workflow_picker,self.report_picker): picker.configure(state='readonly')
+                for picker in (self.module_picker,self.table_picker,self.workflow_picker,self.report_picker): picker.configure(state='readonly')
                 if ok:
                     try: callback(value)
                     except (ServiceError,ValueError,OSError) as exc: self._error(str(exc))
@@ -276,7 +328,7 @@ class HospitalApp(tk.Tk):
         self.busy=True; self.status.set(label); self.progress.start(12)
         for button in (self.test_button,self.install_button,self.open_button): button.configure(state='disabled')
         for entry in self.connection_entries: entry.configure(state='disabled')
-        for picker in (self.table_picker,self.workflow_picker,self.report_picker): picker.configure(state='disabled')
+        for picker in (self.module_picker,self.table_picker,self.workflow_picker,self.report_picker): picker.configure(state='disabled')
         def worker():
             try: self._jobs.put((True,task(),callback))
             except (ServiceError,ValueError,OSError) as exc: self._jobs.put((False,str(exc),callback))
@@ -299,14 +351,20 @@ class HospitalApp(tk.Tk):
         except (ValueError,ServiceError) as exc: return self._error(str(exc))
         def success(result):
             self._save_config()
-            self.status.set('Conexión correcta al servidor MySQL. Ahora crea la base si es nueva o pulsa Abrir hospital.')
-            messagebox.showinfo('Conexión correcta','El servidor respondió. Si esta es la primera vez, pulsa Crear base con ejemplos. Si ya tienes la base, pulsa Abrir hospital.',parent=self)
+            if not result.get('database_exists'):
+                text='El servidor respondió. La base indicada no existe todavía. Pulsa Crear base con ejemplos para crearla, o revisa el nombre si ya tenías una base.'
+            elif result.get('compatible'):
+                text='La base ya existe y se encontraron las tablas del hospital. Pulsa Abrir hospital para trabajar con tus datos; no necesitas crearla de nuevo.'
+            else:
+                text='El servidor respondió, pero la base está incompleta o no contiene las tablas del hospital. Revisa el nombre de la base o utiliza otro nombre para crear una nueva. No se reemplazó ningún dato.'
+            self.status.set(text)
+            messagebox.showinfo('Conexión correcta',text,parent=self)
         self._run('Probando conexión con el servidor...',service.test_connection,success)
 
     def install_demo(self):
         try: service=HospitalService(self._settings())
         except (ValueError,ServiceError) as exc: return self._error(str(exc))
-        if not messagebox.askyesno('Crear base con ejemplos','Se creará una base NUEVA llamada '+service.settings.database+' con las 36 tablas y datos ficticios. Si ya existe, la aplicación se detendrá sin reemplazarla.\n\n¿Crear esta base nueva?',parent=self): return
+        if not messagebox.askyesno('Crear base con ejemplos','Se creará una base NUEVA llamada '+service.settings.database+' con 36 tablas, 789 registros y los nombres y contactos completados del proyecto. Si ya existe, la aplicación se detendrá sin reemplazarla.\n\n¿Crear esta base nueva?',parent=self): return
         def success(result):
             self._save_config(); self.status.set('Base creada con ejemplos. Pulsa Abrir hospital para ver y agregar registros.')
             messagebox.showinfo('Base lista','Se creó la demostración. Pulsa Abrir hospital. En Inicio verás cuántos registros tiene cada tabla.',parent=self)
@@ -315,14 +373,22 @@ class HospitalApp(tk.Tk):
     def open_hospital(self):
         try: service=HospitalService(self._settings())
         except (ValueError,ServiceError) as exc: return self._error(str(exc))
-        def task(): return service.tables(),service.counts(),service.workflows(),service.list_reports()
+        def task():
+            validation=service.validate_schema()
+            return service.tables(),service.counts(),service.workflows(),service.list_reports(),validation
         def success(data):
-            self.service=service; self.catalog,counts,self.workflows_data,reports=data
+            self.service=service; self.catalog,counts,self.workflows_data,reports,validation=data
+            self.read_only=bool(validation.get('read_only'))
+            if self.read_only:
+                self.catalog=[dict(t,can_create=False,can_update=False,note='Tu cuenta de MySQL permite consultar. Puedes ver y exportar datos; para guardar cambios necesitas una cuenta con permisos de escritura.') for t in self.catalog]
+            self.workflow_save_button.configure(state='disabled' if self.read_only else 'normal')
             self.metadata={}; self._save_config()
             for child in self.workflow_scroll.body.winfo_children(): child.destroy()
             self.workflow_form=None; self.workflow_current=None; self.workflow_picker.set('')
             self.workflow_description.set('Elige una operación para esta base.'); self.workflow_result.set('')
             self.report_grid.fill([],[]); self.report_note.set(''); self.record_grid.fill([],[])
+            self.module_picker.configure(values=['Todas las áreas']+list(dict.fromkeys(t['module'] for t in self.catalog)))
+            self.module_picker.set('Todas las áreas')
             self.table_picker.configure(values=[self._table_label(t) for t in self.catalog])
             first=next((i for i,t in enumerate(self.catalog) if t['name']=='pacientes'),0)
             self.table_picker.current(first); self.current_table=self.catalog[first]['name']
@@ -379,6 +445,10 @@ class HospitalApp(tk.Tk):
     def _build_records(self):
         page=self.pages['Registros']
         line=ttk.Frame(page); line.pack(fill='x')
+        ttk.Label(line,text='Área').pack(side='left',padx=(0,6))
+        self.module_picker=ttk.Combobox(line,state='readonly',width=23,values=['Todas las áreas'])
+        self.module_picker.set('Todas las áreas'); self.module_picker.pack(side='left',padx=(0,12))
+        self.module_picker.bind('<<ComboboxSelected>>',self.select_module)
         ttk.Label(line,text='Tabla').pack(side='left',padx=(0,8))
         self.table_picker=ttk.Combobox(line,state='readonly',width=72)
         self.table_picker.pack(side='left',fill='x',expand=True); self.table_picker.bind('<<ComboboxSelected>>',self.select_table)
@@ -391,32 +461,48 @@ class HospitalApp(tk.Tk):
         ttk.Button(searchline,text='Mostrar todos',command=self.clear_search).pack(side='left')
         self.new_button=ttk.Button(searchline,text='Nuevo registro',style='Accent.TButton',command=self.new_record); self.new_button.pack(side='right')
         self.edit_button=ttk.Button(searchline,text='Editar seleccionado',command=self.edit_record); self.edit_button.pack(side='right',padx=7)
+        self.view_button=ttk.Button(searchline,text='Ver registro',command=self.view_record); self.view_button.pack(side='right')
         self.table_note=tk.StringVar(value='Abre el hospital para ver los registros. Aquí puedes consultar las 36 tablas.')
         ttk.Label(page,textvariable=self.table_note,wraplength=1100,foreground=MUTED).pack(anchor='w',pady=(0,8))
         self.record_grid=GridTable(page); self.record_grid.pack(fill='both',expand=True)
-        self.record_grid.tree.bind('<Double-1>',lambda e:self.edit_record())
-        foot=ttk.Frame(page); foot.pack(fill='x',pady=(10,0))
+        self.record_grid.tree.bind('<Double-1>',lambda e:self.view_record())
+        foot=ttk.Frame(page); foot.pack(side='bottom',before=self.record_grid,fill='x',pady=(10,0))
         self.pagination=tk.StringVar(value='')
         ttk.Label(foot,textvariable=self.pagination).pack(side='left')
-        ttk.Button(foot,text='Exportar CSV',command=lambda:self.export_grid(self.record_grid)).pack(side='right')
+        ttk.Button(foot,text='Exportar página a CSV',command=lambda:self.export_grid(self.record_grid)).pack(side='right')
         self.next_button=ttk.Button(foot,text='Siguiente',command=lambda:self.page_records(200)); self.next_button.pack(side='right',padx=6)
         self.prev_button=ttk.Button(foot,text='Anterior',command=lambda:self.page_records(-200)); self.prev_button.pack(side='right')
 
     def goto_table(self,name):
         if self.busy: return
         if not self.service: return self._error('Primero pulsa Abrir hospital.')
+        self.module_picker.set('Todas las áreas')
+        self.table_picker.configure(values=[self._table_label(t) for t in self.catalog])
         for i,table in enumerate(self.catalog):
             if table['name']==name:
                 self.table_picker.current(i); self.select_table(); self.tabs.select(self.pages['Registros']); return
+
+    def _filtered_tables(self):
+        module=self.module_picker.get()
+        return [t for t in self.catalog if module=='Todas las áreas' or t['module']==module]
+
+    def select_module(self,event=None):
+        if self.busy: return
+        tables=self._filtered_tables()
+        self.table_picker.configure(values=[self._table_label(t) for t in tables])
+        if not tables: self.table_picker.set(''); return
+        index=next((i for i,t in enumerate(tables) if t['name']==self.current_table),0)
+        self.table_picker.current(index); self.select_table()
 
     def select_table(self,event=None):
         if self.busy:
             for i,table in enumerate(self.catalog):
                 if table['name']==self.current_table: self.table_picker.current(i)
             return
+        tables=self._filtered_tables()
         i=self.table_picker.current()
         if i<0: return
-        self.current_table=self.catalog[i]['name']; self.search.set(''); self.offset=0
+        self.current_table=tables[i]['name']; self.search.set(''); self.offset=0
         self.load_records()
 
     def search_records(self):
@@ -479,7 +565,7 @@ class HospitalApp(tk.Tk):
         except (ServiceError,ValueError) as exc:
             window.destroy(); return self._error(str(exc))
         self.active_form=form; self.active_form_window=window
-        buttons=ttk.Frame(window,padding=16); buttons.pack(fill='x')
+        buttons=ttk.Frame(window,padding=16); buttons.pack(side='bottom',before=scroll,fill='x')
         form_status=tk.StringVar(value='')
         ttk.Label(buttons,textvariable=form_status,wraplength=600).pack(side='left')
         def save():
@@ -506,6 +592,28 @@ class HospitalApp(tk.Tk):
         if row is None: return self._error('Haz clic en una fila de la tabla y después pulsa Editar seleccionado.')
         self._record_form(row)
 
+    def view_record(self):
+        if self.busy: return
+        row=self.record_grid.selected()
+        if row is None: return self._error('Selecciona una fila para ver todos sus datos.')
+        info=next(t for t in self.catalog if t['name']==self.current_table)
+        window=tk.Toplevel(self); window.title('Ver registro · '+info['label'])
+        window.geometry('820x620'); window.minsize(600,400); window.transient(self)
+        ttk.Label(window,text=info['label'],font=('Segoe UI',17,'bold'),padding=16).pack(anchor='w')
+        ttk.Label(window,text='Vista de lectura. Puedes seleccionar y copiar el texto; aquí no se modifica la base.',padding=(16,0),wraplength=760).pack(anchor='w')
+        frame=ttk.Frame(window,padding=16); frame.pack(fill='both',expand=True)
+        text=tk.Text(frame,wrap='word',font=('Segoe UI',11),background='white',relief='flat',padx=14,pady=10)
+        bar=ttk.Scrollbar(frame,orient='vertical',command=text.yview); text.configure(yscrollcommand=bar.set)
+        bar.pack(side='right',fill='y'); text.pack(fill='both',expand=True)
+        labels={c['name']:c['label'] for c in self.metadata.get(self.current_table,[])}
+        for field,value in row.items():
+            text.insert('end',labels.get(field,field.replace('_',' ').capitalize())+'\n','label')
+            text.insert('end',(display(value) if value is not None else '(Sin dato)')+'\n\n')
+        text.tag_configure('label',font=('Segoe UI',10,'bold'),foreground=BLUE)
+        text.configure(state='disabled')
+        ttk.Button(window,text='Cerrar',command=window.destroy).pack(anchor='e',padx=16,pady=(0,14))
+        self.details_window=window; self.details_text=text
+
     def _build_operations(self):
         page=self.pages['Operaciones']
         ttk.Label(page,text='Operaciones del hospital',font=('Segoe UI',16,'bold')).pack(anchor='w')
@@ -515,10 +623,11 @@ class HospitalApp(tk.Tk):
         self.workflow_description=tk.StringVar(value='Abre el hospital y elige una operación de la lista.')
         ttk.Label(page,textvariable=self.workflow_description,wraplength=1080).pack(anchor='w',pady=12)
         self.workflow_scroll=ScrollFrame(page); self.workflow_scroll.pack(fill='both',expand=True)
-        foot=ttk.Frame(page); foot.pack(fill='x',pady=(10,0))
+        foot=ttk.Frame(page); foot.pack(side='bottom',before=self.workflow_scroll,fill='x',pady=(10,0))
         self.workflow_result=tk.StringVar(value='')
         ttk.Label(foot,textvariable=self.workflow_result,wraplength=850).pack(side='left')
-        ttk.Button(foot,text='Guardar operación',style='Accent.TButton',command=self.save_workflow).pack(side='right')
+        self.workflow_save_button=ttk.Button(foot,text='Guardar operación',style='Accent.TButton',command=self.save_workflow)
+        self.workflow_save_button.pack(side='right')
         self.workflow_form=None; self.workflow_current=None
 
     def select_workflow(self,event=None):
@@ -551,6 +660,7 @@ class HospitalApp(tk.Tk):
     def save_workflow(self):
         try:
             service=self._require_service()
+            if self.read_only: raise ValueError('Tu cuenta de MySQL es de consulta. Necesitas permisos de escritura para guardar una operación.')
             if not self.workflow_form or not self.workflow_current: raise ValueError('Elige una operación de la lista.')
             workflow=self.workflow_current; values=self.workflow_form.values()
         except ValueError as exc: return self._error(str(exc))
@@ -569,7 +679,7 @@ class HospitalApp(tk.Tk):
         bar=ttk.Frame(page); bar.pack(fill='x')
         self.report_picker=ttk.Combobox(bar,state='readonly',width=75); self.report_picker.pack(side='left',fill='x',expand=True)
         ttk.Button(bar,text='Ver consulta',style='Accent.TButton',command=self.show_report).pack(side='left',padx=8)
-        ttk.Button(bar,text='Exportar CSV',command=lambda:self.export_grid(self.report_grid)).pack(side='right')
+        ttk.Button(bar,text='Exportar filas mostradas a CSV',command=lambda:self.export_grid(self.report_grid)).pack(side='right')
         self.report_note=tk.StringVar(value='')
         ttk.Label(page,textvariable=self.report_note,wraplength=1100).pack(anchor='w',pady=10)
         self.report_grid=GridTable(page); self.report_grid.pack(fill='both',expand=True)
@@ -618,8 +728,16 @@ class HospitalApp(tk.Tk):
         except (ValueError,ServiceError) as exc: return self._error(str(exc))
         path=filedialog.askopenfilename(parent=self,title='Elegir respaldo del hospital',filetypes=[('Respaldo del hospital','*.hospital.json'),('JSON','*.json')])
         if not path: return
-        if not messagebox.askyesno('Restaurar en una base nueva','Destino: '+service.settings.database+'.\n\nEl nombre del campo Base de datos debe ser NUEVO. Si ya existe, se rechazará la restauración. Cambia ese campo antes de continuar si quieres conservar la base actual.\n\n¿Crear este destino nuevo desde el respaldo?',parent=self): return
-        self._run('Restaurando los datos en la base nueva...',lambda:service.restore_backup(path),lambda result:(self.status.set('Respaldo restaurado. Pulsa Abrir hospital.'),messagebox.showinfo('Restauración terminada','Se creó el destino nuevo con los datos del respaldo. Pulsa Abrir hospital.',parent=self)))
+        destination=simpledialog.askstring('Nombre de la copia nueva','Escribe un nombre para la base nueva. Tu base actual se conservará.\nUsa letras sin acentos, números y guion bajo.',initialvalue=service.settings.database[:58]+'_copia',parent=self)
+        if destination is None: return
+        try: service=HospitalService(replace(service.settings,database=destination.strip()))
+        except (ValueError,ServiceError) as exc: return self._error(str(exc))
+        if not messagebox.askyesno('Restaurar en una base nueva','Se creará '+service.settings.database+' con los datos del respaldo. Si ya existe, la operación se rechazará.\n\n¿Crear esta copia nueva?',parent=self): return
+        def success(result):
+            self.connection_vars['database'].set(service.settings.database)
+            self.status.set('Respaldo restaurado en '+service.settings.database+'. Pulsa Abrir hospital para usar esta copia.')
+            messagebox.showinfo('Restauración terminada','Se creó la copia nueva. Tu base anterior se conserva. Pulsa Abrir hospital para abrir la copia restaurada.',parent=self)
+        self._run('Restaurando los datos en la base nueva...',lambda:service.restore_backup(path),success)
 
     def _build_help(self):
         page=self.pages['Guía']
@@ -627,17 +745,21 @@ class HospitalApp(tk.Tk):
         guide='''PRIMER USO
 1. Instala Python y MySQL Server. El programa necesita que MySQL esté iniciado.
 2. Escribe los datos de conexión de MySQL en los campos de arriba.
-3. Pulsa Probar conexión. Después, Crear base con ejemplos una sola vez.
-4. Pulsa Abrir hospital. Inicio muestra los conteos de las 36 tablas.
+3. Pulsa Probar conexión. Si tu base ya existe, pulsa Abrir hospital.
+4. Si todavía no existe, pulsa Crear base con ejemplos una sola vez y después Abrir hospital.
+En esta computadora el servidor preparado usa el puerto 3307. En otras, usa el puerto de su MySQL.
 
 AGREGAR INFORMACIÓN
-En Registros elige Pacientes, pulsa Nuevo registro, completa los campos y Guarda.
+En Registros puedes filtrar por Área. Elige Pacientes, pulsa Nuevo registro, completa los campos y Guarda.
+Ver registro o un doble clic muestran todos los datos, incluidos los historiales que no se editan.
+Los campos de Sí/No se eligen de una lista. Los formatos se revisan antes de guardar.
 Las listas de relaciones muestran nombres para elegir médicos, pacientes o consultas.
 Algunas tablas guardan historial: para citas, entregas, movimientos y pagos usa Operaciones.
 
 VER Y GUARDAR UNA COPIA
 Consultas reúne información de varias tablas sin que escribas código.
-Exportar CSV guarda solo las filas que estás viendo. Crear respaldo completo conserva toda la base.
+Exportar página a CSV guarda solo las filas que estás viendo. Crear respaldo completo conserva toda la base.
+Restaurar respaldo pide un nombre nuevo y conserva la base que ya estabas usando.
 
 FECHAS
 Fecha: AAAA-MM-DD, por ejemplo 2002-03-15.
@@ -652,7 +774,7 @@ Las cuentas de usuarios de las tablas son parte del modelo académico; este prog
         text.insert('1.0',guide); text.configure(state='disabled'); text.pack(fill='both',expand=True,pady=12)
         line=ttk.Frame(page); line.pack(fill='x')
         ttk.Button(line,text='Abrir tutorial PDF',style='Accent.TButton',command=lambda:self.open_file(ROOT/'tutorial_interfaz'/'tutorial_interfaz_hospital.pdf')).pack(side='left')
-        ttk.Button(line,text='Abrir tutorial Word',command=lambda:self.open_file(ROOT/'tutorial_interfaz'/'tutorial_interfaz_hospital.docx')).pack(side='left',padx=8)
+        ttk.Button(line,text='Abrir tutorial en texto',command=lambda:self.open_file(ROOT/'tutorial_interfaz'/'TUTORIAL.md')).pack(side='left',padx=8)
         ttk.Button(line,text='Abrir carpeta del proyecto',command=lambda:self.open_file(ROOT)).pack(side='left')
 
     def open_file(self,path):

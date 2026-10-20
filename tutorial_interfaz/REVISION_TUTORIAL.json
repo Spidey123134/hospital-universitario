@@ -1,8 +1,10 @@
 {
   "documento": "tutorial_interfaz_hospital",
+  "version": "2026-10-19",
+  "formato_actual": "PDF y Markdown",
   "paginas": 16,
   "tamano": "Carta 8.5 x 11 pulgadas",
-  "cuerpo_puntos": 11.5,
+  "cuerpo_puntos": 10.5,
   "capturas_reales": 6,
   "png_revisadas_visualmente": [
     1,
@@ -25,14 +27,31 @@
   "titulo_negro_sin_borde": true,
   "sin_paginas_vacias": true,
   "sin_recortes_ni_solapamientos_en_revision_visual": true,
+  "generacion_pdf": "ReportLab desde TUTORIAL.md con seis capturas reales recortadas por encuadre",
+  "renderizacion": "Poppler pdftoppm 130 dpi",
   "notas": [
-    "Los escenarios del tutorial se probaron mediante el servicio de la aplicación en MySQL real dentro de las pruebas de interfaz.",
-    "Las capturas muestran una instancia aislada de prueba; el texto distingue su puerto, base y fechas de los datos que utilizará el lector.",
-    "La exportación CSV describe únicamente las filas visibles; respaldo y restauración usan JSON completo de las 36 tablas."
+    "Se distingue abrir una base existente de crear una nueva; Probar conexión solo verifica.",
+    "La nueva instalación aplica la actualización 07 de nombres y contactos.",
+    "El manual explica filtro por área, lectura del historial, campos Sí/No y permisos MySQL de consulta.",
+    "CSV guarda las filas mostradas; respaldo y restauración usan JSON completo de las 36 tablas.",
+    "La restauración solicita un nombre nuevo en un diálogo y conserva el original.",
+    "Las capturas usan una base UUID de pruebas en el puerto 3307; el texto explica los datos propios de cada integrante.",
+    "El Word de la carpeta es una versión anterior, identificada como tal en README; no se regeneró por faltar el conversor necesario para su revisión visual."
   ],
   "sha256": {
-    "TUTORIAL.md": "ca9871f890f34b35e63e4b1664ad45ee4050f3d4271d82f24fd2510a2154e328",
-    "tutorial_interfaz_hospital.docx": "f4676191380bbc7b87796bea1ee87e1fe2513d0f33c4c4cd4466ad789bc57487",
-    "tutorial_interfaz_hospital.pdf": "c02de8648f6a45fd13c893fb9b1ce3a4b334f238623d7376b2227d3fe402800a"
+    "TUTORIAL.md": "f7c5253dfa93338df2e043ab6f148dafed29fc26988178ad7a018a9fedda3091",
+    "generar_pdf.py": "5067e5a8db5fde83294295da0b0f676d422a830efbbcca0f5e83b3bcfeb431ff",
+    "tutorial_interfaz_hospital.pdf": "3976bb6f2acf8a181fd0148c3404ec2c7324771fc006c5f91c2695000cf3c449",
+    "imagenes/01_conexion.png": "eca2da0dcfa26cd92313294a7f6d40af24307eed48c510c49766116806829a30",
+    "imagenes/02_inicio.png": "0998edcafcd8e287c2d7629f3b23f0da94d6527166089780c6f90f0dce27c622",
+    "imagenes/03_pacientes.png": "be0bb98b62b7e4c0a18b89562f9c42a8841815fc465d536e0339e49108679a82",
+    "imagenes/04_nuevo_paciente.png": "c2c54ef322be95842f60e8390cf7a3a464033484421d624e67e8a3c278a48501",
+    "imagenes/05_agendar_cita.png": "7070721aae8c3fc14cbd13e5711457136ac0e20c0833cc9fc1b524301aa327e9",
+    "imagenes/06_consulta_recetas.png": "e9aa3efa3f30a136701396b22d9ac8df49a3c8d473083c4b98f6b630d78dd080"
+  },
+  "word_version_anterior": {
+    "archivo": "tutorial_interfaz_hospital.docx",
+    "sha256": "f4676191380bbc7b87796bea1ee87e1fe2513d0f33c4c4cd4466ad789bc57487",
+    "se_presenta_como_manual_actual": false
   }
 }

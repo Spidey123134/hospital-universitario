@@ -1,9 +1,9 @@
 {
-  "fecha_utc": "2026-10-15T04:15:30.076921+00:00",
+  "fecha_utc": "2026-10-20T02:50:52.111709+00:00",
   "estado": "APROBADO",
   "resumen": {
-    "total": 23,
-    "correctas": 23,
+    "total": 34,
+    "correctas": 34,
     "fallidas": 0
   },
   "pruebas": [
@@ -15,7 +15,7 @@
     {
       "nombre": "Probar conexion desde boton funciona",
       "correcta": true,
-      "detalle": "[('info', 'Conexión correcta', 'El servidor respondió. Si esta es la primera vez, pulsa Crear base con ejemplos. Si ya tienes la base, pulsa Abrir hospital.')]"
+      "detalle": "[('info', 'Conexión correcta', 'El servidor respondió. La base indicada no existe todavía. Pulsa Crear base con ejemplos para crearla, o revisa el nombre si ya tenías una base.')]"
     },
     {
       "nombre": "Crear base desde interfaz funciona",
@@ -24,6 +24,11 @@
     },
     {
       "nombre": "La interfaz abre 36 tablas",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "La instalacion muestra Elena y su correo coherente",
       "correcta": true,
       "detalle": ""
     },
@@ -43,7 +48,37 @@
       "detalle": ""
     },
     {
+      "nombre": "En 1020x700 la paginacion queda visible",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "En 1020x700 Guardar operacion queda visible",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "El filtro de area mantiene una tabla valida",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Ir a Pacientes restaura Todas las areas",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
       "nombre": "La tabla Pacientes muestra 30 filas",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "El formulario muestra Activo mediante Si o No",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Una fecha imposible se rechaza antes de enviar a MySQL",
       "correcta": true,
       "detalle": ""
     },
@@ -64,6 +99,11 @@
     },
     {
       "nombre": "No se cierra un formulario mientras guarda",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Ver registro muestra el historial de pagos sin editarlo",
       "correcta": true,
       "detalle": ""
     },
@@ -108,6 +148,21 @@
       "detalle": ""
     },
     {
+      "nombre": "Cancelar el nombre de restauracion conserva conexion y datos",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Restaurar cambia al destino solo despues de crear la copia",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "La restauracion conserva la base original",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
       "nombre": "La restauracion desde el boton conserva los datos",
       "correcta": true,
       "detalle": ""
@@ -120,10 +175,10 @@
     {
       "nombre": "Solo se elimina la base UUID propia",
       "correcta": true,
-      "detalle": "hospital_prueba_05504f360ff7414192b21534d62443e4"
+      "detalle": "hospital_prueba_2064a00c35684fa09e68e3cab3e977d7"
     }
   ],
   "huellas_sha256": {
-    "app_hospital/main.py": "e2e2b3b305c5c9d98a339ab270c1598d797f893c3e58e3fca9dcda47334d326b"
+    "app_hospital/main.py": "05125a89f71c257f2fef93ea5a0ea789885a73c137091ccffd5fb434bb588bd5"
   }
 }

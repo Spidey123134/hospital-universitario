@@ -32,10 +32,17 @@ MySQL 8.0.16 o posterior; servidor local y respaldo verificados en MySQL 8.0.45.
 
 Para el trabajo con MySQL se conservan el [tutorial de Workbench](tutorial/README.md), los [scripts del diseño y ejemplos](DATOS_DEMOSTRACION.md) y [hospital_practica.sql](tutorial/hospital_practica.sql).
 
-## Python queda para una etapa posterior
+## Aplicación de Python
 
-La interfaz está separada en [app_hospital](app_hospital/README.md). Se conecta a MySQL y no sustituye a la base. Para esa fase quedan [su tutorial PDF](tutorial_interfaz/tutorial_interfaz_hospital.pdf), [Word](tutorial_interfaz/tutorial_interfaz_hospital.docx) y `ABRIR_HOSPITAL.bat`.
+La base y la aplicación son entregas separadas. La interfaz de escritorio de [app_hospital](app_hospital/README.md) permite trabajar con la base mediante botones y formularios: pacientes, citas, consultas, recetas, farmacia, hospitalización y cobros. Se conecta a MySQL; los registros siguen guardados en el servidor de cada integrante.
 
-Evidencias conservadas: [82 del modelo](VALIDACION.json), [28 del tutorial SQL](tutorial/VALIDACION_TUTORIAL.json), [122 de la ampliación](VALIDACION_DATOS_AMPLIADOS.json), [200 del servicio](VALIDACION_APP.json) y [23 de las ventanas](VALIDACION_INTERFAZ.json).
+1. Extrae **todo** el proyecto y comprueba que MySQL Server esté iniciado.
+2. Abre **ABRIR_HOSPITAL.bat**. Requiere Python 3.10 o posterior con Tkinter; la primera vez descarga las dependencias de `requirements.txt`.
+3. Escribe los datos de tu MySQL y pulsa **Probar conexión**. La aplicación indica si encontró una base compatible, si la base falta o si su estructura necesita revisión.
+4. Si ya tienes la base del proyecto, pulsa **Abrir hospital**. Si no existe, **Crear base con ejemplos** prepara una copia independiente con las 36 tablas, los 789 registros y la actualización de nombres y contactos.
+
+El [tutorial paso a paso](tutorial_interfaz/TUTORIAL.md) y el [PDF actualizado](tutorial_interfaz/tutorial_interfaz_hospital.pdf) explican los formularios y un ejercicio completo. **Probar conexión solo revisa; no instala ni modifica la base.** La aplicación conserva las bases existentes.
+
+Informes disponibles: [modelo de datos](VALIDACION.json), [tutorial SQL](tutorial/VALIDACION_TUTORIAL.json), [datos ampliados](VALIDACION_DATOS_AMPLIADOS.json), [servicio de la aplicación](VALIDACION_APP.json), [ventanas de Python](VALIDACION_INTERFAZ.json) y [validación de formularios](VALIDACION_FORMULARIOS.json). Cada informe registra sus comprobaciones y la versión de los archivos revisados.
 
 Proyecto académico de Sistemas.

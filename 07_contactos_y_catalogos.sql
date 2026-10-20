@@ -181,4 +181,13 @@ UPDATE `usuarios` SET `nombre_usuario`=CASE WHEN `nombre_usuario` <=> 'demo.pers
 UPDATE `usuarios` SET `nombre_usuario`=CASE WHEN `nombre_usuario` <=> 'demo.personal.25' THEN 'daniel.leon' ELSE `nombre_usuario` END WHERE `usuario_id`=5;
 UPDATE `usuarios` SET `nombre_usuario`=CASE WHEN `nombre_usuario` <=> 'demo.personal.8' THEN 'raquel.campos' ELSE `nombre_usuario` END WHERE `usuario_id`=6;
 UPDATE `usuarios` SET `nombre_usuario`=CASE WHEN `nombre_usuario` <=> 'demo.personal.9' THEN 'carlos.mendoza' ELSE `nombre_usuario` END WHERE `usuario_id`=7;
+-- Nombres del personal inicial: conserva cualquier nombre que el equipo haya cambiado.
+UPDATE `personal` SET `nombre`='Elena' WHERE `personal_id`=1 AND `nombre`='Medica Uno';
+UPDATE `personal` SET `nombre`='Andrés' WHERE `personal_id`=2 AND `nombre`='Medico Dos';
+UPDATE `personal` SET `nombre`='Gabriela' WHERE `personal_id`=3 AND `nombre`='Medica Tres';
+UPDATE `personal` SET `nombre`='Laura' WHERE `personal_id`=4 AND `nombre`='Enfermeria Uno';
+UPDATE `personal` SET `nombre`='Héctor' WHERE `personal_id`=5 AND `nombre`='Enfermeria Dos';
+UPDATE `personal` SET `nombre`='Verónica' WHERE `personal_id`=6 AND `nombre`='Farmacia Uno';
+UPDATE `personal` SET `nombre`='Óscar' WHERE `personal_id`=7 AND `nombre`='Recepcion Uno';
+UPDATE `personal` SET `nombre`='Raquel' WHERE `personal_id`=8 AND `nombre`='Laboratorio Uno';
 COMMIT;

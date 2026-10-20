@@ -26,7 +26,7 @@ def main():
     parser.add_argument('--user',required=True)
     args=parser.parse_args()
     database='hospital_prueba_'+uuid.uuid4().hex
-    checks=[]; dialogs=[]; owned=False; copy_database=None
+    checks=[]; dialogs=[]; owned=False; copy_database=None; copy_owned=False
     capture_dir=ROOT/'capturas'; capture_dir.mkdir(exist_ok=True)
     qa=ROOT.parent/'tmp'/'app_gui'; qa.mkdir(parents=True,exist_ok=True)
     app=None
@@ -46,6 +46,9 @@ def main():
         app.lift(); app.update(); time.sleep(.25)
         x,y=app.winfo_rootx(),app.winfo_rooty()
         ImageGrab.grab(bbox=(x,y,x+app.winfo_width(),y+app.winfo_height()),all_screens=True).save(capture_dir/name)
+    def fully_visible(widget,window):
+        window.update_idletasks()
+        return bool(widget.winfo_ismapped()) and widget.winfo_width()>1 and widget.winfo_height()>1 and widget.winfo_rootx()>=window.winfo_rootx() and widget.winfo_rooty()>=window.winfo_rooty() and widget.winfo_rootx()+widget.winfo_width()<=window.winfo_rootx()+window.winfo_width() and widget.winfo_rooty()+widget.winfo_height()<=window.winfo_rooty()+window.winfo_height()
     password=os.environ.get('MYSQL_PWD','')
     connection=pymysql.connect(host=args.host,port=args.port,user=args.user,password=password,autocommit=True)
     try:
@@ -62,20 +65,41 @@ def main():
             check('Crear base desde interfaz funciona',not [x for x in dialogs if x[0]=='error'],str(dialogs[-1:]))
             app.open_hospital(); wait(app)
             check('La interfaz abre 36 tablas',len(app.catalog)==36)
+            first_doctor=next(row for row in app.service.browse('personal',limit=200)['rows'] if row['personal_id']==1)
+            check('La instalacion muestra Elena y su correo coherente',first_doctor['nombre']=='Elena' and first_doctor['apellido_paterno']=='Márquez' and first_doctor['email']=='elena.marquez.1@example.com')
             check('Inicio muestra 789 registros',app.card_vars['_total'].get()=='789')
             check('Todas las tablas se muestran con registros','0 tablas vacías' in app.count_summary.get())
             check('Los botones de respaldo son visibles en Inicio',app.backup_button.winfo_ismapped() and app.restore_button.winfo_ismapped() and app.backup_button.winfo_y()+app.backup_button.winfo_height()<=app.backup_button.master.winfo_height())
             capture(app,'02_inicio.png')
+            app.geometry('1020x700+30+20'); app.goto_table('pacientes'); wait(app)
+            check('En 1020x700 la paginacion queda visible',fully_visible(app.prev_button,app) and fully_visible(app.next_button,app))
+            app.tabs.select(app.pages['Operaciones']); app.update()
+            operation_button=next(button for frame in app.pages['Operaciones'].winfo_children() for button in frame.winfo_children() if isinstance(button,ui.ttk.Button) and button.cget('text')=='Guardar operación')
+            check('En 1020x700 Guardar operacion queda visible',fully_visible(operation_button,app))
+            app.geometry('1280x850+30+20'); app.tabs.select(app.pages['Registros']); app.update()
+            module=next(t['module'] for t in app.catalog if t['name']=='medicos')
+            app.module_picker.set(module); app.select_module(); wait(app)
+            filtered=[t for t in app.catalog if t['module']==module]
+            check('El filtro de area mantiene una tabla valida',app.current_table in {t['name'] for t in filtered} and len(app.table_picker.cget('values'))==len(filtered))
             app.goto_table('pacientes'); wait(app)
+            check('Ir a Pacientes restaura Todas las areas',app.module_picker.get()=='Todas las áreas' and app.current_table=='pacientes' and len(app.table_picker.cget('values'))==36)
             check('La tabla Pacientes muestra 30 filas',len(app.record_grid.rows)==30)
             capture(app,'03_pacientes.png')
             app.new_record(); app.update()
             form=app.active_form
-            sample={'expediente_clinico':'UNI-PRUEBA-001','nombre':'Daniela','apellido_paterno':'Ejemplo','apellido_materno':'Prueba','fecha_nacimiento':'2002-03-15','sexo':'F','telefono':'5550000000','email':'daniela@example.invalid','domicilio':'Domicilio ficticio del ejercicio'}
+            check('El formulario muestra Activo mediante Si o No',isinstance(form.controls['activo'],ui.ttk.Combobox) and form.controls['activo'].get()=='Sí')
+            sample={'expediente_clinico':'UNI-PRUEBA-001','nombre':'Daniela','apellido_paterno':'Serrano','apellido_materno':'Molina','fecha_nacimiento':'2002-03-15','sexo':'F','telefono':'5550000000','email':'daniela.serrano@example.com','domicilio':'Domicilio ficticio del ejercicio'}
             for name,value in sample.items():
                 widget=form.controls[name]
                 if isinstance(widget,ui.ttk.Combobox): widget.set(value)
                 else: widget.delete(0,'end'); widget.insert(0,value)
+            form.controls['fecha_nacimiento'].delete(0,'end'); form.controls['fecha_nacimiento'].insert(0,'2002-02-30')
+            previous_dialogs=len(dialogs)
+            with patch.object(app.service,'create',wraps=app.service.create) as create:
+                form.save(); app.update()
+                check('Una fecha imposible se rechaza antes de enviar a MySQL',not create.called and app.active_form_window.winfo_exists() and app.service.counts()['pacientes']==30 and any(d[0]=='error' and 'Fecha nacimiento' in d[2] for d in dialogs[previous_dialogs:]))
+            del dialogs[previous_dialogs:]
+            form.controls['fecha_nacimiento'].delete(0,'end'); form.controls['fecha_nacimiento'].insert(0,sample['fecha_nacimiento'])
             capture(app.active_form_window,'04_nuevo_paciente.png')
             form.save(); wait(app)
             check('Formulario guarda paciente en MySQL',app.service.counts()['pacientes']==31)
@@ -88,6 +112,11 @@ def main():
             app.busy=True; temporary_form.close(); app.update()
             check('No se cierra un formulario mientras guarda',app.active_form_window.winfo_exists())
             app.busy=False; temporary_form.close(); app.update()
+            app.goto_table('pagos'); wait(app)
+            app.record_grid.tree.selection_set('0'); app.view_record(); app.update()
+            details=app.details_text.get('1.0','end-1c')
+            check('Ver registro muestra el historial de pagos sin editarlo',str(app.edit_button.cget('state'))=='disabled' and str(app.details_text.cget('state'))=='disabled' and 'Monto' in details and str(app.record_grid.rows[0]['monto']) in details)
+            app.details_window.destroy()
             app.tabs.select(app.pages['Operaciones'])
             index=next(i for i,w in enumerate(app.workflows_data) if w['name']=='agendar_cita')
             app.workflow_picker.current(index); app.select_workflow(); app.update()
@@ -123,9 +152,15 @@ def main():
             with connection.cursor() as cur:
                 cur.execute('SELECT COUNT(*) FROM information_schema.schemata WHERE schema_name=%s',(copy_database,))
                 check('El destino de restauracion UUID esta libre',cur.fetchone()[0]==0)
-            app.connection_vars['database'].set(copy_database)
-            with patch.object(ui.filedialog,'askopenfilename',return_value=str(backup)): app.restore()
+            original_database=app.connection_vars['database'].get()
+            with patch.object(ui.filedialog,'askopenfilename',return_value=str(backup)),patch.object(ui.simpledialog,'askstring',return_value=None),patch.object(ui.HospitalService,'restore_backup') as restore_backup:
+                app.restore(); app.update()
+                check('Cancelar el nombre de restauracion conserva conexion y datos',not restore_backup.called and not app.busy and app.connection_vars['database'].get()==original_database and app.service.counts()['pacientes']==31)
+            with patch.object(ui.filedialog,'askopenfilename',return_value=str(backup)),patch.object(ui.simpledialog,'askstring',return_value=copy_database): app.restore()
+            copy_owned=True
             wait(app,180)
+            check('Restaurar cambia al destino solo despues de crear la copia',app.connection_vars['database'].get()==copy_database and app.service.settings.database==original_database)
+            check('La restauracion conserva la base original',app.service.counts()['pacientes']==31 and app.service.counts()['citas']==55)
             app.open_hospital(); wait(app)
             check('La restauracion desde el boton conserva los datos',app.service.counts()['pacientes']==31 and app.service.counts()['citas']==55)
             check('Al abrir una base se limpian los formularios anteriores',app.workflow_current is None and app.workflow_form is None and not app.report_grid.rows)
@@ -139,7 +174,7 @@ def main():
             except Exception: pass
         if owned:
             with connection.cursor() as cur: cur.execute('DROP DATABASE IF EXISTS `'+database+'`')
-        if copy_database:
+        if copy_owned:
             with connection.cursor() as cur: cur.execute('DROP DATABASE IF EXISTS `'+copy_database+'`')
         with connection.cursor() as cur:
             cur.execute('SELECT COUNT(*) FROM information_schema.schemata WHERE schema_name=%s',(database,))

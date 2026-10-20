@@ -12,10 +12,11 @@ from contextlib import contextmanager
 from dataclasses import dataclass, field
 from datetime import date, datetime, time, timedelta
 from decimal import Decimal, InvalidOperation
+from functools import lru_cache
 from pathlib import Path
 
 from .catalog import (ACCESS_READONLY, CREATE_READONLY, HISTORY_READONLY, LABELS,
-                      NOTES, OPTION_LABELS, REPORTS, ROUTINE_ONLY, TABLE_GROUPS,
+                      NOTES, OPTION_LABELS, REFERENCE_QUERIES, REPORTS, ROUTINE_ONLY, TABLE_GROUPS,
                       TABLES, UPDATE_READONLY, WORKFLOWS)
 
 try:
@@ -161,6 +162,23 @@ def display_value(value):
     return str(value)
 
 
+@lru_cache(maxsize=1)
+def expected_structure():
+    """Lee el contrato de nuestros SQL, nunca nombres recibidos del operador."""
+    try:
+        schema = (PROJECT / "01_esquema.sql").read_text(encoding="utf-8-sig")
+        rules = (PROJECT / "02_reglas.sql").read_text(encoding="utf-8-sig")
+    except OSError:
+        raise ServiceError("Faltan archivos del proyecto. Extraiga la carpeta completa, incluidos 01_esquema.sql y 02_reglas.sql.") from None
+    columns = {name: set(re.findall(r"(?m)^  ([a-z][a-z0-9_]*)\s", body))
+               for name, body in re.findall(r"(?ms)^CREATE TABLE ([a-z_]+) \(\r?\n(.*?)^\) ENGINE=", schema)}
+    objects = {kind: set(re.findall(r"(?m)^CREATE " + kind + r" ([a-z_]+)\b", rules))
+               for kind in ("VIEW", "PROCEDURE", "TRIGGER")}
+    if set(columns) != set(TABLES) or any(not names for names in columns.values()) or any(not names for names in objects.values()):
+        raise ServiceError("Los archivos de estructura no corresponden al catálogo de esta versión. Descargue el proyecto completo.")
+    return columns, objects
+
+
 class HospitalService:
     def __init__(self, settings: Settings):
         self.settings = settings
@@ -196,7 +214,7 @@ class HospitalService:
     @contextmanager
     def _connection(self, database=True, transaction=False):
         if pymysql is None:
-            raise ServiceError("Falta PyMySQL. Ejecute instalar_app.bat o instale las dependencias de requirements.txt.")
+            raise ServiceError("Falta PyMySQL. Ejecute ABRIR_HOSPITAL.bat o instale las dependencias de requirements.txt.")
         conn = None
         try:
             kwargs = dict(host=self.settings.host, port=self.settings.port, user=self.settings.user,
@@ -243,6 +261,49 @@ class HospitalService:
             raise ServiceError("Esta base todavía no existe. Cree la demostración o revise su nombre.")
         if not result["compatible"]:
             raise ServiceError("La base no contiene las 36 tablas del hospital. No se modificó. Cree una demostración con otro nombre.")
+        expected_columns, expected_objects = expected_structure()
+        with self._connection() as conn, conn.cursor() as cur:
+            cur.execute("SELECT TABLE_NAME AS table_name,COLUMN_NAME AS column_name FROM information_schema.COLUMNS WHERE TABLE_SCHEMA=%s", (self.settings.database,))
+            columns = {}
+            for row in cur.fetchall():
+                columns.setdefault(row["table_name"], set()).add(row["column_name"])
+            cur.execute("SELECT TABLE_NAME AS name FROM information_schema.VIEWS WHERE TABLE_SCHEMA=%s", (self.settings.database,))
+            views = {r["name"] for r in cur.fetchall()}
+            cur.execute("SELECT ROUTINE_NAME AS name FROM information_schema.ROUTINES WHERE ROUTINE_SCHEMA=%s AND ROUTINE_TYPE='PROCEDURE'", (self.settings.database,))
+            procedures = {r["name"] for r in cur.fetchall()}
+            cur.execute("SELECT TRIGGER_NAME AS name FROM information_schema.TRIGGERS WHERE TRIGGER_SCHEMA=%s", (self.settings.database,))
+            triggers = {r["name"] for r in cur.fetchall()}
+            # MySQL oculta ciertos metadatos a cuentas que solo tienen SELECT.
+            # No se les exige TRIGGER ni EXECUTE únicamente para poder consultar.
+            cur.execute("SHOW GRANTS")
+            grants = [str(next(iter(row.values()))) for row in cur.fetchall()]
+        allowed_read = {"USAGE", "SELECT", "SHOW VIEW", "SHOW_ROUTINE"}
+        privilege_lists = [re.match(r"GRANT (.+?) ON ", grant, re.I) for grant in grants]
+        read_only = bool(privilege_lists) and all(match and
+            set(part.strip().upper() for part in match[1].split(",")).issubset(allowed_read)
+            for match in privilege_lists)
+        missing_columns = {table: sorted(names - columns.get(table, set()))
+                           for table, names in expected_columns.items() if names - columns.get(table, set())}
+        missing_views = sorted(expected_objects["VIEW"] - views)
+        missing_procedures = sorted(expected_objects["PROCEDURE"] - procedures)
+        missing_triggers = sorted(expected_objects["TRIGGER"] - triggers)
+        result.update(missing_columns=missing_columns, missing_views=missing_views,
+                      missing_procedures=missing_procedures, missing_triggers=missing_triggers,
+                      read_only=read_only,
+                      rules_verified=not missing_procedures and not missing_triggers,
+                      column_count=sum(len(columns.get(t, ())) for t in TABLES),
+                      view_count=len(views), procedure_count=len(procedures), trigger_count=len(triggers))
+        if missing_columns or missing_views or ((missing_procedures or missing_triggers) and not read_only):
+            missing = []
+            if missing_columns:
+                missing.append("campos en " + ", ".join(missing_columns))
+            if missing_views:
+                missing.append("vistas: " + ", ".join(missing_views))
+            if missing_procedures:
+                missing.append("procedimientos: " + ", ".join(missing_procedures))
+            if missing_triggers:
+                missing.append("reglas: " + ", ".join(missing_triggers))
+            raise ServiceError("No se pudo comprobar la estructura completa del hospital. Faltan o no son visibles " + "; ".join(missing) + ". Revise la base y los permisos de la cuenta. No se modificó ningún dato.")
         return result
 
     def tables(self):
@@ -342,6 +403,8 @@ class HospitalService:
         limit, _ = self._page(limit)
         if table == "medicos" and column == "medico_id" and not filters:
             return self._doctor_options(search, limit)
+        if table in REFERENCE_QUERIES and column == REFERENCE_QUERIES[table][0]:
+            return self._related_options(table, column, cols, search, limit, filters)
         labels = OPTION_LABELS.get(table, tuple(c["name"] for c in metadata if c["name"] != column and c["data_type"] in ("varchar", "date", "datetime"))[:3])
         labels = tuple(c for c in labels if c in cols)
         where, params = [], []
@@ -361,6 +424,35 @@ class HospitalService:
             cur.execute("SELECT " + select + " FROM " + quote(table) + (" WHERE " + " AND ".join(where) if where else "") + " ORDER BY " + quote(column) + " LIMIT %s", params + [limit])
             rows = cur.fetchall()
         return [(r[column], " | ".join([str(r[column])] + [display_value(r[c]) for c in labels])) for r in rows]
+
+    def _related_options(self, table, column, columns, search, limit, filters):
+        query = REFERENCE_QUERIES[table][1]
+        clauses, params = [], []
+        for name, value in (filters or {}).items():
+            if name not in columns:
+                raise ServiceError("Filtro relacionado no permitido.")
+            field = "t." + quote(name)
+            if value is None:
+                clauses.append(field + " IS NULL")
+            elif isinstance(value, (tuple, list)) and value:
+                clauses.append(field + " IN (" + ",".join(["%s"] * len(value)) + ")")
+                params.extend(value)
+            else:
+                clauses.append(field + "=%s")
+                params.append(value)
+        if table == "camillas" and filters:
+            clauses.append("NOT EXISTS (SELECT 1 FROM asignaciones_camilla a WHERE a.camilla_id=t.camilla_id AND a.fin IS NULL)")
+        if clauses:
+            query += " WHERE " + " AND ".join(clauses)
+        wrapped = "SELECT value,label FROM (" + query + ") opciones"
+        if search:
+            if len(str(search)) > 200:
+                raise ServiceError("La búsqueda es demasiado larga.")
+            wrapped += " WHERE LOCATE(%s,CONCAT_WS(' ',value,label))>0"
+            params.append(str(search))
+        with self._connection() as conn, conn.cursor() as cur:
+            cur.execute(wrapped + " ORDER BY value LIMIT %s", params + [limit])
+            return [(row["value"], row["label"]) for row in cur.fetchall()]
 
     def _doctor_options(self, search="", limit=500, active_only=False):
         if len(str(search)) > 200:
@@ -556,6 +648,10 @@ class HospitalService:
             filters = {"estado": "ABIERTA"}
         elif field_name == "factura_id" and name == "registrar_pago":
             filters = {"estado": "EMITIDA"}
+        elif field_name == "cita_id" and name == "confirmar_cita":
+            filters = {"estado": "PROGRAMADA"}
+        elif field_name == "cita_id" and name == "cancelar_cita":
+            filters = {"estado": ("PROGRAMADA", "CONFIRMADA")}
         return self.reference_options(f["reference"]["table"], f["reference"]["column"], search, limit, filters)
 
     def run_workflow(self, name, values):
@@ -608,8 +704,10 @@ class HospitalService:
         source = re.sub(r"(?m)^(CREATE DATABASE|USE) hospital_universitario(?=[ ;])", lambda m: m[1] + " " + schema, source)
         return list(split_sql_script(source))
 
-    def install_demo(self):
+    def install_demo(self, personalized=True):
         statements = self._script("hospital_demostracion.sql")
+        if personalized:
+            statements += self._script("07_contactos_y_catalogos.sql")
         created, step = False, 0
         try:
             with self._connection(database=False) as conn, conn.cursor() as cur:

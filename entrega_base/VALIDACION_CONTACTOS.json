@@ -1,7 +1,7 @@
 {
-  "fecha_utc": "2026-10-17T04:35:48.326574+00:00",
+  "fecha_utc": "2026-10-20T02:51:30.508736+00:00",
   "estado": "APROBADO",
-  "version_datos": "contactos_y_catalogos_2026_10_16",
+  "version_datos": "contactos_y_catalogos_2026_10_19",
   "datos_ficticios": true,
   "telefonos_formato_10_digitos": 95,
   "correos_example_com": 59,
@@ -29,7 +29,7 @@
   "migracion_reproduce_base_actual": true,
   "migracion_idempotente": true,
   "copia_de_prueba_eliminada": true,
-  "script_sha256": "87441983ffe93dd8093112421329fe0ca6939e3a7ee532918e3dd0a5a809d719",
+  "script_sha256": "83d68f5d32be793e3a39059383025c84d3e2fea1c7af0638238e06faca319198",
   "nota_telefonos": "Datos sinteticos. No se garantiza que un numero este libre o no asignado.",
   "nota_correos": "example.com reservado por IANA; no son buzones operativos."
 }

@@ -63,6 +63,37 @@ OPTION_LABELS = {
     "usuarios": ("nombre_usuario",),
 }
 
+# Consultas fijas para que las relaciones se elijan por nombres y contexto.
+# El servicio solo agrega filtros sobre columnas verificadas del alias «t».
+REFERENCE_QUERIES = {
+    "citas": ("cita_id", """SELECT t.cita_id AS value,
+        CONCAT_WS(' | ',CONCAT('Cita ',t.cita_id),CONCAT_WS(' ',p.nombre,p.apellido_paterno,p.apellido_materno),
+        CONCAT('Médico: ',CONCAT_WS(' ',pe.nombre,pe.apellido_paterno)),CAST(t.inicio AS CHAR),t.estado) AS label
+        FROM citas t JOIN pacientes p ON p.paciente_id=t.paciente_id JOIN personal pe ON pe.personal_id=t.medico_id"""),
+    "consultas": ("consulta_id", """SELECT t.consulta_id AS value,
+        CONCAT_WS(' | ',CONCAT('Consulta ',t.consulta_id),CONCAT_WS(' ',p.nombre,p.apellido_paterno,p.apellido_materno),
+        CONCAT('Médico: ',CONCAT_WS(' ',pe.nombre,pe.apellido_paterno)),CAST(t.fecha AS CHAR),t.tipo) AS label
+        FROM consultas t JOIN pacientes p ON p.paciente_id=t.paciente_id JOIN personal pe ON pe.personal_id=t.medico_id"""),
+    "recetas": ("receta_id", """SELECT t.receta_id AS value,
+        CONCAT_WS(' | ',CONCAT('Receta ',t.receta_id),CONCAT_WS(' ',p.nombre,p.apellido_paterno,p.apellido_materno),
+        CONCAT('Médico: ',CONCAT_WS(' ',pe.nombre,pe.apellido_paterno)),CAST(t.fecha_prescripcion AS CHAR)) AS label
+        FROM recetas t JOIN consultas c ON c.consulta_id=t.consulta_id JOIN pacientes p ON p.paciente_id=c.paciente_id
+        JOIN personal pe ON pe.personal_id=c.medico_id"""),
+    "hospitalizaciones": ("hospitalizacion_id", """SELECT t.hospitalizacion_id AS value,
+        CONCAT_WS(' | ',CONCAT('Estancia ',t.hospitalizacion_id),CONCAT_WS(' ',p.nombre,p.apellido_paterno,p.apellido_materno),
+        CAST(t.fecha_ingreso AS CHAR),IF(t.fecha_alta IS NULL,'ABIERTA','CERRADA')) AS label
+        FROM hospitalizaciones t JOIN pacientes p ON p.paciente_id=t.paciente_id"""),
+    "lotes_medicamento": ("lote_id", """SELECT t.lote_id AS value,
+        CONCAT_WS(' | ',t.numero_lote,m.principio_activo,m.concentracion,CONCAT('Caduca ',t.fecha_caducidad)) AS label
+        FROM lotes_medicamento t JOIN medicamentos m ON m.medicamento_id=t.medicamento_id"""),
+    "facturas": ("factura_id", """SELECT t.factura_id AS value,
+        CONCAT_WS(' | ',t.folio,CONCAT_WS(' ',p.nombre,p.apellido_paterno,p.apellido_materno),t.estado) AS label
+        FROM facturas t JOIN pacientes p ON p.paciente_id=t.paciente_id"""),
+    "camillas": ("camilla_id", """SELECT t.camilla_id AS value,
+        CONCAT_WS(' | ',t.codigo,CONCAT('Habitación ',h.codigo),h.edificio,t.estado_operativo) AS label
+        FROM camillas t JOIN habitaciones h ON h.habitacion_id=t.habitacion_id"""),
+}
+
 REPORTS = {
     "expedientes": ("Consultas y nombres de pacientes", "Expediente, paciente, médico, fecha y motivo.", "SELECT * FROM v_expediente_consultas ORDER BY fecha DESC, consulta_id DESC"),
     "medicos": ("Médicos y especialidades", "Une las cédulas, nombres y especialidades del equipo.", "SELECT m.medico_id,m.cedula_profesional,p.nombre,p.apellido_paterno,p.apellido_materno,GROUP_CONCAT(e.nombre ORDER BY e.nombre SEPARATOR ', ') AS especialidades FROM medicos m JOIN personal p ON p.personal_id=m.medico_id LEFT JOIN medico_especialidad me ON me.medico_id=m.medico_id LEFT JOIN especialidades e ON e.especialidad_id=me.especialidad_id GROUP BY m.medico_id,m.cedula_profesional,p.nombre,p.apellido_paterno,p.apellido_materno ORDER BY m.medico_id"),
