@@ -1,0 +1,5963 @@
+{
+  "version": 1,
+  "rows_added": 646,
+  "batches": [
+    {
+      "kind": "insert",
+      "table": "departamentos",
+      "columns": [
+        "departamento_id",
+        "codigo",
+        "nombre"
+      ],
+      "rows": [
+        [
+          6,
+          "DEP-006",
+          "Imagenología"
+        ],
+        [
+          7,
+          "DEP-007",
+          "Cuidados intensivos"
+        ],
+        [
+          8,
+          "DEP-008",
+          "Urgencias"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "especialidades",
+      "columns": [
+        "especialidad_id",
+        "nombre"
+      ],
+      "rows": [
+        [
+          4,
+          "Cardiologia"
+        ],
+        [
+          5,
+          "Traumatologia"
+        ],
+        [
+          6,
+          "Ginecologia"
+        ],
+        [
+          7,
+          "Neurologia"
+        ],
+        [
+          8,
+          "Dermatologia"
+        ],
+        [
+          9,
+          "Oftalmologia"
+        ],
+        [
+          10,
+          "Otorrinolaringologia"
+        ],
+        [
+          11,
+          "Oncologia"
+        ],
+        [
+          12,
+          "Psiquiatria"
+        ],
+        [
+          13,
+          "Nefrologia"
+        ],
+        [
+          14,
+          "Endocrinologia"
+        ],
+        [
+          15,
+          "Urologia"
+        ],
+        [
+          16,
+          "Urgencias"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "personal",
+      "columns": [
+        "personal_id",
+        "numero_empleado",
+        "departamento_id",
+        "nombre",
+        "apellido_paterno",
+        "apellido_materno",
+        "puesto",
+        "telefono",
+        "email",
+        "activo"
+      ],
+      "rows": [
+        [
+          9,
+          "EMP-0009",
+          1,
+          "Carlos",
+          "Mendoza",
+          "García",
+          "MEDICO",
+          "5533379453",
+          "carlos.mendoza.9@example.com",
+          1
+        ],
+        [
+          10,
+          "EMP-0010",
+          8,
+          "Ana",
+          "Gómez",
+          "Torres",
+          "MEDICO",
+          "5523225344",
+          "ana.gomez.10@example.com",
+          1
+        ],
+        [
+          11,
+          "EMP-0011",
+          2,
+          "Luis",
+          "Hernández",
+          "Robles",
+          "MEDICO",
+          "5588719837",
+          "luis.hernandez.11@example.com",
+          1
+        ],
+        [
+          12,
+          "EMP-0012",
+          6,
+          "María",
+          "López",
+          "Santos",
+          "MEDICO",
+          "5580647355",
+          "maria.lopez.12@example.com",
+          1
+        ],
+        [
+          13,
+          "EMP-0013",
+          1,
+          "Jorge",
+          "Martínez",
+          "Duarte",
+          "MEDICO",
+          "5540955534",
+          "jorge.martinez.13@example.com",
+          1
+        ],
+        [
+          14,
+          "EMP-0014",
+          8,
+          "Sofía",
+          "Ramírez",
+          "Román",
+          "MEDICO",
+          "5581157387",
+          "sofia.ramirez.14@example.com",
+          1
+        ],
+        [
+          15,
+          "EMP-0015",
+          2,
+          "Miguel",
+          "Torres",
+          "Vega",
+          "MEDICO",
+          "5546122686",
+          "miguel.torres.15@example.com",
+          1
+        ],
+        [
+          16,
+          "EMP-0016",
+          6,
+          "Lucía",
+          "Flores",
+          "Ponce",
+          "MEDICO",
+          "5517122981",
+          "lucia.flores.16@example.com",
+          1
+        ],
+        [
+          17,
+          "EMP-0017",
+          1,
+          "David",
+          "Rivera",
+          "Salinas",
+          "MEDICO",
+          "5532315333",
+          "david.rivera.17@example.com",
+          1
+        ],
+        [
+          18,
+          "EMP-0018",
+          8,
+          "Elena",
+          "Vargas",
+          "Cortés",
+          "MEDICO",
+          "5594236597",
+          "elena.vargas.18@example.com",
+          1
+        ],
+        [
+          19,
+          "EMP-0019",
+          2,
+          "Fernando",
+          "Castro",
+          "Lara",
+          "MEDICO",
+          "5595002421",
+          "fernando.castro.19@example.com",
+          1
+        ],
+        [
+          20,
+          "EMP-0020",
+          6,
+          "Carmen",
+          "Morales",
+          "Nieto",
+          "MEDICO",
+          "5596325414",
+          "carmen.morales.20@example.com",
+          1
+        ],
+        [
+          21,
+          "EMP-0021",
+          1,
+          "Javier",
+          "Jiménez",
+          "Beltrán",
+          "MEDICO",
+          "5598057896",
+          "javier.jimenez.21@example.com",
+          1
+        ],
+        [
+          22,
+          "EMP-0022",
+          8,
+          "Patricia",
+          "Ruiz",
+          "Ríos",
+          "MEDICO",
+          "5518248845",
+          "patricia.ruiz.22@example.com",
+          1
+        ],
+        [
+          23,
+          "EMP-0023",
+          2,
+          "Roberto",
+          "Díaz",
+          "Soto",
+          "MEDICO",
+          "5510433163",
+          "roberto.diaz.23@example.com",
+          1
+        ],
+        [
+          24,
+          "EMP-0024",
+          2,
+          "Mariana",
+          "Vega",
+          "Medina",
+          "ENFERMERIA",
+          "5590753483",
+          "mariana.vega.24@example.com",
+          1
+        ],
+        [
+          25,
+          "EMP-0025",
+          2,
+          "Daniel",
+          "Leon",
+          "Luna",
+          "ENFERMERIA",
+          "5573363680",
+          "daniel.leon.25@example.com",
+          1
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "medicos",
+      "columns": [
+        "medico_id",
+        "cedula_profesional"
+      ],
+      "rows": [
+        [
+          9,
+          "CP-1001"
+        ],
+        [
+          10,
+          "CP-1002"
+        ],
+        [
+          11,
+          "CP-1003"
+        ],
+        [
+          12,
+          "CP-1004"
+        ],
+        [
+          13,
+          "CP-1005"
+        ],
+        [
+          14,
+          "CP-1006"
+        ],
+        [
+          15,
+          "CP-1007"
+        ],
+        [
+          16,
+          "CP-1008"
+        ],
+        [
+          17,
+          "CP-1009"
+        ],
+        [
+          18,
+          "CP-1010"
+        ],
+        [
+          19,
+          "CP-1011"
+        ],
+        [
+          20,
+          "CP-1012"
+        ],
+        [
+          21,
+          "CP-1013"
+        ],
+        [
+          22,
+          "CP-1014"
+        ],
+        [
+          23,
+          "CP-1015"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "medico_especialidad",
+      "columns": [
+        "medico_id",
+        "especialidad_id"
+      ],
+      "rows": [
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          11,
+          4
+        ],
+        [
+          12,
+          3
+        ],
+        [
+          13,
+          5
+        ],
+        [
+          14,
+          6
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          9
+        ],
+        [
+          18,
+          10
+        ],
+        [
+          19,
+          11
+        ],
+        [
+          20,
+          12
+        ],
+        [
+          21,
+          13
+        ],
+        [
+          22,
+          14
+        ],
+        [
+          23,
+          15
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "pacientes",
+      "columns": [
+        "paciente_id",
+        "expediente_clinico",
+        "nombre",
+        "apellido_paterno",
+        "apellido_materno",
+        "fecha_nacimiento",
+        "sexo",
+        "telefono",
+        "email",
+        "domicilio",
+        "fecha_registro",
+        "activo"
+      ],
+      "rows": [
+        [
+          6,
+          "EXP-2026-0006",
+          "Andrea",
+          "Perez",
+          "Cortés",
+          "1970-01-01",
+          "F",
+          "5595034277",
+          "andrea.perez.6@example.com",
+          "Calle Pinos 142, Colonia Los Olivos, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          7,
+          "EXP-2026-0007",
+          "Diego",
+          "Sanchez",
+          "Lara",
+          "1973-02-02",
+          "M",
+          "5558283861",
+          "diego.sanchez.7@example.com",
+          "Calle Laurel 149, Colonia Jardines del Sur, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          8,
+          "EXP-2026-0008",
+          "Valeria",
+          "Romero",
+          "Nieto",
+          "1976-03-03",
+          "F",
+          "5589444820",
+          "valeria.romero.8@example.com",
+          "Calle Sauces 156, Colonia Las Fuentes, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          9,
+          "EXP-2026-0009",
+          "Mateo",
+          "Ortiz",
+          "Beltrán",
+          "1979-04-04",
+          "M",
+          "5562935362",
+          "mateo.ortiz.9@example.com",
+          "Calle Amapolas 163, Colonia La Alameda, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          10,
+          "EXP-2026-0010",
+          "Camila",
+          "Reyes",
+          "Ríos",
+          "1982-05-05",
+          "F",
+          "5572592430",
+          "camila.reyes.10@example.com",
+          "Calle Olmos 170, Colonia Santa Clara, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          11,
+          "EXP-2026-0011",
+          "Sebastian",
+          "Cruz",
+          "Soto",
+          "1985-06-06",
+          "M",
+          "5526174248",
+          "sebastian.cruz.11@example.com",
+          "Calle Fresno 177, Colonia Los Olivos, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          12,
+          "EXP-2026-0012",
+          "Renata",
+          "Aguilar",
+          "Medina",
+          "1988-07-07",
+          "F",
+          "5567858460",
+          "renata.aguilar.12@example.com",
+          "Calle Jacarandas 184, Colonia Jardines del Sur, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          13,
+          "EXP-2026-0013",
+          "Emiliano",
+          "Jimenez",
+          "Luna",
+          "1991-08-08",
+          "M",
+          "5595454144",
+          "emiliano.jimenez.13@example.com",
+          "Calle Encinos 191, Colonia Las Fuentes, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          14,
+          "EXP-2026-0014",
+          "Paula",
+          "Rojas",
+          "García",
+          "1994-09-09",
+          "F",
+          "5566457548",
+          "paula.rojas.14@example.com",
+          "Calle Cedros 198, Colonia La Alameda, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          15,
+          "EXP-2026-0015",
+          "Nicolas",
+          "Chavez",
+          "Torres",
+          "1997-10-10",
+          "M",
+          "5556605764",
+          "nicolas.chavez.15@example.com",
+          "Calle Magnolias 205, Colonia Santa Clara, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          16,
+          "EXP-2026-0016",
+          "Fernanda",
+          "Molina",
+          "Robles",
+          "2000-11-11",
+          "F",
+          "5518103238",
+          "fernanda.molina.16@example.com",
+          "Calle Pinos 212, Colonia Los Olivos, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          17,
+          "EXP-2026-0017",
+          "Alejandro",
+          "Silva",
+          "Santos",
+          "2003-12-12",
+          "M",
+          "5577223791",
+          "alejandro.silva.17@example.com",
+          "Calle Laurel 219, Colonia Jardines del Sur, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          18,
+          "EXP-2026-0018",
+          "Regina",
+          "Castillo",
+          "Duarte",
+          "2006-01-13",
+          "F",
+          "5591059756",
+          "regina.castillo.18@example.com",
+          "Calle Sauces 226, Colonia Las Fuentes, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          19,
+          "EXP-2026-0019",
+          "Leonardo",
+          "Herrera",
+          "Román",
+          "2009-02-14",
+          "M",
+          "5541068101",
+          "leonardo.herrera.19@example.com",
+          "Calle Amapolas 233, Colonia La Alameda, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          20,
+          "EXP-2026-0020",
+          "Daniela",
+          "Vazquez",
+          "Vega",
+          "2012-03-15",
+          "F",
+          "5598702249",
+          "daniela.vazquez.20@example.com",
+          "Calle Olmos 240, Colonia Santa Clara, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          21,
+          "EXP-2026-0021",
+          "Santiago",
+          "Navarro",
+          "Ponce",
+          "1970-04-16",
+          "M",
+          "5513794089",
+          "santiago.navarro.21@example.com",
+          "Calle Fresno 247, Colonia Los Olivos, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          22,
+          "EXP-2026-0022",
+          "Isabella",
+          "Acosta",
+          "Salinas",
+          "1973-05-17",
+          "F",
+          "5573744375",
+          "isabella.acosta.22@example.com",
+          "Calle Jacarandas 254, Colonia Jardines del Sur, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          23,
+          "EXP-2026-0023",
+          "Gabriel",
+          "Luna",
+          "Cortés",
+          "1976-06-18",
+          "M",
+          "5539965520",
+          "gabriel.luna.23@example.com",
+          "Calle Encinos 261, Colonia Las Fuentes, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          24,
+          "EXP-2026-0024",
+          "Ximena",
+          "Salazar",
+          "Lara",
+          "1979-07-19",
+          "F",
+          "5584621011",
+          "ximena.salazar.24@example.com",
+          "Calle Cedros 268, Colonia La Alameda, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          25,
+          "EXP-2026-0025",
+          "Rodrigo",
+          "Guerrero",
+          "Nieto",
+          "1982-08-20",
+          "M",
+          "5578390034",
+          "rodrigo.guerrero.25@example.com",
+          "Calle Magnolias 275, Colonia Santa Clara, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          26,
+          "EXP-2026-0026",
+          "Natalia",
+          "Campos",
+          "Beltrán",
+          "1985-09-21",
+          "F",
+          "5552101549",
+          "natalia.campos.26@example.com",
+          "Calle Pinos 282, Colonia Los Olivos, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          27,
+          "EXP-2026-0027",
+          "Mauricio",
+          "Delgado",
+          "Ríos",
+          "1988-10-22",
+          "M",
+          "5529792698",
+          "mauricio.delgado.27@example.com",
+          "Calle Laurel 289, Colonia Jardines del Sur, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          28,
+          "EXP-2026-0028",
+          "Carolina",
+          "Paredes",
+          "Soto",
+          "1991-11-23",
+          "F",
+          "5528459448",
+          "carolina.paredes.28@example.com",
+          "Calle Sauces 296, Colonia Las Fuentes, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          29,
+          "EXP-2026-0029",
+          "Joaquin",
+          "Fuentes",
+          "Medina",
+          "1994-12-24",
+          "M",
+          "5543823562",
+          "joaquin.fuentes.29@example.com",
+          "Calle Amapolas 303, Colonia La Alameda, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ],
+        [
+          30,
+          "EXP-2026-0030",
+          "Adriana",
+          "Mejia",
+          "Luna",
+          "1997-01-25",
+          "F",
+          "5579849652",
+          "adriana.mejia.30@example.com",
+          "Calle Olmos 310, Colonia Santa Clara, Ciudad de México",
+          "2026-09-15 09:00:00",
+          1
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "contactos_emergencia",
+      "columns": [
+        "contacto_id",
+        "paciente_id",
+        "nombre",
+        "parentesco",
+        "telefono",
+        "prioridad"
+      ],
+      "rows": [
+        [
+          7,
+          6,
+          "Ana Perez Ponce",
+          "Madre",
+          "5520421006",
+          1
+        ],
+        [
+          8,
+          7,
+          "Jorge Sanchez Salinas",
+          "Padre",
+          "5548217525",
+          1
+        ],
+        [
+          9,
+          8,
+          "Mariana Romero Cortés",
+          "Hermana",
+          "5528358798",
+          1
+        ],
+        [
+          10,
+          9,
+          "Rodrigo Ortiz Lara",
+          "Hermano",
+          "5526365809",
+          1
+        ],
+        [
+          11,
+          10,
+          "Patricia Reyes Nieto",
+          "Tutora",
+          "5531353768",
+          1
+        ],
+        [
+          12,
+          11,
+          "Daniel Cruz Beltrán",
+          "Cónyuge",
+          "5550991152",
+          1
+        ],
+        [
+          13,
+          12,
+          "Ana Aguilar Ríos",
+          "Madre",
+          "5594637664",
+          1
+        ],
+        [
+          14,
+          13,
+          "Jorge Jimenez Soto",
+          "Padre",
+          "5555888939",
+          1
+        ],
+        [
+          15,
+          14,
+          "Mariana Rojas Medina",
+          "Hermana",
+          "5594391544",
+          1
+        ],
+        [
+          16,
+          15,
+          "Rodrigo Chavez Luna",
+          "Hermano",
+          "5524835763",
+          1
+        ],
+        [
+          17,
+          16,
+          "Patricia Molina García",
+          "Tutora",
+          "5572391854",
+          1
+        ],
+        [
+          18,
+          17,
+          "Daniel Silva Torres",
+          "Cónyuge",
+          "5556396586",
+          1
+        ],
+        [
+          19,
+          18,
+          "Ana Castillo Robles",
+          "Madre",
+          "5590242300",
+          1
+        ],
+        [
+          20,
+          19,
+          "Jorge Herrera Santos",
+          "Padre",
+          "5591252176",
+          1
+        ],
+        [
+          21,
+          20,
+          "Mariana Vazquez Duarte",
+          "Hermana",
+          "5594204797",
+          1
+        ],
+        [
+          22,
+          21,
+          "Rodrigo Navarro Román",
+          "Hermano",
+          "5517209811",
+          1
+        ],
+        [
+          23,
+          22,
+          "Patricia Acosta Vega",
+          "Tutora",
+          "5518879145",
+          1
+        ],
+        [
+          24,
+          23,
+          "Daniel Luna Ponce",
+          "Cónyuge",
+          "5553415024",
+          1
+        ],
+        [
+          25,
+          24,
+          "Ana Salazar Salinas",
+          "Madre",
+          "5522273263",
+          1
+        ],
+        [
+          26,
+          25,
+          "Jorge Guerrero Cortés",
+          "Padre",
+          "5556866143",
+          1
+        ],
+        [
+          27,
+          26,
+          "Mariana Campos Lara",
+          "Hermana",
+          "5518448799",
+          1
+        ],
+        [
+          28,
+          27,
+          "Rodrigo Delgado Nieto",
+          "Hermano",
+          "5583736837",
+          1
+        ],
+        [
+          29,
+          28,
+          "Patricia Paredes Beltrán",
+          "Tutora",
+          "5518786093",
+          1
+        ],
+        [
+          30,
+          29,
+          "Daniel Fuentes Ríos",
+          "Cónyuge",
+          "5561793484",
+          1
+        ],
+        [
+          31,
+          30,
+          "Ana Mejia Soto",
+          "Madre",
+          "5518716767",
+          1
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "aseguradoras",
+      "columns": [
+        "aseguradora_id",
+        "nombre",
+        "telefono"
+      ],
+      "rows": [
+        [
+          3,
+          "Cobertura Médica del Valle",
+          "5578075862"
+        ],
+        [
+          4,
+          "Previsión Familiar",
+          "5525501726"
+        ],
+        [
+          5,
+          "Seguros Salud y Bienestar",
+          "5534793683"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "polizas",
+      "columns": [
+        "poliza_id",
+        "paciente_id",
+        "aseguradora_id",
+        "numero_poliza",
+        "fecha_inicio",
+        "fecha_fin"
+      ],
+      "rows": [
+        [
+          4,
+          6,
+          3,
+          "POL-2026-00004",
+          "2026-01-01",
+          "2027-12-31"
+        ],
+        [
+          5,
+          7,
+          4,
+          "POL-2026-00005",
+          "2026-01-01",
+          "2027-12-31"
+        ],
+        [
+          6,
+          8,
+          5,
+          "POL-2026-00006",
+          "2026-01-01",
+          "2027-12-31"
+        ],
+        [
+          7,
+          9,
+          3,
+          "POL-2026-00007",
+          "2026-01-01",
+          "2027-12-31"
+        ],
+        [
+          8,
+          10,
+          4,
+          "POL-2026-00008",
+          "2026-01-01",
+          "2027-12-31"
+        ],
+        [
+          9,
+          11,
+          5,
+          "POL-2026-00009",
+          "2026-01-01",
+          "2027-12-31"
+        ],
+        [
+          10,
+          12,
+          3,
+          "POL-2026-00010",
+          "2026-01-01",
+          "2027-12-31"
+        ],
+        [
+          11,
+          13,
+          4,
+          "POL-2026-00011",
+          "2026-01-01",
+          "2027-12-31"
+        ],
+        [
+          12,
+          14,
+          5,
+          "POL-2026-00012",
+          "2026-01-01",
+          "2027-12-31"
+        ],
+        [
+          13,
+          15,
+          3,
+          "POL-2026-00013",
+          "2026-01-01",
+          "2027-12-31"
+        ],
+        [
+          14,
+          16,
+          4,
+          "POL-2026-00014",
+          "2026-01-01",
+          "2027-12-31"
+        ],
+        [
+          15,
+          17,
+          5,
+          "POL-2026-00015",
+          "2026-01-01",
+          "2027-12-31"
+        ],
+        [
+          16,
+          18,
+          3,
+          "POL-2026-00016",
+          "2026-01-01",
+          "2027-12-31"
+        ],
+        [
+          17,
+          19,
+          4,
+          "POL-2026-00017",
+          "2026-01-01",
+          "2027-12-31"
+        ],
+        [
+          18,
+          20,
+          5,
+          "POL-2026-00018",
+          "2026-01-01",
+          "2027-12-31"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "habitaciones",
+      "columns": [
+        "habitacion_id",
+        "departamento_id",
+        "codigo",
+        "edificio",
+        "piso",
+        "tipo"
+      ],
+      "rows": [
+        [
+          5,
+          2,
+          "HAB-202",
+          "Torre C",
+          2,
+          "GENERAL"
+        ],
+        [
+          6,
+          2,
+          "HAB-203",
+          "Torre C",
+          2,
+          "PRIVADA"
+        ],
+        [
+          7,
+          2,
+          "HAB-204",
+          "Torre C",
+          2,
+          "UCI"
+        ],
+        [
+          8,
+          2,
+          "HAB-301",
+          "Torre C",
+          3,
+          "GENERAL"
+        ],
+        [
+          9,
+          2,
+          "HAB-302",
+          "Torre C",
+          3,
+          "URGENCIAS"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "camillas",
+      "columns": [
+        "camilla_id",
+        "habitacion_id",
+        "codigo",
+        "estado_operativo"
+      ],
+      "rows": [
+        [
+          7,
+          5,
+          "CAM-07",
+          "OPERATIVA"
+        ],
+        [
+          8,
+          5,
+          "CAM-08",
+          "OPERATIVA"
+        ],
+        [
+          9,
+          6,
+          "CAM-09",
+          "OPERATIVA"
+        ],
+        [
+          10,
+          6,
+          "CAM-10",
+          "OPERATIVA"
+        ],
+        [
+          11,
+          7,
+          "CAM-11",
+          "OPERATIVA"
+        ],
+        [
+          12,
+          7,
+          "CAM-12",
+          "OPERATIVA"
+        ],
+        [
+          13,
+          8,
+          "CAM-13",
+          "OPERATIVA"
+        ],
+        [
+          14,
+          8,
+          "CAM-14",
+          "OPERATIVA"
+        ],
+        [
+          15,
+          9,
+          "CAM-15",
+          "MANTENIMIENTO"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "citas",
+      "columns": [
+        "cita_id",
+        "paciente_id",
+        "medico_id",
+        "inicio",
+        "fin",
+        "motivo",
+        "estado"
+      ],
+      "rows": [
+        [
+          7,
+          6,
+          9,
+          "2026-10-01 09:00:00",
+          "2026-10-01 09:30:00",
+          "Valoración por infección respiratoria de vías superiores",
+          "ATENDIDA"
+        ],
+        [
+          8,
+          7,
+          10,
+          "2026-10-01 09:45:00",
+          "2026-10-01 10:15:00",
+          "Valoración por gastritis",
+          "ATENDIDA"
+        ],
+        [
+          9,
+          8,
+          11,
+          "2026-10-01 10:30:00",
+          "2026-10-01 11:00:00",
+          "Valoración por rinitis alérgica",
+          "ATENDIDA"
+        ],
+        [
+          10,
+          9,
+          12,
+          "2026-10-01 11:15:00",
+          "2026-10-01 11:45:00",
+          "Valoración por control de hipertensión arterial",
+          "ATENDIDA"
+        ],
+        [
+          11,
+          10,
+          13,
+          "2026-10-01 12:00:00",
+          "2026-10-01 12:30:00",
+          "Valoración por dolor articular",
+          "ATENDIDA"
+        ],
+        [
+          12,
+          11,
+          14,
+          "2026-10-02 09:00:00",
+          "2026-10-02 09:30:00",
+          "Valoración por infección respiratoria de vías superiores",
+          "ATENDIDA"
+        ],
+        [
+          13,
+          12,
+          15,
+          "2026-10-02 09:45:00",
+          "2026-10-02 10:15:00",
+          "Valoración por gastritis",
+          "ATENDIDA"
+        ],
+        [
+          14,
+          13,
+          16,
+          "2026-10-02 10:30:00",
+          "2026-10-02 11:00:00",
+          "Valoración por rinitis alérgica",
+          "ATENDIDA"
+        ],
+        [
+          15,
+          14,
+          17,
+          "2026-10-02 11:15:00",
+          "2026-10-02 11:45:00",
+          "Valoración por control de hipertensión arterial",
+          "ATENDIDA"
+        ],
+        [
+          16,
+          15,
+          18,
+          "2026-10-02 12:00:00",
+          "2026-10-02 12:30:00",
+          "Valoración por dolor articular",
+          "ATENDIDA"
+        ],
+        [
+          17,
+          16,
+          19,
+          "2026-10-03 09:00:00",
+          "2026-10-03 09:30:00",
+          "Valoración por infección respiratoria de vías superiores",
+          "ATENDIDA"
+        ],
+        [
+          18,
+          17,
+          20,
+          "2026-10-03 09:45:00",
+          "2026-10-03 10:15:00",
+          "Valoración por gastritis",
+          "ATENDIDA"
+        ],
+        [
+          19,
+          18,
+          21,
+          "2026-10-03 10:30:00",
+          "2026-10-03 11:00:00",
+          "Valoración por rinitis alérgica",
+          "ATENDIDA"
+        ],
+        [
+          20,
+          19,
+          22,
+          "2026-10-03 11:15:00",
+          "2026-10-03 11:45:00",
+          "Valoración por control de hipertensión arterial",
+          "ATENDIDA"
+        ],
+        [
+          21,
+          20,
+          23,
+          "2026-10-03 12:00:00",
+          "2026-10-03 12:30:00",
+          "Valoración por dolor articular",
+          "ATENDIDA"
+        ],
+        [
+          22,
+          21,
+          9,
+          "2026-10-04 09:00:00",
+          "2026-10-04 09:30:00",
+          "Valoración por infección respiratoria de vías superiores",
+          "ATENDIDA"
+        ],
+        [
+          23,
+          22,
+          10,
+          "2026-10-04 09:45:00",
+          "2026-10-04 10:15:00",
+          "Valoración por gastritis",
+          "ATENDIDA"
+        ],
+        [
+          24,
+          23,
+          11,
+          "2026-10-04 10:30:00",
+          "2026-10-04 11:00:00",
+          "Valoración por rinitis alérgica",
+          "ATENDIDA"
+        ],
+        [
+          25,
+          24,
+          12,
+          "2026-10-04 11:15:00",
+          "2026-10-04 11:45:00",
+          "Valoración por control de hipertensión arterial",
+          "ATENDIDA"
+        ],
+        [
+          26,
+          25,
+          13,
+          "2026-10-04 12:00:00",
+          "2026-10-04 12:30:00",
+          "Valoración por dolor articular",
+          "ATENDIDA"
+        ],
+        [
+          27,
+          26,
+          14,
+          "2026-10-05 09:00:00",
+          "2026-10-05 09:30:00",
+          "Valoración por infección respiratoria de vías superiores",
+          "ATENDIDA"
+        ],
+        [
+          28,
+          27,
+          15,
+          "2026-10-05 09:45:00",
+          "2026-10-05 10:15:00",
+          "Valoración por gastritis",
+          "ATENDIDA"
+        ],
+        [
+          29,
+          28,
+          16,
+          "2026-10-05 10:30:00",
+          "2026-10-05 11:00:00",
+          "Valoración por rinitis alérgica",
+          "ATENDIDA"
+        ],
+        [
+          30,
+          29,
+          17,
+          "2026-10-05 11:15:00",
+          "2026-10-05 11:45:00",
+          "Valoración por control de hipertensión arterial",
+          "ATENDIDA"
+        ],
+        [
+          31,
+          30,
+          18,
+          "2026-10-05 12:00:00",
+          "2026-10-05 12:30:00",
+          "Valoración por dolor articular",
+          "ATENDIDA"
+        ],
+        [
+          32,
+          6,
+          9,
+          "2026-10-20 09:00:00",
+          "2026-10-20 09:30:00",
+          "Consulta de seguimiento y revisión de evolución",
+          "PROGRAMADA"
+        ],
+        [
+          33,
+          7,
+          10,
+          "2026-10-20 10:00:00",
+          "2026-10-20 10:30:00",
+          "Consulta de seguimiento y revisión de evolución",
+          "CONFIRMADA"
+        ],
+        [
+          34,
+          8,
+          11,
+          "2026-10-20 11:00:00",
+          "2026-10-20 11:30:00",
+          "Consulta de seguimiento y revisión de evolución",
+          "PROGRAMADA"
+        ],
+        [
+          35,
+          9,
+          12,
+          "2026-10-20 12:00:00",
+          "2026-10-20 12:30:00",
+          "Consulta de seguimiento y revisión de evolución",
+          "CONFIRMADA"
+        ],
+        [
+          36,
+          10,
+          13,
+          "2026-10-21 09:00:00",
+          "2026-10-21 09:30:00",
+          "Consulta de seguimiento y revisión de evolución",
+          "PROGRAMADA"
+        ],
+        [
+          37,
+          11,
+          14,
+          "2026-10-21 10:00:00",
+          "2026-10-21 10:30:00",
+          "Consulta de seguimiento y revisión de evolución",
+          "CONFIRMADA"
+        ],
+        [
+          38,
+          12,
+          15,
+          "2026-10-21 11:00:00",
+          "2026-10-21 11:30:00",
+          "Consulta de seguimiento y revisión de evolución",
+          "PROGRAMADA"
+        ],
+        [
+          39,
+          13,
+          16,
+          "2026-10-21 12:00:00",
+          "2026-10-21 12:30:00",
+          "Consulta de seguimiento y revisión de evolución",
+          "CONFIRMADA"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "consultas",
+      "columns": [
+        "consulta_id",
+        "cita_id",
+        "paciente_id",
+        "medico_id",
+        "fecha",
+        "tipo",
+        "motivo",
+        "notas",
+        "peso_kg",
+        "talla_cm",
+        "temperatura_c"
+      ],
+      "rows": [
+        [
+          6,
+          7,
+          6,
+          9,
+          "2026-10-01 09:05:00",
+          "PROGRAMADA",
+          "Valoración por infección respiratoria de vías superiores",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          55,
+          155,
+          36.5
+        ],
+        [
+          7,
+          8,
+          7,
+          10,
+          "2026-10-01 09:50:00",
+          "PROGRAMADA",
+          "Valoración por gastritis",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          56,
+          156,
+          36.6
+        ],
+        [
+          8,
+          9,
+          8,
+          11,
+          "2026-10-01 10:35:00",
+          "PROGRAMADA",
+          "Valoración por rinitis alérgica",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          57,
+          157,
+          36.7
+        ],
+        [
+          9,
+          10,
+          9,
+          12,
+          "2026-10-01 11:20:00",
+          "PROGRAMADA",
+          "Valoración por control de hipertensión arterial",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          58,
+          158,
+          36.5
+        ],
+        [
+          10,
+          11,
+          10,
+          13,
+          "2026-10-01 12:05:00",
+          "PROGRAMADA",
+          "Valoración por dolor articular",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          59,
+          159,
+          36.6
+        ],
+        [
+          11,
+          12,
+          11,
+          14,
+          "2026-10-02 09:05:00",
+          "PROGRAMADA",
+          "Valoración por infección respiratoria de vías superiores",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          60,
+          160,
+          36.7
+        ],
+        [
+          12,
+          13,
+          12,
+          15,
+          "2026-10-02 09:50:00",
+          "PROGRAMADA",
+          "Valoración por gastritis",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          61,
+          161,
+          36.5
+        ],
+        [
+          13,
+          14,
+          13,
+          16,
+          "2026-10-02 10:35:00",
+          "PROGRAMADA",
+          "Valoración por rinitis alérgica",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          62,
+          162,
+          36.6
+        ],
+        [
+          14,
+          15,
+          14,
+          17,
+          "2026-10-02 11:20:00",
+          "PROGRAMADA",
+          "Valoración por control de hipertensión arterial",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          63,
+          163,
+          36.7
+        ],
+        [
+          15,
+          16,
+          15,
+          18,
+          "2026-10-02 12:05:00",
+          "PROGRAMADA",
+          "Valoración por dolor articular",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          64,
+          164,
+          36.5
+        ],
+        [
+          16,
+          17,
+          16,
+          19,
+          "2026-10-03 09:05:00",
+          "PROGRAMADA",
+          "Valoración por infección respiratoria de vías superiores",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          65,
+          165,
+          36.6
+        ],
+        [
+          17,
+          18,
+          17,
+          20,
+          "2026-10-03 09:50:00",
+          "PROGRAMADA",
+          "Valoración por gastritis",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          66,
+          166,
+          36.7
+        ],
+        [
+          18,
+          19,
+          18,
+          21,
+          "2026-10-03 10:35:00",
+          "PROGRAMADA",
+          "Valoración por rinitis alérgica",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          67,
+          167,
+          36.5
+        ],
+        [
+          19,
+          20,
+          19,
+          22,
+          "2026-10-03 11:20:00",
+          "PROGRAMADA",
+          "Valoración por control de hipertensión arterial",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          68,
+          168,
+          36.6
+        ],
+        [
+          20,
+          21,
+          20,
+          23,
+          "2026-10-03 12:05:00",
+          "PROGRAMADA",
+          "Valoración por dolor articular",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          69,
+          169,
+          36.7
+        ],
+        [
+          21,
+          22,
+          21,
+          9,
+          "2026-10-04 09:05:00",
+          "PROGRAMADA",
+          "Valoración por infección respiratoria de vías superiores",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          70,
+          170,
+          36.5
+        ],
+        [
+          22,
+          23,
+          22,
+          10,
+          "2026-10-04 09:50:00",
+          "PROGRAMADA",
+          "Valoración por gastritis",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          71,
+          171,
+          36.6
+        ],
+        [
+          23,
+          24,
+          23,
+          11,
+          "2026-10-04 10:35:00",
+          "PROGRAMADA",
+          "Valoración por rinitis alérgica",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          72,
+          172,
+          36.7
+        ],
+        [
+          24,
+          25,
+          24,
+          12,
+          "2026-10-04 11:20:00",
+          "PROGRAMADA",
+          "Valoración por control de hipertensión arterial",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          73,
+          173,
+          36.5
+        ],
+        [
+          25,
+          26,
+          25,
+          13,
+          "2026-10-04 12:05:00",
+          "PROGRAMADA",
+          "Valoración por dolor articular",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          74,
+          174,
+          36.6
+        ],
+        [
+          26,
+          27,
+          26,
+          14,
+          "2026-10-05 09:05:00",
+          "PROGRAMADA",
+          "Valoración por infección respiratoria de vías superiores",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          75,
+          175,
+          36.7
+        ],
+        [
+          27,
+          28,
+          27,
+          15,
+          "2026-10-05 09:50:00",
+          "PROGRAMADA",
+          "Valoración por gastritis",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          76,
+          176,
+          36.5
+        ],
+        [
+          28,
+          29,
+          28,
+          16,
+          "2026-10-05 10:35:00",
+          "PROGRAMADA",
+          "Valoración por rinitis alérgica",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          77,
+          177,
+          36.6
+        ],
+        [
+          29,
+          30,
+          29,
+          17,
+          "2026-10-05 11:20:00",
+          "PROGRAMADA",
+          "Valoración por control de hipertensión arterial",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          78,
+          178,
+          36.7
+        ],
+        [
+          30,
+          31,
+          30,
+          18,
+          "2026-10-05 12:05:00",
+          "PROGRAMADA",
+          "Valoración por dolor articular",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          79,
+          179,
+          36.5
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "diagnosticos",
+      "columns": [
+        "diagnostico_id",
+        "codigo",
+        "descripcion"
+      ],
+      "rows": [
+        [
+          4,
+          "DX-004",
+          "Infección respiratoria de vías superiores"
+        ],
+        [
+          5,
+          "DX-005",
+          "Gastritis"
+        ],
+        [
+          6,
+          "DX-006",
+          "Rinitis alérgica"
+        ],
+        [
+          7,
+          "DX-007",
+          "Control de hipertensión arterial"
+        ],
+        [
+          8,
+          "DX-008",
+          "Dolor articular"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "consulta_diagnosticos",
+      "columns": [
+        "consulta_id",
+        "diagnostico_id",
+        "es_principal",
+        "observaciones"
+      ],
+      "rows": [
+        [
+          6,
+          4,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          6,
+          2,
+          0,
+          "Diagnóstico complementario registrado en el expediente."
+        ],
+        [
+          7,
+          5,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          8,
+          6,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          9,
+          7,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          9,
+          2,
+          0,
+          "Diagnóstico complementario registrado en el expediente."
+        ],
+        [
+          10,
+          8,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          11,
+          4,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          12,
+          5,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          12,
+          2,
+          0,
+          "Diagnóstico complementario registrado en el expediente."
+        ],
+        [
+          13,
+          6,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          14,
+          7,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          15,
+          8,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          15,
+          2,
+          0,
+          "Diagnóstico complementario registrado en el expediente."
+        ],
+        [
+          16,
+          4,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          17,
+          5,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          18,
+          6,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          18,
+          2,
+          0,
+          "Diagnóstico complementario registrado en el expediente."
+        ],
+        [
+          19,
+          7,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          20,
+          8,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          21,
+          4,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          21,
+          2,
+          0,
+          "Diagnóstico complementario registrado en el expediente."
+        ],
+        [
+          22,
+          5,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          23,
+          6,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          24,
+          7,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          24,
+          2,
+          0,
+          "Diagnóstico complementario registrado en el expediente."
+        ],
+        [
+          25,
+          8,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          26,
+          4,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          27,
+          5,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          27,
+          2,
+          0,
+          "Diagnóstico complementario registrado en el expediente."
+        ],
+        [
+          28,
+          6,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          29,
+          7,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          30,
+          8,
+          1,
+          "Diagnóstico principal registrado en la consulta."
+        ],
+        [
+          30,
+          2,
+          0,
+          "Diagnóstico complementario registrado en el expediente."
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "alergias_paciente",
+      "columns": [
+        "alergia_id",
+        "paciente_id",
+        "sustancia",
+        "reaccion",
+        "fecha_registro"
+      ],
+      "rows": [
+        [
+          3,
+          6,
+          "Látex",
+          "Enrojecimiento y prurito",
+          "2026-09-15"
+        ],
+        [
+          4,
+          10,
+          "Mariscos",
+          "Urticaria",
+          "2026-09-15"
+        ],
+        [
+          5,
+          14,
+          "Sulfonamidas",
+          "Erupción cutánea",
+          "2026-09-15"
+        ],
+        [
+          6,
+          18,
+          "Polen",
+          "Estornudos y congestión nasal",
+          "2026-09-15"
+        ],
+        [
+          7,
+          22,
+          "Amoxicilina",
+          "Erupción cutánea",
+          "2026-09-15"
+        ],
+        [
+          8,
+          26,
+          "Medio de contraste yodado",
+          "Urticaria",
+          "2026-09-15"
+        ],
+        [
+          9,
+          30,
+          "Clorhexidina",
+          "Irritación de la piel",
+          "2026-09-15"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "hospitalizaciones",
+      "columns": [
+        "hospitalizacion_id",
+        "consulta_ingreso_id",
+        "paciente_id",
+        "medico_responsable_id",
+        "fecha_ingreso",
+        "fecha_alta",
+        "motivo",
+        "resumen_alta"
+      ],
+      "rows": [
+        [
+          3,
+          6,
+          6,
+          9,
+          "2026-10-01 10:05:00",
+          null,
+          "Observación hospitalaria por infección respiratoria de vías superiores",
+          null
+        ],
+        [
+          4,
+          7,
+          7,
+          10,
+          "2026-10-01 10:50:00",
+          null,
+          "Observación hospitalaria por gastritis",
+          null
+        ],
+        [
+          5,
+          8,
+          8,
+          11,
+          "2026-10-01 11:35:00",
+          null,
+          "Observación hospitalaria por rinitis alérgica",
+          null
+        ],
+        [
+          6,
+          9,
+          9,
+          12,
+          "2026-10-01 12:20:00",
+          null,
+          "Observación hospitalaria por control de hipertensión arterial",
+          null
+        ],
+        [
+          7,
+          10,
+          10,
+          13,
+          "2026-10-01 13:05:00",
+          null,
+          "Observación hospitalaria por dolor articular",
+          null
+        ],
+        [
+          8,
+          11,
+          11,
+          14,
+          "2026-10-02 10:05:00",
+          null,
+          "Observación hospitalaria por infección respiratoria de vías superiores",
+          null
+        ],
+        [
+          9,
+          12,
+          12,
+          15,
+          "2026-10-02 10:50:00",
+          "2026-10-03 10:50:00",
+          "Observación hospitalaria por gastritis",
+          "Alta registrada tras valoración del médico responsable. Resumen de atención integrado al expediente."
+        ],
+        [
+          10,
+          13,
+          13,
+          16,
+          "2026-10-02 11:35:00",
+          "2026-10-03 11:35:00",
+          "Observación hospitalaria por rinitis alérgica",
+          "Alta registrada tras valoración del médico responsable. Resumen de atención integrado al expediente."
+        ],
+        [
+          11,
+          14,
+          14,
+          17,
+          "2026-10-02 12:20:00",
+          "2026-10-03 12:20:00",
+          "Observación hospitalaria por control de hipertensión arterial",
+          "Alta registrada tras valoración del médico responsable. Resumen de atención integrado al expediente."
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "asignaciones_camilla",
+      "columns": [
+        "asignacion_id",
+        "hospitalizacion_id",
+        "camilla_id",
+        "inicio",
+        "fin"
+      ],
+      "rows": [
+        [
+          4,
+          3,
+          7,
+          "2026-10-01 10:05:00",
+          null
+        ],
+        [
+          5,
+          4,
+          8,
+          "2026-10-01 10:50:00",
+          null
+        ],
+        [
+          6,
+          5,
+          9,
+          "2026-10-01 11:35:00",
+          null
+        ],
+        [
+          7,
+          6,
+          10,
+          "2026-10-01 12:20:00",
+          null
+        ],
+        [
+          8,
+          7,
+          11,
+          "2026-10-01 13:05:00",
+          null
+        ],
+        [
+          9,
+          8,
+          12,
+          "2026-10-02 10:05:00",
+          null
+        ],
+        [
+          10,
+          9,
+          13,
+          "2026-10-02 10:50:00",
+          "2026-10-03 10:50:00"
+        ],
+        [
+          11,
+          10,
+          14,
+          "2026-10-02 11:35:00",
+          "2026-10-03 11:35:00"
+        ],
+        [
+          12,
+          11,
+          3,
+          "2026-10-02 12:20:00",
+          "2026-10-03 12:20:00"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "notas_enfermeria",
+      "columns": [
+        "nota_id",
+        "hospitalizacion_id",
+        "personal_id",
+        "fecha",
+        "observacion"
+      ],
+      "rows": [
+        [
+          4,
+          3,
+          24,
+          "2026-10-01 10:35:00",
+          "Se verificó identificación del paciente y ubicación en la camilla asignada."
+        ],
+        [
+          5,
+          3,
+          25,
+          "2026-10-01 12:35:00",
+          "Se registró la entrega de turno y la continuidad de los cuidados indicados."
+        ],
+        [
+          6,
+          4,
+          24,
+          "2026-10-01 11:20:00",
+          "Se registraron signos vitales y cuidados del turno en la hoja de enfermería."
+        ],
+        [
+          7,
+          4,
+          25,
+          "2026-10-01 13:20:00",
+          "Se verificó identificación del paciente y ubicación en la camilla asignada."
+        ],
+        [
+          8,
+          5,
+          24,
+          "2026-10-01 12:05:00",
+          "Se registró la entrega de turno y la continuidad de los cuidados indicados."
+        ],
+        [
+          9,
+          5,
+          25,
+          "2026-10-01 14:05:00",
+          "Se registraron signos vitales y cuidados del turno en la hoja de enfermería."
+        ],
+        [
+          10,
+          6,
+          24,
+          "2026-10-01 12:50:00",
+          "Se verificó identificación del paciente y ubicación en la camilla asignada."
+        ],
+        [
+          11,
+          6,
+          25,
+          "2026-10-01 14:50:00",
+          "Se registró la entrega de turno y la continuidad de los cuidados indicados."
+        ],
+        [
+          12,
+          7,
+          24,
+          "2026-10-01 13:35:00",
+          "Se registraron signos vitales y cuidados del turno en la hoja de enfermería."
+        ],
+        [
+          13,
+          7,
+          25,
+          "2026-10-01 15:35:00",
+          "Se verificó identificación del paciente y ubicación en la camilla asignada."
+        ],
+        [
+          14,
+          8,
+          24,
+          "2026-10-02 10:35:00",
+          "Se registró la entrega de turno y la continuidad de los cuidados indicados."
+        ],
+        [
+          15,
+          8,
+          25,
+          "2026-10-02 12:35:00",
+          "Se registraron signos vitales y cuidados del turno en la hoja de enfermería."
+        ],
+        [
+          16,
+          9,
+          24,
+          "2026-10-02 11:20:00",
+          "Se verificó identificación del paciente y ubicación en la camilla asignada."
+        ],
+        [
+          17,
+          9,
+          25,
+          "2026-10-02 13:20:00",
+          "Se registró la entrega de turno y la continuidad de los cuidados indicados."
+        ],
+        [
+          18,
+          10,
+          24,
+          "2026-10-02 12:05:00",
+          "Se registraron signos vitales y cuidados del turno en la hoja de enfermería."
+        ],
+        [
+          19,
+          10,
+          25,
+          "2026-10-02 14:05:00",
+          "Se verificó identificación del paciente y ubicación en la camilla asignada."
+        ],
+        [
+          20,
+          11,
+          24,
+          "2026-10-02 12:50:00",
+          "Se registró la entrega de turno y la continuidad de los cuidados indicados."
+        ],
+        [
+          21,
+          11,
+          25,
+          "2026-10-02 14:50:00",
+          "Se registraron signos vitales y cuidados del turno en la hoja de enfermería."
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "medicamentos",
+      "columns": [
+        "medicamento_id",
+        "codigo",
+        "principio_activo",
+        "concentracion",
+        "presentacion",
+        "unidad_inventario",
+        "stock_minimo"
+      ],
+      "rows": [
+        [
+          4,
+          "MED-004",
+          "Omeprazol",
+          "20 mg",
+          "Cápsula gastrorresistente",
+          "cápsula",
+          15
+        ],
+        [
+          5,
+          "MED-005",
+          "Ketorolaco trometamol",
+          "30 mg/mL",
+          "Solución inyectable, ampolla de 1 mL",
+          "ampolla",
+          20
+        ],
+        [
+          6,
+          "MED-006",
+          "Salbutamol",
+          "100 microgramos/dosis",
+          "Inhalador de 200 dosis",
+          "inhalador",
+          25
+        ],
+        [
+          7,
+          "MED-007",
+          "Loratadina",
+          "10 mg",
+          "Tableta",
+          "tableta",
+          30
+        ],
+        [
+          8,
+          "MED-008",
+          "Metformina",
+          "850 mg de hidrocloruro de metformina",
+          "Tableta recubierta",
+          "tableta",
+          15
+        ],
+        [
+          9,
+          "MED-009",
+          "Losartán potásico",
+          "50 mg",
+          "Tableta recubierta",
+          "tableta",
+          20
+        ],
+        [
+          10,
+          "MED-010",
+          "Diclofenaco sódico",
+          "10 mg/g (1 %)",
+          "Gel, tubo de 60 g",
+          "tubo",
+          25
+        ],
+        [
+          11,
+          "MED-011",
+          "Insulina humana",
+          "100 UI/mL",
+          "Solución inyectable, vial de 10 mL",
+          "vial",
+          30
+        ],
+        [
+          12,
+          "MED-012",
+          "Ceftriaxona",
+          "1 g por vial",
+          "Polvo para solución inyectable, vial",
+          "vial",
+          15
+        ],
+        [
+          13,
+          "MED-013",
+          "Diazepam",
+          "10 mg/2 mL",
+          "Solución inyectable, ampolla de 2 mL",
+          "ampolla",
+          20
+        ],
+        [
+          14,
+          "MED-014",
+          "Hidrocortisona",
+          "100 mg por vial",
+          "Polvo y disolvente para solución inyectable, vial",
+          "vial",
+          25
+        ],
+        [
+          15,
+          "MED-015",
+          "Furosemida",
+          "40 mg",
+          "Tableta",
+          "tableta",
+          30
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "proveedores",
+      "columns": [
+        "proveedor_id",
+        "nombre",
+        "telefono",
+        "email"
+      ],
+      "rows": [
+        [
+          3,
+          "Abastecedora Hospitalaria del Valle",
+          "5543350366",
+          "ventas.abastecedora.hospitalaria.del.valle@example.com"
+        ],
+        [
+          4,
+          "Material Médico Alameda",
+          "5552558257",
+          "ventas.material.medico.alameda@example.com"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "lotes_medicamento",
+      "columns": [
+        "lote_id",
+        "medicamento_id",
+        "proveedor_id",
+        "numero_lote",
+        "fecha_recepcion",
+        "fecha_caducidad",
+        "costo_unitario"
+      ],
+      "rows": [
+        [
+          5,
+          4,
+          3,
+          "LT-2026-0005",
+          "2026-09-01",
+          "2028-12-31",
+          7.5
+        ],
+        [
+          6,
+          5,
+          4,
+          "LT-2026-0006",
+          "2026-09-01",
+          "2028-12-31",
+          8.5
+        ],
+        [
+          7,
+          6,
+          3,
+          "LT-2026-0007",
+          "2026-09-01",
+          "2028-12-31",
+          9.5
+        ],
+        [
+          8,
+          7,
+          4,
+          "LT-2026-0008",
+          "2026-09-01",
+          "2028-12-31",
+          10.5
+        ],
+        [
+          9,
+          8,
+          3,
+          "LT-2026-0009",
+          "2026-09-01",
+          "2028-12-31",
+          11.5
+        ],
+        [
+          10,
+          9,
+          4,
+          "LT-2026-0010",
+          "2026-09-01",
+          "2028-12-31",
+          12.5
+        ],
+        [
+          11,
+          10,
+          3,
+          "LT-2026-0011",
+          "2026-09-01",
+          "2028-12-31",
+          13.5
+        ],
+        [
+          12,
+          11,
+          4,
+          "LT-2026-0012",
+          "2026-09-01",
+          "2028-12-31",
+          14.5
+        ],
+        [
+          13,
+          12,
+          3,
+          "LT-2026-0013",
+          "2026-09-01",
+          "2028-12-31",
+          15.5
+        ],
+        [
+          14,
+          13,
+          4,
+          "LT-2026-0014",
+          "2026-09-01",
+          "2028-12-31",
+          16.5
+        ],
+        [
+          15,
+          14,
+          3,
+          "LT-2026-0015",
+          "2026-09-01",
+          "2028-12-31",
+          17.5
+        ],
+        [
+          16,
+          15,
+          4,
+          "LT-2026-0016",
+          "2026-09-01",
+          "2028-12-31",
+          18.5
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "movimientos_inventario",
+      "columns": [
+        "movimiento_id",
+        "lote_id",
+        "dispensacion_detalle_id",
+        "personal_id",
+        "fecha",
+        "tipo",
+        "cantidad",
+        "motivo"
+      ],
+      "rows": [
+        [
+          7,
+          5,
+          null,
+          6,
+          "2026-09-01 12:00:00",
+          "ENTRADA",
+          240,
+          "Recepción de mercancía y registro de lote en farmacia"
+        ],
+        [
+          8,
+          6,
+          null,
+          6,
+          "2026-09-01 12:00:00",
+          "ENTRADA",
+          250,
+          "Recepción de mercancía y registro de lote en farmacia"
+        ],
+        [
+          9,
+          7,
+          null,
+          6,
+          "2026-09-01 12:00:00",
+          "ENTRADA",
+          260,
+          "Recepción de mercancía y registro de lote en farmacia"
+        ],
+        [
+          10,
+          8,
+          null,
+          6,
+          "2026-09-01 12:00:00",
+          "ENTRADA",
+          270,
+          "Recepción de mercancía y registro de lote en farmacia"
+        ],
+        [
+          11,
+          9,
+          null,
+          6,
+          "2026-09-01 12:00:00",
+          "ENTRADA",
+          280,
+          "Recepción de mercancía y registro de lote en farmacia"
+        ],
+        [
+          12,
+          10,
+          null,
+          6,
+          "2026-09-01 12:00:00",
+          "ENTRADA",
+          290,
+          "Recepción de mercancía y registro de lote en farmacia"
+        ],
+        [
+          13,
+          11,
+          null,
+          6,
+          "2026-09-01 12:00:00",
+          "ENTRADA",
+          300,
+          "Recepción de mercancía y registro de lote en farmacia"
+        ],
+        [
+          14,
+          12,
+          null,
+          6,
+          "2026-09-01 12:00:00",
+          "ENTRADA",
+          310,
+          "Recepción de mercancía y registro de lote en farmacia"
+        ],
+        [
+          15,
+          13,
+          null,
+          6,
+          "2026-09-01 12:00:00",
+          "ENTRADA",
+          320,
+          "Recepción de mercancía y registro de lote en farmacia"
+        ],
+        [
+          16,
+          14,
+          null,
+          6,
+          "2026-09-01 12:00:00",
+          "ENTRADA",
+          330,
+          "Recepción de mercancía y registro de lote en farmacia"
+        ],
+        [
+          17,
+          15,
+          null,
+          6,
+          "2026-09-01 12:00:00",
+          "ENTRADA",
+          340,
+          "Recepción de mercancía y registro de lote en farmacia"
+        ],
+        [
+          18,
+          16,
+          null,
+          6,
+          "2026-09-01 12:00:00",
+          "ENTRADA",
+          350,
+          "Recepción de mercancía y registro de lote en farmacia"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "recetas",
+      "columns": [
+        "receta_id",
+        "consulta_id",
+        "fecha_prescripcion",
+        "observaciones"
+      ],
+      "rows": [
+        [
+          4,
+          6,
+          "2026-10-01 09:20:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          5,
+          7,
+          "2026-10-01 10:05:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          6,
+          8,
+          "2026-10-01 10:50:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          7,
+          9,
+          "2026-10-01 11:35:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          8,
+          10,
+          "2026-10-01 12:20:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          9,
+          11,
+          "2026-10-02 09:20:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          10,
+          12,
+          "2026-10-02 10:05:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          11,
+          13,
+          "2026-10-02 10:50:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          12,
+          14,
+          "2026-10-02 11:35:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          13,
+          15,
+          "2026-10-02 12:20:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          14,
+          16,
+          "2026-10-03 09:20:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          15,
+          17,
+          "2026-10-03 10:05:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          16,
+          18,
+          "2026-10-03 10:50:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          17,
+          19,
+          "2026-10-03 11:35:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          18,
+          20,
+          "2026-10-03 12:20:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          19,
+          21,
+          "2026-10-04 09:20:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          20,
+          22,
+          "2026-10-04 10:05:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          21,
+          23,
+          "2026-10-04 10:50:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          22,
+          24,
+          "2026-10-04 11:35:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          23,
+          25,
+          "2026-10-04 12:20:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          24,
+          26,
+          "2026-10-05 09:20:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ],
+        [
+          25,
+          27,
+          "2026-10-05 10:05:00",
+          "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente."
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "receta_detalle",
+      "columns": [
+        "receta_id",
+        "renglon",
+        "medicamento_id",
+        "dosis",
+        "frecuencia",
+        "duracion_dias",
+        "via_administracion",
+        "cantidad_prescrita"
+      ],
+      "rows": [
+        [
+          4,
+          1,
+          4,
+          "1 cápsula",
+          "Cada 8 horas",
+          3,
+          "Oral",
+          9
+        ],
+        [
+          4,
+          2,
+          8,
+          "1 tableta",
+          "Cada 12 horas",
+          3,
+          "Oral",
+          6
+        ],
+        [
+          5,
+          1,
+          5,
+          "Según orden médica",
+          "Cada 12 horas",
+          4,
+          "Intravenosa",
+          8
+        ],
+        [
+          5,
+          2,
+          9,
+          "1 tableta",
+          "Cada 24 horas",
+          4,
+          "Oral",
+          4
+        ],
+        [
+          6,
+          1,
+          6,
+          "1 inhalación",
+          "Cada 24 horas",
+          5,
+          "Inhalatoria",
+          5
+        ],
+        [
+          6,
+          2,
+          10,
+          "1 aplicación",
+          "Cada 6 horas",
+          5,
+          "Cutánea",
+          20
+        ],
+        [
+          7,
+          1,
+          7,
+          "1 tableta",
+          "Cada 6 horas",
+          6,
+          "Oral",
+          24
+        ],
+        [
+          7,
+          2,
+          11,
+          "Según orden médica",
+          "Cada 8 horas",
+          6,
+          "Subcutánea",
+          18
+        ],
+        [
+          8,
+          1,
+          8,
+          "1 tableta",
+          "Cada 8 horas",
+          7,
+          "Oral",
+          21
+        ],
+        [
+          8,
+          2,
+          12,
+          "Según orden médica",
+          "Cada 12 horas",
+          7,
+          "Intravenosa",
+          14
+        ],
+        [
+          9,
+          1,
+          9,
+          "1 tableta",
+          "Cada 12 horas",
+          3,
+          "Oral",
+          6
+        ],
+        [
+          9,
+          2,
+          13,
+          "Según orden médica",
+          "Cada 24 horas",
+          3,
+          "Intramuscular",
+          3
+        ],
+        [
+          10,
+          1,
+          10,
+          "1 aplicación",
+          "Cada 24 horas",
+          4,
+          "Cutánea",
+          4
+        ],
+        [
+          10,
+          2,
+          14,
+          "Según orden médica",
+          "Cada 6 horas",
+          4,
+          "Intravenosa",
+          16
+        ],
+        [
+          11,
+          1,
+          11,
+          "Según orden médica",
+          "Cada 6 horas",
+          5,
+          "Subcutánea",
+          20
+        ],
+        [
+          11,
+          2,
+          15,
+          "1 tableta",
+          "Cada 8 horas",
+          5,
+          "Oral",
+          15
+        ],
+        [
+          12,
+          1,
+          12,
+          "Según orden médica",
+          "Cada 8 horas",
+          6,
+          "Intravenosa",
+          18
+        ],
+        [
+          12,
+          2,
+          4,
+          "1 cápsula",
+          "Cada 12 horas",
+          6,
+          "Oral",
+          12
+        ],
+        [
+          13,
+          1,
+          13,
+          "Según orden médica",
+          "Cada 12 horas",
+          7,
+          "Intramuscular",
+          14
+        ],
+        [
+          13,
+          2,
+          5,
+          "Según orden médica",
+          "Cada 24 horas",
+          7,
+          "Intravenosa",
+          7
+        ],
+        [
+          14,
+          1,
+          14,
+          "Según orden médica",
+          "Cada 24 horas",
+          3,
+          "Intravenosa",
+          3
+        ],
+        [
+          14,
+          2,
+          6,
+          "1 inhalación",
+          "Cada 6 horas",
+          3,
+          "Inhalatoria",
+          12
+        ],
+        [
+          15,
+          1,
+          15,
+          "1 tableta",
+          "Cada 6 horas",
+          4,
+          "Oral",
+          16
+        ],
+        [
+          15,
+          2,
+          7,
+          "1 tableta",
+          "Cada 8 horas",
+          4,
+          "Oral",
+          12
+        ],
+        [
+          16,
+          1,
+          4,
+          "1 cápsula",
+          "Cada 8 horas",
+          5,
+          "Oral",
+          15
+        ],
+        [
+          16,
+          2,
+          8,
+          "1 tableta",
+          "Cada 12 horas",
+          5,
+          "Oral",
+          10
+        ],
+        [
+          17,
+          1,
+          5,
+          "Según orden médica",
+          "Cada 12 horas",
+          6,
+          "Intravenosa",
+          12
+        ],
+        [
+          17,
+          2,
+          9,
+          "1 tableta",
+          "Cada 24 horas",
+          6,
+          "Oral",
+          6
+        ],
+        [
+          18,
+          1,
+          6,
+          "1 inhalación",
+          "Cada 24 horas",
+          7,
+          "Inhalatoria",
+          7
+        ],
+        [
+          18,
+          2,
+          10,
+          "1 aplicación",
+          "Cada 6 horas",
+          7,
+          "Cutánea",
+          28
+        ],
+        [
+          19,
+          1,
+          7,
+          "1 tableta",
+          "Cada 6 horas",
+          3,
+          "Oral",
+          12
+        ],
+        [
+          19,
+          2,
+          11,
+          "Según orden médica",
+          "Cada 8 horas",
+          3,
+          "Subcutánea",
+          9
+        ],
+        [
+          20,
+          1,
+          8,
+          "1 tableta",
+          "Cada 8 horas",
+          4,
+          "Oral",
+          12
+        ],
+        [
+          20,
+          2,
+          12,
+          "Según orden médica",
+          "Cada 12 horas",
+          4,
+          "Intravenosa",
+          8
+        ],
+        [
+          21,
+          1,
+          9,
+          "1 tableta",
+          "Cada 12 horas",
+          5,
+          "Oral",
+          10
+        ],
+        [
+          21,
+          2,
+          13,
+          "Según orden médica",
+          "Cada 24 horas",
+          5,
+          "Intramuscular",
+          5
+        ],
+        [
+          22,
+          1,
+          10,
+          "1 aplicación",
+          "Cada 24 horas",
+          6,
+          "Cutánea",
+          6
+        ],
+        [
+          22,
+          2,
+          14,
+          "Según orden médica",
+          "Cada 6 horas",
+          6,
+          "Intravenosa",
+          24
+        ],
+        [
+          23,
+          1,
+          11,
+          "Según orden médica",
+          "Cada 6 horas",
+          7,
+          "Subcutánea",
+          28
+        ],
+        [
+          23,
+          2,
+          15,
+          "1 tableta",
+          "Cada 8 horas",
+          7,
+          "Oral",
+          21
+        ],
+        [
+          24,
+          1,
+          12,
+          "Según orden médica",
+          "Cada 8 horas",
+          3,
+          "Intravenosa",
+          9
+        ],
+        [
+          24,
+          2,
+          4,
+          "1 cápsula",
+          "Cada 12 horas",
+          3,
+          "Oral",
+          6
+        ],
+        [
+          25,
+          1,
+          13,
+          "Según orden médica",
+          "Cada 12 horas",
+          4,
+          "Intramuscular",
+          8
+        ],
+        [
+          25,
+          2,
+          5,
+          "Según orden médica",
+          "Cada 24 horas",
+          4,
+          "Intravenosa",
+          4
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "dispensaciones",
+      "columns": [
+        "dispensacion_id",
+        "receta_id",
+        "personal_id",
+        "fecha"
+      ],
+      "rows": [
+        [
+          2,
+          4,
+          6,
+          "2026-10-01 10:05:00"
+        ],
+        [
+          3,
+          5,
+          6,
+          "2026-10-01 10:50:00"
+        ],
+        [
+          4,
+          6,
+          6,
+          "2026-10-01 11:35:00"
+        ],
+        [
+          5,
+          7,
+          6,
+          "2026-10-01 12:20:00"
+        ],
+        [
+          6,
+          8,
+          6,
+          "2026-10-01 13:05:00"
+        ],
+        [
+          7,
+          9,
+          6,
+          "2026-10-02 10:05:00"
+        ],
+        [
+          8,
+          10,
+          6,
+          "2026-10-02 10:50:00"
+        ],
+        [
+          9,
+          11,
+          6,
+          "2026-10-02 11:35:00"
+        ],
+        [
+          10,
+          12,
+          6,
+          "2026-10-02 12:20:00"
+        ],
+        [
+          11,
+          13,
+          6,
+          "2026-10-02 13:05:00"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "dispensacion_detalle",
+      "columns": [
+        "dispensacion_detalle_id",
+        "dispensacion_id",
+        "receta_id",
+        "renglon",
+        "medicamento_id",
+        "lote_id",
+        "cantidad"
+      ],
+      "rows": [
+        [
+          3,
+          2,
+          4,
+          1,
+          4,
+          5,
+          9
+        ],
+        [
+          4,
+          2,
+          4,
+          2,
+          8,
+          9,
+          6
+        ],
+        [
+          5,
+          3,
+          5,
+          1,
+          5,
+          6,
+          8
+        ],
+        [
+          6,
+          3,
+          5,
+          2,
+          9,
+          10,
+          4
+        ],
+        [
+          7,
+          4,
+          6,
+          1,
+          6,
+          7,
+          5
+        ],
+        [
+          8,
+          4,
+          6,
+          2,
+          10,
+          11,
+          20
+        ],
+        [
+          9,
+          5,
+          7,
+          1,
+          7,
+          8,
+          24
+        ],
+        [
+          10,
+          5,
+          7,
+          2,
+          11,
+          12,
+          18
+        ],
+        [
+          11,
+          6,
+          8,
+          1,
+          8,
+          9,
+          21
+        ],
+        [
+          12,
+          6,
+          8,
+          2,
+          12,
+          13,
+          14
+        ],
+        [
+          13,
+          7,
+          9,
+          1,
+          9,
+          10,
+          3
+        ],
+        [
+          14,
+          7,
+          9,
+          2,
+          13,
+          14,
+          1
+        ],
+        [
+          15,
+          8,
+          10,
+          1,
+          10,
+          11,
+          2
+        ],
+        [
+          16,
+          8,
+          10,
+          2,
+          14,
+          15,
+          8
+        ],
+        [
+          17,
+          9,
+          11,
+          1,
+          11,
+          12,
+          10
+        ],
+        [
+          18,
+          9,
+          11,
+          2,
+          15,
+          16,
+          7
+        ],
+        [
+          19,
+          10,
+          12,
+          1,
+          12,
+          13,
+          9
+        ],
+        [
+          20,
+          10,
+          12,
+          2,
+          4,
+          5,
+          6
+        ],
+        [
+          21,
+          11,
+          13,
+          1,
+          13,
+          14,
+          7
+        ],
+        [
+          22,
+          11,
+          13,
+          2,
+          5,
+          6,
+          3
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "movimientos_inventario",
+      "columns": [
+        "movimiento_id",
+        "lote_id",
+        "dispensacion_detalle_id",
+        "personal_id",
+        "fecha",
+        "tipo",
+        "cantidad",
+        "motivo"
+      ],
+      "rows": [
+        [
+          19,
+          5,
+          3,
+          6,
+          "2026-10-01 10:05:00",
+          "SALIDA",
+          -9,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          20,
+          9,
+          4,
+          6,
+          "2026-10-01 10:05:00",
+          "SALIDA",
+          -6,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          21,
+          6,
+          5,
+          6,
+          "2026-10-01 10:50:00",
+          "SALIDA",
+          -8,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          22,
+          10,
+          6,
+          6,
+          "2026-10-01 10:50:00",
+          "SALIDA",
+          -4,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          23,
+          7,
+          7,
+          6,
+          "2026-10-01 11:35:00",
+          "SALIDA",
+          -5,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          24,
+          11,
+          8,
+          6,
+          "2026-10-01 11:35:00",
+          "SALIDA",
+          -20,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          25,
+          8,
+          9,
+          6,
+          "2026-10-01 12:20:00",
+          "SALIDA",
+          -24,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          26,
+          12,
+          10,
+          6,
+          "2026-10-01 12:20:00",
+          "SALIDA",
+          -18,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          27,
+          9,
+          11,
+          6,
+          "2026-10-01 13:05:00",
+          "SALIDA",
+          -21,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          28,
+          13,
+          12,
+          6,
+          "2026-10-01 13:05:00",
+          "SALIDA",
+          -14,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          29,
+          10,
+          13,
+          6,
+          "2026-10-02 10:05:00",
+          "SALIDA",
+          -3,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          30,
+          14,
+          14,
+          6,
+          "2026-10-02 10:05:00",
+          "SALIDA",
+          -1,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          31,
+          11,
+          15,
+          6,
+          "2026-10-02 10:50:00",
+          "SALIDA",
+          -2,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          32,
+          15,
+          16,
+          6,
+          "2026-10-02 10:50:00",
+          "SALIDA",
+          -8,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          33,
+          12,
+          17,
+          6,
+          "2026-10-02 11:35:00",
+          "SALIDA",
+          -10,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          34,
+          16,
+          18,
+          6,
+          "2026-10-02 11:35:00",
+          "SALIDA",
+          -7,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          35,
+          13,
+          19,
+          6,
+          "2026-10-02 12:20:00",
+          "SALIDA",
+          -9,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          36,
+          5,
+          20,
+          6,
+          "2026-10-02 12:20:00",
+          "SALIDA",
+          -6,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          37,
+          14,
+          21,
+          6,
+          "2026-10-02 13:05:00",
+          "SALIDA",
+          -7,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ],
+        [
+          38,
+          6,
+          22,
+          6,
+          "2026-10-02 13:05:00",
+          "SALIDA",
+          -3,
+          "Entrega a paciente conforme al detalle de dispensación"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "procedimientos",
+      "columns": [
+        "procedimiento_id",
+        "codigo",
+        "nombre",
+        "tipo",
+        "precio_referencia"
+      ],
+      "rows": [
+        [
+          5,
+          "PROC-005",
+          "Química sanguínea",
+          "LABORATORIO",
+          125
+        ],
+        [
+          6,
+          "PROC-006",
+          "Ultrasonido abdominal",
+          "IMAGEN",
+          150
+        ],
+        [
+          7,
+          "PROC-007",
+          "Colecistectomía",
+          "CIRUGIA",
+          175
+        ],
+        [
+          8,
+          "PROC-008",
+          "Curación de herida",
+          "OTRO",
+          200
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "ordenes_procedimiento",
+      "columns": [
+        "orden_id",
+        "consulta_id",
+        "procedimiento_id",
+        "fecha_solicitud",
+        "fecha_programada",
+        "estado",
+        "indicaciones"
+      ],
+      "rows": [
+        [
+          5,
+          6,
+          5,
+          "2026-10-01 09:25:00",
+          "2026-10-01 11:25:00",
+          "SOLICITADA",
+          "Realizar química sanguínea y anexar el informe al expediente."
+        ],
+        [
+          6,
+          7,
+          6,
+          "2026-10-01 10:10:00",
+          "2026-10-01 12:10:00",
+          "SOLICITADA",
+          "Realizar ultrasonido abdominal y anexar el informe al expediente."
+        ],
+        [
+          7,
+          8,
+          7,
+          "2026-10-01 10:55:00",
+          "2026-10-01 12:55:00",
+          "SOLICITADA",
+          "Realizar colecistectomía y anexar el informe al expediente."
+        ],
+        [
+          8,
+          9,
+          8,
+          "2026-10-01 11:40:00",
+          "2026-10-01 13:40:00",
+          "SOLICITADA",
+          "Realizar curación de herida y anexar el informe al expediente."
+        ],
+        [
+          9,
+          10,
+          5,
+          "2026-10-01 12:25:00",
+          "2026-10-01 14:25:00",
+          "SOLICITADA",
+          "Realizar química sanguínea y anexar el informe al expediente."
+        ],
+        [
+          10,
+          11,
+          6,
+          "2026-10-02 09:25:00",
+          "2026-10-02 11:25:00",
+          "SOLICITADA",
+          "Realizar ultrasonido abdominal y anexar el informe al expediente."
+        ],
+        [
+          11,
+          12,
+          7,
+          "2026-10-02 10:10:00",
+          "2026-10-02 12:10:00",
+          "SOLICITADA",
+          "Realizar colecistectomía y anexar el informe al expediente."
+        ],
+        [
+          12,
+          13,
+          8,
+          "2026-10-02 10:55:00",
+          "2026-10-02 12:55:00",
+          "SOLICITADA",
+          "Realizar curación de herida y anexar el informe al expediente."
+        ],
+        [
+          13,
+          14,
+          5,
+          "2026-10-02 11:40:00",
+          "2026-10-02 13:40:00",
+          "SOLICITADA",
+          "Realizar química sanguínea y anexar el informe al expediente."
+        ],
+        [
+          14,
+          15,
+          6,
+          "2026-10-02 12:25:00",
+          "2026-10-02 14:25:00",
+          "SOLICITADA",
+          "Realizar ultrasonido abdominal y anexar el informe al expediente."
+        ],
+        [
+          15,
+          16,
+          7,
+          "2026-10-03 09:25:00",
+          "2026-10-03 11:25:00",
+          "SOLICITADA",
+          "Realizar colecistectomía y anexar el informe al expediente."
+        ],
+        [
+          16,
+          17,
+          8,
+          "2026-10-03 10:10:00",
+          "2026-10-03 12:10:00",
+          "SOLICITADA",
+          "Realizar curación de herida y anexar el informe al expediente."
+        ],
+        [
+          17,
+          18,
+          5,
+          "2026-10-03 10:55:00",
+          "2026-10-03 12:55:00",
+          "SOLICITADA",
+          "Realizar química sanguínea y anexar el informe al expediente."
+        ],
+        [
+          18,
+          19,
+          6,
+          "2026-10-03 11:40:00",
+          "2026-10-03 13:40:00",
+          "PROGRAMADA",
+          "Realizar ultrasonido abdominal y anexar el informe al expediente."
+        ],
+        [
+          19,
+          20,
+          7,
+          "2026-10-03 12:25:00",
+          "2026-10-03 14:25:00",
+          "PROGRAMADA",
+          "Realizar colecistectomía y anexar el informe al expediente."
+        ],
+        [
+          20,
+          21,
+          8,
+          "2026-10-04 09:25:00",
+          "2026-10-04 11:25:00",
+          "PROGRAMADA",
+          "Realizar curación de herida y anexar el informe al expediente."
+        ],
+        [
+          21,
+          22,
+          5,
+          "2026-10-04 10:10:00",
+          "2026-10-04 12:10:00",
+          "PROGRAMADA",
+          "Realizar química sanguínea y anexar el informe al expediente."
+        ],
+        [
+          22,
+          23,
+          6,
+          "2026-10-04 10:55:00",
+          "2026-10-04 12:55:00",
+          "PROGRAMADA",
+          "Realizar ultrasonido abdominal y anexar el informe al expediente."
+        ],
+        [
+          23,
+          24,
+          7,
+          "2026-10-04 11:40:00",
+          "2026-10-04 13:40:00",
+          "PROGRAMADA",
+          "Realizar colecistectomía y anexar el informe al expediente."
+        ],
+        [
+          24,
+          25,
+          8,
+          "2026-10-04 12:25:00",
+          "2026-10-04 14:25:00",
+          "PROGRAMADA",
+          "Realizar curación de herida y anexar el informe al expediente."
+        ],
+        [
+          25,
+          26,
+          5,
+          "2026-10-05 09:25:00",
+          "2026-10-05 11:25:00",
+          "PROGRAMADA",
+          "Realizar química sanguínea y anexar el informe al expediente."
+        ],
+        [
+          26,
+          27,
+          6,
+          "2026-10-05 10:10:00",
+          "2026-10-05 12:10:00",
+          "PROGRAMADA",
+          "Realizar ultrasonido abdominal y anexar el informe al expediente."
+        ],
+        [
+          27,
+          28,
+          7,
+          "2026-10-05 10:55:00",
+          "2026-10-05 12:55:00",
+          "PROGRAMADA",
+          "Realizar colecistectomía y anexar el informe al expediente."
+        ],
+        [
+          28,
+          29,
+          8,
+          "2026-10-05 11:40:00",
+          "2026-10-05 13:40:00",
+          "CANCELADA",
+          "Realizar curación de herida y anexar el informe al expediente."
+        ],
+        [
+          29,
+          30,
+          5,
+          "2026-10-05 12:25:00",
+          "2026-10-05 14:25:00",
+          "PROGRAMADA",
+          "Realizar química sanguínea y anexar el informe al expediente."
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "resultados_procedimiento",
+      "columns": [
+        "resultado_id",
+        "orden_id",
+        "personal_id",
+        "fecha_resultado",
+        "informe"
+      ],
+      "rows": [
+        [
+          3,
+          5,
+          8,
+          "2026-10-01 12:25:00",
+          "Informe de química sanguínea. Documento recibido y registrado en el expediente EXP-2026-0006."
+        ],
+        [
+          4,
+          6,
+          10,
+          "2026-10-01 13:10:00",
+          "Informe de ultrasonido abdominal. Documento recibido y registrado en el expediente EXP-2026-0007."
+        ],
+        [
+          5,
+          7,
+          11,
+          "2026-10-01 13:55:00",
+          "Informe de colecistectomía. Documento recibido y registrado en el expediente EXP-2026-0008."
+        ],
+        [
+          6,
+          8,
+          12,
+          "2026-10-01 14:40:00",
+          "Informe de curación de herida. Documento recibido y registrado en el expediente EXP-2026-0009."
+        ],
+        [
+          7,
+          9,
+          8,
+          "2026-10-01 15:25:00",
+          "Informe de química sanguínea. Documento recibido y registrado en el expediente EXP-2026-0010."
+        ],
+        [
+          8,
+          10,
+          14,
+          "2026-10-02 12:25:00",
+          "Informe de ultrasonido abdominal. Documento recibido y registrado en el expediente EXP-2026-0011."
+        ],
+        [
+          9,
+          11,
+          15,
+          "2026-10-02 13:10:00",
+          "Informe de colecistectomía. Documento recibido y registrado en el expediente EXP-2026-0012."
+        ],
+        [
+          10,
+          12,
+          16,
+          "2026-10-02 13:55:00",
+          "Informe de curación de herida. Documento recibido y registrado en el expediente EXP-2026-0013."
+        ],
+        [
+          11,
+          13,
+          8,
+          "2026-10-02 14:40:00",
+          "Informe de química sanguínea. Documento recibido y registrado en el expediente EXP-2026-0014."
+        ],
+        [
+          12,
+          14,
+          18,
+          "2026-10-02 15:25:00",
+          "Informe de ultrasonido abdominal. Documento recibido y registrado en el expediente EXP-2026-0015."
+        ],
+        [
+          13,
+          15,
+          19,
+          "2026-10-03 12:25:00",
+          "Informe de colecistectomía. Documento recibido y registrado en el expediente EXP-2026-0016."
+        ],
+        [
+          14,
+          16,
+          20,
+          "2026-10-03 13:10:00",
+          "Informe de curación de herida. Documento recibido y registrado en el expediente EXP-2026-0017."
+        ],
+        [
+          15,
+          17,
+          8,
+          "2026-10-03 13:55:00",
+          "Informe de química sanguínea. Documento recibido y registrado en el expediente EXP-2026-0018."
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "facturas",
+      "columns": [
+        "factura_id",
+        "folio",
+        "paciente_id",
+        "poliza_id",
+        "fecha",
+        "estado"
+      ],
+      "rows": [
+        [
+          5,
+          "FAC-2026-00005",
+          6,
+          4,
+          "2026-10-01 13:05:00",
+          "ABIERTA"
+        ],
+        [
+          6,
+          "FAC-2026-00006",
+          7,
+          5,
+          "2026-10-01 13:50:00",
+          "ABIERTA"
+        ],
+        [
+          7,
+          "FAC-2026-00007",
+          8,
+          6,
+          "2026-10-01 14:35:00",
+          "ABIERTA"
+        ],
+        [
+          8,
+          "FAC-2026-00008",
+          9,
+          7,
+          "2026-10-01 15:20:00",
+          "ABIERTA"
+        ],
+        [
+          9,
+          "FAC-2026-00009",
+          10,
+          8,
+          "2026-10-01 16:05:00",
+          "ABIERTA"
+        ],
+        [
+          10,
+          "FAC-2026-00010",
+          11,
+          9,
+          "2026-10-02 13:05:00",
+          "ABIERTA"
+        ],
+        [
+          11,
+          "FAC-2026-00011",
+          12,
+          10,
+          "2026-10-02 13:50:00",
+          "ABIERTA"
+        ],
+        [
+          12,
+          "FAC-2026-00012",
+          13,
+          11,
+          "2026-10-02 14:35:00",
+          "ABIERTA"
+        ],
+        [
+          13,
+          "FAC-2026-00013",
+          14,
+          12,
+          "2026-10-02 15:20:00",
+          "ABIERTA"
+        ],
+        [
+          14,
+          "FAC-2026-00014",
+          15,
+          13,
+          "2026-10-02 16:05:00",
+          "ABIERTA"
+        ],
+        [
+          15,
+          "FAC-2026-00015",
+          16,
+          14,
+          "2026-10-03 13:05:00",
+          "ABIERTA"
+        ],
+        [
+          16,
+          "FAC-2026-00016",
+          17,
+          15,
+          "2026-10-03 13:50:00",
+          "ABIERTA"
+        ],
+        [
+          17,
+          "FAC-2026-00017",
+          18,
+          16,
+          "2026-10-03 14:35:00",
+          "ABIERTA"
+        ],
+        [
+          18,
+          "FAC-2026-00018",
+          19,
+          17,
+          "2026-10-03 15:20:00",
+          "ABIERTA"
+        ],
+        [
+          19,
+          "FAC-2026-00019",
+          20,
+          18,
+          "2026-10-03 16:05:00",
+          "ABIERTA"
+        ],
+        [
+          20,
+          "FAC-2026-00020",
+          21,
+          null,
+          "2026-10-04 13:05:00",
+          "ABIERTA"
+        ],
+        [
+          21,
+          "FAC-2026-00021",
+          22,
+          null,
+          "2026-10-04 13:50:00",
+          "ABIERTA"
+        ],
+        [
+          22,
+          "FAC-2026-00022",
+          23,
+          null,
+          "2026-10-04 14:35:00",
+          "ABIERTA"
+        ],
+        [
+          23,
+          "FAC-2026-00023",
+          24,
+          null,
+          "2026-10-04 15:20:00",
+          "ABIERTA"
+        ],
+        [
+          24,
+          "FAC-2026-00024",
+          25,
+          null,
+          "2026-10-04 16:05:00",
+          "ABIERTA"
+        ],
+        [
+          25,
+          "FAC-2026-00025",
+          26,
+          null,
+          "2026-10-05 13:05:00",
+          "ABIERTA"
+        ],
+        [
+          26,
+          "FAC-2026-00026",
+          27,
+          null,
+          "2026-10-05 13:50:00",
+          "ABIERTA"
+        ],
+        [
+          27,
+          "FAC-2026-00027",
+          28,
+          null,
+          "2026-10-05 14:35:00",
+          "ABIERTA"
+        ],
+        [
+          28,
+          "FAC-2026-00028",
+          29,
+          null,
+          "2026-10-05 15:20:00",
+          "ABIERTA"
+        ],
+        [
+          29,
+          "FAC-2026-00029",
+          30,
+          null,
+          "2026-10-05 16:05:00",
+          "ABIERTA"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "factura_detalle",
+      "columns": [
+        "factura_id",
+        "renglon",
+        "descripcion",
+        "cantidad",
+        "precio_unitario",
+        "descuento"
+      ],
+      "rows": [
+        [
+          5,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          350,
+          0
+        ],
+        [
+          5,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          125,
+          0
+        ],
+        [
+          6,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          400,
+          0
+        ],
+        [
+          6,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          150,
+          0
+        ],
+        [
+          7,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          450,
+          0
+        ],
+        [
+          7,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          175,
+          0
+        ],
+        [
+          8,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          500,
+          0
+        ],
+        [
+          8,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          200,
+          0
+        ],
+        [
+          9,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          550,
+          0
+        ],
+        [
+          9,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          125,
+          0
+        ],
+        [
+          10,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          600,
+          0
+        ],
+        [
+          10,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          150,
+          0
+        ],
+        [
+          11,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          350,
+          0
+        ],
+        [
+          11,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          175,
+          0
+        ],
+        [
+          12,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          400,
+          0
+        ],
+        [
+          12,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          200,
+          0
+        ],
+        [
+          13,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          450,
+          0
+        ],
+        [
+          13,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          125,
+          0
+        ],
+        [
+          14,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          500,
+          0
+        ],
+        [
+          14,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          150,
+          0
+        ],
+        [
+          15,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          550,
+          0
+        ],
+        [
+          15,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          175,
+          0
+        ],
+        [
+          16,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          600,
+          0
+        ],
+        [
+          16,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          200,
+          0
+        ],
+        [
+          17,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          350,
+          0
+        ],
+        [
+          17,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          125,
+          0
+        ],
+        [
+          18,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          400,
+          0
+        ],
+        [
+          18,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          150,
+          0
+        ],
+        [
+          19,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          450,
+          0
+        ],
+        [
+          19,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          175,
+          0
+        ],
+        [
+          20,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          500,
+          0
+        ],
+        [
+          20,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          200,
+          0
+        ],
+        [
+          21,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          550,
+          0
+        ],
+        [
+          21,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          125,
+          0
+        ],
+        [
+          22,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          600,
+          0
+        ],
+        [
+          22,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          150,
+          0
+        ],
+        [
+          23,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          350,
+          0
+        ],
+        [
+          23,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          175,
+          0
+        ],
+        [
+          24,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          400,
+          0
+        ],
+        [
+          24,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          200,
+          0
+        ],
+        [
+          25,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          450,
+          0
+        ],
+        [
+          25,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          125,
+          0
+        ],
+        [
+          26,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          500,
+          0
+        ],
+        [
+          26,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          150,
+          0
+        ],
+        [
+          27,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          550,
+          0
+        ],
+        [
+          27,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          175,
+          0
+        ],
+        [
+          28,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          600,
+          0
+        ],
+        [
+          28,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          200,
+          0
+        ],
+        [
+          29,
+          1,
+          "Consulta médica de seguimiento",
+          1,
+          350,
+          0
+        ],
+        [
+          29,
+          2,
+          "Servicio de diagnóstico y procedimiento",
+          1,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "kind": "statement",
+      "sql": "UPDATE facturas SET estado = 'EMITIDA' WHERE factura_id BETWEEN 5 AND 24"
+    },
+    {
+      "kind": "insert",
+      "table": "pagos",
+      "columns": [
+        "pago_id",
+        "factura_id",
+        "fecha",
+        "monto",
+        "metodo",
+        "referencia"
+      ],
+      "rows": [
+        [
+          5,
+          5,
+          "2026-10-01 13:20:00",
+          475,
+          "EFECTIVO",
+          "EFE-202610-000005"
+        ],
+        [
+          6,
+          6,
+          "2026-10-01 14:05:00",
+          550,
+          "TARJETA",
+          "TAR-202610-000006"
+        ],
+        [
+          7,
+          7,
+          "2026-10-01 14:50:00",
+          625,
+          "TRANSFERENCIA",
+          "TRA-202610-000007"
+        ],
+        [
+          8,
+          8,
+          "2026-10-01 15:35:00",
+          700,
+          "EFECTIVO",
+          "EFE-202610-000008"
+        ],
+        [
+          9,
+          9,
+          "2026-10-01 16:20:00",
+          675,
+          "TARJETA",
+          "TAR-202610-000009"
+        ],
+        [
+          10,
+          10,
+          "2026-10-02 13:20:00",
+          150,
+          "TRANSFERENCIA",
+          "TRA-202610-000010"
+        ],
+        [
+          11,
+          11,
+          "2026-10-02 14:05:00",
+          150,
+          "EFECTIVO",
+          "EFE-202610-000011"
+        ],
+        [
+          12,
+          12,
+          "2026-10-02 14:50:00",
+          150,
+          "TARJETA",
+          "TAR-202610-000012"
+        ],
+        [
+          13,
+          13,
+          "2026-10-02 15:35:00",
+          150,
+          "TRANSFERENCIA",
+          "TRA-202610-000013"
+        ],
+        [
+          14,
+          14,
+          "2026-10-02 16:20:00",
+          150,
+          "EFECTIVO",
+          "EFE-202610-000014"
+        ],
+        [
+          15,
+          15,
+          "2026-10-03 13:20:00",
+          75,
+          "TARJETA",
+          "TAR-202610-000015"
+        ],
+        [
+          16,
+          15,
+          "2026-10-03 13:50:00",
+          50,
+          "TARJETA",
+          "TAR-202610-000016"
+        ],
+        [
+          17,
+          16,
+          "2026-10-03 14:05:00",
+          75,
+          "TRANSFERENCIA",
+          "TRA-202610-000017"
+        ],
+        [
+          18,
+          16,
+          "2026-10-03 14:35:00",
+          50,
+          "TRANSFERENCIA",
+          "TRA-202610-000018"
+        ],
+        [
+          19,
+          17,
+          "2026-10-03 14:50:00",
+          75,
+          "EFECTIVO",
+          "EFE-202610-000019"
+        ],
+        [
+          20,
+          17,
+          "2026-10-03 15:20:00",
+          50,
+          "EFECTIVO",
+          "EFE-202610-000020"
+        ],
+        [
+          21,
+          18,
+          "2026-10-03 15:35:00",
+          75,
+          "TARJETA",
+          "TAR-202610-000021"
+        ],
+        [
+          22,
+          18,
+          "2026-10-03 16:05:00",
+          50,
+          "TARJETA",
+          "TAR-202610-000022"
+        ],
+        [
+          23,
+          19,
+          "2026-10-03 16:20:00",
+          75,
+          "TRANSFERENCIA",
+          "TRA-202610-000023"
+        ],
+        [
+          24,
+          19,
+          "2026-10-03 16:50:00",
+          50,
+          "TRANSFERENCIA",
+          "TRA-202610-000024"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "roles",
+      "columns": [
+        "rol_id",
+        "nombre",
+        "descripcion"
+      ],
+      "rows": [
+        [
+          5,
+          "LABORATORIO",
+          "Registro de órdenes e informes de estudios."
+        ],
+        [
+          6,
+          "ENFERMERIA",
+          "Registro de cuidados y seguimiento de hospitalización."
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "usuarios",
+      "columns": [
+        "usuario_id",
+        "personal_id",
+        "nombre_usuario",
+        "password_hash",
+        "activo"
+      ],
+      "rows": [
+        [
+          4,
+          24,
+          "mariana.vega",
+          "pbkdf2_sha256$120000$4827187d29ff1a9a2e307811$Dm0eSqkySx1nY5dvolbdQrn39BYnploGHcmgX9Hv6Pg=",
+          0
+        ],
+        [
+          5,
+          25,
+          "daniel.leon",
+          "pbkdf2_sha256$120000$545a4a40771d2ffe4b316026$jhxzd47KJbdi4TstGP3fMPrL9/+SxD+7rSmg8PIsIyo=",
+          0
+        ],
+        [
+          6,
+          8,
+          "raquel.campos",
+          "pbkdf2_sha256$120000$8c6505c56518bf09e51988f5$22MufqgBYugwREKkvMNO2WsFsyyxvoCwSHUC5jgqn0o=",
+          0
+        ],
+        [
+          7,
+          9,
+          "carlos.mendoza",
+          "pbkdf2_sha256$120000$0c0f3f013e0de2c374fbfa4d$zHC3wc8p65fc+Qvgx865RhVSb7M493ohtKzcULlZ8aw=",
+          0
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "usuario_roles",
+      "columns": [
+        "usuario_id",
+        "rol_id"
+      ],
+      "rows": [
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "citas",
+      "columns": [
+        "cita_id",
+        "paciente_id",
+        "medico_id",
+        "inicio",
+        "fin",
+        "motivo",
+        "estado"
+      ],
+      "rows": [
+        [
+          40,
+          6,
+          9,
+          "2026-10-10 09:00:00",
+          "2026-10-10 09:25:00",
+          "Valoración por gastritis",
+          "ATENDIDA"
+        ],
+        [
+          41,
+          7,
+          10,
+          "2026-10-10 09:30:00",
+          "2026-10-10 09:55:00",
+          "Valoración por rinitis alérgica",
+          "ATENDIDA"
+        ],
+        [
+          42,
+          8,
+          11,
+          "2026-10-10 10:00:00",
+          "2026-10-10 10:25:00",
+          "Valoración por control de hipertensión arterial",
+          "ATENDIDA"
+        ],
+        [
+          43,
+          9,
+          12,
+          "2026-10-10 10:30:00",
+          "2026-10-10 10:55:00",
+          "Valoración por dolor articular",
+          "ATENDIDA"
+        ],
+        [
+          44,
+          10,
+          13,
+          "2026-10-10 11:00:00",
+          "2026-10-10 11:25:00",
+          "Valoración por infección respiratoria de vías superiores",
+          "ATENDIDA"
+        ],
+        [
+          45,
+          11,
+          14,
+          "2026-10-10 11:30:00",
+          "2026-10-10 11:55:00",
+          "Valoración por gastritis",
+          "ATENDIDA"
+        ],
+        [
+          46,
+          12,
+          15,
+          "2026-10-10 12:00:00",
+          "2026-10-10 12:25:00",
+          "Valoración por rinitis alérgica",
+          "ATENDIDA"
+        ],
+        [
+          47,
+          13,
+          16,
+          "2026-10-10 12:30:00",
+          "2026-10-10 12:55:00",
+          "Valoración por control de hipertensión arterial",
+          "ATENDIDA"
+        ],
+        [
+          48,
+          14,
+          17,
+          "2026-10-10 13:00:00",
+          "2026-10-10 13:25:00",
+          "Valoración por dolor articular",
+          "ATENDIDA"
+        ],
+        [
+          49,
+          15,
+          18,
+          "2026-10-10 13:30:00",
+          "2026-10-10 13:55:00",
+          "Valoración por infección respiratoria de vías superiores",
+          "ATENDIDA"
+        ],
+        [
+          50,
+          16,
+          19,
+          "2026-10-10 14:00:00",
+          "2026-10-10 14:25:00",
+          "Valoración por gastritis",
+          "ATENDIDA"
+        ],
+        [
+          51,
+          17,
+          20,
+          "2026-10-10 14:30:00",
+          "2026-10-10 14:55:00",
+          "Valoración por rinitis alérgica",
+          "ATENDIDA"
+        ],
+        [
+          52,
+          18,
+          21,
+          "2026-10-10 15:00:00",
+          "2026-10-10 15:25:00",
+          "Valoración por control de hipertensión arterial",
+          "ATENDIDA"
+        ],
+        [
+          53,
+          19,
+          22,
+          "2026-10-10 15:30:00",
+          "2026-10-10 15:55:00",
+          "Valoración por dolor articular",
+          "ATENDIDA"
+        ],
+        [
+          54,
+          20,
+          23,
+          "2026-10-10 16:00:00",
+          "2026-10-10 16:25:00",
+          "Valoración por infección respiratoria de vías superiores",
+          "ATENDIDA"
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "consultas",
+      "columns": [
+        "consulta_id",
+        "cita_id",
+        "paciente_id",
+        "medico_id",
+        "fecha",
+        "tipo",
+        "motivo",
+        "notas"
+      ],
+      "rows": [
+        [
+          31,
+          40,
+          6,
+          9,
+          "2026-10-10 09:05:00",
+          "PROGRAMADA",
+          "Valoración por gastritis",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ],
+        [
+          32,
+          41,
+          7,
+          10,
+          "2026-10-10 09:35:00",
+          "PROGRAMADA",
+          "Valoración por rinitis alérgica",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ],
+        [
+          33,
+          42,
+          8,
+          11,
+          "2026-10-10 10:05:00",
+          "PROGRAMADA",
+          "Valoración por control de hipertensión arterial",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ],
+        [
+          34,
+          43,
+          9,
+          12,
+          "2026-10-10 10:35:00",
+          "PROGRAMADA",
+          "Valoración por dolor articular",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ],
+        [
+          35,
+          44,
+          10,
+          13,
+          "2026-10-10 11:05:00",
+          "PROGRAMADA",
+          "Valoración por infección respiratoria de vías superiores",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ],
+        [
+          36,
+          45,
+          11,
+          14,
+          "2026-10-10 11:35:00",
+          "PROGRAMADA",
+          "Valoración por gastritis",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ],
+        [
+          37,
+          46,
+          12,
+          15,
+          "2026-10-10 12:05:00",
+          "PROGRAMADA",
+          "Valoración por rinitis alérgica",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ],
+        [
+          38,
+          47,
+          13,
+          16,
+          "2026-10-10 12:35:00",
+          "PROGRAMADA",
+          "Valoración por control de hipertensión arterial",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ],
+        [
+          39,
+          48,
+          14,
+          17,
+          "2026-10-10 13:05:00",
+          "PROGRAMADA",
+          "Valoración por dolor articular",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ],
+        [
+          40,
+          49,
+          15,
+          18,
+          "2026-10-10 13:35:00",
+          "PROGRAMADA",
+          "Valoración por infección respiratoria de vías superiores",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ],
+        [
+          41,
+          50,
+          16,
+          19,
+          "2026-10-10 14:05:00",
+          "PROGRAMADA",
+          "Valoración por gastritis",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ],
+        [
+          42,
+          51,
+          17,
+          20,
+          "2026-10-10 14:35:00",
+          "PROGRAMADA",
+          "Valoración por rinitis alérgica",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ],
+        [
+          43,
+          52,
+          18,
+          21,
+          "2026-10-10 15:05:00",
+          "PROGRAMADA",
+          "Valoración por control de hipertensión arterial",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ],
+        [
+          44,
+          53,
+          19,
+          22,
+          "2026-10-10 15:35:00",
+          "PROGRAMADA",
+          "Valoración por dolor articular",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ],
+        [
+          45,
+          54,
+          20,
+          23,
+          "2026-10-10 16:05:00",
+          "PROGRAMADA",
+          "Valoración por infección respiratoria de vías superiores",
+          "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente."
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "recetas",
+      "columns": [
+        "receta_id",
+        "consulta_id",
+        "fecha_prescripcion",
+        "observaciones"
+      ],
+      "rows": [
+        [
+          26,
+          31,
+          "2026-10-10 09:10:00",
+          "Monitorear temperatura corporal."
+        ],
+        [
+          27,
+          32,
+          "2026-10-10 09:40:00",
+          "Administrar lentamente por vía IV."
+        ],
+        [
+          28,
+          33,
+          "2026-10-10 10:10:00",
+          "Tomar en ayunas por la mañana."
+        ],
+        [
+          29,
+          34,
+          "2026-10-10 10:40:00",
+          "Completar tratamiento de 7 días."
+        ],
+        [
+          30,
+          35,
+          "2026-10-10 11:10:00",
+          "Usar en caso de dolor agudo."
+        ],
+        [
+          31,
+          36,
+          "2026-10-10 11:40:00",
+          "Antes del primer alimento del día."
+        ],
+        [
+          32,
+          37,
+          "2026-10-10 12:10:00",
+          "Vigilar estado de conciencia."
+        ],
+        [
+          33,
+          38,
+          "2026-10-10 12:40:00",
+          "Indicado para cuadro alérgico."
+        ],
+        [
+          34,
+          39,
+          "2026-10-10 13:10:00",
+          "Acompañar con los alimentos principales."
+        ],
+        [
+          35,
+          40,
+          "2026-10-10 13:40:00",
+          "Usar espaciador en caso de disnea."
+        ],
+        [
+          36,
+          41,
+          "2026-10-10 14:10:00",
+          "Diluir en solución salina al 0.9%."
+        ],
+        [
+          37,
+          42,
+          "2026-10-10 14:40:00",
+          "Controlar niveles de glucosa."
+        ],
+        [
+          38,
+          43,
+          "2026-10-10 15:10:00",
+          "Vigilar gasto urinario y presión arterial."
+        ],
+        [
+          39,
+          44,
+          "2026-10-10 15:40:00",
+          "Rotar sitio de punción diariamente."
+        ],
+        [
+          40,
+          45,
+          "2026-10-10 16:10:00",
+          "Frotar suavemente sobre la zona afectada."
+        ]
+      ]
+    },
+    {
+      "kind": "insert",
+      "table": "receta_detalle",
+      "columns": [
+        "receta_id",
+        "renglon",
+        "medicamento_id",
+        "dosis",
+        "frecuencia",
+        "duracion_dias",
+        "via_administracion",
+        "cantidad_prescrita"
+      ],
+      "rows": [
+        [
+          26,
+          1,
+          1,
+          "500 mg cada 8 horas",
+          "Cada 8 horas",
+          1,
+          "Oral",
+          1
+        ],
+        [
+          27,
+          1,
+          5,
+          "30 mg cada 12 horas",
+          "Cada 12 horas",
+          1,
+          "Intravenosa",
+          1
+        ],
+        [
+          28,
+          1,
+          9,
+          "50 mg cada 24 horas",
+          "Cada 24 horas",
+          1,
+          "Oral",
+          1
+        ],
+        [
+          29,
+          1,
+          3,
+          "10 ml cada 8 horas",
+          "Cada 8 horas",
+          7,
+          "Oral",
+          1
+        ],
+        [
+          30,
+          1,
+          2,
+          "400 mg cada 6 horas condicional",
+          "Cada 6 horas",
+          1,
+          "Oral",
+          1
+        ],
+        [
+          31,
+          1,
+          4,
+          "20 mg cada 24 horas",
+          "Cada 24 horas",
+          1,
+          "Oral",
+          1
+        ],
+        [
+          32,
+          1,
+          13,
+          "10 mg dosis única",
+          "Dosis única",
+          1,
+          "Intramuscular",
+          1
+        ],
+        [
+          33,
+          1,
+          7,
+          "10 mg cada 24 horas",
+          "Cada 24 horas",
+          1,
+          "Oral",
+          1
+        ],
+        [
+          34,
+          1,
+          8,
+          "850 mg cada 12 horas",
+          "Cada 12 horas",
+          1,
+          "Oral",
+          1
+        ],
+        [
+          35,
+          1,
+          6,
+          "2 disparos cada 4 horas",
+          "Cada 4 horas",
+          1,
+          "Inhalatoria",
+          1
+        ],
+        [
+          36,
+          1,
+          12,
+          "1 g cada 12 horas",
+          "Cada 12 horas",
+          1,
+          "Intravenosa",
+          1
+        ],
+        [
+          37,
+          1,
+          14,
+          "100 mg cada 8 horas",
+          "Cada 8 horas",
+          1,
+          "Intravenosa",
+          1
+        ],
+        [
+          38,
+          1,
+          15,
+          "40 mg cada 24 horas",
+          "Cada 24 horas",
+          1,
+          "Oral",
+          1
+        ],
+        [
+          39,
+          1,
+          11,
+          "15 UI por la noche",
+          "Por la noche",
+          1,
+          "Subcutánea",
+          1
+        ],
+        [
+          40,
+          1,
+          10,
+          "Aplicar cantidad moderada",
+          "Según indicación registrada en la receta",
+          1,
+          "Tópico",
+          1
+        ]
+      ]
+    }
+  ]
+}

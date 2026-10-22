@@ -1,9 +1,9 @@
 {
-  "fecha_utc": "2026-10-20T02:50:52.111709+00:00",
+  "fecha_utc": "2026-10-22T17:31:04.576086+00:00",
   "estado": "APROBADO",
   "resumen": {
-    "total": 34,
-    "correctas": 34,
+    "total": 38,
+    "correctas": 38,
     "fallidas": 0
   },
   "pruebas": [
@@ -28,6 +28,21 @@
       "detalle": ""
     },
     {
+      "nombre": "La instalacion de Python no deja relleno en los textos de las 36 tablas",
+      "correcta": true,
+      "detalle": "{\"tablas\": 36, \"celdas\": 1696, \"coincidencias\": 0, \"ejemplos\": []}"
+    },
+    {
+      "nombre": "Completar datos en una base limpia informa sin modificar ni pedir respaldo",
+      "correcta": true,
+      "detalle": "{'respaldo_solicitado': False, 'dialogos': [('info', 'Datos completos', 'No quedan valores iniciales pendientes de esta actualización. No se modificó ningún registro.')]}"
+    },
+    {
+      "nombre": "Completar datos conserva las 36 tablas sin relleno",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
       "nombre": "La instalacion muestra Elena y su correo coherente",
       "correcta": true,
       "detalle": ""
@@ -44,6 +59,11 @@
     },
     {
       "nombre": "Los botones de respaldo son visibles en Inicio",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "En 1020x700 Completar datos queda visible en Inicio",
       "correcta": true,
       "detalle": ""
     },
@@ -175,10 +195,10 @@
     {
       "nombre": "Solo se elimina la base UUID propia",
       "correcta": true,
-      "detalle": "hospital_prueba_2064a00c35684fa09e68e3cab3e977d7"
+      "detalle": "hospital_prueba_8f1d7f2d9041479fa9f35bd1c042fd0d"
     }
   ],
   "huellas_sha256": {
-    "app_hospital/main.py": "05125a89f71c257f2fef93ea5a0ea789885a73c137091ccffd5fb434bb588bd5"
+    "app_hospital/main.py": "4ff957ae5354f6f1737ee98faec81481786ca01e9cf3a98e96d2f8ccd9a73456"
   }
 }

@@ -18,11 +18,13 @@ En la laptop donde se preparó la base local del proyecto, el servidor se inicia
 4. Si la base del proyecto ya existe y es compatible, pulsa **Abrir hospital**.
 5. Si no existe, pulsa **Crear base con ejemplos**, confirma y espera. Después abre el hospital.
 
-La creación carga 789 registros repartidos en las 36 tablas e incluye `07_contactos_y_catalogos.sql`: nombres completos, 95 teléfonos de diez dígitos y 59 correos de ejemplo personalizados. Conserva los aportes del equipo. Una base existente no se sustituye ni recibe esta carga otra vez. Para actualizar una copia anterior, consulta [Datos del proyecto](../DATOS_DEL_PROYECTO.md) y respáldala primero.
+La creación carga 789 registros repartidos en las 36 tablas con los textos completos: nombres, domicilios, medicamentos, notas, recetas y estudios. Incluye 95 teléfonos de diez dígitos y 59 correos personalizados, y conserva los aportes del equipo. Una base existente no se sustituye ni recibe esta carga otra vez. El archivo 07 se conserva como antecedente histórico de la primera actualización de contactos.
+
+Si ya tienes una copia con los valores anteriores, entra a **Inicio → Completar datos del proyecto**. La aplicación revisa los campos, te pide dónde guardar un respaldo y lo crea antes de actualizar. Sustituye solamente los valores conocidos de versiones anteriores; conserva los campos que el equipo ya haya personalizado, los identificadores, las relaciones, fechas y cantidades. Si la base ya está completa, informa que no hay cambios pendientes y no pide crear otro respaldo. Los detalles están en [Datos del proyecto](../DATOS_DEL_PROYECTO.md).
 
 ## Funciones
 
-- **Inicio:** conteos de las 36 tablas, pacientes, médicos, medicamentos, recetas y total; creación de respaldo completo y restauración en una base nueva.
+- **Inicio:** conteos de las 36 tablas, pacientes, médicos, medicamentos, recetas y total; completar los textos anteriores del proyecto, crear un respaldo completo y restaurar en una base nueva.
 - **Registros:** filtrar las 36 tablas por área del hospital, buscar, abrir **Ver registro**, agregar y editar donde corresponde, seleccionar relaciones por nombre y exportar la página mostrada a CSV. Identificadores y campos calculados se protegen. Los valores lógicos se eligen como **Sí** o **No**; las fechas, números y longitudes de los campos se revisan al guardar.
 - **Operaciones:** agendar, confirmar y cancelar citas; asignar o trasladar camillas; dar altas; registrar entradas y ajustes; entregar medicamentos; emitir y anular facturas; registrar pagos. Las seis operaciones principales usan los procedimientos transaccionales de la base.
 - **Consultas:** ocho reportes con nombres, especialidades, recetas, disponibilidad, existencias y saldos.
@@ -56,9 +58,11 @@ En otros sistemas, usa el ejecutable Python del entorno correspondiente. La inte
 | --- | --- |
 | `main.py` | Ventanas, formularios, acciones y exportación de CSV |
 | `db.py` | Conexión, valores parametrizados, validación, carga y respaldo |
+| `data_cleanup.py` | Actualización reconocida de textos anteriores con respaldo y conservación de las reglas |
 | `catalog.py` | Tablas permitidas, etiquetas, restricciones, operaciones y reportes |
 | `tests/integration_mysql.py` | Pruebas reales del servicio, incluido el ejercicio del tutorial |
 | `tests/gui_smoke.py` | Recorrido de las ventanas reales y capturas de la propia aplicación |
+| `tests/audit_data.py` | Revisión de todos los campos de texto de las 36 tablas; detecta relleno y oculta valores sensibles |
 | `tests/test_forms.py` | Pruebas de validación de formularios con Tkinter, sin conexión a MySQL |
 
 Se puede consultar y agregar información en los módulos del hospital. Algunas relaciones dependen de más de un campo: una consulta vinculada a una cita debe usar el mismo paciente y médico; un lote debe coincidir con el medicamento de la receta. Las listas ayudan a elegir y la base valida esas relaciones al guardar. No se afirma que la aplicación cubra todos los procesos de un hospital real.
@@ -73,6 +77,8 @@ Usa una instancia de pruebas con una cuenta que pueda crear y eliminar bases. Es
 .venv_app\Scripts\python.exe -m unittest app_hospital.tests.test_forms
 ```
 
-El segundo recorrido necesita escritorio Windows y Pillow para capturar exclusivamente las ventanas de esta aplicación. Pillow es una dependencia opcional de las pruebas, no de la aplicación. Las pruebas de formularios también necesitan una pantalla con Tkinter y no usan MySQL. Los reportes están en [VALIDACION_APP.json](../VALIDACION_APP.json), [VALIDACION_INTERFAZ.json](../VALIDACION_INTERFAZ.json) y [VALIDACION_FORMULARIOS.json](../VALIDACION_FORMULARIOS.json). Cambiar código o datos requiere volver a verificar la evidencia correspondiente.
+El segundo recorrido necesita escritorio Windows y Pillow 11.2.1 o posterior para capturar exclusivamente la ventana propia por su identificador HWND, incluso si otra aplicación está delante; no recorta el escritorio. Esta opción está documentada en [Pillow](https://pillow.readthedocs.io/en/stable/reference/ImageGrab.html). Pillow es una dependencia opcional de las pruebas, no de la aplicación. Las pruebas de formularios también necesitan una pantalla con Tkinter y no usan MySQL. Los reportes están en [VALIDACION_APP.json](../VALIDACION_APP.json), [VALIDACION_INTERFAZ.json](../VALIDACION_INTERFAZ.json) y [VALIDACION_FORMULARIOS.json](../VALIDACION_FORMULARIOS.json). Cambiar código o datos requiere volver a verificar la evidencia correspondiente.
+
+El manual actual es el PDF o Markdown de `tutorial_interfaz/`. El Word conservado en esa carpeta corresponde a una versión anterior y puede mostrar los textos antiguos; no se presenta como documentación actualizada.
 
 Referencias de programación: [Tkinter](https://docs.python.org/3/library/tkinter.html), [PyMySQL y su extra de autenticación](https://pypi.org/project/PyMySQL/), [instalación de MySQL en Windows](https://dev.mysql.com/doc/refman/8.0/en/windows-installation.html).

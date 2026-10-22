@@ -1,0 +1,292 @@
+{
+  "inicio_utc": "2026-10-22T17:25:29+00:00",
+  "base_temporal": "hospital_prueba_06c6e50704ed4511bcaf22738abbe083",
+  "etapa": "completada",
+  "vista_previa": {
+    "version": "2026-10-22",
+    "cells": 755,
+    "rows": 523,
+    "tables": {
+      "citas": {
+        "rows": 54,
+        "cells": 54
+      },
+      "consultas": {
+        "rows": 45,
+        "cells": 90
+      },
+      "diagnosticos": {
+        "rows": 8,
+        "cells": 16
+      },
+      "consulta_diagnosticos": {
+        "rows": 40,
+        "cells": 40
+      },
+      "alergias_paciente": {
+        "rows": 9,
+        "cells": 18
+      },
+      "hospitalizaciones": {
+        "rows": 11,
+        "cells": 15
+      },
+      "notas_enfermeria": {
+        "rows": 21,
+        "cells": 21
+      },
+      "medicamentos": {
+        "rows": 15,
+        "cells": 75
+      },
+      "recetas": {
+        "rows": 40,
+        "cells": 40
+      },
+      "receta_detalle": {
+        "rows": 64,
+        "cells": 162
+      },
+      "movimientos_inventario": {
+        "rows": 38,
+        "cells": 38
+      },
+      "procedimientos": {
+        "rows": 8,
+        "cells": 16
+      },
+      "ordenes_procedimiento": {
+        "rows": 29,
+        "cells": 29
+      },
+      "resultados_procedimiento": {
+        "rows": 15,
+        "cells": 15
+      },
+      "facturas": {
+        "rows": 29,
+        "cells": 29
+      },
+      "factura_detalle": {
+        "rows": 60,
+        "cells": 60
+      },
+      "pagos": {
+        "rows": 24,
+        "cells": 24
+      },
+      "roles": {
+        "rows": 6,
+        "cells": 6
+      },
+      "usuarios": {
+        "rows": 7,
+        "cells": 7
+      }
+    },
+    "already_complete": 484,
+    "skipped_cells": 0,
+    "missing_rows": 0
+  },
+  "resultado": {
+    "version": "2026-10-22",
+    "cells": 755,
+    "rows": 523,
+    "tables": {
+      "citas": {
+        "rows": 54,
+        "cells": 54
+      },
+      "consultas": {
+        "rows": 45,
+        "cells": 90
+      },
+      "diagnosticos": {
+        "rows": 8,
+        "cells": 16
+      },
+      "consulta_diagnosticos": {
+        "rows": 40,
+        "cells": 40
+      },
+      "alergias_paciente": {
+        "rows": 9,
+        "cells": 18
+      },
+      "hospitalizaciones": {
+        "rows": 11,
+        "cells": 15
+      },
+      "notas_enfermeria": {
+        "rows": 21,
+        "cells": 21
+      },
+      "medicamentos": {
+        "rows": 15,
+        "cells": 75
+      },
+      "recetas": {
+        "rows": 40,
+        "cells": 40
+      },
+      "receta_detalle": {
+        "rows": 64,
+        "cells": 162
+      },
+      "movimientos_inventario": {
+        "rows": 38,
+        "cells": 38
+      },
+      "procedimientos": {
+        "rows": 8,
+        "cells": 16
+      },
+      "ordenes_procedimiento": {
+        "rows": 29,
+        "cells": 29
+      },
+      "resultados_procedimiento": {
+        "rows": 15,
+        "cells": 15
+      },
+      "facturas": {
+        "rows": 29,
+        "cells": 29
+      },
+      "factura_detalle": {
+        "rows": 60,
+        "cells": 60
+      },
+      "pagos": {
+        "rows": 24,
+        "cells": 24
+      },
+      "roles": {
+        "rows": 6,
+        "cells": 6
+      },
+      "usuarios": {
+        "rows": 7,
+        "cells": 7
+      }
+    },
+    "already_complete": 484,
+    "skipped_cells": 0,
+    "missing_rows": 0,
+    "success": true,
+    "data_committed": true,
+    "guards_restored": true,
+    "trigger_count": 23,
+    "trigger_fingerprint": "94780e8aacc5b4a755a189d5edb58a5ea9fd1323944537814de48bd8aa5233c9",
+    "total_rows": 789,
+    "recovery_log_updated": true
+  },
+  "fin_utc": "2026-10-22T17:27:28+00:00",
+  "estado": "APROBADO",
+  "resumen": {
+    "total": 22,
+    "correctas": 22,
+    "fallidas": 0
+  },
+  "pruebas": [
+    {
+      "prueba": "El nombre UUID de prueba estaba libre",
+      "correcta": true
+    },
+    {
+      "prueba": "El respaldo contiene la base del proyecto",
+      "correcta": true
+    },
+    {
+      "prueba": "La importación no conserva referencias a la base original",
+      "correcta": true
+    },
+    {
+      "prueba": "El respaldo anterior se importa en la copia UUID",
+      "correcta": true
+    },
+    {
+      "prueba": "La copia tiene 36 tablas y 789 filas",
+      "correcta": true
+    },
+    {
+      "prueba": "La copia conserva las 23 reglas",
+      "correcta": true
+    },
+    {
+      "prueba": "El conteo de textos antiguos coincide con el esperado",
+      "correcta": true
+    },
+    {
+      "prueba": "La falla tras retirar reglas revierte todos los textos",
+      "correcta": true
+    },
+    {
+      "prueba": "La falla restaura las 23 definiciones y sus contextos exactos",
+      "correcta": true
+    },
+    {
+      "prueba": "El archivo de recuperación confirma rollback y reglas restauradas",
+      "correcta": true
+    },
+    {
+      "prueba": "Se actualizan únicamente los textos reconocidos por clave y huella",
+      "correcta": true
+    },
+    {
+      "prueba": "Todas las filas coinciden con el plan sin cambios adicionales",
+      "correcta": true
+    },
+    {
+      "prueba": "Claves, relaciones, fechas, estados, importes y cantidades se conservan",
+      "correcta": true
+    },
+    {
+      "prueba": "Las 23 reglas conservan sus definiciones y contexto exactos",
+      "correcta": true
+    },
+    {
+      "prueba": "La auditoría de textos de relleno queda en cero",
+      "correcta": true
+    },
+    {
+      "prueba": "Una segunda vista previa tiene cero cambios",
+      "correcta": true
+    },
+    {
+      "prueba": "Una segunda aplicación no escribe ni retira reglas",
+      "correcta": true
+    },
+    {
+      "prueba": "Una dirección escrita por el equipo no coincide con el marcador original",
+      "correcta": true
+    },
+    {
+      "prueba": "La actualización conserva los datos personalizados del equipo",
+      "correcta": true
+    },
+    {
+      "prueba": "La prueba de personalización no deja cambios adicionales",
+      "correcta": true
+    },
+    {
+      "prueba": "La base hospital_universitario original queda intacta",
+      "correcta": true
+    },
+    {
+      "prueba": "Solo se elimina la copia UUID propia",
+      "correcta": true
+    }
+  ],
+  "huellas_sha256": {
+    "app_hospital/tests/integration_cleanup.py": "af6b1ec4948303a2f2d764801fe11e61680ae88dbb5a3128aebccae93a78d62b",
+    "app_hospital/data_cleanup.py": "03a0f07889bb36d66a2deba0f649684d055601ad6c6d2384c93a4576bf229ee1",
+    "datos/valores_completos.json": "ccd5165575f94c481501ae1d889566e9d6b8327c896a613df51767cbbfef108e"
+  },
+  "comparacion_canonica_independiente": {
+    "tablas": 36,
+    "filas": 789,
+    "coinciden": true,
+    "metodo": "El resultado esperado sobre el respaldo anterior coincide con las 36 tablas del conjunto canónico; la copia ejecutada coincide íntegramente con ese resultado esperado."
+  }
+}

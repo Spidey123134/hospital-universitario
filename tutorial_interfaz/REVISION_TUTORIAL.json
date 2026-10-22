@@ -1,11 +1,12 @@
 {
   "documento": "tutorial_interfaz_hospital",
-  "version": "2026-10-19",
+  "version": "2026-10-22",
   "formato_actual": "PDF y Markdown",
-  "paginas": 16,
+  "paginas": 18,
   "tamano": "Carta 8.5 x 11 pulgadas",
   "cuerpo_puntos": 10.5,
   "capturas_reales": 6,
+  "capturas_exclusivas_hwnd": true,
   "png_revisadas_visualmente": [
     1,
     2,
@@ -22,32 +23,47 @@
     13,
     14,
     15,
-    16
+    16,
+    17,
+    18
   ],
   "titulo_negro_sin_borde": true,
   "sin_paginas_vacias": true,
   "sin_recortes_ni_solapamientos_en_revision_visual": true,
-  "generacion_pdf": "ReportLab desde TUTORIAL.md con seis capturas reales recortadas por encuadre",
+  "generacion_pdf": "ReportLab desde TUTORIAL.md con seis capturas exclusivas de las ventanas de la aplicación",
   "renderizacion": "Poppler pdftoppm 130 dpi",
+  "auditoria_instalacion": {
+    "tablas": 36,
+    "celdas_texto_revisadas": 1696,
+    "marcadores_de_relleno": 0
+  },
+  "pruebas_interfaz": {
+    "total": 38,
+    "correctas": 38,
+    "fallidas": 0
+  },
   "notas": [
     "Se distingue abrir una base existente de crear una nueva; Probar conexión solo verifica.",
-    "La nueva instalación aplica la actualización 07 de nombres y contactos.",
-    "El manual explica filtro por área, lectura del historial, campos Sí/No y permisos MySQL de consulta.",
+    "Las copias nuevas incluyen textos completos. La revisión de relleno recorre las 36 tablas.",
+    "Inicio > Completar datos del proyecto revisa una copia anterior, crea un respaldo antes de actualizar valores reconocidos y conserva los campos editados por el equipo.",
+    "El botón también se comprobó sobre una base ya completa: no modifica registros ni solicita otro respaldo.",
+    "La receta del tutorial usa una captura coherente de Loratadina 10 mg, con cantidad, vía y frecuencia naturales; se conserva la aclaración global de uso académico.",
     "CSV guarda las filas mostradas; respaldo y restauración usan JSON completo de las 36 tablas.",
-    "La restauración solicita un nombre nuevo en un diálogo y conserva el original.",
-    "Las capturas usan una base UUID de pruebas en el puerto 3307; el texto explica los datos propios de cada integrante.",
-    "El Word de la carpeta es una versión anterior, identificada como tal en README; no se regeneró por faltar el conversor necesario para su revisión visual."
+    "Las capturas se obtuvieron por identificador HWND con Pillow 12.3.0; no son recortes del escritorio ni incluyen otras aplicaciones.",
+    "Las capturas usan una base UUID propia de pruebas en el puerto 3307. Los dos destinos UUID de la prueba se eliminaron al terminar.",
+    "El Word de la carpeta es una versión anterior, identificada como tal en README; no se regeneró ni se presenta como guía actual.",
+    "Se normaliza el separador de navegación a > en el PDF para que no dependa de la fuente Symbol."
   ],
   "sha256": {
-    "TUTORIAL.md": "f7c5253dfa93338df2e043ab6f148dafed29fc26988178ad7a018a9fedda3091",
-    "generar_pdf.py": "5067e5a8db5fde83294295da0b0f676d422a830efbbcca0f5e83b3bcfeb431ff",
-    "tutorial_interfaz_hospital.pdf": "3976bb6f2acf8a181fd0148c3404ec2c7324771fc006c5f91c2695000cf3c449",
-    "imagenes/01_conexion.png": "eca2da0dcfa26cd92313294a7f6d40af24307eed48c510c49766116806829a30",
-    "imagenes/02_inicio.png": "0998edcafcd8e287c2d7629f3b23f0da94d6527166089780c6f90f0dce27c622",
-    "imagenes/03_pacientes.png": "be0bb98b62b7e4c0a18b89562f9c42a8841815fc465d536e0339e49108679a82",
-    "imagenes/04_nuevo_paciente.png": "c2c54ef322be95842f60e8390cf7a3a464033484421d624e67e8a3c278a48501",
-    "imagenes/05_agendar_cita.png": "7070721aae8c3fc14cbd13e5711457136ac0e20c0833cc9fc1b524301aa327e9",
-    "imagenes/06_consulta_recetas.png": "e9aa3efa3f30a136701396b22d9ac8df49a3c8d473083c4b98f6b630d78dd080"
+    "TUTORIAL.md": "7ededf7efdb6227cbec48868f10d17e383f9549d17a493746c4e3dda4daad6e0",
+    "generar_pdf.py": "1c29101c1fe4d49ac0eb6396f80319183bc509c3bc42c8e934c2e29574f65995",
+    "tutorial_interfaz_hospital.pdf": "95f1391188916796561c717ba7e6795faedacb5478290716202989fd881393e4",
+    "imagenes/01_conexion.png": "3140737d5b8c8e06b88cac6bf37c47f4df1df25914721b19417ba92601f9db70",
+    "imagenes/02_inicio.png": "f5a316fae93d0a2ae55f00e9cd1364fc3850fd7ea61dbb912d4a4aa3c3fb42a8",
+    "imagenes/03_pacientes.png": "3cf5a19ae2283f49121ba4a42e9b53b7c022ad89028be8e293c9594dc5d20637",
+    "imagenes/04_nuevo_paciente.png": "82e7139c9246a6eb8f742f8c7e97d8962e4ee5f6102398f1bcfef411fc7536e9",
+    "imagenes/05_agendar_cita.png": "f03623f91f92599c2c72c05a485ac926c221bee817ed311e540dcb6a40ff5bb8",
+    "imagenes/06_consulta_recetas.png": "cffffef6a701ecd6f075e0eea5caae8aef2f9e930da6384815dff4c641368e9c"
   },
   "word_version_anterior": {
     "archivo": "tutorial_interfaz_hospital.docx",

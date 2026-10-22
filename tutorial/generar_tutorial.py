@@ -210,8 +210,8 @@ ORDER BY paciente_id;'''),
     label('Buscar parte de un texto'),
     code('''SELECT paciente_id, nombre
 FROM pacientes
-WHERE nombre LIKE '%Tres%';'''),
-    p('Esperas al paciente con ID 3. El símbolo % permite que haya más caracteres antes o después de Tres.'),
+WHERE nombre LIKE '%Alex%';'''),
+    p('Esperas al paciente con ID 3. El símbolo % permite que haya más caracteres antes o después de Alex.'),
     label('Contar en lugar de listar'),
     code('''SELECT COUNT(*) AS total_pacientes
 FROM pacientes;'''),
@@ -250,22 +250,22 @@ INSERT INTO pacientes (
   apellido_materno, fecha_nacimiento, sexo, telefono
 )
 VALUES (
-  'EXP-TUTORIAL-001', 'Paciente Tutorial', 'Prueba',
-  'Ficticio', '2000-01-15', 'NO_ESPECIFICADO',
-  'TEL-TUTORIAL-001'
+  'EXP-2026-0031', 'Nicolás', 'Herrera',
+  'Ríos', '2000-01-15', 'NO_ESPECIFICADO',
+  '5512349087'
 );'''),
     p('2. Comprueba en Action Output que INSERT terminó sin error. Solo si tuvo éxito, ejecuta este segundo bloque en la misma conexión:'),
     code('''SET @paciente_tutorial = LAST_INSERT_ID();
 SELECT paciente_id, expediente_clinico, nombre, telefono
 FROM pacientes
 WHERE paciente_id = @paciente_tutorial;'''),
-    p('3. Anota el paciente_id devuelto. Debe aparecer Paciente Tutorial con su expediente y teléfono ficticios.'),
+    p('3. Anota el paciente_id devuelto. Debe aparecer Nicolás Herrera con su expediente y teléfono ficticios.'),
     label('Lo que hizo el bloque'),
     p('AUTO_INCREMENT genera el identificador. LAST_INSERT_ID() recupera el que acaba de generarse en esta conexión; no supongas que siempre será 6. La variable @paciente_tutorial guarda ese ID durante la sesión.'),
     p('Las columnas que omitimos usan su valor predeterminado o permiten NULL según la definición de la tabla. Las fechas se escriben año-mes-día.'),
     label('Si sale el error 1062'),
     p('El expediente ya existe. Detente: no ejecutes el SET ni las modificaciones siguientes basándote en un INSERT que falló. Para repetir el ejercicio, elige otro expediente exclusivo, cambia también los filtros posteriores y vuelve a insertar.'),
-    p('Si cerraste la conexión, la variable se pierde. Puedes recuperar el registro con SELECT paciente_id FROM pacientes WHERE expediente_clinico = \'EXP-TUTORIAL-001\'; y establecer SET @paciente_tutorial = el_numero_real; reemplazando el_numero_real por el ID que leíste.'))
+    p('Si cerraste la conexión, la variable se pierde. Puedes recuperar el registro con SELECT paciente_id FROM pacientes WHERE expediente_clinico = \'EXP-2026-0031\'; y establecer SET @paciente_tutorial = el_numero_real; reemplazando el_numero_real por el ID que leíste.'))
 
 page('12 Cambiar un dato y deshacerlo',
     p('UPDATE cambia filas. Una transacción permite revisar un cambio antes de confirmarlo. Este ejercicio usa el paciente agregado en la página anterior.'),
@@ -278,7 +278,7 @@ FROM pacientes
 WHERE paciente_id = @paciente_tutorial;
 
 UPDATE pacientes
-SET telefono = 'TEL-CAMBIADO-TUTORIAL'
+SET telefono = '5587654301'
 WHERE paciente_id = @paciente_tutorial;
 
 SELECT paciente_id, telefono AS durante
@@ -290,7 +290,7 @@ ROLLBACK;
 SELECT paciente_id, telefono AS despues
 FROM pacientes
 WHERE paciente_id = @paciente_tutorial;'''),
-    p('2. Revisa las tres cuadrículas: antes y después deben mostrar TEL-TUTORIAL-001; durante debe mostrar TEL-CAMBIADO-TUTORIAL.'),
+    p('2. Revisa las tres cuadrículas: antes y después deben mostrar 5512349087; durante debe mostrar 5587654301.'),
     label('Cómo guardar un cambio'),
     p('START TRANSACTION abre una transacción. ROLLBACK deshace sus cambios pendientes; COMMIT los confirma. Si quieres guardar el teléfono nuevo en este ejercicio, repite el bloque sustituyendo ROLLBACK por COMMIT.'),
     p('Con autocommit activo, una instrucción de modificación fuera de una transacción se confirma automáticamente. No confíes en Ctrl + Z para deshacer un cambio del servidor: ese atajo solo afecta al editor.'),
@@ -300,16 +300,16 @@ WHERE paciente_id = @paciente_tutorial;'''),
 
 page('13 Eliminar solo el registro de práctica',
     p('DELETE elimina filas. Este ejemplo borra únicamente el paciente que acabas de crear; todavía no tiene citas, consultas u otros registros asociados.'),
-    p('1. Ejecuta primero esta lectura y confirma que muestra Paciente Tutorial:'),
+    p('1. Ejecuta primero esta lectura y confirma que muestra Nicolás Herrera:'),
     code('''USE hospital_practica;
 SELECT paciente_id, expediente_clinico, nombre
 FROM pacientes
 WHERE paciente_id = @paciente_tutorial
-  AND expediente_clinico = 'EXP-TUTORIAL-001';'''),
+  AND expediente_clinico = 'EXP-2026-0031';'''),
     p('2. Si aparece exactamente el registro correcto, ejecuta el bloque siguiente:'),
     code('''DELETE FROM pacientes
 WHERE paciente_id = @paciente_tutorial
-  AND expediente_clinico = 'EXP-TUTORIAL-001';
+  AND expediente_clinico = 'EXP-2026-0031';
 
 SELECT ROW_COUNT() AS filas_eliminadas;
 
@@ -335,7 +335,7 @@ CALL sp_agendar_cita(
   4, 1,
   '2026-10-15 15:00:00',
   '2026-10-15 15:30:00',
-  'Cita ficticia del tutorial',
+  'Control de seguimiento',
   @cita_tutorial
 );
 SELECT @cita_tutorial AS cita_creada;
@@ -413,7 +413,7 @@ WHERE factura_id = 1;'''),
     code('''SET @pago_tutorial = NULL;
 CALL sp_registrar_pago(
   1, '2026-10-10 10:30:00', 25.00,
-  'EFECTIVO', 'ABONO-TUTORIAL-001',
+  'EFECTIVO', 'EFE-202610-000025',
   @pago_tutorial
 );
 SELECT @pago_tutorial AS pago_creado;'''),
@@ -432,21 +432,21 @@ page('18 Comprobar reglas con errores esperados',
     label('Un código único repetido'),
     code('''USE hospital_practica;
 INSERT INTO departamentos (codigo, nombre)
-VALUES ('DEP-DEMO-01', 'Duplicado de prueba');'''),
+VALUES ('DEP-001', 'Consulta externa');'''),
     p('Esperas error 1062 Duplicate entry: ya existe ese código. UNIQUE protege valores que no deben repetirse.'),
     label('Un valor fuera de la regla'),
     code('''INSERT INTO contactos_emergencia (
   paciente_id, nombre, parentesco, telefono, prioridad
 )
-VALUES (1, 'Contacto ficticio', 'PRUEBA',
-        'TEL-PRUEBA', 0);'''),
+VALUES (1, 'Teresa Herrera Ríos', 'Hermana',
+        '5512349088', 0);'''),
     p('Esperas error 3819 Check constraint: prioridad debe ser mayor que 0. CHECK valida una condición del registro.'),
     label('Una relación hacia un paciente inexistente'),
     code('''INSERT INTO contactos_emergencia (
   paciente_id, nombre, parentesco, telefono, prioridad
 )
-VALUES (999999, 'Contacto ficticio', 'PRUEBA',
-        'TEL-PRUEBA', 1);'''),
+VALUES (999999, 'Teresa Herrera Ríos', 'Hermana',
+        '5512349088', 1);'''),
     p('Esperas error 1452 Foreign key constraint: el paciente 999999 no existe en la carga inicial.'),
     label('Cómo explicarlo al profesor'),
     p('Estos errores demuestran que el servidor protege reglas del modelo. No debes desactivar CHECK o claves foráneas para conseguir que entren datos incorrectos.'),
@@ -543,11 +543,11 @@ page('23 Cambiar un dato usando el ratón',
     code('''SELECT paciente_id, nombre, telefono
 FROM hospital_practica.pacientes
 WHERE paciente_id = 1;'''),
-    p('2. Anota el teléfono que aparece antes de cambiarlo. Haz doble clic en la celda telefono y escribe TEL-VISUAL-001. No edites paciente_id.'),
+    p('2. Anota el teléfono que aparece antes de cambiarlo. Haz doble clic en la celda telefono y escribe 5598760123. No edites paciente_id.'),
     p('3. Pulsa Apply en la zona de resultados. Workbench abre una ventana para revisar el SQL que enviará al servidor.'),
     p('4. Lee el cambio antes de aprobarlo. Debe actualizar pacientes de hospital_practica, cambiar solo telefono y filtrar el paciente con ID 1. Si muestra otra tabla o varias filas, cancela y revisa el paso.'),
     p('5. En la ventana de revisión pulsa Apply. Comprueba que terminó correctamente y pulsa Finish.'),
-    p('6. Vuelve a ejecutar la consulta de arriba o refresca la cuadrícula. El teléfono debe mostrar TEL-VISUAL-001.'),
+    p('6. Vuelve a ejecutar la consulta de arriba o refresca la cuadrícula. El teléfono debe mostrar 5598760123.'),
     p('7. Para devolver el dato al valor original, edita la misma celda con el valor que anotaste y repite Apply, revisión, Apply y Finish.'),
     label('Cuándo no se puede editar la cuadrícula'),
     p('Si aparece Read Only, el resultado no es editable en ese contexto. Puede faltar la clave primaria, combinar varias tablas o no tener permisos de escritura. Usa una consulta de una sola tabla con su PK o el SQL del ejercicio correspondiente.'),

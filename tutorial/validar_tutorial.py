@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Verifica el tutorial en una base UUID propia de una instancia aislada.
+"""Verifica el tutorial en una base UUID propia del servidor indicado.
 
 No instala servidores, no inicia servicios y no modifica los SQL originales.
 Elimina exclusivamente la base UUID que crea en esta ejecución.
+La contraseña se hereda de MYSQL_PWD y nunca se escribe en argumentos o informes.
 """
 from __future__ import annotations
 
 from datetime import datetime, timezone
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -16,20 +18,29 @@ import uuid
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SERVER_ROOT = Path(r"C:\Users\gamel\AppData\Local\Temp\codex-hospital-mysql-test")
-MYSQL = SERVER_ROOT / "mysql-8.0.45-winx64" / "bin" / "mysql.exe"
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--mysql", default="mysql", help="Ruta del cliente mysql.")
+parser.add_argument("--host", default="127.0.0.1")
+parser.add_argument("--port", type=int, default=3306)
+parser.add_argument("--user", required=True)
+parser.add_argument("--output", type=Path, default=Path(__file__).with_name("VALIDACION_TUTORIAL.json"))
+args = parser.parse_args()
+if not 1 <= args.port <= 65535:
+    parser.error("--port debe estar entre 1 y 65535.")
+MYSQL = args.mysql
 DATABASE = "hospital_tutorial_" + uuid.uuid4().hex
-OUTPUT = Path(__file__).with_name("VALIDACION_TUTORIAL.json")
+OUTPUT = args.output
 ERROR = re.compile(r"ERROR\s+(\d+)\s+\(")
 results: list[dict] = []
 owns_database = False
 database_removed = False
 fatal_error = None
+server_version = None
 
 
 def sql(statement: str, use_database: bool = True):
     command = [str(MYSQL), "--no-defaults", "--protocol=TCP",
-               "--host=127.0.0.1", "--port=33087", "--user=root",
+               "--host=" + args.host, "--port=" + str(args.port), "--user=" + args.user,
                "--batch", "--raw", "--skip-column-names",
                "--default-character-set=utf8mb4", "--connect-timeout=10"]
     if use_database:
@@ -72,14 +83,14 @@ def reject(name: str, statement: str, expected_code: int):
 try:
     if not re.fullmatch(r"hospital_tutorial_[0-9a-f]{32}", DATABASE):
         raise RuntimeError("Identificador temporal inválido.")
-    identity = sql("SELECT @@datadir, @@port, VERSION();", False)
+    identity = sql("SELECT @@port, VERSION();", False)
     if identity.returncode:
-        raise RuntimeError("La instancia aislada no está disponible.")
-    datadir, port, server_version = identity.stdout.strip().split("\t")
-    if Path(datadir).resolve() != (SERVER_ROOT / "data").resolve() or port != "33087":
-        raise RuntimeError("El servidor no corresponde a la instancia aislada.")
-    record("Identidad de instancia aislada", True,
-           "MySQL 8.0.45; datadir temporal esperado; puerto TCP local 33087.", "entorno")
+        raise RuntimeError("El servidor indicado no está disponible.")
+    port, server_version = identity.stdout.strip().split("\t")
+    if int(port) != args.port:
+        raise RuntimeError("El puerto informado por el servidor no coincide con el solicitado.")
+    record("Conexión al servidor indicado", True,
+           "Versión " + server_version + "; puerto " + str(args.port) + "; se utilizará exclusivamente una base UUID propia.", "entorno")
     check = sql("SELECT COUNT(*) FROM information_schema.schemata "
                 f"WHERE schema_name = '{DATABASE}';", False)
     if check.returncode or check.stdout.strip() != "0":
@@ -107,12 +118,12 @@ try:
            "AUTO_INCREMENT y CHECK del paciente presentes.")
     execute("04: cinco pacientes originales", "SELECT paciente_id, expediente_clinico "
             "FROM pacientes ORDER BY paciente_id;",
-            "1\tEXP-DEMO-001\n2\tEXP-DEMO-002\n3\tEXP-DEMO-003\n"
-            "4\tEXP-DEMO-004\n5\tEXP-DEMO-005")
+            "1\tEXP-2026-0001\n2\tEXP-2026-0002\n3\tEXP-2026-0003\n"
+            "4\tEXP-2026-0004\n5\tEXP-2026-0005")
     execute("05a: filtro pacientes activos sexo F", "SELECT paciente_id FROM pacientes "
             "WHERE activo = 1 AND sexo = 'F' ORDER BY paciente_id;", "1\n4")
-    execute("05b: LIKE encuentra Paciente Tres", "SELECT paciente_id FROM pacientes "
-            "WHERE nombre LIKE '%Tres%';", "3")
+    execute("05b: LIKE encuentra Alex Rojas Medina", "SELECT paciente_id FROM pacientes "
+            "WHERE nombre LIKE '%Alex%';", "3")
     execute("06: LEFT JOIN conserva cinco pacientes", "SELECT p.paciente_id, ce.contacto_id "
             "FROM pacientes p LEFT JOIN contactos_emergencia ce "
             "ON ce.paciente_id=p.paciente_id AND ce.prioridad=1 ORDER BY p.paciente_id;",
@@ -123,21 +134,21 @@ SET SQL_SAFE_UPDATES = 1;
 INSERT INTO pacientes
   (expediente_clinico, nombre, apellido_paterno, apellido_materno,
    fecha_nacimiento, sexo, telefono)
-VALUES ('EXP-TUTORIAL-001', 'Paciente Tutorial', 'Prueba', 'Ficticio',
-        '2000-01-15', 'NO_ESPECIFICADO', 'TEL-TUTORIAL-001');
+VALUES ('EXP-2026-0031', 'Nicolás', 'Herrera', 'Ríos',
+        '2000-01-15', 'NO_ESPECIFICADO', '5512349087');
 SET @paciente_tutorial = LAST_INSERT_ID();
 SELECT 'INSERTADO', COUNT(*) FROM pacientes
-WHERE paciente_id=@paciente_tutorial AND expediente_clinico='EXP-TUTORIAL-001';
+WHERE paciente_id=@paciente_tutorial AND expediente_clinico='EXP-2026-0031';
 SELECT 'AUTOID', @paciente_tutorial > 5;
 START TRANSACTION;
 SELECT 'ANTES', telefono FROM pacientes WHERE paciente_id=@paciente_tutorial;
-UPDATE pacientes SET telefono='TEL-CAMBIADO-TUTORIAL'
+UPDATE pacientes SET telefono='5587654301'
 WHERE paciente_id=@paciente_tutorial;
 SELECT 'DURANTE', telefono FROM pacientes WHERE paciente_id=@paciente_tutorial;
 ROLLBACK;
 SELECT 'DESPUES', telefono FROM pacientes WHERE paciente_id=@paciente_tutorial;
 DELETE FROM pacientes WHERE paciente_id=@paciente_tutorial
-AND expediente_clinico='EXP-TUTORIAL-001';
+AND expediente_clinico='EXP-2026-0031';
 SELECT 'BORRADAS', ROW_COUNT();
 SELECT 'RESTANTES', COUNT(*) FROM pacientes WHERE paciente_id=@paciente_tutorial;
 SELECT 'ORIGINALES', COUNT(*) FROM pacientes;
@@ -151,9 +162,9 @@ SELECT 'ORIGINALES', COUNT(*) FROM pacientes;
            "Un paciente ficticio nuevo, ID mayor que 5, capturado en la misma conexión.",
            sql_safe_updates=1, error_mysql=int(match.group(1)) if match else None)
     record("08: UPDATE con WHERE y ROLLBACK",
-           safe and rows.get("ANTES") == "TEL-TUTORIAL-001"
-           and rows.get("DURANTE") == "TEL-CAMBIADO-TUTORIAL"
-           and rows.get("DESPUES") == "TEL-TUTORIAL-001",
+           safe and rows.get("ANTES") == "5512349087"
+           and rows.get("DURANTE") == "5587654301"
+           and rows.get("DESPUES") == "5512349087",
            "El teléfono cambia dentro de la transacción y regresa al original.",
            sql_safe_updates=1)
     record("09: DELETE restringido al paciente nuevo",
@@ -165,7 +176,7 @@ SELECT 'ORIGINALES', COUNT(*) FROM pacientes;
     execute("10: sp_agendar_cita y parámetro OUT", """
 SET @cita_tutorial = NULL;
 CALL sp_agendar_cita(4,1,'2026-10-15 15:00:00','2026-10-15 15:30:00',
-                    'Cita ficticia del tutorial',@cita_tutorial);
+                    'Control de seguimiento',@cita_tutorial);
 SELECT @cita_tutorial IS NOT NULL;
 SELECT paciente_id,medico_id,inicio,fin,estado FROM citas
 WHERE cita_id=@cita_tutorial;
@@ -194,18 +205,18 @@ SELECT stock FROM v_stock_lotes WHERE lote_id=3;
     execute("13b: sp_registrar_pago registra 25", """
 SET @pago_tutorial=NULL;
 CALL sp_registrar_pago(1,'2026-10-10 10:30:00',25.00,'EFECTIVO',
-                       'ABONO-TUTORIAL-001',@pago_tutorial);
+                       'EFE-202610-000025',@pago_tutorial);
 SELECT @pago_tutorial IS NOT NULL;
 SELECT total,pagado,saldo FROM v_facturas_saldo WHERE factura_id=1;
 """, "1\n850.00\t525.00\t325.00")
     reject("14a: código UNIQUE repetido", "INSERT INTO departamentos(codigo,nombre) "
-           "VALUES('DEP-DEMO-01','Departamento duplicado tutorial');", 1062)
+           "VALUES('DEP-001','Consulta externa');", 1062)
     reject("14b: CHECK prioridad mayor que cero", "INSERT INTO contactos_emergencia "
            "(paciente_id,nombre,parentesco,telefono,prioridad) "
-           "VALUES(1,'Contacto Tutorial','Prueba','TEL-TUTORIAL-ERROR',0);", 3819)
+           "VALUES(1,'Teresa Herrera Ríos','Hermana','5512349088',0);", 3819)
     reject("14c: FK de paciente inexistente", "INSERT INTO contactos_emergencia "
            "(paciente_id,nombre,parentesco,telefono,prioridad) "
-           "VALUES(999999,'Contacto Tutorial','Prueba','TEL-TUTORIAL-ERROR',1);", 1452)
+           "VALUES(999999,'Teresa Herrera Ríos','Hermana','5512349088',1);", 1452)
     execute("15: CREATE y ALTER de tabla de práctica", """
 CREATE TABLE prueba_estructura (
  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -217,9 +228,9 @@ FROM information_schema.columns
 WHERE table_schema=DATABASE() AND table_name='prueba_estructura'
 AND column_name='observaciones';
 """, "observaciones\tvarchar\t200\tYES")
-    execute("Usuarios demo inactivos sin autenticación", "SELECT COUNT(*) FROM usuarios "
-            "WHERE activo=1; SELECT COUNT(*) FROM usuarios WHERE "
-            "password_hash='MARCADOR_DEMO_NO_ES_HASH_VALIDO_NO_INICIAR_SESION';", "0\n3")
+    execute("Cuentas inactivas con tres hashes PBKDF2 distintos", "SELECT COUNT(*) FROM usuarios "
+            "WHERE activo=1; SELECT COUNT(DISTINCT password_hash) FROM usuarios WHERE "
+            "password_hash REGEXP '^pbkdf2_sha256[$][1-9][0-9]*[$][0-9a-f]{24}[$][A-Za-z0-9+/]{43}=$';", "0\n3")
     reject("Instalación no repetible encima de base existente",
            f"CREATE DATABASE {DATABASE};", 1007)
     query_source = (ROOT / "04_consultas.sql").read_text(encoding="utf-8-sig")
@@ -248,8 +259,8 @@ finally:
         "estado": "APROBADO" if results and passed == len(results) else "FALLIDO",
         "fecha_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "fecha_didactica": "2026-10-10",
-        "servidor": {"version": "MySQL 8.0.45", "host": "127.0.0.1", "puerto": 33087,
-                     "aislado": True, "servicio_instalado": False},
+        "servidor": {"version": server_version, "host": args.host, "puerto": args.port,
+                     "base_de_prueba_aislada_por_uuid": True},
         "base_temporal": DATABASE,
         "base_temporal_eliminada": database_removed,
         "instancia_detenida_al_final": False,

@@ -1,0 +1,167 @@
+[
+  {
+    "medicamento_id": 1,
+    "codigo": "MED-001",
+    "principio_activo": "Paracetamol",
+    "concentracion": "500 mg",
+    "presentacion": "Tableta",
+    "unidad_inventario": "tableta",
+    "via_administracion": "Oral",
+    "dosis_texto": "1 tableta",
+    "frecuencia_texto": "Según orden médica"
+  },
+  {
+    "medicamento_id": 2,
+    "codigo": "MED-002",
+    "principio_activo": "Ibuprofeno",
+    "concentracion": "400 mg",
+    "presentacion": "Tableta recubierta",
+    "unidad_inventario": "tableta",
+    "via_administracion": "Oral",
+    "dosis_texto": "1 tableta",
+    "frecuencia_texto": "Según orden médica"
+  },
+  {
+    "medicamento_id": 3,
+    "codigo": "MED-003",
+    "principio_activo": "Amoxicilina",
+    "concentracion": "250 mg/5 mL",
+    "presentacion": "Polvo para suspensión oral, frasco de 100 mL",
+    "unidad_inventario": "frasco",
+    "via_administracion": "Oral",
+    "dosis_texto": "5 mL",
+    "frecuencia_texto": "Según orden médica"
+  },
+  {
+    "medicamento_id": 4,
+    "codigo": "MED-004",
+    "principio_activo": "Omeprazol",
+    "concentracion": "20 mg",
+    "presentacion": "Cápsula gastrorresistente",
+    "unidad_inventario": "cápsula",
+    "via_administracion": "Oral",
+    "dosis_texto": "1 cápsula",
+    "frecuencia_texto": "Según orden médica"
+  },
+  {
+    "medicamento_id": 5,
+    "codigo": "MED-005",
+    "principio_activo": "Ketorolaco trometamol",
+    "concentracion": "30 mg/mL",
+    "presentacion": "Solución inyectable, ampolla de 1 mL",
+    "unidad_inventario": "ampolla",
+    "via_administracion": "Intravenosa",
+    "dosis_texto": "Según orden médica",
+    "frecuencia_texto": "Según orden médica"
+  },
+  {
+    "medicamento_id": 6,
+    "codigo": "MED-006",
+    "principio_activo": "Salbutamol",
+    "concentracion": "100 microgramos/dosis",
+    "presentacion": "Inhalador de 200 dosis",
+    "unidad_inventario": "inhalador",
+    "via_administracion": "Inhalatoria",
+    "dosis_texto": "1 inhalación",
+    "frecuencia_texto": "Según orden médica"
+  },
+  {
+    "medicamento_id": 7,
+    "codigo": "MED-007",
+    "principio_activo": "Loratadina",
+    "concentracion": "10 mg",
+    "presentacion": "Tableta",
+    "unidad_inventario": "tableta",
+    "via_administracion": "Oral",
+    "dosis_texto": "1 tableta",
+    "frecuencia_texto": "Según orden médica"
+  },
+  {
+    "medicamento_id": 8,
+    "codigo": "MED-008",
+    "principio_activo": "Metformina",
+    "concentracion": "850 mg de hidrocloruro de metformina",
+    "presentacion": "Tableta recubierta",
+    "unidad_inventario": "tableta",
+    "via_administracion": "Oral",
+    "dosis_texto": "1 tableta",
+    "frecuencia_texto": "Según orden médica"
+  },
+  {
+    "medicamento_id": 9,
+    "codigo": "MED-009",
+    "principio_activo": "Losartán potásico",
+    "concentracion": "50 mg",
+    "presentacion": "Tableta recubierta",
+    "unidad_inventario": "tableta",
+    "via_administracion": "Oral",
+    "dosis_texto": "1 tableta",
+    "frecuencia_texto": "Según orden médica"
+  },
+  {
+    "medicamento_id": 10,
+    "codigo": "MED-010",
+    "principio_activo": "Diclofenaco sódico",
+    "concentracion": "10 mg/g (1 %)",
+    "presentacion": "Gel, tubo de 60 g",
+    "unidad_inventario": "tubo",
+    "via_administracion": "Cutánea",
+    "dosis_texto": "1 aplicación",
+    "frecuencia_texto": "Según orden médica"
+  },
+  {
+    "medicamento_id": 11,
+    "codigo": "MED-011",
+    "principio_activo": "Insulina humana",
+    "concentracion": "100 UI/mL",
+    "presentacion": "Solución inyectable, vial de 10 mL",
+    "unidad_inventario": "vial",
+    "via_administracion": "Subcutánea",
+    "dosis_texto": "Según orden médica",
+    "frecuencia_texto": "Según orden médica"
+  },
+  {
+    "medicamento_id": 12,
+    "codigo": "MED-012",
+    "principio_activo": "Ceftriaxona",
+    "concentracion": "1 g por vial",
+    "presentacion": "Polvo para solución inyectable, vial",
+    "unidad_inventario": "vial",
+    "via_administracion": "Intravenosa",
+    "dosis_texto": "Según orden médica",
+    "frecuencia_texto": "Según orden médica"
+  },
+  {
+    "medicamento_id": 13,
+    "codigo": "MED-013",
+    "principio_activo": "Diazepam",
+    "concentracion": "10 mg/2 mL",
+    "presentacion": "Solución inyectable, ampolla de 2 mL",
+    "unidad_inventario": "ampolla",
+    "via_administracion": "Intramuscular",
+    "dosis_texto": "Según orden médica",
+    "frecuencia_texto": "Según orden médica"
+  },
+  {
+    "medicamento_id": 14,
+    "codigo": "MED-014",
+    "principio_activo": "Hidrocortisona",
+    "concentracion": "100 mg por vial",
+    "presentacion": "Polvo y disolvente para solución inyectable, vial",
+    "unidad_inventario": "vial",
+    "via_administracion": "Intravenosa",
+    "dosis_texto": "Según orden médica",
+    "frecuencia_texto": "Según orden médica"
+  },
+  {
+    "medicamento_id": 15,
+    "codigo": "MED-015",
+    "principio_activo": "Furosemida",
+    "concentracion": "40 mg",
+    "presentacion": "Tableta",
+    "unidad_inventario": "tableta",
+    "via_administracion": "Oral",
+    "dosis_texto": "1 tableta",
+    "frecuencia_texto": "Según orden médica"
+  }
+]

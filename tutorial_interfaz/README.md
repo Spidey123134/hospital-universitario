@@ -13,6 +13,8 @@ Empieza por extraer **toda** la carpeta del proyecto y abrir `ABRIR_HOSPITAL.bat
 
 Si la base del proyecto ya está instalada, primero prueba la conexión y después pulsa **Abrir hospital**. El botón **Crear base con ejemplos** se usa únicamente cuando el nombre elegido todavía no existe. La comprobación de conexión no carga ni cambia registros.
 
+Si tu copia todavía muestra textos como «domicilio ficticio», entra a **Inicio → Completar datos del proyecto**. La aplicación guarda un respaldo antes de actualizar los valores iniciales reconocidos y conserva los campos que el equipo ya editó. Las copias nuevas ya incluyen los datos completos.
+
 Cada integrante trabaja con su propio MySQL. El servidor local preparado en la laptop del proyecto usa el puerto **3307**; una instalación normal suele usar **3306**. El tutorial explica esta diferencia y cómo trasladar los datos mediante un respaldo completo.
 
 El tutorial de la carpeta `tutorial/` explica el uso técnico de MySQL Workbench. Se conserva como material para desarrolladores; para la demostración de la aplicación utiliza esta guía.

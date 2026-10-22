@@ -84,19 +84,19 @@ SELECT m.medico_id, m.cedula_profesional, p.nombre, p.apellido_paterno,
 FROM medicos m JOIN personal p ON p.personal_id = m.medico_id
 JOIN medico_especialidad me ON me.medico_id = m.medico_id
 JOIN especialidades e ON e.especialidad_id = me.especialidad_id
-WHERE m.cedula_profesional LIKE 'CP-10%'
+WHERE m.medico_id BETWEEN 9 AND 23
 ORDER BY m.medico_id;
 
 -- 10. Solo las 15 recetas adaptadas de las capturas del equipo.
--- Las observaciones distinguen los datos transcritos de los agregados.
+-- Los identificadores de destino y la procedencia están en aporte_equipo/recetas_captura.csv.
 SELECT r.receta_id, c.paciente_id, c.medico_id,
        CONCAT_WS(' ', pe.nombre, pe.apellido_paterno) AS medico,
-       rd.medicamento_id, m.principio_activo AS medicamento_de_ejemplo,
+       rd.medicamento_id, m.principio_activo AS medicamento,
        r.fecha_prescripcion, rd.dosis, rd.via_administracion,
        r.observaciones
 FROM recetas r JOIN consultas c ON c.consulta_id = r.consulta_id
 JOIN personal pe ON pe.personal_id = c.medico_id
 JOIN receta_detalle rd ON rd.receta_id = r.receta_id
 JOIN medicamentos m ON m.medicamento_id = rd.medicamento_id
-WHERE r.observaciones LIKE '[APORTE EQUIPO%'
+WHERE r.receta_id BETWEEN 26 AND 40
 ORDER BY r.receta_id;

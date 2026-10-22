@@ -1,0 +1,153 @@
+{
+  "estado": "APROBADO",
+  "fecha_utc": "2026-10-22T17:29:56.081453+00:00",
+  "version_datos": "valores_completos_2026_10_22",
+  "tablas_revisadas": 36,
+  "celdas_textuales_revisadas": 1696,
+  "coincidencias_antes": 683,
+  "coincidencias_despues": 0,
+  "campos_actualizados": 755,
+  "registros_actualizados": 523,
+  "tablas_actualizadas": {
+    "citas": {
+      "rows": 54,
+      "cells": 54
+    },
+    "consultas": {
+      "rows": 45,
+      "cells": 90
+    },
+    "diagnosticos": {
+      "rows": 8,
+      "cells": 16
+    },
+    "consulta_diagnosticos": {
+      "rows": 40,
+      "cells": 40
+    },
+    "alergias_paciente": {
+      "rows": 9,
+      "cells": 18
+    },
+    "hospitalizaciones": {
+      "rows": 11,
+      "cells": 15
+    },
+    "notas_enfermeria": {
+      "rows": 21,
+      "cells": 21
+    },
+    "medicamentos": {
+      "rows": 15,
+      "cells": 75
+    },
+    "recetas": {
+      "rows": 40,
+      "cells": 40
+    },
+    "receta_detalle": {
+      "rows": 64,
+      "cells": 162
+    },
+    "movimientos_inventario": {
+      "rows": 38,
+      "cells": 38
+    },
+    "procedimientos": {
+      "rows": 8,
+      "cells": 16
+    },
+    "ordenes_procedimiento": {
+      "rows": 29,
+      "cells": 29
+    },
+    "resultados_procedimiento": {
+      "rows": 15,
+      "cells": 15
+    },
+    "facturas": {
+      "rows": 29,
+      "cells": 29
+    },
+    "factura_detalle": {
+      "rows": 60,
+      "cells": 60
+    },
+    "pagos": {
+      "rows": 24,
+      "cells": 24
+    },
+    "roles": {
+      "rows": 6,
+      "cells": 6
+    },
+    "usuarios": {
+      "rows": 7,
+      "cells": 7
+    }
+  },
+  "filas_totales": 789,
+  "filas_por_tabla": {
+    "departamentos": 8,
+    "especialidades": 16,
+    "personal": 25,
+    "medicos": 18,
+    "medico_especialidad": 19,
+    "pacientes": 30,
+    "contactos_emergencia": 31,
+    "aseguradoras": 5,
+    "polizas": 18,
+    "habitaciones": 9,
+    "camillas": 15,
+    "citas": 54,
+    "consultas": 45,
+    "diagnosticos": 8,
+    "consulta_diagnosticos": 40,
+    "alergias_paciente": 9,
+    "hospitalizaciones": 11,
+    "asignaciones_camilla": 12,
+    "notas_enfermeria": 21,
+    "medicamentos": 15,
+    "proveedores": 4,
+    "lotes_medicamento": 16,
+    "recetas": 40,
+    "receta_detalle": 64,
+    "dispensaciones": 11,
+    "dispensacion_detalle": 22,
+    "movimientos_inventario": 38,
+    "procedimientos": 8,
+    "ordenes_procedimiento": 29,
+    "resultados_procedimiento": 15,
+    "facturas": 29,
+    "factura_detalle": 60,
+    "pagos": 24,
+    "roles": 6,
+    "usuarios": 7,
+    "usuario_roles": 7
+  },
+  "sin_cambios_en_ids_relaciones_fechas_cantidades_importes_estados": true,
+  "reglas_restauradas_exactamente": true,
+  "numero_reglas": 23,
+  "huella_reglas": "94780e8aacc5b4a755a189d5edb58a5ea9fd1323944537814de48bd8aa5233c9",
+  "resultado_igual_al_conjunto_canonico": true,
+  "segunda_aplicacion_sin_cambios": true,
+  "respaldo_previo_json_y_sql_guardado_fuera_del_repositorio": true,
+  "plan_sha256": "ccd5165575f94c481501ae1d889566e9d6b8327c896a613df51767cbbfef108e",
+  "fuentes_verificadas": {
+    "estado": "APROBADO",
+    "filas_fuentes": 789,
+    "campos_textuales_comparados": 1390,
+    "regeneracion_determinista": true,
+    "filas_plan": 687,
+    "campos_plan": 1239,
+    "hashes_origen": 1239,
+    "huellas_fuentes": {
+      "03_datos_demo.sql": "447164a593158faaf210cea84173f92868c6fcacba270ff1ad5a9cdc19e7cda9",
+      "05_datos_demo_ampliados.sql": "eb32426c68c378b31938ac4efc1138e392f118d12c7a9e81a540ddf15eefc83f",
+      "hospital_completo.sql": "09690887e8f5455b209ece9c6da1f51043c5e02e41be59d8eddfe6628499207f",
+      "hospital_demostracion.sql": "16203fe40cd1a9a107faf8e3effaba1fc5e71a30e4aeb12ec3aa67f45549ade7"
+    },
+    "plan_sha256": "ccd5165575f94c481501ae1d889566e9d6b8327c896a613df51767cbbfef108e"
+  },
+  "verificado_tras_reiniciar_mysql": true
+}

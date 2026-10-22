@@ -382,6 +382,7 @@ class HospitalApp(tk.Tk):
             if self.read_only:
                 self.catalog=[dict(t,can_create=False,can_update=False,note='Tu cuenta de MySQL permite consultar. Puedes ver y exportar datos; para guardar cambios necesitas una cuenta con permisos de escritura.') for t in self.catalog]
             self.workflow_save_button.configure(state='disabled' if self.read_only else 'normal')
+            self.cleanup_button.configure(state='disabled' if self.read_only else 'normal')
             self.metadata={}; self._save_config()
             for child in self.workflow_scroll.body.winfo_children(): child.destroy()
             self.workflow_form=None; self.workflow_current=None; self.workflow_picker.set('')
@@ -422,7 +423,30 @@ class HospitalApp(tk.Tk):
         ttk.Button(bottom,text='Ir a Pacientes',style='Accent.TButton',command=lambda:self.goto_table('pacientes')).pack(side='left')
         self.backup_button=ttk.Button(bottom,text='Crear respaldo completo',command=self.backup); self.backup_button.pack(side='left',padx=8)
         self.restore_button=ttk.Button(bottom,text='Restaurar respaldo en base nueva',command=self.restore); self.restore_button.pack(side='left')
+        self.cleanup_button=ttk.Button(bottom,text='Completar datos del proyecto',command=self.complete_project_data)
+        self.cleanup_button.pack(side='left',padx=(8,0))
         self.count_grid.pack(fill='both',expand=True)
+
+    def complete_project_data(self):
+        try:
+            service=self._require_service()
+            if self.read_only: raise ValueError('Esta actualización necesita una cuenta de MySQL con permisos de escritura y administración de reglas.')
+        except ValueError as exc: return self._error(str(exc))
+        from .data_cleanup import preview_cleanup, apply_cleanup
+        def preview_ready(result):
+            if not result['cells']:
+                self.status.set('Los datos iniciales del proyecto ya están completos. Los campos editados por el equipo se conservaron.')
+                messagebox.showinfo('Datos completos','No quedan valores iniciales pendientes de esta actualización. No se modificó ningún registro.',parent=self)
+                return
+            path=filedialog.asksaveasfilename(parent=self,title='Guardar respaldo antes de completar los datos',defaultextension='.hospital.json',initialfile='antes_de_completar_'+datetime.now().strftime('%Y%m%d_%H%M%S')+'.hospital.json',filetypes=[('Respaldo completo del hospital','*.hospital.json')])
+            if not path: return
+            if not messagebox.askyesno('Completar datos del proyecto',f"Se completarán {result['cells']} campos en {result['rows']} registros de {len(result['tables'])} tablas. Primero se guardará un respaldo completo. Se conservarán los identificadores, cantidades, fechas y campos que el equipo ya haya personalizado.\n\nCierra otras ventanas o programas conectados a esta base durante la actualización. ¿Continuar?",parent=self): return
+            def success(report):
+                self.status.set(f"Se completaron {report['cells']} campos. El respaldo anterior quedó guardado en la ubicación elegida.")
+                messagebox.showinfo('Datos actualizados','Se completaron los valores iniciales y se comprobaron los registros y las reglas de la base. El respaldo anterior se conserva. Pulsa Actualizar para revisar las tablas.',parent=self)
+                self.load_records()
+            self._run('Guardando respaldo y completando los datos del proyecto...',lambda:apply_cleanup(service.settings,path),success)
+        self._run('Revisando los datos iniciales pendientes...',lambda:preview_cleanup(service.settings),preview_ready)
 
     def _show_counts(self,counts):
         total=sum(counts.values()); empty=sum(n==0 for n in counts.values())

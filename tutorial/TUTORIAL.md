@@ -334,10 +334,10 @@ En los datos iniciales aparecen las pacientes con IDs 1 y 4. AND pide que se cum
 ```sql
 SELECT paciente_id, nombre
 FROM pacientes
-WHERE nombre LIKE '%Tres%';
+WHERE nombre LIKE '%Alex%';
 ```
 
-Esperas al paciente con ID 3. El símbolo % permite que haya más caracteres antes o después de Tres.
+Esperas al paciente con ID 3. El símbolo % permite que haya más caracteres antes o después de Alex.
 
 ## Contar en lugar de listar
 
@@ -401,9 +401,9 @@ INSERT INTO pacientes (
   apellido_materno, fecha_nacimiento, sexo, telefono
 )
 VALUES (
-  'EXP-TUTORIAL-001', 'Paciente Tutorial', 'Prueba',
-  'Ficticio', '2000-01-15', 'NO_ESPECIFICADO',
-  'TEL-TUTORIAL-001'
+  'EXP-2026-0031', 'Nicolás', 'Herrera',
+  'Ríos', '2000-01-15', 'NO_ESPECIFICADO',
+  '5512349087'
 );
 ```
 
@@ -416,7 +416,7 @@ FROM pacientes
 WHERE paciente_id = @paciente_tutorial;
 ```
 
-3. Anota el paciente_id devuelto. Debe aparecer Paciente Tutorial con su expediente y teléfono ficticios.
+3. Anota el paciente_id devuelto. Debe aparecer Nicolás Herrera con su expediente y teléfono ficticios.
 
 ## Lo que hizo el bloque
 
@@ -428,7 +428,7 @@ Las columnas que omitimos usan su valor predeterminado o permiten NULL según la
 
 El expediente ya existe. Detente: no ejecutes el SET ni las modificaciones siguientes basándote en un INSERT que falló. Para repetir el ejercicio, elige otro expediente exclusivo, cambia también los filtros posteriores y vuelve a insertar.
 
-Si cerraste la conexión, la variable se pierde. Puedes recuperar el registro con SELECT paciente_id FROM pacientes WHERE expediente_clinico = 'EXP-TUTORIAL-001'; y establecer SET @paciente_tutorial = el_numero_real; reemplazando el_numero_real por el ID que leíste.
+Si cerraste la conexión, la variable se pierde. Puedes recuperar el registro con SELECT paciente_id FROM pacientes WHERE expediente_clinico = 'EXP-2026-0031'; y establecer SET @paciente_tutorial = el_numero_real; reemplazando el_numero_real por el ID que leíste.
 
 # 12 Cambiar un dato y deshacerlo
 
@@ -445,7 +445,7 @@ FROM pacientes
 WHERE paciente_id = @paciente_tutorial;
 
 UPDATE pacientes
-SET telefono = 'TEL-CAMBIADO-TUTORIAL'
+SET telefono = '5587654301'
 WHERE paciente_id = @paciente_tutorial;
 
 SELECT paciente_id, telefono AS durante
@@ -459,7 +459,7 @@ FROM pacientes
 WHERE paciente_id = @paciente_tutorial;
 ```
 
-2. Revisa las tres cuadrículas: antes y después deben mostrar TEL-TUTORIAL-001; durante debe mostrar TEL-CAMBIADO-TUTORIAL.
+2. Revisa las tres cuadrículas: antes y después deben mostrar 5512349087; durante debe mostrar 5587654301.
 
 ## Cómo guardar un cambio
 
@@ -477,14 +477,14 @@ No uses este patrón para los procedimientos de negocio ni para CREATE o ALTER. 
 
 DELETE elimina filas. Este ejemplo borra únicamente el paciente que acabas de crear; todavía no tiene citas, consultas u otros registros asociados.
 
-1. Ejecuta primero esta lectura y confirma que muestra Paciente Tutorial:
+1. Ejecuta primero esta lectura y confirma que muestra Nicolás Herrera:
 
 ```sql
 USE hospital_practica;
 SELECT paciente_id, expediente_clinico, nombre
 FROM pacientes
 WHERE paciente_id = @paciente_tutorial
-  AND expediente_clinico = 'EXP-TUTORIAL-001';
+  AND expediente_clinico = 'EXP-2026-0031';
 ```
 
 2. Si aparece exactamente el registro correcto, ejecuta el bloque siguiente:
@@ -492,7 +492,7 @@ WHERE paciente_id = @paciente_tutorial
 ```sql
 DELETE FROM pacientes
 WHERE paciente_id = @paciente_tutorial
-  AND expediente_clinico = 'EXP-TUTORIAL-001';
+  AND expediente_clinico = 'EXP-2026-0031';
 
 SELECT ROW_COUNT() AS filas_eliminadas;
 
@@ -532,7 +532,7 @@ CALL sp_agendar_cita(
   4, 1,
   '2026-10-15 15:00:00',
   '2026-10-15 15:30:00',
-  'Cita ficticia del tutorial',
+  'Control de seguimiento',
   @cita_tutorial
 );
 SELECT @cita_tutorial AS cita_creada;
@@ -654,7 +654,7 @@ Valores iniciales de factura 1: total = 850.00, pagado = 500.00 y saldo = 350.00
 SET @pago_tutorial = NULL;
 CALL sp_registrar_pago(
   1, '2026-10-10 10:30:00', 25.00,
-  'EFECTIVO', 'ABONO-TUTORIAL-001',
+  'EFECTIVO', 'EFE-202610-000025',
   @pago_tutorial
 );
 SELECT @pago_tutorial AS pago_creado;
@@ -687,7 +687,7 @@ Ahora ejecutarás tres instrucciones incorrectas a propósito. Selecciona y ejec
 ```sql
 USE hospital_practica;
 INSERT INTO departamentos (codigo, nombre)
-VALUES ('DEP-DEMO-01', 'Duplicado de prueba');
+VALUES ('DEP-001', 'Consulta externa');
 ```
 
 Esperas error 1062 Duplicate entry: ya existe ese código. UNIQUE protege valores que no deben repetirse.
@@ -698,8 +698,8 @@ Esperas error 1062 Duplicate entry: ya existe ese código. UNIQUE protege valore
 INSERT INTO contactos_emergencia (
   paciente_id, nombre, parentesco, telefono, prioridad
 )
-VALUES (1, 'Contacto ficticio', 'PRUEBA',
-        'TEL-PRUEBA', 0);
+VALUES (1, 'Teresa Herrera Ríos', 'Hermana',
+        '5512349088', 0);
 ```
 
 Esperas error 3819 Check constraint: prioridad debe ser mayor que 0. CHECK valida una condición del registro.
@@ -710,8 +710,8 @@ Esperas error 3819 Check constraint: prioridad debe ser mayor que 0. CHECK valid
 INSERT INTO contactos_emergencia (
   paciente_id, nombre, parentesco, telefono, prioridad
 )
-VALUES (999999, 'Contacto ficticio', 'PRUEBA',
-        'TEL-PRUEBA', 1);
+VALUES (999999, 'Teresa Herrera Ríos', 'Hermana',
+        '5512349088', 1);
 ```
 
 Esperas error 1452 Foreign key constraint: el paciente 999999 no existe en la carga inicial.
@@ -884,7 +884,7 @@ FROM hospital_practica.pacientes
 WHERE paciente_id = 1;
 ```
 
-2. Anota el teléfono que aparece antes de cambiarlo. Haz doble clic en la celda telefono y escribe TEL-VISUAL-001. No edites paciente_id.
+2. Anota el teléfono que aparece antes de cambiarlo. Haz doble clic en la celda telefono y escribe 5598760123. No edites paciente_id.
 
 3. Pulsa Apply en la zona de resultados. Workbench abre una ventana para revisar el SQL que enviará al servidor.
 
@@ -892,7 +892,7 @@ WHERE paciente_id = 1;
 
 5. En la ventana de revisión pulsa Apply. Comprueba que terminó correctamente y pulsa Finish.
 
-6. Vuelve a ejecutar la consulta de arriba o refresca la cuadrícula. El teléfono debe mostrar TEL-VISUAL-001.
+6. Vuelve a ejecutar la consulta de arriba o refresca la cuadrícula. El teléfono debe mostrar 5598760123.
 
 7. Para devolver el dato al valor original, edita la misma celda con el valor que anotaste y repite Apply, revisión, Apply y Finish.
 

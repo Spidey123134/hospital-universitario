@@ -1,7 +1,8 @@
 """Prueba de las ventanas reales sobre una base MySQL temporal propia.
 
 Ejemplo: python -m app_hospital.tests.gui_smoke --user root --port 33087
-Requiere escritorio Windows y Pillow solo para capturas de la propia ventana.
+Requiere escritorio Windows y Pillow 11.2.1 o posterior para capturar solo la
+ventana propia por identificador HWND, sin recortar el escritorio.
 No modifica hospital_universitario. Elimina solamente su base UUID de prueba.
 """
 import argparse
@@ -17,6 +18,7 @@ from unittest.mock import patch
 import pymysql
 from PIL import ImageGrab
 from app_hospital import main as ui
+from app_hospital.tests.audit_data import scan_service
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -43,9 +45,12 @@ def main():
             time.sleep(.015)
         raise AssertionError('La ventana no termino su operacion.')
     def capture(app,name):
-        app.lift(); app.update(); time.sleep(.25)
-        x,y=app.winfo_rootx(),app.winfo_rooty()
-        ImageGrab.grab(bbox=(x,y,x+app.winfo_width(),y+app.winfo_height()),all_screens=True).save(capture_dir/name)
+        app.update(); time.sleep(.25)
+        # Capture this Tk window by handle, including when another program is
+        # in front. A desktop crop could accidentally record unrelated apps.
+        handle=int(app.wm_frame(),0)
+        if not handle: raise AssertionError('No se pudo identificar la ventana propia para la captura.')
+        ImageGrab.grab(window=handle).save(capture_dir/name)
     def fully_visible(widget,window):
         window.update_idletasks()
         return bool(widget.winfo_ismapped()) and widget.winfo_width()>1 and widget.winfo_height()>1 and widget.winfo_rootx()>=window.winfo_rootx() and widget.winfo_rooty()>=window.winfo_rooty() and widget.winfo_rootx()+widget.winfo_width()<=window.winfo_rootx()+window.winfo_width() and widget.winfo_rooty()+widget.winfo_height()<=window.winfo_rooty()+window.winfo_height()
@@ -61,17 +66,26 @@ def main():
             for key,value in dict(host=args.host,port=str(args.port),user=args.user,password=password,database=database).items(): app.connection_vars[key].set(value)
             app.test_connection(); wait(app)
             check('Probar conexion desde boton funciona',not [x for x in dialogs if x[0]=='error'],str(dialogs[-1:]))
-            app.install_demo(); owned=True; wait(app,180)
+            app.install_demo(); owned=True; wait(app,300)
             check('Crear base desde interfaz funciona',not [x for x in dialogs if x[0]=='error'],str(dialogs[-1:]))
             app.open_hospital(); wait(app)
             check('La interfaz abre 36 tablas',len(app.catalog)==36)
+            clean_data=scan_service(app.service.settings)
+            check('La instalacion de Python no deja relleno en los textos de las 36 tablas',clean_data['table_count']==36 and clean_data['matching_cells']==0,json.dumps({'tablas':clean_data['table_count'],'celdas':clean_data['cells_scanned'],'coincidencias':clean_data['matching_cells'],'ejemplos':clean_data['examples']},ensure_ascii=False,default=str))
+            dialogs_before=len(dialogs)
+            with patch.object(ui.filedialog,'asksaveasfilename') as cleanup_backup:
+                app.complete_project_data(); wait(app)
+                check('Completar datos en una base limpia informa sin modificar ni pedir respaldo',not cleanup_backup.called and any(item[0]=='info' and 'No quedan valores iniciales pendientes' in item[2] for item in dialogs[dialogs_before:]),str({'respaldo_solicitado':cleanup_backup.called,'dialogos':dialogs[dialogs_before:]}))
+            check('Completar datos conserva las 36 tablas sin relleno',scan_service(app.service.settings)['matching_cells']==0)
             first_doctor=next(row for row in app.service.browse('personal',limit=200)['rows'] if row['personal_id']==1)
             check('La instalacion muestra Elena y su correo coherente',first_doctor['nombre']=='Elena' and first_doctor['apellido_paterno']=='Márquez' and first_doctor['email']=='elena.marquez.1@example.com')
             check('Inicio muestra 789 registros',app.card_vars['_total'].get()=='789')
             check('Todas las tablas se muestran con registros','0 tablas vacías' in app.count_summary.get())
             check('Los botones de respaldo son visibles en Inicio',app.backup_button.winfo_ismapped() and app.restore_button.winfo_ismapped() and app.backup_button.winfo_y()+app.backup_button.winfo_height()<=app.backup_button.master.winfo_height())
             capture(app,'02_inicio.png')
-            app.geometry('1020x700+30+20'); app.goto_table('pacientes'); wait(app)
+            app.geometry('1020x700+30+20'); app.update()
+            check('En 1020x700 Completar datos queda visible en Inicio',fully_visible(app.cleanup_button,app))
+            app.goto_table('pacientes'); wait(app)
             check('En 1020x700 la paginacion queda visible',fully_visible(app.prev_button,app) and fully_visible(app.next_button,app))
             app.tabs.select(app.pages['Operaciones']); app.update()
             operation_button=next(button for frame in app.pages['Operaciones'].winfo_children() for button in frame.winfo_children() if isinstance(button,ui.ttk.Button) and button.cget('text')=='Guardar operación')
@@ -88,7 +102,7 @@ def main():
             app.new_record(); app.update()
             form=app.active_form
             check('El formulario muestra Activo mediante Si o No',isinstance(form.controls['activo'],ui.ttk.Combobox) and form.controls['activo'].get()=='Sí')
-            sample={'expediente_clinico':'UNI-PRUEBA-001','nombre':'Daniela','apellido_paterno':'Serrano','apellido_materno':'Molina','fecha_nacimiento':'2002-03-15','sexo':'F','telefono':'5550000000','email':'daniela.serrano@example.com','domicilio':'Domicilio ficticio del ejercicio'}
+            sample={'expediente_clinico':'UNI-PRUEBA-001','nombre':'Daniela','apellido_paterno':'Serrano','apellido_materno':'Molina','fecha_nacimiento':'2002-03-15','sexo':'F','telefono':'5550000000','email':'daniela.serrano@example.com','domicilio':'Calle Magnolia 28, Colonia Jardines, Ciudad de México'}
             for name,value in sample.items():
                 widget=form.controls[name]
                 if isinstance(widget,ui.ttk.Combobox): widget.set(value)
@@ -127,7 +141,7 @@ def main():
             for name in ('paciente_id','medico_id'):
                 options=form.maps[name]; selected=next(label for label,key in options.items() if int(key)==(31 if name=='paciente_id' else 1))
                 form.controls[name].set(selected)
-            for name,value in {'inicio':'2030-01-15 09:00:00','fin':'2030-01-15 09:30:00','motivo':'Revision ficticia del tutorial'}.items():
+            for name,value in {'inicio':'2030-01-15 09:00:00','fin':'2030-01-15 09:30:00','motivo':'Revisión de control'}.items():
                 widget=form.controls[name]
                 if isinstance(widget,ui.tk.Text): widget.delete('1.0','end'); widget.insert('1.0',value)
                 else: widget.delete(0,'end'); widget.insert(0,value)
@@ -158,7 +172,7 @@ def main():
                 check('Cancelar el nombre de restauracion conserva conexion y datos',not restore_backup.called and not app.busy and app.connection_vars['database'].get()==original_database and app.service.counts()['pacientes']==31)
             with patch.object(ui.filedialog,'askopenfilename',return_value=str(backup)),patch.object(ui.simpledialog,'askstring',return_value=copy_database): app.restore()
             copy_owned=True
-            wait(app,180)
+            wait(app,300)
             check('Restaurar cambia al destino solo despues de crear la copia',app.connection_vars['database'].get()==copy_database and app.service.settings.database==original_database)
             check('La restauracion conserva la base original',app.service.counts()['pacientes']==31 and app.service.counts()['citas']==55)
             app.open_hospital(); wait(app)

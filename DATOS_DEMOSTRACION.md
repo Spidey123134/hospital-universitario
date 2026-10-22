@@ -2,7 +2,7 @@
 
 La estructura mantiene sus **36 tablas**. La demostración ampliada contiene **789 filas** repartidas entre ellas. Incluye los 15 médicos y 15 recetas adaptadas de las capturas del equipo, además de casos ficticios de citas, hospitalización, farmacia, estudios y cobros.
 
-Para instalar la versión con nombres y contactos completados, utiliza el [respaldo actual](entrega_base/hospital_universitario_respaldo.sql) y sigue [BASE_DE_DATOS.md](BASE_DE_DATOS.md). Las instrucciones siguientes reconstruyen la muestra original usada en las comprobaciones del tutorial. Si eliges esa ruta, ejecuta también `07_contactos_y_catalogos.sql` después de la ampliación. [DATOS_DEL_PROYECTO.md](DATOS_DEL_PROYECTO.md) explica la actualización; no necesitas repetirla si importas el respaldo actual.
+Para instalar la versión completa, utiliza el [respaldo actual](entrega_base/hospital_universitario_respaldo.sql) y sigue [BASE_DE_DATOS.md](BASE_DE_DATOS.md). También puedes usar los instaladores descritos aquí: `03_datos_demo.sql`, `05_datos_demo_ampliados.sql` y los archivos consolidados ya contienen textos completos; no necesitan ejecutar `07_contactos_y_catalogos.sql` después. Si conservas una copia anterior con valores de relleno, usa **Inicio > Completar datos del proyecto** en la interfaz actual. [DATOS_DEL_PROYECTO.md](DATOS_DEL_PROYECTO.md) explica cómo se crea el respaldo y se respetan las modificaciones del equipo.
 
 | Datos | Muestra inicial del tutorial | Demostración ampliada |
 | --- | ---: | ---: |
@@ -58,7 +58,7 @@ Una receta tiene cabecera en `recetas` y medicamentos en `receta_detalle`. Si co
 
 La [explicación de la fusión](aporte_equipo/README.md) y sus dos CSV conservan los valores visibles de las capturas y la correspondencia de identificadores. Los horarios originales también se conservaron en el CSV; el esquema actual registra citas con fecha y hora, pero no administra jornadas laborales.
 
-Las capturas no muestran los nombres de los pacientes ni de los medicamentos. Para completar relaciones se usaron pacientes y compuestos ficticios del proyecto. Las recetas adaptadas llevan una observación que identifica esa diferencia. Cantidad y duración no especificadas se completaron con valores de prueba; los textos de dosis y vías se conservaron como parte del ejercicio del equipo, sin validación clínica.
+Las capturas no muestran los nombres de los pacientes ni de los medicamentos. Para completar las relaciones se usaron los pacientes del proyecto y el [catálogo documentado de medicamentos](datos/REFERENCIAS_CATALOGO.md). La correspondencia con las capturas se explica en los CSV y en la documentación del aporte. Las observaciones, dosis y vías transcritas se conservaron; las cantidades y duraciones no especificadas se completaron para el ejercicio académico, sin validación clínica.
 
 Los ejercicios del tutorial siguen usando `tutorial/hospital_practica.sql`, con la muestra pequeña y sus resultados esperados. La ampliación se usa para demostrar más registros y relaciones en `hospital_universitario`.
 
@@ -74,4 +74,4 @@ python validar_datos_ampliados.py --mysql "C:/MySQL/bin/mysql.exe" --user root -
 
 Ajusta la ruta, usuario y puerto a tu equipo. La contraseña, si se necesita, se toma de la variable de entorno `MYSQL_PWD`; no va en los argumentos ni en el reporte. El programa crea sus propias bases `hospital_prueba_UUID` y no modifica `hospital_universitario`.
 
-`generar_datos_ampliados.py` regenera los archivos 05 y `hospital_demostracion.sql` a partir de los CSV y ejemplos definidos en su código. Regenerar archivos no ejecuta ni modifica una base. Después de cambiar datos, vuelve a validar antes de presentar la evidencia.
+`generar_datos_ampliados.py` regenera `05_datos_demo_ampliados.sql`, `hospital_completo.sql` y `hospital_demostracion.sql` a partir de `datos/carga_ampliada.json`, `03_datos_demo.sql` y los CSV del equipo. Rechaza los marcadores de relleno antes de escribir. Regenerar archivos no ejecuta ni modifica una base. Después de cambiar datos, vuelve a validar antes de presentar la evidencia.

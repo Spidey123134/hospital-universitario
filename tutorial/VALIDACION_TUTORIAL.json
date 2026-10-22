@@ -1,34 +1,33 @@
 {
   "estado": "APROBADO",
-  "fecha_utc": "2026-10-11T05:16:29+00:00",
+  "fecha_utc": "2026-10-22T17:24:58+00:00",
   "fecha_didactica": "2026-10-10",
   "servidor": {
-    "version": "MySQL 8.0.45",
+    "version": "8.0.45",
     "host": "127.0.0.1",
-    "puerto": 33087,
-    "aislado": true,
-    "servicio_instalado": false
+    "puerto": 3307,
+    "base_de_prueba_aislada_por_uuid": true
   },
-  "base_temporal": "hospital_tutorial_2b9e156007fb4647a105de0b5bb1fe91",
+  "base_temporal": "hospital_tutorial_18f82849696946ed851d13ccc7fc5e3c",
   "base_temporal_eliminada": true,
-  "instancia_detenida_al_final": true,
+  "instancia_detenida_al_final": false,
   "total": 28,
   "correctas": 28,
   "fallidas": 0,
   "alcance": "SQL del tutorial sobre copia UUID propia; no valida la interfaz de Workbench ni Reverse Engineer.",
   "huellas_sha256_originales": {
-    "hospital_completo.sql": "65637e2fb21cea83a794b7115301841259efeecb45c0592b5127b52160be44cc",
+    "hospital_completo.sql": "09690887e8f5455b209ece9c6da1f51043c5e02e41be59d8eddfe6628499207f",
     "01_esquema.sql": "bbe9ed69d896dfbfbb60c9aaec783b4116ec07cf3266eeaba03c2383ca4dfec1",
     "02_reglas.sql": "a506582fb8fa5c142520acabfc336ab720dee06e196445e8d8b32b1902a3b484",
-    "03_datos_demo.sql": "4bc2db6498289ac806c98c3bbda631454cd88c8b2f5ab313194568c0fe781593",
+    "03_datos_demo.sql": "447164a593158faaf210cea84173f92868c6fcacba270ff1ad5a9cdc19e7cda9",
     "04_consultas.sql": "34b39f2b0ec66dc37792fc2f9a0a6b5fc96eaa362062a4b144939fe2bf02e86d"
   },
   "resultados": [
     {
-      "nombre": "Identidad de instancia aislada",
+      "nombre": "Conexión al servidor indicado",
       "categoria": "entorno",
       "correcta": true,
-      "detalle": "MySQL 8.0.45; datadir temporal esperado; puerto TCP local 33087."
+      "detalle": "Versión 8.0.45; puerto 3307; se utilizará exclusivamente una base UUID propia."
     },
     {
       "nombre": "Instalación completa en base UUID propia",
@@ -44,8 +43,8 @@
       "categoria": "ejercicio",
       "correcta": true,
       "detalle": "Resultado esperado confirmado.",
-      "esperado": "hospital_tutorial_2b9e156007fb4647a105de0b5bb1fe91",
-      "obtenido": "hospital_tutorial_2b9e156007fb4647a105de0b5bb1fe91",
+      "esperado": "hospital_tutorial_18f82849696946ed851d13ccc7fc5e3c",
+      "obtenido": "hospital_tutorial_18f82849696946ed851d13ccc7fc5e3c",
       "error_mysql": null
     },
     {
@@ -68,8 +67,8 @@
       "categoria": "ejercicio",
       "correcta": true,
       "detalle": "Resultado esperado confirmado.",
-      "esperado": "1\tEXP-DEMO-001\n2\tEXP-DEMO-002\n3\tEXP-DEMO-003\n4\tEXP-DEMO-004\n5\tEXP-DEMO-005",
-      "obtenido": "1\tEXP-DEMO-001\n2\tEXP-DEMO-002\n3\tEXP-DEMO-003\n4\tEXP-DEMO-004\n5\tEXP-DEMO-005",
+      "esperado": "1\tEXP-2026-0001\n2\tEXP-2026-0002\n3\tEXP-2026-0003\n4\tEXP-2026-0004\n5\tEXP-2026-0005",
+      "obtenido": "1\tEXP-2026-0001\n2\tEXP-2026-0002\n3\tEXP-2026-0003\n4\tEXP-2026-0004\n5\tEXP-2026-0005",
       "error_mysql": null
     },
     {
@@ -82,7 +81,7 @@
       "error_mysql": null
     },
     {
-      "nombre": "05b: LIKE encuentra Paciente Tres",
+      "nombre": "05b: LIKE encuentra Alex Rojas Medina",
       "categoria": "ejercicio",
       "correcta": true,
       "detalle": "Resultado esperado confirmado.",
@@ -226,7 +225,7 @@
       "error_mysql": null
     },
     {
-      "nombre": "Usuarios demo inactivos sin autenticación",
+      "nombre": "Cuentas inactivas con tres hashes PBKDF2 distintos",
       "categoria": "ejercicio",
       "correcta": true,
       "detalle": "Resultado esperado confirmado.",

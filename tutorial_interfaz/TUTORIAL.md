@@ -126,13 +126,25 @@ Si es la primera instalación y todavía no existe `hospital_universitario`:
 4. Espera a que termine. No cierres la ventana durante el proceso.
 5. Pulsa **Abrir hospital**.
 
-**Resultado esperado:** la aplicación muestra el hospital con 36 tablas y 789 filas en total, incluidas 30 personas en pacientes, 18 médicos, 15 medicamentos y 40 recetas. La creación también aplica la actualización de nombres y contactos: 95 teléfonos de diez dígitos y 59 correos personalizados bajo `example.com`.
+**Resultado esperado:** la aplicación muestra el hospital con 36 tablas y 789 filas en total, incluidas 30 personas en pacientes, 18 médicos, 15 medicamentos y 40 recetas. La copia nueva ya incluye los textos completos: nombres, domicilios, notas, catálogo de medicamentos, recetas y estudios. También conserva 95 teléfonos de diez dígitos y 59 correos personalizados bajo `example.com`.
 
 Esos números describen la carga inicial. Cambiarán cuando el equipo agregue sus registros. Todas las tablas contienen ejemplos; cada tabla tiene la cantidad que corresponde a sus relaciones. Una receta puede tener varios renglones de medicamentos.
 
 Los contactos son inventados para el proyecto. Un correo guardado en la tabla no crea una cuenta de correo, y un teléfono inventado no está verificado como libre. Los datos clínicos sirven para comprobar relaciones y formularios; no son indicaciones de tratamiento.
 
 Si la base ya existe, utiliza **Abrir hospital**. No necesitas borrar una base para entrar a la aplicación ni repetir la creación cada día. Conserva el trabajo que ya haya agregado tu equipo.
+
+## Actualizar una copia que todavía tiene textos de relleno
+
+Si al abrir tablas aparecen valores como «domicilio ficticio» o «dosis simulada», estás usando datos de una versión anterior. Descargar los archivos nuevos no cambia automáticamente los registros guardados en MySQL.
+
+1. Abre la versión actual de la aplicación y entra a tu hospital existente.
+2. Pulsa **Inicio → Completar datos del proyecto**.
+3. Revisa el mensaje y la ubicación donde se guardará el respaldo previo.
+4. Confirma la actualización y espera a que termine. Si no se puede guardar el respaldo, la aplicación no debe comenzar a cambiar los datos.
+5. Lee el resumen y vuelve a abrir las tablas en **Registros**. Comprueba domicilios, medicamentos, notas y recetas.
+
+La revisión abarca 19 tablas con textos anteriores y comprueba los campos de texto de las 36 tablas. Cambia solamente valores conocidos de versiones previas y conserva los campos que tu equipo ya modificó. No vuelve a crear la base, no agrega otra copia de las filas y no borra el trabajo. El archivo 07 de contactos queda como antecedente histórico; no tienes que ejecutarlo para usar este botón.
 
 ## Ideas que te ayudarán al llenar formularios
 
@@ -287,7 +299,7 @@ Este ejemplo usa una fecha de práctica. Si el equipo ya ocupó ese horario, eli
 3. En **Médico**, elige un médico activo de la lista y anota cuál elegiste.
 4. En **Inicio**, escribe `2026-11-02 10:00:00`.
 5. En **Fin**, escribe `2026-11-02 10:30:00`.
-6. En **Motivo**, escribe `Consulta ficticia para demostración`.
+6. En **Motivo**, escribe `Revisión de control`.
 7. Pulsa **Guardar operación**.
 8. En **Registros**, selecciona **Citas (citas)** y localiza la cita recién creada. Anota su identificador.
 
@@ -306,11 +318,11 @@ La captura usa una fecha de ensayo de 2030. Para el ejercicio de esta guía usa 
 Una cita reserva un horario. Una consulta registra la atención. Una receta se vincula con una consulta y después recibe sus renglones de medicamentos.
 
 1. En **Registros**, elige **Consultas (consultas)** y pulsa **Nuevo registro**.
-2. Para practicar sin vincular la cita anterior, selecciona a Daniela y un médico activo, deja la cita opcional vacía y elige tipo **URGENCIA**. Usa motivo `Ejercicio de registro sin uso clínico` y fecha `2026-11-02 11:00:00`. Deja vacíos los datos opcionales que no utilizarás.
+2. Para practicar sin vincular la cita anterior, selecciona a Daniela y un médico activo, deja la cita opcional vacía y elige tipo **URGENCIA**. Usa motivo `Valoración por congestión nasal` y fecha `2026-11-02 11:00:00`. Deja vacíos los datos opcionales que no utilizarás.
 3. Pulsa **Guardar**. Localiza la consulta y anota su identificador.
-4. Cambia a **Recetas (recetas)**, pulsa **Nuevo registro** y selecciona esa consulta. Usa fecha `2026-11-02 11:05:00` y observación `Receta ficticia para clase`. Guarda y anota el identificador de la receta.
+4. Cambia a **Recetas (recetas)**, pulsa **Nuevo registro** y selecciona esa consulta. Usa fecha `2026-11-02 11:05:00` y observación `Seguimiento en consulta externa`. Guarda y anota el identificador de la receta.
 5. Cambia a **Medicamentos de cada receta (receta_detalle)** y pulsa **Nuevo registro**.
-6. Selecciona la receta que acabas de crear y un medicamento ficticio de la lista. Escribe renglón `1`, dosis `Dosis simulada para el ejercicio`, frecuencia `Frecuencia simulada`, duración `1`, vía `Simulada` y cantidad prescrita `1`. Guarda.
+6. Selecciona la receta que acabas de crear y **Loratadina, 10 mg, tableta** del catálogo. Para practicar la captura, escribe renglón `1`, dosis `1 tableta`, frecuencia `Cada 24 horas`, duración `1`, vía `Oral` y cantidad prescrita `1`. Guarda.
 7. Abre **Consultas**, elige **Recetas con nombres y medicamentos** y pulsa **Ver consulta**.
 
 **Resultado esperado:** ves el paciente, médico y medicamento juntos. Una receta con dos medicamentos produce dos renglones con el mismo identificador de receta. Es la forma de guardar varios medicamentos sin duplicar la cabecera.
@@ -338,7 +350,7 @@ Si se rechaza, revisa el mensaje. No cambies directamente la cantidad del invent
 
 1. En **Registros**, elige **Facturas (facturas)** y pulsa **Nuevo registro**.
 2. Escribe folio `UNI-COBRO-001`, selecciona a Daniela y usa fecha `2026-11-02 12:00:00`. Deja la póliza opcional vacía para este ejemplo. Guarda.
-3. Cambia a **Conceptos de facturas (factura_detalle)**. Crea un concepto para esa factura con renglón `1`, descripción `Servicio ficticio`, cantidad `1`, precio unitario `100.00` y descuento `0.00`. Guarda.
+3. Cambia a **Conceptos de facturas (factura_detalle)**. Crea un concepto para esa factura con renglón `1`, descripción `Consulta de medicina general`, cantidad `1`, precio unitario `100.00` y descuento `0.00`. Guarda.
 4. En **Operaciones**, elige **Emitir factura**, selecciona la factura de ese folio y pulsa **Guardar operación**.
 5. En **Consultas**, abre **Facturas y saldos** y pulsa **Ver consulta**. La factura debe mostrar total `100.00` y saldo `100.00`.
 6. En **Operaciones**, elige **Registrar pago de factura**. Selecciona esa factura, escribe fecha `2026-11-02 12:10:00`, monto `40.00` y método **EFECTIVO**. Guarda la operación.
@@ -351,11 +363,11 @@ Los conceptos se modifican mientras la factura está ABIERTA. Emitirla cierra es
 ## Registrar una estancia y asignar camilla
 
 1. En **Registros**, elige **Hospitalizaciones (hospitalizaciones)** y pulsa **Nuevo registro**.
-2. Selecciona una consulta de ingreso y el mismo paciente de esa consulta. Para practicar puedes usar la consulta de Daniela creada antes. Selecciona un médico responsable, ingreso `2026-11-02 11:30:00` y motivo `Estancia ficticia para clase`. Guarda.
+2. Selecciona una consulta de ingreso y el mismo paciente de esa consulta. Para practicar puedes usar la consulta de Daniela creada antes. Selecciona un médico responsable, ingreso `2026-11-02 11:30:00` y motivo `Observación y seguimiento`. Guarda.
 3. En **Consultas**, abre **Disponibilidad de camillas**. Identifica una camilla disponible y operativa.
 4. En **Operaciones**, elige **Asignar o trasladar camilla**. Selecciona la hospitalización que acabas de crear, esa camilla e inicio `2026-11-02 11:35:00`. Guarda.
 5. Actualiza **Disponibilidad de camillas**. Debe aparecer ocupada.
-6. Para terminar el ejemplo, en **Operaciones** elige **Dar alta hospitalaria**. Selecciona esa estancia, fecha `2026-11-02 13:00:00` y resumen `Fin de estancia ficticia`. Guarda.
+6. Para terminar el ejemplo, en **Operaciones** elige **Dar alta hospitalaria**. Selecciona esa estancia, fecha `2026-11-02 13:00:00` y resumen `Alta con seguimiento en consulta externa`. Guarda.
 
 **Resultado esperado:** la hospitalización conserva ingreso y alta, y la camilla queda libre. Si hay notas o traslados posteriores, el alta debe tener una fecha posterior a ellos.
 

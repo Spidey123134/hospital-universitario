@@ -1,0 +1,15 @@
+{
+  "fecha_utc": "2026-10-22T17:34:03.704342+00:00",
+  "estado": "APROBADO",
+  "resumen": {
+    "total": 17,
+    "correctas": 17,
+    "fallidas": 0
+  },
+  "sin_mysql": true,
+  "huellas_sha256": {
+    "app_hospital/data_cleanup.py": "03a0f07889bb36d66a2deba0f649684d055601ad6c6d2384c93a4576bf229ee1",
+    "app_hospital/tests/test_data_cleanup.py": "83c7cbb7b6234d89ce358f11c49dafbf337a95ceeba8e2cfc8c6e31c04b26992",
+    "datos/valores_completos.json": "ccd5165575f94c481501ae1d889566e9d6b8327c896a613df51767cbbfef108e"
+  }
+}

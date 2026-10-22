@@ -10,4 +10,6 @@ __pycache__/
 conexion_hospital.json
 respaldos/
 *.hospital.json
+*.hospital.json.reglas.json
+*.hospital.json.*.tmp
 app_hospital/capturas/

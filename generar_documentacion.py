@@ -658,7 +658,7 @@ def pdf_report(tables, original):
             if test['categoria']=='concurrencia': bullet(test['nombre']+'. '+test['detalle'])
         heading('Resultados del conjunto ficticio',2)
         para('Las existencias por lote de los tres productos de demostración son 142, 57 y 40 unidades. Los saldos se calculan del detalle y los pagos, sin copiar un total editable a facturas.')
-        story.append(table(['Factura demo','Total MXN','Pagado MXN','Saldo MXN'],[['FAC-DEMO-001','850.00','500.00','350.00'],['FAC-DEMO-002','800.00','800.00','0.00'],['FAC-DEMO-003','1,200.00','400.00','800.00'],['FAC-DEMO-004','750.00','0.00','750.00']],[W*.40,W*.20,W*.20,W*.20]))
+        story.append(table(['Factura demo','Total MXN','Pagado MXN','Saldo MXN'],[['FAC-2026-00001','850.00','500.00','350.00'],['FAC-2026-00002','800.00','800.00','0.00'],['FAC-2026-00003','1,200.00','400.00','800.00'],['FAC-2026-00004','750.00','0.00','750.00']],[W*.40,W*.20,W*.20,W*.20]))
         heading('Límites de la evidencia',2)
         para('La limpieza de la base temporal está registrada en el JSON. Las dos pruebas simultáneas verifican los escenarios incluidos (una cita aceptada y otra rechazada; una salida de 7 aceptada y otra rechazada con stock inicial 10), sin certificar todos los intercalados posibles de producción. Al cambiar SQL o datos se deben repetir las pruebas y reemplazar la evidencia; regenerar documentación por sí solo no ejecuta el servidor.')
     story.append(PageBreak())
@@ -710,7 +710,8 @@ def main():
     if evidence: ESTADO_PRUEBAS=evidence['texto_documental']
     tables=parse_ddl(); original=original_metadata(); DIAGRAMAS.mkdir(exist_ok=True)
     (BASE/'DICCIONARIO.md').write_text(markdown_dictionary(tables),encoding='utf-8')
-    write_model(); (BASE/'README.md').write_text(readme(),encoding='utf-8')
+    write_model()
+    # README.md se mantiene por separado: contiene la instalación y la interfaz vigentes.
     (DIAGRAMAS/'er_completo.mmd').write_text(mermaid(tables,tables),encoding='utf-8')
     svg_er(tables,tables,'Hospital universitario - modelo físico completo',DIAGRAMAS/'er_completo.svg',columns=6,full=True)
     for key,(title,names) in MODULOS.items():

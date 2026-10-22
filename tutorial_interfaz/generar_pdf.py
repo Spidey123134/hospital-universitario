@@ -25,6 +25,8 @@ WIDTH = 6.8 * inch
 
 
 def inline(text):
+    # Keep navigation separators readable even without a system Symbol font.
+    text = text.replace("→", " > ").replace("\u2011", "-").replace("\u2013", "-").replace("\u2014", "-")
     output = []
     for part in TOKEN.split(text):
         if part.startswith("**"):
