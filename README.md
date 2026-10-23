@@ -22,6 +22,7 @@ MySQL 8.0.16 o posterior; servidor local y respaldo verificados en MySQL 8.0.45.
 
 ## Documentación
 
+- [PDF completo de tablas y relaciones](output/pdf/relaciones_y_tablas_hospital.pdf): 51 páginas, ocho diagramas por área, las 36 fichas con sus 205 campos y el catálogo de las 48 claves foráneas. Incluye índice con enlaces.
 - [Cómo tener la base en cada computadora](BASE_DE_DATOS.md)
 - [Datos completados y actualización de una copia anterior](DATOS_DEL_PROYECTO.md)
 - [Respaldo exportado de la base](entrega_base/hospital_universitario_respaldo.sql)
