@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-22",
+  "version": "2026-10-23-contenido-completo",
   "changes": [
     {
       "table": "citas",
@@ -770,8 +770,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Daniela Serrano, 28 años. Dolor frontal opresivo desde la tarde anterior, asociado a una jornada prolongada frente a la pantalla. También refiere molestia epigástrica ocasional después de comer; niega vómito y traumatismo y permanece alerta y orientada. Mediciones del encuentro: peso 60 kg, talla 160 cm, temperatura 36.5 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "4ad1a593c42417643a9989acb4b9186886f38fac8350a4c7136976c1a7b6c6f7"
           ]
         }
@@ -790,8 +791,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Arturo Valdés, 46 años. Dolor en la parte alta del abdomen después de comer, acompañado de distensión. A la palpación refiere molestia epigástrica sin rigidez abdominal. Mediciones del encuentro: peso 75 kg, talla 175 cm, temperatura 36.6 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "64b3f01d138a8580dbd78d4a52b80e9e7892dc0b68e491ab8e67e8296ec5eb07"
           ]
         }
@@ -810,8 +812,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Alex Rojas, 24 años. Dolor lumbar tras levantar una caja, que aumenta al incorporarse. Camina con lentitud y niega pérdida de fuerza; antecedente de urticaria con ibuprofeno. Comenta que está concluyendo el tratamiento de una infección dental; la receta de este encuentro cubre el último día del ciclo y no corresponde al dolor lumbar. Mediciones del encuentro: peso 65 kg, talla 168 cm, temperatura 36.7 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "704d290cd6b8f6ce2fa786f609064dcfd6f8ac8f2606ce0cd5cf37683c4b86d7"
           ]
         }
@@ -830,8 +833,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Lucía Navarro, 12 años. Acude acompañada por su madre por dolor de cabeza al salir de la escuela. Niega caída, vómito y alteración visual; responde al interrogatorio de acuerdo con su edad. Mediciones del encuentro: peso 40 kg, talla 145 cm, temperatura 36.5 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "eaf71247a0caf3bd8f7affa008e2a76ec2b3ebcf2cd05cb20c47860636a5673f"
           ]
         }
@@ -850,8 +854,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Ricardo Espinosa, 53 años. Dolor en región lumbar que dificulta girar el tronco. No refiere caída ni adormecimiento de piernas; se solicita observación por limitación para caminar. Mediciones del encuentro: peso 80 kg, talla 172 cm, temperatura 36.8 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "2d7276957851b88202ecdd1a13444de7a758fbff6ba3e65f2c59dc67dd30072f"
           ]
         }
@@ -870,8 +875,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Andrea Perez, 56 años. Congestión nasal y dolor de garganta al despertar, con tos seca ocasional. Se observa faringe enrojecida; también refiere molestia epigástrica después del desayuno y alergia al látex. Antecedentes concurrentes de diabetes tipo 2 en tratamiento y reflujo gastroesofágico; se revisa continuidad de ambos medicamentos. Mediciones del encuentro: peso 55 kg, talla 155 cm, temperatura 36.5 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -890,8 +896,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Diego Sanchez, 53 años. Ardor epigástrico que aparece tras alimentos condimentados, con sensación de plenitud. Niega vómito con sangre y describe episodios parecidos durante la semana. También refiere dolor lumbar agudo e hipertensión en tratamiento; se revisan por separado del ardor epigástrico. Mediciones del encuentro: peso 56 kg, talla 156 cm, temperatura 36.6 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -910,8 +917,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Valeria Romero, 50 años. Estornudos en salvas y secreción nasal transparente al limpiar una habitación con polvo. Presenta prurito nasal y lagrimeo, sin dificultad para hablar. Refiere antecedente de broncoespasmo y dolor muscular localizado. En este mismo encuentro existe orden de colecistectomía y se documenta antecedente de episodios de dolor biliar. Mediciones del encuentro: peso 57 kg, talla 157 cm, temperatura 36.7 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -930,8 +938,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Mateo Ortiz, 47 años. Acude a revisar el horario de su medicamento para la presión y refiere olvidos de la toma matutina. También describe dolor abdominal intermitente después de comidas abundantes. Antecedente concurrente de diabetes en tratamiento con insulina y rinitis alérgica; se revisan horarios de comidas y tomas. Mediciones del encuentro: peso 58 kg, talla 158 cm, temperatura 36.5 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -950,8 +959,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Camila Reyes, 44 años. Dolor en rodilla derecha al subir escaleras, de predominio vespertino. Conserva movilidad y apoyo; refiere alergia alimentaria a mariscos con urticaria. Antecedente de diabetes tipo 2 y seguimiento de infección de tejidos blandos con tratamiento parenteral; la receta reúne ambos motivos. Mediciones del encuentro: peso 59 kg, talla 159 cm, temperatura 36.6 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -970,8 +980,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Sebastian Cruz, 41 años. Rinorrea y odinofagia desde el día anterior. A la inspección hay congestión de mucosa nasal; niega disnea y mantiene conversación sin pausas. Antecedente concurrente de hipertensión y contractura muscular dolorosa; se revisan como motivos distintos del cuadro respiratorio. Mediciones del encuentro: peso 60 kg, talla 160 cm, temperatura 36.7 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -990,8 +1001,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Renata Aguilar, 38 años. Molestia epigástrica al permanecer varias horas en ayuno, acompañada de náusea sin vómito. El dolor se localiza en epigastrio y no se irradia a la espalda. Antecedente de insuficiencia suprarrenal en seguimiento y dolor muscular localizado. La orden de colecistectomía corresponde a episodios previos de dolor biliar. Mediciones del encuentro: peso 61 kg, talla 161 cm, temperatura 36.5 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1010,8 +1022,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Emiliano Jimenez, 35 años. Obstrucción nasal bilateral y picor de ojos después de permanecer al aire libre. Refiere secreción acuosa; no se observa exudado nasal purulento. Antecedentes concurrentes de diabetes en tratamiento con insulina e hipertensión con retención de líquidos; se revisan como condiciones distintas de la rinitis. Mediciones del encuentro: peso 62 kg, talla 162 cm, temperatura 36.6 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1030,8 +1043,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Paula Rojas, 32 años. Solicita revisión de sus horarios de toma por antecedente de hipertensión. No refiere dolor torácico ni falta de aire; informa erupción cutánea previa con sulfonamidas. Además del control de hipertensión se da seguimiento a infección urinaria en tratamiento parenteral y a reflujo gastroesofágico. Mediciones del encuentro: peso 63 kg, talla 163 cm, temperatura 36.7 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1050,8 +1064,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Nicolas Chavez, 28 años. Dolor en muñeca izquierda después de una jornada de trabajo manual. La molestia aumenta al flexionar; también refiere distensión y dolor abdominal leve después de comer. También refiere espasmo muscular doloroso; la receta de analgesia se relaciona con este síntoma y no con la molestia abdominal. Mediciones del encuentro: peso 64 kg, talla 164 cm, temperatura 36.5 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1070,8 +1085,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Fernanda Molina, 25 años. Tos seca y sensación de garganta áspera al hablar durante tiempo prolongado. Se observa congestión faríngea y no refiere dolor al respirar. Antecedente de broncoespasmo e insuficiencia suprarrenal en seguimiento. La colecistectomía solicitada en el encuentro se relaciona con episodios previos de dolor biliar. Mediciones del encuentro: peso 65 kg, talla 165 cm, temperatura 36.6 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1090,8 +1106,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Alejandro Silva, 22 años. Ardor en la parte superior del abdomen después de tomar café en ayuno. Refiere eructos frecuentes; niega evacuaciones oscuras y vómito persistente. Antecedentes concurrentes de hipertensión con retención de líquidos y rinitis alérgica; no se atribuyen sus medicamentos al ardor epigástrico. Mediciones del encuentro: peso 66 kg, talla 166 cm, temperatura 36.7 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1110,8 +1127,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Regina Castillo, 20 años. Estornudos, lagrimeo y congestión al exponerse a polen, coincidentes con la alergia anotada en su expediente. También comenta molestia abdominal difusa posterior a la comida. Antecedentes concurrentes de diabetes tipo 2 y reflujo gastroesofágico en tratamiento; se revisan continuidad y horarios. Mediciones del encuentro: peso 67 kg, talla 167 cm, temperatura 36.5 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1130,8 +1148,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Leonardo Herrera, 17 años. Acude con su madre para revisar el registro domiciliario relacionado con hipertensión. Niega dolor torácico y mareo; participa en el interrogatorio y reconoce el horario de sus tomas. También refiere dolor lumbar agudo; la analgesia breve se documenta separada de la revisión de hipertensión. Mediciones del encuentro: peso 68 kg, talla 168 cm, temperatura 36.6 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1150,8 +1169,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Daniela Vazquez, 14 años. Acude acompañada por su padre por dolor de tobillo izquierdo después de actividad deportiva. Puede apoyar el pie y no refiere caída ni herida abierta. Antecedente de broncoespasmo; se revisa el uso de su inhalador además del dolor de tobillo. Mediciones del encuentro: peso 69 kg, talla 169 cm, temperatura 36.7 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1170,8 +1190,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Santiago Navarro, 56 años. Dolor de garganta y escurrimiento nasal que comenzaron por la noche. La voz es conservada; también refiere distensión y dolor abdominal después de la cena. Antecedente concurrente de diabetes tratada con insulina y rinitis alérgica; se revisan tomas y relación con las comidas. Mediciones del encuentro: peso 70 kg, talla 170 cm, temperatura 36.5 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1190,8 +1211,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Isabella Acosta, 53 años. Dolor epigástrico relacionado con comidas tardías y sensación de acidez al acostarse. Reporta erupción cutánea previa con amoxicilina; niega vómito con sangre. Antecedente concurrente de diabetes tipo 2 y seguimiento de infección de tejidos blandos con tratamiento parenteral. La alergia referida a amoxicilina fue erupción tardía, sin antecedente de anafilaxia en el relato. Mediciones del encuentro: peso 71 kg, talla 171 cm, temperatura 36.6 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1210,8 +1232,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Gabriel Luna, 50 años. Congestión nasal al abrir cajas almacenadas, seguida de estornudos repetidos. Refiere mejoría al salir de la habitación y no presenta alteración de la voz. Antecedente de hipertensión y espasmo muscular doloroso, revisados como motivos distintos de la congestión nasal. Mediciones del encuentro: peso 72 kg, talla 172 cm, temperatura 36.7 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1230,8 +1253,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Ximena Salazar, 47 años. Comenta dificultad para mantener un horario fijo de su tratamiento por cambios de turno laboral. Niega dolor torácico; además presenta molestia abdominal después de alimentos grasosos. Antecedente de insuficiencia suprarrenal en seguimiento y dolor muscular localizado, adicionales al control de hipertensión. Mediciones del encuentro: peso 73 kg, talla 173 cm, temperatura 36.5 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1250,8 +1274,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Rodrigo Guerrero, 44 años. Dolor de hombro derecho al elevar el brazo por encima de la cabeza. No refiere golpe reciente; conserva sensibilidad y movilidad de los dedos. Antecedentes de diabetes tratada con insulina e hipertensión con retención de líquidos, revisados además del dolor de hombro. Mediciones del encuentro: peso 74 kg, talla 174 cm, temperatura 36.6 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1270,8 +1295,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Natalia Campos, 41 años. Congestión nasal, irritación faríngea y tos al inicio de la mañana. Refiere urticaria previa con medio de contraste yodado; no se solicita contraste en este encuentro. Se revisa además continuidad de tratamiento parenteral por infección urinaria y reflujo gastroesofágico. Mediciones del encuentro: peso 75 kg, talla 175 cm, temperatura 36.7 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1290,8 +1316,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Mauricio Delgado, 37 años. Ardor epigástrico después de comer de prisa, acompañado de distensión abdominal. Localiza la molestia en abdomen superior y niega vómito persistente. También presenta espasmo muscular doloroso; se documenta el motivo de la analgesia separado de la molestia epigástrica. Mediciones del encuentro: peso 76 kg, talla 176 cm, temperatura 36.5 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1310,8 +1337,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Carolina Paredes, 34 años. Prurito nasal y lagrimeo al barrer el patio; describe secreción transparente y episodios similares con polvo. La respiración es tranquila durante el interrogatorio. Mediciones del encuentro: peso 77 kg, talla 177 cm, temperatura 36.6 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1330,8 +1358,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Joaquin Fuentes, 31 años. Acude por revisión del horario de sus tomas al iniciar un nuevo turno de trabajo. Niega palpitaciones y dolor torácico; distingue los medicamentos por su nombre. Mediciones del encuentro: peso 78 kg, talla 178 cm, temperatura 36.7 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1350,8 +1379,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Adriana Mejia, 29 años. Dolor en rodilla izquierda después de caminar en una pendiente. Conserva el apoyo y refiere dolor abdominal leve tras comer; antecedente de irritación cutánea con clorhexidina. Mediciones del encuentro: peso 79 kg, talla 179 cm, temperatura 36.5 °C.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "9f4135cd21df0a521ab27ab199805f5622fe39207df2b5590014a8cf5432629d"
           ]
         }
@@ -1370,8 +1400,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Andrea Perez, 56 años. Reconsulta por ardor epigástrico después de comidas abundantes, sin vómito ni evacuaciones oscuras. Explica que la molestia respiratoria del encuentro anterior ha disminuido.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1390,8 +1421,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Diego Sanchez, 53 años. Acude por congestión nasal y estornudos al limpiar su taller. Describe secreción acuosa y prurito; no refiere dolor torácico ni dificultad para deglutir.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1410,8 +1442,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Valeria Romero, 50 años. Revisa el horario de las tomas por antecedente de hipertensión. No refiere mareo ni visión borrosa y comenta que sus molestias nasales han cedido.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1430,8 +1463,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Mateo Ortiz, 47 años. Dolor de muñeca derecha al cargar bolsas del supermercado. Conserva fuerza de prensión y no refiere caída ni pérdida de sensibilidad.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1450,8 +1484,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Camila Reyes, 44 años. Congestión nasal y tos seca después de convivir con un familiar resfriado. Niega dolor al respirar; mantiene su antecedente de alergia a mariscos.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1470,8 +1505,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Sebastian Cruz, 41 años. Ardor epigástrico al final de la jornada y sensación de llenura después de cenar. Niega vómito con sangre y refiere que la tos del encuentro anterior desapareció.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1490,8 +1526,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Renata Aguilar, 38 años. Estornudos, secreción transparente y prurito nasal al ventilar una habitación. No refiere urticaria ni hinchazón de labios durante este episodio.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1510,8 +1547,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Emiliano Jimenez, 35 años. Acude para revisar la organización de sus tomas por hipertensión. Niega dolor torácico y reconoce que algunos días cambia la hora del medicamento.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1530,8 +1568,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Paula Rojas, 32 años. Dolor de codo izquierdo después de realizar movimientos repetidos en el trabajo. Conserva extensión y flexión; refiere antecedente de reacción cutánea a sulfonamidas.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1550,8 +1589,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Nicolas Chavez, 29 años. Dolor de garganta al tragar alimentos y escurrimiento nasal desde la noche anterior. Niega falta de aire y no presenta dificultad para responder preguntas.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1570,8 +1610,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Fernanda Molina, 25 años. Molestia epigástrica después de ingerir alimentos muy condimentados. Refiere acidez sin vómito y describe tolerancia a líquidos durante la mañana.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1590,8 +1631,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Alejandro Silva, 22 años. Obstrucción nasal y estornudos al permanecer en una zona con vegetación. Señala que el prurito nasal es la principal molestia y niega dolor torácico.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1610,8 +1652,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Regina Castillo, 20 años. Acude para revisar la regularidad del tratamiento por hipertensión. Comenta olvidos los fines de semana y no refiere disnea ni dolor de cabeza durante el encuentro.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1630,8 +1673,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Leonardo Herrera, 17 años. Acude acompañado por su madre por dolor de rodilla derecha después del entrenamiento. Conserva la marcha y no refiere golpe directo ni herida.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1650,8 +1694,9 @@
           ]
         },
         "notas": {
-          "value": "Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.",
+          "value": "Daniela Vazquez, 14 años. Acude con su padre por escurrimiento nasal y sensación de garganta irritada. Niega dificultad para respirar y permanece participativa durante el interrogatorio.",
           "source_sha256": [
+            "1c0e53af064e0a8e1f10d5f5bfc24a8f5989e0e06372748d7082a23bdb20e33d",
             "f648f8ba3bf0fc7ea1abe4b7617159644290e3cffaf0a5ed144a06e34a10462a"
           ]
         }
@@ -1825,8 +1870,9 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Dolor frontal opresivo desde la tarde anterior, asociado a una jornada prolongada frente a la pantalla.",
           "source_sha256": [
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a",
             "c7c3d9f07c5e58f95a0bf4095efe380f4615eced1917980b5f7bc6bb1b63929d"
           ]
         }
@@ -1840,8 +1886,9 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico complementario registrado en el expediente.",
+          "value": "Molestia epigástrica ocasional después de comer, secundaria a la cefalea que motiva el encuentro.",
           "source_sha256": [
+            "f572b8c69a7c6b63b701d236445bdc93bc3fcd82d8a82801e616966d67745e83",
             "f8c4140decc4fab2ecf6f4728151628f8e8e3b48eb0dc426b95ab6b48e1f66ab"
           ]
         }
@@ -1855,8 +1902,9 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Dolor en la parte alta del abdomen después de comer, acompañado de distensión.",
           "source_sha256": [
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a",
             "c7c3d9f07c5e58f95a0bf4095efe380f4615eced1917980b5f7bc6bb1b63929d"
           ]
         }
@@ -1870,8 +1918,9 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Dolor lumbar tras levantar una caja, que aumenta al incorporarse.",
           "source_sha256": [
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a",
             "c7c3d9f07c5e58f95a0bf4095efe380f4615eced1917980b5f7bc6bb1b63929d"
           ]
         }
@@ -1885,8 +1934,9 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Acude acompañada por su madre por dolor de cabeza al salir de la escuela.",
           "source_sha256": [
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a",
             "c7c3d9f07c5e58f95a0bf4095efe380f4615eced1917980b5f7bc6bb1b63929d"
           ]
         }
@@ -1900,8 +1950,9 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Dolor en región lumbar que dificulta girar el tronco.",
           "source_sha256": [
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a",
             "c7c3d9f07c5e58f95a0bf4095efe380f4615eced1917980b5f7bc6bb1b63929d"
           ]
         }
@@ -1915,9 +1966,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico complementario registrado en el expediente.",
+          "value": "Molestia epigástrica posterior al desayuno durante el mismo cuadro respiratorio.",
           "source_sha256": [
-            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049"
+            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049",
+            "f572b8c69a7c6b63b701d236445bdc93bc3fcd82d8a82801e616966d67745e83"
           ]
         }
       }
@@ -1930,9 +1982,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Congestión nasal y dolor de garganta al despertar, con tos seca ocasional.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -1945,9 +1998,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Ardor epigástrico que aparece tras alimentos condimentados, con sensación de plenitud.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -1960,9 +2014,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Estornudos en salvas y secreción nasal transparente al limpiar una habitación con polvo.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -1975,9 +2030,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico complementario registrado en el expediente.",
+          "value": "Dolor abdominal intermitente tras comidas abundantes, distinto del motivo de seguimiento de hipertensión.",
           "source_sha256": [
-            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049"
+            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049",
+            "f572b8c69a7c6b63b701d236445bdc93bc3fcd82d8a82801e616966d67745e83"
           ]
         }
       }
@@ -1990,9 +2046,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Acude a revisar el horario de su medicamento para la presión y refiere olvidos de la toma matutina.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2005,9 +2062,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Dolor en rodilla derecha al subir escaleras, de predominio vespertino.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2020,9 +2078,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Rinorrea y odinofagia desde el día anterior.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2035,9 +2094,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico complementario registrado en el expediente.",
+          "value": "Dolor localizado en epigastrio con náusea sin vómito durante el episodio de acidez.",
           "source_sha256": [
-            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049"
+            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049",
+            "f572b8c69a7c6b63b701d236445bdc93bc3fcd82d8a82801e616966d67745e83"
           ]
         }
       }
@@ -2050,9 +2110,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Molestia epigástrica al permanecer varias horas en ayuno, acompañada de náusea sin vómito.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2065,9 +2126,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Obstrucción nasal bilateral y picor de ojos después de permanecer al aire libre.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2080,9 +2142,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Solicita revisión de sus horarios de toma por antecedente de hipertensión.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2095,9 +2158,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico complementario registrado en el expediente.",
+          "value": "Distensión y dolor abdominal leve después de alimentos, concomitantes con dolor de muñeca.",
           "source_sha256": [
-            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049"
+            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049",
+            "f572b8c69a7c6b63b701d236445bdc93bc3fcd82d8a82801e616966d67745e83"
           ]
         }
       }
@@ -2110,9 +2174,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Dolor en muñeca izquierda después de una jornada de trabajo manual.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2125,9 +2190,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Tos seca y sensación de garganta áspera al hablar durante tiempo prolongado.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2140,9 +2206,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Ardor en la parte superior del abdomen después de tomar café en ayuno.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2155,9 +2222,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico complementario registrado en el expediente.",
+          "value": "Molestia abdominal difusa posterior a la comida, sin sustituir el motivo de rinitis.",
           "source_sha256": [
-            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049"
+            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049",
+            "f572b8c69a7c6b63b701d236445bdc93bc3fcd82d8a82801e616966d67745e83"
           ]
         }
       }
@@ -2170,9 +2238,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Estornudos, lagrimeo y congestión al exponerse a polen, coincidentes con la alergia anotada en su expediente.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2185,9 +2254,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Acude con su madre para revisar el registro domiciliario relacionado con hipertensión.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2200,9 +2270,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Acude acompañada por su padre por dolor de tobillo izquierdo después de actividad deportiva.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2215,9 +2286,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico complementario registrado en el expediente.",
+          "value": "Distensión abdominal posterior a la cena durante el encuentro por irritación faríngea.",
           "source_sha256": [
-            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049"
+            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049",
+            "f572b8c69a7c6b63b701d236445bdc93bc3fcd82d8a82801e616966d67745e83"
           ]
         }
       }
@@ -2230,9 +2302,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Dolor de garganta y escurrimiento nasal que comenzaron por la noche.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2245,9 +2318,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Dolor epigástrico relacionado con comidas tardías y sensación de acidez al acostarse.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2260,9 +2334,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Congestión nasal al abrir cajas almacenadas, seguida de estornudos repetidos.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2275,9 +2350,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico complementario registrado en el expediente.",
+          "value": "Molestia abdominal después de alimentos grasosos durante la revisión de horarios de toma.",
           "source_sha256": [
-            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049"
+            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049",
+            "f572b8c69a7c6b63b701d236445bdc93bc3fcd82d8a82801e616966d67745e83"
           ]
         }
       }
@@ -2290,9 +2366,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Comenta dificultad para mantener un horario fijo de su tratamiento por cambios de turno laboral.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2305,9 +2382,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Dolor de hombro derecho al elevar el brazo por encima de la cabeza.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2320,9 +2398,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Congestión nasal, irritación faríngea y tos al inicio de la mañana.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2335,9 +2414,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico complementario registrado en el expediente.",
+          "value": "Dolor en abdomen superior y distensión después de comer de prisa, relacionado con el ardor epigástrico.",
           "source_sha256": [
-            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049"
+            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049",
+            "f572b8c69a7c6b63b701d236445bdc93bc3fcd82d8a82801e616966d67745e83"
           ]
         }
       }
@@ -2350,9 +2430,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Ardor epigástrico después de comer de prisa, acompañado de distensión abdominal.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2365,9 +2446,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Prurito nasal y lagrimeo al barrer el patio; describe secreción transparente y episodios similares con polvo.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2380,9 +2462,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Acude por revisión del horario de sus tomas al iniciar un nuevo turno de trabajo.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2395,9 +2478,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico complementario registrado en el expediente.",
+          "value": "Dolor abdominal leve después de la comida, adicional a la molestia de rodilla.",
           "source_sha256": [
-            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049"
+            "59aa618cdfcdcb7eb7531f593d007298e031597a3ff92f2052b9d5267bb8a049",
+            "f572b8c69a7c6b63b701d236445bdc93bc3fcd82d8a82801e616966d67745e83"
           ]
         }
       }
@@ -2410,9 +2494,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Diagnóstico principal registrado en la consulta.",
+          "value": "Dolor en rodilla izquierda después de caminar en una pendiente.",
           "source_sha256": [
-            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb"
+            "1b3578fad1156e8526d56733692cbc75834e4287e2e38481e0741410ff5b42bb",
+            "80b58e53d6959ec0c0364a5f8747c1de44ee4ed5c23c4003030a4f4cd120d66a"
           ]
         }
       }
@@ -2610,9 +2695,10 @@
           ]
         },
         "resumen_alta": {
-          "value": "Alta registrada tras valoración del médico responsable. Resumen de atención integrado al expediente.",
+          "value": "Observación de Alex Rojas del 08/10 al 09/10 por dolor lumbar posterior a esfuerzo. Al egreso puede incorporarse y caminar con menor limitación; no refiere pérdida de fuerza. Se informa a su acompañante el antecedente de urticaria con ibuprofeno y se entrega el resumen de atención.",
           "source_sha256": [
-            "84d91eeb39bc8fa427f5f31b12277530d6496c6b28faed28a660f22a99fe1002"
+            "84d91eeb39bc8fa427f5f31b12277530d6496c6b28faed28a660f22a99fe1002",
+            "8f16a25f75c142c138ec3379b8d9fefbe6bfa4e498b788f717059469aec8654a"
           ]
         }
       }
@@ -2728,8 +2814,9 @@
           ]
         },
         "resumen_alta": {
-          "value": "Alta registrada tras valoración del médico responsable. Resumen de atención integrado al expediente.",
+          "value": "Renata Aguilar permaneció del 02/10 al 03/10 por dolor y ardor epigástrico. Al egreso tolera líquidos y alimentos en porciones pequeñas, sin vómito observado. Se entrega a la paciente la relación de documentos de su estancia y el informe del procedimiento realizado.",
           "source_sha256": [
+            "8f16a25f75c142c138ec3379b8d9fefbe6bfa4e498b788f717059469aec8654a",
             "ef451fe0dc5ffdecdeea7de2daddd5b8f0ba6d27ffba4c5407e22407592e2bba"
           ]
         }
@@ -2748,8 +2835,9 @@
           ]
         },
         "resumen_alta": {
-          "value": "Alta registrada tras valoración del médico responsable. Resumen de atención integrado al expediente.",
+          "value": "Emiliano Jimenez permaneció del 02/10 al 03/10 por congestión nasal, estornudos y lagrimeo. Al egreso refiere disminución del prurito y puede descansar sin interrupciones por estornudos. Se entrega el resumen y se verifica el retiro de sus pertenencias.",
           "source_sha256": [
+            "8f16a25f75c142c138ec3379b8d9fefbe6bfa4e498b788f717059469aec8654a",
             "ef451fe0dc5ffdecdeea7de2daddd5b8f0ba6d27ffba4c5407e22407592e2bba"
           ]
         }
@@ -2768,8 +2856,9 @@
           ]
         },
         "resumen_alta": {
-          "value": "Alta registrada tras valoración del médico responsable. Resumen de atención integrado al expediente.",
+          "value": "Paula Rojas permaneció del 02/10 al 03/10 durante revisión por hipertensión y organización de horarios de toma. Al egreso explica el horario anotado y no refiere dolor torácico ni falta de aire. Se hace constar su antecedente de erupción con sulfonamidas al entregar el resumen.",
           "source_sha256": [
+            "8f16a25f75c142c138ec3379b8d9fefbe6bfa4e498b788f717059469aec8654a",
             "ef451fe0dc5ffdecdeea7de2daddd5b8f0ba6d27ffba4c5407e22407592e2bba"
           ]
         }
@@ -2782,9 +2871,10 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se verificó identificación del paciente y ubicación en la camilla asignada.",
+          "value": "Alex Rojas, camilla 1. Ingresa por dolor lumbar; se incorpora con apoyo y reconoce a la persona que lo acompaña. Se informa el antecedente de urticaria con ibuprofeno en la entrega inicial.",
           "source_sha256": [
-            "51b1336748fab56a8c9605906c4fb854ee680d2089bb84249ee74b04752a3a88"
+            "51b1336748fab56a8c9605906c4fb854ee680d2089bb84249ee74b04752a3a88",
+            "b2830144f196fe3972fc98bf2d594eb88cf1ca6c90196f6eb6e561132ab65f57"
           ]
         }
       }
@@ -2796,8 +2886,9 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se registró la entrega de turno y la continuidad de los cuidados indicados.",
+          "value": "Alex Rojas, camilla 3. Tras el cambio de camilla, refiere menor molestia al permanecer de lado y utiliza el timbre para solicitar ayuda al levantarse. Se entrega el turno con la alergia a ibuprofeno identificada.",
           "source_sha256": [
+            "d922ad31fa2f73f40762bd315dd255b5945c91f1b8eb67f8b6e000d905ff3a3d",
             "f31747f0bfc410cc829871292de3ad380f10b28026d7cf3219785af2d468bf59"
           ]
         }
@@ -2810,8 +2901,9 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se registraron signos vitales y cuidados del turno en la hoja de enfermería.",
+          "value": "Ricardo Espinosa, camilla 2. Permanece en observación por dolor lumbar y pide apoyo para cambiar de posición. Acepta líquidos por vía oral y conserva comunicación clara durante el cuidado de ingreso.",
           "source_sha256": [
+            "10bf97b770b21662c1af5ea685839cc84e36ce8d5ddcc62a6b38193e93b1fb97",
             "fc48fa07a079925db550fb2ae1e8052cf0db1df2fda965d5afec90738de365cb"
           ]
         }
@@ -2824,9 +2916,10 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se verificó identificación del paciente y ubicación en la camilla asignada.",
+          "value": "Andrea Perez, camilla 7. Ingresa con congestión nasal y tos seca; puede conversar sin interrupciones. Se identifica alergia al látex y se selecciona material sin látex para el cuidado.",
           "source_sha256": [
-            "6f46ea75cab9a7502aabe90bbe2c952e6b8610707c624e69218bec940c0f5404"
+            "6f46ea75cab9a7502aabe90bbe2c952e6b8610707c624e69218bec940c0f5404",
+            "b2830144f196fe3972fc98bf2d594eb88cf1ca6c90196f6eb6e561132ab65f57"
           ]
         }
       }
@@ -2838,9 +2931,10 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se registró la entrega de turno y la continuidad de los cuidados indicados.",
+          "value": "Andrea Perez, camilla 7. Refiere irritación de garganta al hablar; tolera pequeños sorbos de agua y solicita pañuelos. Se entrega el cuidado con la alergia al látex visible en la hoja de ingreso.",
           "source_sha256": [
-            "5cf06025a090ebb4880c43dd8eb6db24376a9da1aceaf8be648da5bfd3e478c8"
+            "5cf06025a090ebb4880c43dd8eb6db24376a9da1aceaf8be648da5bfd3e478c8",
+            "d922ad31fa2f73f40762bd315dd255b5945c91f1b8eb67f8b6e000d905ff3a3d"
           ]
         }
       }
@@ -2852,8 +2946,9 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se registraron signos vitales y cuidados del turno en la hoja de enfermería.",
+          "value": "Diego Sanchez, camilla 8. Durante la recepción describe ardor epigástrico y plenitud después de comer. Permanece sentado por comodidad y no presenta vómito durante la valoración de enfermería.",
           "source_sha256": [
+            "10bf97b770b21662c1af5ea685839cc84e36ce8d5ddcc62a6b38193e93b1fb97",
             "5b7227d60f181e1256b81a3183dd8c7bfe7e24a22761c0621ed027c37518e40a"
           ]
         }
@@ -2866,9 +2961,10 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se verificó identificación del paciente y ubicación en la camilla asignada.",
+          "value": "Diego Sanchez, camilla 8. Refiere náusea leve sin vómito al cambiar de posición. Mantiene tolerancia a líquidos y solicita acompañamiento para desplazarse al sanitario.",
           "source_sha256": [
-            "64b90fd3512014037454c6f2d567842b14d0087aef62448f5c9bdf6bda57c4da"
+            "64b90fd3512014037454c6f2d567842b14d0087aef62448f5c9bdf6bda57c4da",
+            "b2830144f196fe3972fc98bf2d594eb88cf1ca6c90196f6eb6e561132ab65f57"
           ]
         }
       }
@@ -2880,8 +2976,9 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se registró la entrega de turno y la continuidad de los cuidados indicados.",
+          "value": "Valeria Romero, camilla 9. Presenta estornudos y secreción nasal transparente al ingreso. Se retiran objetos con polvo del entorno inmediato y el paciente permanece capaz de hablar con claridad.",
           "source_sha256": [
+            "d922ad31fa2f73f40762bd315dd255b5945c91f1b8eb67f8b6e000d905ff3a3d",
             "f6959372f1385fc82a0d00f698498e9c2ba163525d94bf730f95b9dee2a99ad2"
           ]
         }
@@ -2894,8 +2991,9 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se registraron signos vitales y cuidados del turno en la hoja de enfermería.",
+          "value": "Valeria Romero, camilla 9. Comenta disminución del prurito nasal después del aseo facial. Se proporciona material para higiene nasal y se registra tolerancia al cambio de ropa de cama.",
           "source_sha256": [
+            "10bf97b770b21662c1af5ea685839cc84e36ce8d5ddcc62a6b38193e93b1fb97",
             "f06ba89e74e2f9939bd2f1c2eb02050e64c14df3bd588272f01a49264dd38984"
           ]
         }
@@ -2908,9 +3006,10 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se verificó identificación del paciente y ubicación en la camilla asignada.",
+          "value": "Mateo Ortiz, camilla 10. Recibe orientación sobre el uso del timbre y refiere olvidos del horario de sus tomas. Se coloca la hoja de horarios a su alcance y se verifica que puede leerla.",
           "source_sha256": [
-            "66e898b1f1806d7023961a078a22ba93b800df2e82a5b324c80d67ba06d495dd"
+            "66e898b1f1806d7023961a078a22ba93b800df2e82a5b324c80d67ba06d495dd",
+            "b2830144f196fe3972fc98bf2d594eb88cf1ca6c90196f6eb6e561132ab65f57"
           ]
         }
       }
@@ -2922,8 +3021,9 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se registró la entrega de turno y la continuidad de los cuidados indicados.",
+          "value": "Mateo Ortiz, camilla 10. Comenta molestia abdominal después de ingerir alimentos. Permanece sentado, sin vómito observado, y comunica sus necesidades al personal del turno.",
           "source_sha256": [
+            "d922ad31fa2f73f40762bd315dd255b5945c91f1b8eb67f8b6e000d905ff3a3d",
             "ff05f979f59a78ee067a9f7727ba6d9fe2c8a50bf849f9d2aee349ae245716ac"
           ]
         }
@@ -2936,8 +3036,9 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se registraron signos vitales y cuidados del turno en la hoja de enfermería.",
+          "value": "Camila Reyes, camilla 11. Refiere dolor de rodilla derecha al levantarse; se acompaña el primer desplazamiento y mantiene apoyo. Se comunica antecedente de urticaria con mariscos.",
           "source_sha256": [
+            "10bf97b770b21662c1af5ea685839cc84e36ce8d5ddcc62a6b38193e93b1fb97",
             "3969c25bcbd8ab6cc536f116d6259a4485a7558d651f970b18636185408cee22"
           ]
         }
@@ -2950,8 +3051,9 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se verificó identificación del paciente y ubicación en la camilla asignada.",
+          "value": "Camila Reyes, camilla 11. Solicita apoyo para acomodar la pierna derecha sobre la cama y describe alivio en reposo. Se deja el timbre al alcance y se verifica retorno seguro desde el sanitario.",
           "source_sha256": [
+            "b2830144f196fe3972fc98bf2d594eb88cf1ca6c90196f6eb6e561132ab65f57",
             "d0f45abc486be98a659ef20605ddb46aaccd7cbb1823718866cc97afb161173a"
           ]
         }
@@ -2964,9 +3066,10 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se registró la entrega de turno y la continuidad de los cuidados indicados.",
+          "value": "Sebastian Cruz, camilla 12. A la recepción presenta escurrimiento nasal y voz conservada. Acepta agua y solicita una postura semisentada por comodidad de la garganta.",
           "source_sha256": [
-            "566650601e0d836598a3b237da03c7eb8530a33638223fe71f97843c53c47e5e"
+            "566650601e0d836598a3b237da03c7eb8530a33638223fe71f97843c53c47e5e",
+            "d922ad31fa2f73f40762bd315dd255b5945c91f1b8eb67f8b6e000d905ff3a3d"
           ]
         }
       }
@@ -2978,8 +3081,9 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se registraron signos vitales y cuidados del turno en la hoja de enfermería.",
+          "value": "Sebastian Cruz, camilla 12. La tos interrumpe el descanso de manera ocasional. Se cambia el recipiente de agua y se entrega el turno indicando que tolera líquidos sin dificultad.",
           "source_sha256": [
+            "10bf97b770b21662c1af5ea685839cc84e36ce8d5ddcc62a6b38193e93b1fb97",
             "a5934875aa8b63f9b752d060c4d9630dc08bd06cf8b3b40e5471ad5d13174aa3"
           ]
         }
@@ -2992,9 +3096,10 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se verificó identificación del paciente y ubicación en la camilla asignada.",
+          "value": "Renata Aguilar, camilla 13. Describe molestia epigástrica al recibir alimentos y prefiere ingerir porciones pequeñas. No presenta vómito observado durante el cuidado de esta hora.",
           "source_sha256": [
-            "1c9b15fea0473589a239177003540ac043aca484c5df93f41307c6663d9f7a78"
+            "1c9b15fea0473589a239177003540ac043aca484c5df93f41307c6663d9f7a78",
+            "b2830144f196fe3972fc98bf2d594eb88cf1ca6c90196f6eb6e561132ab65f57"
           ]
         }
       }
@@ -3006,9 +3111,10 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se registró la entrega de turno y la continuidad de los cuidados indicados.",
+          "value": "Renata Aguilar, camilla 13. Refiere menor náusea al permanecer sentado después de comer. Se acompaña al sanitario y retorna a su camilla sin requerir traslado en silla.",
           "source_sha256": [
-            "1b2ae2cf395803ec07cb3155ed59b68adf6382bb6c34879b2cc77dbd13720403"
+            "1b2ae2cf395803ec07cb3155ed59b68adf6382bb6c34879b2cc77dbd13720403",
+            "d922ad31fa2f73f40762bd315dd255b5945c91f1b8eb67f8b6e000d905ff3a3d"
           ]
         }
       }
@@ -3020,8 +3126,9 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se registraron signos vitales y cuidados del turno en la hoja de enfermería.",
+          "value": "Emiliano Jimenez, camilla 14. Refiere congestión nasal y lagrimeo al inicio del cuidado. Se proporcionan pañuelos y se ayuda a colocar la cabecera en una posición que le resulta cómoda.",
           "source_sha256": [
+            "10bf97b770b21662c1af5ea685839cc84e36ce8d5ddcc62a6b38193e93b1fb97",
             "635f97a702eebeb024b0cc7c5e539c50ce80f5513e3cbb3597f3b3760feb0404"
           ]
         }
@@ -3034,9 +3141,10 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se verificó identificación del paciente y ubicación en la camilla asignada.",
+          "value": "Emiliano Jimenez, camilla 14. El prurito de ojos disminuye después del aseo con agua. Conserva comunicación clara y solicita abrir la cortina sin exponerse al polvo de la ventana.",
           "source_sha256": [
-            "5155951716c07ab2654c07db6d818de66f065e99fbeaf4c74f97f7879c227533"
+            "5155951716c07ab2654c07db6d818de66f065e99fbeaf4c74f97f7879c227533",
+            "b2830144f196fe3972fc98bf2d594eb88cf1ca6c90196f6eb6e561132ab65f57"
           ]
         }
       }
@@ -3048,9 +3156,10 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se registró la entrega de turno y la continuidad de los cuidados indicados.",
+          "value": "Paula Rojas, camilla 3. Explica el horario habitual de sus tomas durante la recepción. Se informa el antecedente de erupción con sulfonamidas y se coloca el listado de alergias a la vista del equipo.",
           "source_sha256": [
-            "9d2484affd49c8232a1d93ee077c73092cfc268257255137f0796e2511f56d6f"
+            "9d2484affd49c8232a1d93ee077c73092cfc268257255137f0796e2511f56d6f",
+            "d922ad31fa2f73f40762bd315dd255b5945c91f1b8eb67f8b6e000d905ff3a3d"
           ]
         }
       }
@@ -3062,8 +3171,9 @@
       },
       "fields": {
         "observacion": {
-          "value": "Se registraron signos vitales y cuidados del turno en la hoja de enfermería.",
+          "value": "Paula Rojas, camilla 3. No refiere dolor torácico durante el cuidado y comenta que comprende el horario escrito. Se entrega el turno con la alergia a sulfonamidas y sus pertenencias verificadas.",
           "source_sha256": [
+            "10bf97b770b21662c1af5ea685839cc84e36ce8d5ddcc62a6b38193e93b1fb97",
             "8cb7ae35ae43d934c4ea67bd3851c79b0604a93ac914eddcfa9d97431c1828a3"
           ]
         }
@@ -3646,8 +3756,10 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Daniela Serrano. Paracetamol 500 mg: prescrito 8 tabletas, dispensado 8; Ibuprofeno 400 mg: prescrito 3 tabletas, dispensado 3. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257",
+            "a735ab5b51942ecd801702cba28a7ee9884d41296692905d6c88a80f3c3370b0",
             "eb4435514fb17bbb737ddb99f01fd4e3f80eb750c4218dbd757c7754ec0450e1"
           ]
         }
@@ -3660,9 +3772,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Alex Rojas. Amoxicilina 250 mg/5 mL: prescrito 4 frascos, dispensado 0; Paracetamol 500 mg: prescrito 2 tabletas, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones. La amoxicilina cubre el último día del tratamiento dental concurrente.",
           "source_sha256": [
-            "2ff5c593bc5daa8269937708f8d9442d919b87fdaa72055812317bc537539ba2"
+            "2ff5c593bc5daa8269937708f8d9442d919b87fdaa72055812317bc537539ba2",
+            "73567615e9c9b594d02211010419120f57037f4ca0295a99b58601c2d37a5003",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3674,9 +3788,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Lucía Navarro. Ibuprofeno 400 mg: prescrito 2 tabletas, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "2ff5c593bc5daa8269937708f8d9442d919b87fdaa72055812317bc537539ba2"
+            "2ff5c593bc5daa8269937708f8d9442d919b87fdaa72055812317bc537539ba2",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257",
+            "bc60d886f7bc59c121c4a9a6a1eb25272b543933ac535150419878ac601d6fa7"
           ]
         }
       }
@@ -3688,9 +3804,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Andrea Perez. Omeprazol 20 mg: prescrito 9 cápsulas, dispensado 9; Metformina 850 mg de hidrocloruro de metformina: prescrito 6 tabletas, dispensado 6. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "7a099bf81b9091177409744179835dc218bfffd1515644864bbd8c9a15bfe817",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3702,9 +3820,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Diego Sanchez. Ketorolaco trometamol 30 mg/mL: prescrito 8 ampollas, dispensado 8; Losartán potásico 50 mg: prescrito 4 tabletas, dispensado 4. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "6ee436639853dac17ca9f7d431bf50eb45a9c3e4e747d2836530f907d3ff2ac2",
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3716,9 +3836,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Valeria Romero. Salbutamol 100 microgramos/dosis: prescrito 5 inhaladores, dispensado 5; Diclofenaco sódico 10 mg/g (1 %): prescrito 20 tubos, dispensado 20. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "878df483d1618aa9a6c4ace52b579389ddde95f7584103902b7843435bf32f09",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3730,9 +3852,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Mateo Ortiz. Loratadina 10 mg: prescrito 24 tabletas, dispensado 24; Insulina humana 100 UI/mL: prescrito 18 viales, dispensado 18. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257",
+            "b9f77212a8bf0d8f599846273d4b2a7f9dc49d0fca24b215ecced0609fdc14ba"
           ]
         }
       }
@@ -3744,9 +3868,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Camila Reyes. Metformina 850 mg de hidrocloruro de metformina: prescrito 21 tabletas, dispensado 21; Ceftriaxona 1 g por vial: prescrito 14 viales, dispensado 14. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "6a00436f256a0a535bc65bd9fb502f6b8e69bd5bb0dbcbefd105601d946cb9f7",
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3758,9 +3884,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Sebastian Cruz. Losartán potásico 50 mg: prescrito 6 tabletas, dispensado 3; Diazepam 10 mg/2 mL: prescrito 3 ampollas, dispensado 1. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "98cb2ed57021db063237ec8a34024a4b79d7ec90ad5d20e144e5340c83b2fb51",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3772,9 +3900,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Renata Aguilar. Diclofenaco sódico 10 mg/g (1 %): prescrito 4 tubos, dispensado 2; Hidrocortisona 100 mg por vial: prescrito 16 viales, dispensado 8. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "4282d304c3c8741b48d1c205aa89c721249fe139bb0cb6c6ef8e8462cdd83877",
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3786,9 +3916,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Emiliano Jimenez. Insulina humana 100 UI/mL: prescrito 20 viales, dispensado 10; Furosemida 40 mg: prescrito 15 tabletas, dispensado 7. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "7e675da39df4a10233db2277e59cd9f705c93ba00e38e1be7175f2f2e652daa3",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3800,9 +3932,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Paula Rojas. Ceftriaxona 1 g por vial: prescrito 18 viales, dispensado 9; Omeprazol 20 mg: prescrito 12 cápsulas, dispensado 6. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257",
+            "da21175e7434acccf490da5ce529566a6d194bbed6d2e11b3bcc66d4e23d8409"
           ]
         }
       }
@@ -3814,9 +3948,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Nicolas Chavez. Diazepam 10 mg/2 mL: prescrito 14 ampollas, dispensado 7; Ketorolaco trometamol 30 mg/mL: prescrito 7 ampollas, dispensado 3. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "06abb845f25490baa5d1295ca7378cb62a701c6f5596ce26d875a07990501c39",
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3828,9 +3964,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Fernanda Molina. Hidrocortisona 100 mg por vial: prescrito 3 viales, dispensado 0; Salbutamol 100 microgramos/dosis: prescrito 12 inhaladores, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9af7913aa3e72619e1a9521fd0bf9c10dfcb8266405186db84ae047200963e0f",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3842,9 +3980,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Alejandro Silva. Furosemida 40 mg: prescrito 16 tabletas, dispensado 0; Loratadina 10 mg: prescrito 12 tabletas, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "8b1929522b862ec4c1fb58c1dba2b2972a3d5cff251ee43ecbba1528ff5e82a2",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3856,9 +3996,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Regina Castillo. Omeprazol 20 mg: prescrito 15 cápsulas, dispensado 0; Metformina 850 mg de hidrocloruro de metformina: prescrito 10 tabletas, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "09fad9f7293a1a642b5b416f424599ecbd866d28b58ccfe4a716a2140896be0a",
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3870,9 +4012,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Leonardo Herrera. Ketorolaco trometamol 30 mg/mL: prescrito 12 ampollas, dispensado 0; Losartán potásico 50 mg: prescrito 6 tabletas, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257",
+            "ee8c8d79a619dd80fe4af107279f3ac6026ca388792e3c900b34500254f7b83f"
           ]
         }
       }
@@ -3884,9 +4028,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Daniela Vazquez. Salbutamol 100 microgramos/dosis: prescrito 7 inhaladores, dispensado 0; Diclofenaco sódico 10 mg/g (1 %): prescrito 28 tubos, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "317324f59be6d1742471cc616afbc1d010ce58ddab715b03592d90ef5b2c6842",
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3898,9 +4044,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Santiago Navarro. Loratadina 10 mg: prescrito 12 tabletas, dispensado 0; Insulina humana 100 UI/mL: prescrito 9 viales, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "4b72ed10beada58de6029cd494c3900028d8de9b0630ce00776dfc43597b54ca",
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3912,9 +4060,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Isabella Acosta. Metformina 850 mg de hidrocloruro de metformina: prescrito 12 tabletas, dispensado 0; Ceftriaxona 1 g por vial: prescrito 8 viales, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257",
+            "c3d862c98225bf75c682e51a76005d2a976b5de3833ab0c52f3fa8ec83220ec3"
           ]
         }
       }
@@ -3926,9 +4076,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Gabriel Luna. Losartán potásico 50 mg: prescrito 10 tabletas, dispensado 0; Diazepam 10 mg/2 mL: prescrito 5 ampollas, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "1764c9cdd6026c8d2b900a0ce17c9fff03ca227919bc0cd211b6f03e30befa40",
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3940,9 +4092,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Ximena Salazar. Diclofenaco sódico 10 mg/g (1 %): prescrito 6 tubos, dispensado 0; Hidrocortisona 100 mg por vial: prescrito 24 viales, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257",
+            "ccd0e67bfe5f961882761da4cf1385f2228b2ba39f018b0986f51516923c8449"
           ]
         }
       }
@@ -3954,9 +4108,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Rodrigo Guerrero. Insulina humana 100 UI/mL: prescrito 28 viales, dispensado 0; Furosemida 40 mg: prescrito 21 tabletas, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "4c5723f50b8faa882945a7f45fbe8f0d4cba16b3cf366abc2cda2971f4071e00",
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3968,9 +4124,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Natalia Campos. Ceftriaxona 1 g por vial: prescrito 9 viales, dispensado 0; Omeprazol 20 mg: prescrito 6 cápsulas, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "4ed7a74114d05842aa29a600dae311ea05cf1e8ca3d95b2ef6cbf0df1e145b20",
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -3982,9 +4140,11 @@
       },
       "fields": {
         "observaciones": {
-          "value": "Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.",
+          "value": "Mauricio Delgado. Diazepam 10 mg/2 mL: prescrito 8 ampollas, dispensado 0; Ketorolaco trometamol 30 mg/mL: prescrito 4 ampollas, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.",
           "source_sha256": [
-            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42"
+            "2dda0224126d110974133c6beac2c7f6aa13590aab834c5234ee103d71f46b78",
+            "70fc001541d85db90f7c0838f4b0bfb698b7a21ad0baae6eee1c37409f7a6b42",
+            "9f947d444bf1bac5249d3086e3d413c9e56e89069d1421956ebf5f744fcbb257"
           ]
         }
       }
@@ -4261,15 +4421,17 @@
       },
       "fields": {
         "dosis": {
-          "value": "5 mL",
+          "value": "500 mg (10 mL de suspensión de 250 mg/5 mL)",
           "source_sha256": [
+            "4b7ff67b954ddb8f55f9a466d7b68b0ba18f40e7e84cd30e7c2715072a843b52",
             "7d47c8bebfbf09a586554e31377c5ea180b0e1327cfd25433ffcb3cc49dd9ed2"
           ]
         },
         "frecuencia": {
-          "value": "Cada 24 horas",
+          "value": "Cada 8 horas",
           "source_sha256": [
-            "9477bebe0eaa253691dec0bb8df35a73cffb72259347d47d380681535a9447e1"
+            "9477bebe0eaa253691dec0bb8df35a73cffb72259347d47d380681535a9447e1",
+            "e491d1496ce8b17d2e1e168c014f56d126ab0cb7edb926a386d5f3125cea0011"
           ]
         },
         "via_administracion": {
@@ -4348,8 +4510,9 @@
           ]
         },
         "frecuencia": {
-          "value": "Cada 8 horas",
+          "value": "Cada 24 horas",
           "source_sha256": [
+            "e821df1430ff056dc0ae4874fbe257720a16803013c3e1e257cae76d8c2ffd46",
             "f0db49ce520698fa5f256002f583847732e9cc9422479a041b075f1cb5d2afb1"
           ]
         },
@@ -4396,21 +4559,30 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "15 mg (0.5 mL de solución de 30 mg/mL)",
           "source_sha256": [
-            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622"
+            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1",
+            "df3c8ca4980fdd4f56a857010fed8e397bdfdb5140c43e77972633e71e30e56e"
           ]
         },
         "frecuencia": {
-          "value": "Cada 12 horas",
+          "value": "Cada 6 horas si dolor",
           "source_sha256": [
-            "625ce65df1d87d5d4500659046ef2e9f166b2ce514ff99c8722dde78b462b61e"
+            "625ce65df1d87d5d4500659046ef2e9f166b2ce514ff99c8722dde78b462b61e",
+            "a1a2359c4ff4ff0fcfb2c964a7efad1c10532c619c6e35edaf6995e9a5fe55d4"
           ]
         },
         "via_administracion": {
           "value": "Intravenosa",
           "source_sha256": [
             "cc85fa9f5f459db001263025ec8b275fbcb5becffecded0c4177e1432c842b37"
+          ]
+        },
+        "duracion_dias": {
+          "value": 2,
+          "source_sha256": [
+            "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
           ]
         }
       }
@@ -4510,9 +4682,10 @@
           ]
         },
         "frecuencia": {
-          "value": "Cada 6 horas",
+          "value": "Cada 24 horas",
           "source_sha256": [
-            "2bc81019c4dade9902ed2b8b2dcc9e45597de72c8ebb947e3c5cd50a63f620d1"
+            "2bc81019c4dade9902ed2b8b2dcc9e45597de72c8ebb947e3c5cd50a63f620d1",
+            "dc9cc4de214ff11512a59f203729994b09d301e06b5b17be07cf582544b786af"
           ]
         },
         "via_administracion": {
@@ -4531,14 +4704,16 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "6 UI (0.06 mL de solución de 100 UI/mL)",
           "source_sha256": [
-            "1679b9aec0edc472c36fc5b990ae95d28c055d330a6ce9fae022d5ee0c263344"
+            "1679b9aec0edc472c36fc5b990ae95d28c055d330a6ce9fae022d5ee0c263344",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1"
           ]
         },
         "frecuencia": {
-          "value": "Cada 8 horas",
+          "value": "Antes de desayuno, comida y cena",
           "source_sha256": [
+            "e821df1430ff056dc0ae4874fbe257720a16803013c3e1e257cae76d8c2ffd46",
             "f0db49ce520698fa5f256002f583847732e9cc9422479a041b075f1cb5d2afb1"
           ]
         },
@@ -4585,15 +4760,17 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "1 g (contenido de 1 vial)",
           "source_sha256": [
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1",
             "a528cbd586a84b10bf7c0ff14bd4c7c061c71052592b292d2e62bc1452d6eed4"
           ]
         },
         "frecuencia": {
-          "value": "Cada 12 horas",
+          "value": "Cada 24 horas",
           "source_sha256": [
-            "625ce65df1d87d5d4500659046ef2e9f166b2ce514ff99c8722dde78b462b61e"
+            "625ce65df1d87d5d4500659046ef2e9f166b2ce514ff99c8722dde78b462b61e",
+            "a1a2359c4ff4ff0fcfb2c964a7efad1c10532c619c6e35edaf6995e9a5fe55d4"
           ]
         },
         "via_administracion": {
@@ -4639,9 +4816,10 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "5 mg (1 mL de solución de 10 mg/2 mL)",
           "source_sha256": [
-            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622"
+            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1"
           ]
         },
         "frecuencia": {
@@ -4693,9 +4871,10 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "100 mg (contenido de 1 vial)",
           "source_sha256": [
-            "60967d83e9404f11ff95bcf8b752456a7fbf89e60db0c231298bc32aef0f2a47"
+            "60967d83e9404f11ff95bcf8b752456a7fbf89e60db0c231298bc32aef0f2a47",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1"
           ]
         },
         "frecuencia": {
@@ -4720,15 +4899,17 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "4 UI (0.04 mL de solución de 100 UI/mL)",
           "source_sha256": [
-            "1679b9aec0edc472c36fc5b990ae95d28c055d330a6ce9fae022d5ee0c263344"
+            "1679b9aec0edc472c36fc5b990ae95d28c055d330a6ce9fae022d5ee0c263344",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1"
           ]
         },
         "frecuencia": {
-          "value": "Cada 6 horas",
+          "value": "Antes de desayuno, comida y cena",
           "source_sha256": [
-            "2bc81019c4dade9902ed2b8b2dcc9e45597de72c8ebb947e3c5cd50a63f620d1"
+            "2bc81019c4dade9902ed2b8b2dcc9e45597de72c8ebb947e3c5cd50a63f620d1",
+            "dc9cc4de214ff11512a59f203729994b09d301e06b5b17be07cf582544b786af"
           ]
         },
         "via_administracion": {
@@ -4753,8 +4934,9 @@
           ]
         },
         "frecuencia": {
-          "value": "Cada 8 horas",
+          "value": "Cada 24 horas",
           "source_sha256": [
+            "e821df1430ff056dc0ae4874fbe257720a16803013c3e1e257cae76d8c2ffd46",
             "f0db49ce520698fa5f256002f583847732e9cc9422479a041b075f1cb5d2afb1"
           ]
         },
@@ -4774,14 +4956,16 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "1 g (contenido de 1 vial)",
           "source_sha256": [
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1",
             "a528cbd586a84b10bf7c0ff14bd4c7c061c71052592b292d2e62bc1452d6eed4"
           ]
         },
         "frecuencia": {
-          "value": "Cada 8 horas",
+          "value": "Cada 24 horas",
           "source_sha256": [
+            "e821df1430ff056dc0ae4874fbe257720a16803013c3e1e257cae76d8c2ffd46",
             "f0db49ce520698fa5f256002f583847732e9cc9422479a041b075f1cb5d2afb1"
           ]
         },
@@ -4807,9 +4991,10 @@
           ]
         },
         "frecuencia": {
-          "value": "Cada 12 horas",
+          "value": "Cada 24 horas",
           "source_sha256": [
-            "625ce65df1d87d5d4500659046ef2e9f166b2ce514ff99c8722dde78b462b61e"
+            "625ce65df1d87d5d4500659046ef2e9f166b2ce514ff99c8722dde78b462b61e",
+            "a1a2359c4ff4ff0fcfb2c964a7efad1c10532c619c6e35edaf6995e9a5fe55d4"
           ]
         },
         "via_administracion": {
@@ -4828,9 +5013,10 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "5 mg (1 mL de solución de 10 mg/2 mL)",
           "source_sha256": [
-            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622"
+            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1"
           ]
         },
         "frecuencia": {
@@ -4855,21 +5041,30 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "15 mg (0.5 mL de solución de 30 mg/mL)",
           "source_sha256": [
-            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622"
+            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1",
+            "df3c8ca4980fdd4f56a857010fed8e397bdfdb5140c43e77972633e71e30e56e"
           ]
         },
         "frecuencia": {
-          "value": "Cada 24 horas",
+          "value": "Cada 6 horas si dolor",
           "source_sha256": [
-            "1f4fe2fbc17529475e5654eb22e58ea31edf88877004b6b4ab00f8615f333868"
+            "1f4fe2fbc17529475e5654eb22e58ea31edf88877004b6b4ab00f8615f333868",
+            "e491d1496ce8b17d2e1e168c014f56d126ab0cb7edb926a386d5f3125cea0011"
           ]
         },
         "via_administracion": {
           "value": "Intravenosa",
           "source_sha256": [
             "cc85fa9f5f459db001263025ec8b275fbcb5becffecded0c4177e1432c842b37"
+          ]
+        },
+        "duracion_dias": {
+          "value": 2,
+          "source_sha256": [
+            "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451"
           ]
         }
       }
@@ -4882,9 +5077,10 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "100 mg (contenido de 1 vial)",
           "source_sha256": [
-            "60967d83e9404f11ff95bcf8b752456a7fbf89e60db0c231298bc32aef0f2a47"
+            "60967d83e9404f11ff95bcf8b752456a7fbf89e60db0c231298bc32aef0f2a47",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1"
           ]
         },
         "frecuencia": {
@@ -4942,9 +5138,10 @@
           ]
         },
         "frecuencia": {
-          "value": "Cada 6 horas",
+          "value": "Cada 24 horas",
           "source_sha256": [
-            "2bc81019c4dade9902ed2b8b2dcc9e45597de72c8ebb947e3c5cd50a63f620d1"
+            "2bc81019c4dade9902ed2b8b2dcc9e45597de72c8ebb947e3c5cd50a63f620d1",
+            "dc9cc4de214ff11512a59f203729994b09d301e06b5b17be07cf582544b786af"
           ]
         },
         "via_administracion": {
@@ -4969,8 +5166,9 @@
           ]
         },
         "frecuencia": {
-          "value": "Cada 8 horas",
+          "value": "Cada 24 horas",
           "source_sha256": [
+            "e821df1430ff056dc0ae4874fbe257720a16803013c3e1e257cae76d8c2ffd46",
             "f0db49ce520698fa5f256002f583847732e9cc9422479a041b075f1cb5d2afb1"
           ]
         },
@@ -4996,8 +5194,9 @@
           ]
         },
         "frecuencia": {
-          "value": "Cada 8 horas",
+          "value": "Cada 24 horas",
           "source_sha256": [
+            "e821df1430ff056dc0ae4874fbe257720a16803013c3e1e257cae76d8c2ffd46",
             "f0db49ce520698fa5f256002f583847732e9cc9422479a041b075f1cb5d2afb1"
           ]
         },
@@ -5044,21 +5243,30 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "15 mg (0.5 mL de solución de 30 mg/mL)",
           "source_sha256": [
-            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622"
+            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1",
+            "df3c8ca4980fdd4f56a857010fed8e397bdfdb5140c43e77972633e71e30e56e"
           ]
         },
         "frecuencia": {
-          "value": "Cada 12 horas",
+          "value": "Cada 6 horas si dolor",
           "source_sha256": [
-            "625ce65df1d87d5d4500659046ef2e9f166b2ce514ff99c8722dde78b462b61e"
+            "625ce65df1d87d5d4500659046ef2e9f166b2ce514ff99c8722dde78b462b61e",
+            "a1a2359c4ff4ff0fcfb2c964a7efad1c10532c619c6e35edaf6995e9a5fe55d4"
           ]
         },
         "via_administracion": {
           "value": "Intravenosa",
           "source_sha256": [
             "cc85fa9f5f459db001263025ec8b275fbcb5becffecded0c4177e1432c842b37"
+          ]
+        },
+        "duracion_dias": {
+          "value": 2,
+          "source_sha256": [
+            "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
           ]
         }
       }
@@ -5158,9 +5366,10 @@
           ]
         },
         "frecuencia": {
-          "value": "Cada 6 horas",
+          "value": "Cada 24 horas",
           "source_sha256": [
-            "2bc81019c4dade9902ed2b8b2dcc9e45597de72c8ebb947e3c5cd50a63f620d1"
+            "2bc81019c4dade9902ed2b8b2dcc9e45597de72c8ebb947e3c5cd50a63f620d1",
+            "dc9cc4de214ff11512a59f203729994b09d301e06b5b17be07cf582544b786af"
           ]
         },
         "via_administracion": {
@@ -5179,14 +5388,16 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "8 UI (0.08 mL de solución de 100 UI/mL)",
           "source_sha256": [
-            "1679b9aec0edc472c36fc5b990ae95d28c055d330a6ce9fae022d5ee0c263344"
+            "1679b9aec0edc472c36fc5b990ae95d28c055d330a6ce9fae022d5ee0c263344",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1"
           ]
         },
         "frecuencia": {
-          "value": "Cada 8 horas",
+          "value": "Antes de desayuno, comida y cena",
           "source_sha256": [
+            "e821df1430ff056dc0ae4874fbe257720a16803013c3e1e257cae76d8c2ffd46",
             "f0db49ce520698fa5f256002f583847732e9cc9422479a041b075f1cb5d2afb1"
           ]
         },
@@ -5233,15 +5444,17 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "1 g (contenido de 1 vial)",
           "source_sha256": [
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1",
             "a528cbd586a84b10bf7c0ff14bd4c7c061c71052592b292d2e62bc1452d6eed4"
           ]
         },
         "frecuencia": {
-          "value": "Cada 12 horas",
+          "value": "Cada 24 horas",
           "source_sha256": [
-            "625ce65df1d87d5d4500659046ef2e9f166b2ce514ff99c8722dde78b462b61e"
+            "625ce65df1d87d5d4500659046ef2e9f166b2ce514ff99c8722dde78b462b61e",
+            "a1a2359c4ff4ff0fcfb2c964a7efad1c10532c619c6e35edaf6995e9a5fe55d4"
           ]
         },
         "via_administracion": {
@@ -5287,9 +5500,10 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "5 mg (1 mL de solución de 10 mg/2 mL)",
           "source_sha256": [
-            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622"
+            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1"
           ]
         },
         "frecuencia": {
@@ -5341,9 +5555,10 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "100 mg (contenido de 1 vial)",
           "source_sha256": [
-            "60967d83e9404f11ff95bcf8b752456a7fbf89e60db0c231298bc32aef0f2a47"
+            "60967d83e9404f11ff95bcf8b752456a7fbf89e60db0c231298bc32aef0f2a47",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1"
           ]
         },
         "frecuencia": {
@@ -5368,15 +5583,17 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "6 UI (0.06 mL de solución de 100 UI/mL)",
           "source_sha256": [
-            "1679b9aec0edc472c36fc5b990ae95d28c055d330a6ce9fae022d5ee0c263344"
+            "1679b9aec0edc472c36fc5b990ae95d28c055d330a6ce9fae022d5ee0c263344",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1"
           ]
         },
         "frecuencia": {
-          "value": "Cada 6 horas",
+          "value": "Antes de desayuno, comida y cena",
           "source_sha256": [
-            "2bc81019c4dade9902ed2b8b2dcc9e45597de72c8ebb947e3c5cd50a63f620d1"
+            "2bc81019c4dade9902ed2b8b2dcc9e45597de72c8ebb947e3c5cd50a63f620d1",
+            "dc9cc4de214ff11512a59f203729994b09d301e06b5b17be07cf582544b786af"
           ]
         },
         "via_administracion": {
@@ -5401,8 +5618,9 @@
           ]
         },
         "frecuencia": {
-          "value": "Cada 8 horas",
+          "value": "Cada 24 horas",
           "source_sha256": [
+            "e821df1430ff056dc0ae4874fbe257720a16803013c3e1e257cae76d8c2ffd46",
             "f0db49ce520698fa5f256002f583847732e9cc9422479a041b075f1cb5d2afb1"
           ]
         },
@@ -5422,14 +5640,16 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "1 g (contenido de 1 vial)",
           "source_sha256": [
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1",
             "a528cbd586a84b10bf7c0ff14bd4c7c061c71052592b292d2e62bc1452d6eed4"
           ]
         },
         "frecuencia": {
-          "value": "Cada 8 horas",
+          "value": "Cada 24 horas",
           "source_sha256": [
+            "e821df1430ff056dc0ae4874fbe257720a16803013c3e1e257cae76d8c2ffd46",
             "f0db49ce520698fa5f256002f583847732e9cc9422479a041b075f1cb5d2afb1"
           ]
         },
@@ -5455,9 +5675,10 @@
           ]
         },
         "frecuencia": {
-          "value": "Cada 12 horas",
+          "value": "Cada 24 horas",
           "source_sha256": [
-            "625ce65df1d87d5d4500659046ef2e9f166b2ce514ff99c8722dde78b462b61e"
+            "625ce65df1d87d5d4500659046ef2e9f166b2ce514ff99c8722dde78b462b61e",
+            "a1a2359c4ff4ff0fcfb2c964a7efad1c10532c619c6e35edaf6995e9a5fe55d4"
           ]
         },
         "via_administracion": {
@@ -5476,9 +5697,10 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "5 mg (1 mL de solución de 10 mg/2 mL)",
           "source_sha256": [
-            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622"
+            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1"
           ]
         },
         "frecuencia": {
@@ -5503,21 +5725,30 @@
       },
       "fields": {
         "dosis": {
-          "value": "Según orden médica",
+          "value": "15 mg (0.5 mL de solución de 30 mg/mL)",
           "source_sha256": [
-            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622"
+            "3e498422a2f43595481a044c1764ca886a418af4300baa68e9f919dd7c11c622",
+            "8049d3a9671781165d53c678331ca493b0eb8e71fa34a7bb9ba15080321b01a1",
+            "df3c8ca4980fdd4f56a857010fed8e397bdfdb5140c43e77972633e71e30e56e"
           ]
         },
         "frecuencia": {
-          "value": "Cada 24 horas",
+          "value": "Cada 6 horas si dolor",
           "source_sha256": [
-            "1f4fe2fbc17529475e5654eb22e58ea31edf88877004b6b4ab00f8615f333868"
+            "1f4fe2fbc17529475e5654eb22e58ea31edf88877004b6b4ab00f8615f333868",
+            "e491d1496ce8b17d2e1e168c014f56d126ab0cb7edb926a386d5f3125cea0011"
           ]
         },
         "via_administracion": {
           "value": "Intravenosa",
           "source_sha256": [
             "cc85fa9f5f459db001263025ec8b275fbcb5becffecded0c4177e1432c842b37"
+          ]
+        },
+        "duracion_dias": {
+          "value": 2,
+          "source_sha256": [
+            "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
           ]
         }
       }
@@ -6446,8 +6677,9 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar biometría hemática y anexar el informe al expediente.",
+          "value": "EXP-2026-0001. Biometría hemática en sangre venosa para la valoración del encuentro. Identificar la muestra con expediente y nombre; informar hemoglobina, hematocrito, leucocitos y plaquetas.",
           "source_sha256": [
+            "2801f681a4cac60e815fb8ec9119cb188ab41b3a939e78b361bac9951dd5bd50",
             "9a9422e298c10c06a96022faa7efbcec587d89e4defbc154c61a3a97090c0d4d"
           ]
         }
@@ -6460,9 +6692,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar radiografía de tórax y anexar el informe al expediente.",
+          "value": "EXP-2026-0002. Radiografía de tórax en la fecha programada para completar la valoración. Verificar identidad y retirar objetos metálicos del campo antes de la adquisición; emitir descripción de las imágenes.",
           "source_sha256": [
-            "9a9422e298c10c06a96022faa7efbcec587d89e4defbc154c61a3a97090c0d4d"
+            "9a9422e298c10c06a96022faa7efbcec587d89e4defbc154c61a3a97090c0d4d",
+            "a3db80e7dd458e5243d28755ac30ba946d689e58604724222ef8a08e00d688ee"
           ]
         }
       }
@@ -6474,9 +6707,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar electrocardiograma y anexar el informe al expediente.",
+          "value": "EXP-2026-0003. Electrocardiograma de 12 derivaciones durante la observación hospitalaria. Registrar frecuencia, intervalos y calidad del trazado con la identificación del expediente.",
           "source_sha256": [
-            "9a9422e298c10c06a96022faa7efbcec587d89e4defbc154c61a3a97090c0d4d"
+            "9a9422e298c10c06a96022faa7efbcec587d89e4defbc154c61a3a97090c0d4d",
+            "b78823af994626ae98cc53e583221c26257a78f6aeb2840f90560fec8f58408d"
           ]
         }
       }
@@ -6488,8 +6722,9 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar apendicectomía y anexar el informe al expediente.",
+          "value": "EXP-2026-0005. Solicitud de apendicectomía para evaluación por el equipo quirúrgico. Confirmar indicación, consentimiento, valoración preoperatoria y disponibilidad de sala antes de fijar la fecha.",
           "source_sha256": [
+            "05b01db05f9aff75e00a5c2484815fc8ea218ff8ae6d5fc643fb35d4e9f9f9d3",
             "9a9422e298c10c06a96022faa7efbcec587d89e4defbc154c61a3a97090c0d4d"
           ]
         }
@@ -6502,9 +6737,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar química sanguínea y anexar el informe al expediente.",
+          "value": "EXP-2026-0006. Química sanguínea: registrar glucosa, urea, creatinina, ácido úrico, colesterol total y triglicéridos. Identificar muestra con expediente y consignar condición de la muestra.",
           "source_sha256": [
-            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
+            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed",
+            "b70a0a02465b59f555982e6c4713275dc1d7ac783e1ef47a196745178317c6b4"
           ]
         }
       }
@@ -6516,8 +6752,9 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar ultrasonido abdominal y anexar el informe al expediente.",
+          "value": "EXP-2026-0007. Ultrasonido abdominal: describir hígado, vesícula, vía biliar, riñones y presencia de líquido libre. Incorporar medidas obtenidas e identificación del expediente en el informe.",
           "source_sha256": [
+            "062a9c88040a6ed520dedc79c3823c0fce3a5e74a3928d28af431a6bebe4942f",
             "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
           ]
         }
@@ -6530,9 +6767,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar colecistectomía y anexar el informe al expediente.",
+          "value": "EXP-2026-0008. Colecistectomía: verificar expediente, indicación quirúrgica, consentimiento y valoración preoperatoria antes del ingreso a sala. Registrar técnica, hallazgos, sangrado y destino de la pieza.",
           "source_sha256": [
-            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
+            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed",
+            "e9fd8aa2b335465ac3cc732af5788ead5dfaba258528ac3411643f14b096c6e8"
           ]
         }
       }
@@ -6544,8 +6782,9 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar curación de herida y anexar el informe al expediente.",
+          "value": "EXP-2026-0009. Curación de herida: identificar localización, extensión, aspecto del lecho y exudado antes de la limpieza. Registrar material de cobertura y tolerancia al procedimiento.",
           "source_sha256": [
+            "35b3e8b4499b940e275461151b72d8b5ac7165363739f7033506db166675375a",
             "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
           ]
         }
@@ -6558,9 +6797,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar química sanguínea y anexar el informe al expediente.",
+          "value": "EXP-2026-0010. Química sanguínea: registrar glucosa, urea, creatinina, ácido úrico, colesterol total y triglicéridos. Identificar muestra con expediente y consignar condición de la muestra.",
           "source_sha256": [
-            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
+            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed",
+            "b70a0a02465b59f555982e6c4713275dc1d7ac783e1ef47a196745178317c6b4"
           ]
         }
       }
@@ -6572,8 +6812,9 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar ultrasonido abdominal y anexar el informe al expediente.",
+          "value": "EXP-2026-0011. Ultrasonido abdominal: describir hígado, vesícula, vía biliar, riñones y presencia de líquido libre. Incorporar medidas obtenidas e identificación del expediente en el informe.",
           "source_sha256": [
+            "062a9c88040a6ed520dedc79c3823c0fce3a5e74a3928d28af431a6bebe4942f",
             "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
           ]
         }
@@ -6586,9 +6827,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar colecistectomía y anexar el informe al expediente.",
+          "value": "EXP-2026-0012. Colecistectomía: verificar expediente, indicación quirúrgica, consentimiento y valoración preoperatoria antes del ingreso a sala. Registrar técnica, hallazgos, sangrado y destino de la pieza.",
           "source_sha256": [
-            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
+            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed",
+            "e9fd8aa2b335465ac3cc732af5788ead5dfaba258528ac3411643f14b096c6e8"
           ]
         }
       }
@@ -6600,8 +6842,9 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar curación de herida y anexar el informe al expediente.",
+          "value": "EXP-2026-0013. Curación de herida: identificar localización, extensión, aspecto del lecho y exudado antes de la limpieza. Registrar material de cobertura y tolerancia al procedimiento.",
           "source_sha256": [
+            "35b3e8b4499b940e275461151b72d8b5ac7165363739f7033506db166675375a",
             "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
           ]
         }
@@ -6614,9 +6857,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar química sanguínea y anexar el informe al expediente.",
+          "value": "EXP-2026-0014. Química sanguínea: registrar glucosa, urea, creatinina, ácido úrico, colesterol total y triglicéridos. Identificar muestra con expediente y consignar condición de la muestra.",
           "source_sha256": [
-            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
+            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed",
+            "b70a0a02465b59f555982e6c4713275dc1d7ac783e1ef47a196745178317c6b4"
           ]
         }
       }
@@ -6628,8 +6872,9 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar ultrasonido abdominal y anexar el informe al expediente.",
+          "value": "EXP-2026-0015. Ultrasonido abdominal: describir hígado, vesícula, vía biliar, riñones y presencia de líquido libre. Incorporar medidas obtenidas e identificación del expediente en el informe.",
           "source_sha256": [
+            "062a9c88040a6ed520dedc79c3823c0fce3a5e74a3928d28af431a6bebe4942f",
             "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
           ]
         }
@@ -6642,9 +6887,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar colecistectomía y anexar el informe al expediente.",
+          "value": "EXP-2026-0016. Colecistectomía: verificar expediente, indicación quirúrgica, consentimiento y valoración preoperatoria antes del ingreso a sala. Registrar técnica, hallazgos, sangrado y destino de la pieza.",
           "source_sha256": [
-            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
+            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed",
+            "e9fd8aa2b335465ac3cc732af5788ead5dfaba258528ac3411643f14b096c6e8"
           ]
         }
       }
@@ -6656,8 +6902,9 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar curación de herida y anexar el informe al expediente.",
+          "value": "EXP-2026-0017. Curación de herida: identificar localización, extensión, aspecto del lecho y exudado antes de la limpieza. Registrar material de cobertura y tolerancia al procedimiento.",
           "source_sha256": [
+            "35b3e8b4499b940e275461151b72d8b5ac7165363739f7033506db166675375a",
             "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
           ]
         }
@@ -6670,9 +6917,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar química sanguínea y anexar el informe al expediente.",
+          "value": "EXP-2026-0018. Química sanguínea: registrar glucosa, urea, creatinina, ácido úrico, colesterol total y triglicéridos. Identificar muestra con expediente y consignar condición de la muestra.",
           "source_sha256": [
-            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
+            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed",
+            "b70a0a02465b59f555982e6c4713275dc1d7ac783e1ef47a196745178317c6b4"
           ]
         }
       }
@@ -6684,8 +6932,9 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar ultrasonido abdominal y anexar el informe al expediente.",
+          "value": "EXP-2026-0019. Ultrasonido abdominal: describir hígado, vesícula, vía biliar, riñones y presencia de líquido libre. Incorporar medidas obtenidas e identificación del expediente en el informe.",
           "source_sha256": [
+            "062a9c88040a6ed520dedc79c3823c0fce3a5e74a3928d28af431a6bebe4942f",
             "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
           ]
         }
@@ -6698,9 +6947,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar colecistectomía y anexar el informe al expediente.",
+          "value": "EXP-2026-0020. Colecistectomía: verificar expediente, indicación quirúrgica, consentimiento y valoración preoperatoria antes del ingreso a sala. Registrar técnica, hallazgos, sangrado y destino de la pieza.",
           "source_sha256": [
-            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
+            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed",
+            "e9fd8aa2b335465ac3cc732af5788ead5dfaba258528ac3411643f14b096c6e8"
           ]
         }
       }
@@ -6712,8 +6962,9 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar curación de herida y anexar el informe al expediente.",
+          "value": "EXP-2026-0021. Curación de herida: identificar localización, extensión, aspecto del lecho y exudado antes de la limpieza. Registrar material de cobertura y tolerancia al procedimiento.",
           "source_sha256": [
+            "35b3e8b4499b940e275461151b72d8b5ac7165363739f7033506db166675375a",
             "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
           ]
         }
@@ -6726,9 +6977,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar química sanguínea y anexar el informe al expediente.",
+          "value": "EXP-2026-0022. Química sanguínea: registrar glucosa, urea, creatinina, ácido úrico, colesterol total y triglicéridos. Identificar muestra con expediente y consignar condición de la muestra.",
           "source_sha256": [
-            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
+            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed",
+            "b70a0a02465b59f555982e6c4713275dc1d7ac783e1ef47a196745178317c6b4"
           ]
         }
       }
@@ -6740,8 +6992,9 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar ultrasonido abdominal y anexar el informe al expediente.",
+          "value": "EXP-2026-0023. Ultrasonido abdominal: describir hígado, vesícula, vía biliar, riñones y presencia de líquido libre. Incorporar medidas obtenidas e identificación del expediente en el informe.",
           "source_sha256": [
+            "062a9c88040a6ed520dedc79c3823c0fce3a5e74a3928d28af431a6bebe4942f",
             "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
           ]
         }
@@ -6754,9 +7007,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar colecistectomía y anexar el informe al expediente.",
+          "value": "EXP-2026-0024. Colecistectomía: verificar expediente, indicación quirúrgica, consentimiento y valoración preoperatoria antes del ingreso a sala. Registrar técnica, hallazgos, sangrado y destino de la pieza.",
           "source_sha256": [
-            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
+            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed",
+            "e9fd8aa2b335465ac3cc732af5788ead5dfaba258528ac3411643f14b096c6e8"
           ]
         }
       }
@@ -6768,8 +7022,9 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar curación de herida y anexar el informe al expediente.",
+          "value": "EXP-2026-0025. Curación de herida: identificar localización, extensión, aspecto del lecho y exudado antes de la limpieza. Registrar material de cobertura y tolerancia al procedimiento.",
           "source_sha256": [
+            "35b3e8b4499b940e275461151b72d8b5ac7165363739f7033506db166675375a",
             "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
           ]
         }
@@ -6782,9 +7037,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar química sanguínea y anexar el informe al expediente.",
+          "value": "EXP-2026-0026. Química sanguínea: registrar glucosa, urea, creatinina, ácido úrico, colesterol total y triglicéridos. Identificar muestra con expediente y consignar condición de la muestra.",
           "source_sha256": [
-            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
+            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed",
+            "b70a0a02465b59f555982e6c4713275dc1d7ac783e1ef47a196745178317c6b4"
           ]
         }
       }
@@ -6796,8 +7052,9 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar ultrasonido abdominal y anexar el informe al expediente.",
+          "value": "EXP-2026-0027. Ultrasonido abdominal: describir hígado, vesícula, vía biliar, riñones y presencia de líquido libre. Incorporar medidas obtenidas e identificación del expediente en el informe.",
           "source_sha256": [
+            "062a9c88040a6ed520dedc79c3823c0fce3a5e74a3928d28af431a6bebe4942f",
             "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
           ]
         }
@@ -6810,9 +7067,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar colecistectomía y anexar el informe al expediente.",
+          "value": "EXP-2026-0028. Colecistectomía: verificar expediente, indicación quirúrgica, consentimiento y valoración preoperatoria antes del ingreso a sala. Registrar técnica, hallazgos, sangrado y destino de la pieza.",
           "source_sha256": [
-            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
+            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed",
+            "e9fd8aa2b335465ac3cc732af5788ead5dfaba258528ac3411643f14b096c6e8"
           ]
         }
       }
@@ -6824,8 +7082,9 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar curación de herida y anexar el informe al expediente.",
+          "value": "EXP-2026-0029. Curación de herida cancelada antes de su realización; conservar la solicitud para trazabilidad, sin registrar un resultado de ejecución.",
           "source_sha256": [
+            "35b3e8b4499b940e275461151b72d8b5ac7165363739f7033506db166675375a",
             "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
           ]
         }
@@ -6838,9 +7097,10 @@
       },
       "fields": {
         "indicaciones": {
-          "value": "Realizar química sanguínea y anexar el informe al expediente.",
+          "value": "EXP-2026-0030. Química sanguínea: registrar glucosa, urea, creatinina, ácido úrico, colesterol total y triglicéridos. Identificar muestra con expediente y consignar condición de la muestra.",
           "source_sha256": [
-            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed"
+            "51e87f8f823ddd8834384712135706815065f9f584d66af4e142f7348f5bc3ed",
+            "b70a0a02465b59f555982e6c4713275dc1d7ac783e1ef47a196745178317c6b4"
           ]
         }
       }
@@ -6852,9 +7112,10 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de biometría hemática. Documento recibido y registrado en el expediente EXP-2026-0001.",
+          "value": "Biometría hemática en sangre venosa: hemoglobina 13.4 g/dL; hematocrito 40.1 %; leucocitos 6.8 × 10^9/L; neutrófilos 57 %; linfocitos 33 %; plaquetas 258 × 10^9/L. Muestra sin coágulos visibles al procesamiento.",
           "source_sha256": [
-            "3fe5678c14e1e0341cef10b310c95ba1b7fefd1c78180107c7a28d63f9c2f00f"
+            "3fe5678c14e1e0341cef10b310c95ba1b7fefd1c78180107c7a28d63f9c2f00f",
+            "538e38a5d913676815aad14c7d24de461e17ef6e26743a03e69d72456befbcc6"
           ]
         }
       }
@@ -6866,8 +7127,9 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de electrocardiograma. Documento recibido y registrado en el expediente EXP-2026-0003.",
+          "value": "Electrocardiograma de 12 derivaciones: frecuencia 74 latidos/min; intervalo PR 160 ms; QRS 88 ms; QTc 410 ms. Ondas P preceden a cada complejo QRS y el trazado conserva una secuencia regular; sin artefactos que impidan la lectura.",
           "source_sha256": [
+            "c23f116e89f7d65b84ea3856fff9faca1fd40600243fa0ea4a884f4014020c73",
             "fae93bfbfa53376b9da4dace75c90649ef449530208cefc50ddc46d34e4e8640"
           ]
         }
@@ -6880,8 +7142,9 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de química sanguínea. Documento recibido y registrado en el expediente EXP-2026-0006.",
+          "value": "Química sanguínea en suero: glucosa 94 mg/dL; urea 29 mg/dL; creatinina 0.82 mg/dL; ácido úrico 4.6 mg/dL; colesterol total 178 mg/dL; triglicéridos 126 mg/dL. Suero sin hemólisis visible.",
           "source_sha256": [
+            "b20e2c64fdcf27eaf2ef4d247611b0fe95f56f2a3b7ba2af3a58340d27f34cdc",
             "f6decd52cadf0f2252d613cf3c599050bddf7db1a2bf94cb94cedfacc318a246"
           ]
         }
@@ -6894,8 +7157,9 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de ultrasonido abdominal. Documento recibido y registrado en el expediente EXP-2026-0007.",
+          "value": "Ultrasonido abdominal: hígado de contornos regulares, eje longitudinal 14.2 cm; vesícula de pared de 2 mm, sin imágenes con sombra acústica; colédoco 4 mm; riñón derecho 10.7 cm e izquierdo 10.9 cm. No se observa líquido libre en los espacios explorados.",
           "source_sha256": [
+            "193a37e554f761917c81d28de750a5b11c40b22f5a7334547f8dbaf29dbf0d71",
             "e967037da27206f7973adc66a4ab9822e703ef9617887ac0707ea381599f32d0"
           ]
         }
@@ -6908,9 +7172,10 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de colecistectomía. Documento recibido y registrado en el expediente EXP-2026-0008.",
+          "value": "Registro transoperatorio de colecistectomía laparoscópica: se identificaron conducto y arteria císticos antes de su cierre; se extrajo la vesícula en bolsa. Sangrado estimado 35 mL; recuento de material completo y cierre de accesos sin incidencia documentada. Pieza remitida para examen histológico; este informe no incluye anatomía patológica.",
           "source_sha256": [
-            "8520c61edd92b130079d9c77350992e51da20328172e6cd1b19fc4983c4e648c"
+            "8520c61edd92b130079d9c77350992e51da20328172e6cd1b19fc4983c4e648c",
+            "9257bda595e13f90c788e59f588ba5e784ddd8e9cf8da86427d1e0548dcf494f"
           ]
         }
       }
@@ -6922,8 +7187,9 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de curación de herida. Documento recibido y registrado en el expediente EXP-2026-0009.",
+          "value": "Curación de herida superficial de antebrazo derecho: superficie de 2.0 × 0.6 cm, bordes aproximados y exudado seroso escaso; no se observa sangrado activo. Se realizó limpieza y cobertura con apósito estéril; la persona refirió tolerancia al procedimiento.",
           "source_sha256": [
+            "5ba78c5f79f413c1438829aa9eaed00c080c4a8c755e6f3a18e899f2069c4965",
             "cb1558178ab6905651d8022bf2d7f97441b53b6376d916be41403f7be830c746"
           ]
         }
@@ -6936,8 +7202,9 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de química sanguínea. Documento recibido y registrado en el expediente EXP-2026-0010.",
+          "value": "Química sanguínea en suero: glucosa 101 mg/dL; urea 31 mg/dL; creatinina 0.91 mg/dL; ácido úrico 4.9 mg/dL; colesterol total 184 mg/dL; triglicéridos 138 mg/dL. Volumen de muestra suficiente para el panel solicitado.",
           "source_sha256": [
+            "25b9d096bab6b153210de3577d29354da4a98dc20d12ef10f86c09aa9ed39d74",
             "c9f820e76e89caf6b59ae77ea041dcae28546d4e54cd914c13761cd9a4b7828a"
           ]
         }
@@ -6950,8 +7217,9 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de ultrasonido abdominal. Documento recibido y registrado en el expediente EXP-2026-0011.",
+          "value": "Ultrasonido abdominal: hígado de ecogenicidad homogénea, eje longitudinal 14.5 cm; vesícula sin imágenes con sombra acústica y pared de 2 mm; colédoco 3.8 mm. Riñones de 10.8 y 11.0 cm, sin dilatación de cavidades; no se observa líquido libre.",
           "source_sha256": [
+            "84656ca0ac4fef27a004a1004eecc97a714f0f77bcb31374f092836e564c68d4",
             "8703dcc307f3d85c8c467cbacc66c2c4eef558c1a165f9bcbf57df51be8776db"
           ]
         }
@@ -6964,8 +7232,9 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de colecistectomía. Documento recibido y registrado en el expediente EXP-2026-0012.",
+          "value": "Registro transoperatorio de colecistectomía laparoscópica: disección e identificación de estructuras císticas, cierre de conducto y arteria y extracción de vesícula en bolsa. Sangrado estimado 25 mL; recuento de gasas e instrumental completo. Pieza remitida para examen histológico y cierre de accesos; sin informe histológico incorporado a este registro.",
           "source_sha256": [
+            "618fbe497d97bac13a5e442b2be9b7349906c4564b497b0748530b997792cb19",
             "8cfdf9e194a1cc1dc04b9efccc0baa73b00cc286a3bba18f69dd198909f89c61"
           ]
         }
@@ -6978,8 +7247,9 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de curación de herida. Documento recibido y registrado en el expediente EXP-2026-0013.",
+          "value": "Curación de lesión superficial de pierna izquierda: área de 1.5 × 0.8 cm, lecho rosado y exudado seroso escaso, sin sangrado activo. Se efectuaron limpieza y colocación de apósito; se conservó movilidad del pie durante el procedimiento.",
           "source_sha256": [
+            "6be62aa946c9267e554e9d3d27f34815f47fbb727d80b966810269b9043812b5",
             "6ca1e1ff6234eeb45c96c464744ca7ffcc5002fe453abd9d5103677a10b91492"
           ]
         }
@@ -6992,9 +7262,10 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de química sanguínea. Documento recibido y registrado en el expediente EXP-2026-0014.",
+          "value": "Química sanguínea en suero: glucosa 89 mg/dL; urea 26 mg/dL; creatinina 0.76 mg/dL; ácido úrico 4.1 mg/dL; colesterol total 171 mg/dL; triglicéridos 112 mg/dL. Identificación de muestra coincidente con la orden.",
           "source_sha256": [
-            "2cf39c07130ea8c771a5a8190cb3638e409b6547d06fcec51a51e555dceeaf15"
+            "2cf39c07130ea8c771a5a8190cb3638e409b6547d06fcec51a51e555dceeaf15",
+            "d04fbd0fd414c3936bbf786872b8993e4b17168b8c3f4102cabeace9f0d7ec29"
           ]
         }
       }
@@ -7006,9 +7277,10 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de ultrasonido abdominal. Documento recibido y registrado en el expediente EXP-2026-0015.",
+          "value": "Ultrasonido abdominal: hígado de contornos regulares y eje longitudinal 14.0 cm; vesícula con pared de 2.1 mm, sin imágenes con sombra acústica; colédoco 4.1 mm. Riñón derecho 11.1 cm e izquierdo 11.0 cm, sin dilatación de cavidades; no se observa líquido libre.",
           "source_sha256": [
-            "119c79f7c53d7b86890707fbf3a4d1a61dd601f8e2f9bfc4856803bb11ba3887"
+            "119c79f7c53d7b86890707fbf3a4d1a61dd601f8e2f9bfc4856803bb11ba3887",
+            "5069ac2b08b9fa068c4d4a5252c7ea7ca60a6ce9d06a69d9ad5fc69a9b11173a"
           ]
         }
       }
@@ -7020,9 +7292,10 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de colecistectomía. Documento recibido y registrado en el expediente EXP-2026-0016.",
+          "value": "Registro transoperatorio de colecistectomía laparoscópica: se identificaron estructuras císticas, se cerraron conducto y arteria y se extrajo la vesícula en bolsa. Sangrado estimado 30 mL; revisión de hemostasia y recuento de material completos. Se remitió pieza para examen histológico y se cerraron los accesos.",
           "source_sha256": [
-            "eca4245db69bca3c55e7eeb8bf31b330498d1b10b62dcfd1b8996ddd110a0e16"
+            "eca4245db69bca3c55e7eeb8bf31b330498d1b10b62dcfd1b8996ddd110a0e16",
+            "f93eece145aec814904df8d30fcc0640eb44e188f9c01df7fe87373463b50cfa"
           ]
         }
       }
@@ -7034,8 +7307,9 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de curación de herida. Documento recibido y registrado en el expediente EXP-2026-0017.",
+          "value": "Curación de abrasión superficial de codo izquierdo: extensión de 2.5 × 1.0 cm, lecho rosado y costra periférica delgada, sin sangrado activo. Se realizó limpieza y cobertura; la movilidad de la mano se mantuvo conservada durante la curación.",
           "source_sha256": [
+            "2073466d3a30688dd873f4b4b925b0635f2fc209c707bcbf0ba9cd955afe73d8",
             "3d03eb00b603cdb0d34457770e8043661178c62b7ba8a83fd8b28abcf457ed10"
           ]
         }
@@ -7048,9 +7322,10 @@
       },
       "fields": {
         "informe": {
-          "value": "Informe de química sanguínea. Documento recibido y registrado en el expediente EXP-2026-0018.",
+          "value": "Química sanguínea en suero: glucosa 96 mg/dL; urea 28 mg/dL; creatinina 0.84 mg/dL; ácido úrico 4.4 mg/dL; colesterol total 176 mg/dL; triglicéridos 119 mg/dL. Suero sin lipemia visible al procesamiento.",
           "source_sha256": [
-            "3b2b37cfb7382cd38bd326fbed48a3d796d26d5fb256dae6945d0e2389ffc50e"
+            "3b2b37cfb7382cd38bd326fbed48a3d796d26d5fb256dae6945d0e2389ffc50e",
+            "9db278afa72ae40cde9c3f4b0de81a87371ba1fd6870321f3b692091adc0a982"
           ]
         }
       }
@@ -7499,8 +7774,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Medicamento dispensado en farmacia",
+          "value": "Paracetamol 500 mg, tableta; dispensación 1, renglón 1",
           "source_sha256": [
+            "cd37fc5104171b368a00cd23fd774c4818f1107adfd126b93b425087752e929e",
             "f4b10bc79455db30b696cb66298299fb932e1d2e7d552b503226fb62c71ead96"
           ]
         }
@@ -7619,9 +7895,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por infección respiratoria de vías superiores del 2026-10-01",
           "source_sha256": [
-            "3eabd021a3cbc8dc95dfbdbc1d13a8d846c188db4aa5f22736c78d81efc93e58"
+            "3eabd021a3cbc8dc95dfbdbc1d13a8d846c188db4aa5f22736c78d81efc93e58",
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee"
           ]
         }
       }
@@ -7634,9 +7911,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Química sanguínea realizado (orden 5)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -7649,8 +7927,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por gastritis del 2026-10-01",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "9e8b48cd2b7adbb44a4804316049d8bae7df4f3d2074f75cbaad042bc6c6819e"
           ]
         }
@@ -7664,9 +7943,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Ultrasonido abdominal realizado (orden 6)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -7679,9 +7959,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por rinitis alérgica del 2026-10-01",
           "source_sha256": [
-            "0a7c33426af2de43d4ef891afb11500c0be5e9fb0280528788c1ac8343dc09b0"
+            "0a7c33426af2de43d4ef891afb11500c0be5e9fb0280528788c1ac8343dc09b0",
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee"
           ]
         }
       }
@@ -7694,9 +7975,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Colecistectomía realizado (orden 7)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -7709,9 +7991,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por control de hipertensión arterial del 2026-10-01",
           "source_sha256": [
-            "569794e52416c91d6c2e557024c7f37692882ae493819ee88c40e56e0d51fc25"
+            "569794e52416c91d6c2e557024c7f37692882ae493819ee88c40e56e0d51fc25",
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee"
           ]
         }
       }
@@ -7724,9 +8007,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Curación de herida realizado (orden 8)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -7739,8 +8023,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por dolor articular del 2026-10-01",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "ab38727c32bf2a98ac8e56d164ce1fc930a0022aea44d4bd334d4e44b7253e28"
           ]
         }
@@ -7754,9 +8039,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Química sanguínea realizado (orden 9)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -7769,9 +8055,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por infección respiratoria de vías superiores del 2026-10-02",
           "source_sha256": [
-            "250c7002e41e41ee97431501f914a3e645d576fed9292e2c3cd9d8246bb59348"
+            "250c7002e41e41ee97431501f914a3e645d576fed9292e2c3cd9d8246bb59348",
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee"
           ]
         }
       }
@@ -7784,9 +8071,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Ultrasonido abdominal realizado (orden 10)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -7799,8 +8087,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por gastritis del 2026-10-02",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "ed02570c5a210b404addcf5dfbdd8278cf0591adf454c0d39b789fdabe71e703"
           ]
         }
@@ -7814,9 +8103,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Colecistectomía realizado (orden 11)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -7829,8 +8119,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por rinitis alérgica del 2026-10-02",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "df5f2f8ab7bea25b7dc74f4ea4f4a92e35319d37a96e5b4f44c7f41ceb569b7b"
           ]
         }
@@ -7844,9 +8135,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Curación de herida realizado (orden 12)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -7859,8 +8151,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por control de hipertensión arterial del 2026-10-02",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "b8e81c502c37100cbe0705b19981786a69c366451c5bc93c17f49703fac8a45a"
           ]
         }
@@ -7874,9 +8167,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Química sanguínea realizado (orden 13)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -7889,9 +8183,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por dolor articular del 2026-10-02",
           "source_sha256": [
-            "31896f08b2cb2df80cf0e49657d5bae1510105789a0823ce10b11f21e37b7932"
+            "31896f08b2cb2df80cf0e49657d5bae1510105789a0823ce10b11f21e37b7932",
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee"
           ]
         }
       }
@@ -7904,9 +8199,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Ultrasonido abdominal realizado (orden 14)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -7919,8 +8215,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por infección respiratoria de vías superiores del 2026-10-03",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "d4eb959b7aacfd42d2e44ec7b9d01610c81c07f361430257f69d068d336438ff"
           ]
         }
@@ -7934,9 +8231,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Colecistectomía realizado (orden 15)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -7949,8 +8247,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por gastritis del 2026-10-03",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "f7b64f8e97da5ee6c8bb98cefd14519f942dea2efd0edbecf7144ed35272579c"
           ]
         }
@@ -7964,9 +8263,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Curación de herida realizado (orden 16)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -7979,9 +8279,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por rinitis alérgica del 2026-10-03",
           "source_sha256": [
-            "20ebfe3b680d4a6a466ef15bc323013daed0ed20755688b8638a38831cbb23cc"
+            "20ebfe3b680d4a6a466ef15bc323013daed0ed20755688b8638a38831cbb23cc",
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee"
           ]
         }
       }
@@ -7994,9 +8295,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Química sanguínea realizado (orden 17)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -8009,9 +8311,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por control de hipertensión arterial del 2026-10-03",
           "source_sha256": [
-            "3cfecd5aeeff5afbec12d74417d83db083b3703e80cc02c33cf017a227523dec"
+            "3cfecd5aeeff5afbec12d74417d83db083b3703e80cc02c33cf017a227523dec",
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee"
           ]
         }
       }
@@ -8024,9 +8327,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Anticipo de ultrasonido abdominal programado (orden 18)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -8039,8 +8343,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por dolor articular del 2026-10-03",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "e403e686341fe4121db2b6cc8a3332f49455d23d88454f9047e7594de654c9bf"
           ]
         }
@@ -8054,9 +8359,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Anticipo de colecistectomía programado (orden 19)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -8069,9 +8375,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por infección respiratoria de vías superiores del 2026-10-04",
           "source_sha256": [
-            "5758f1a91c1a4584ac20c1e4cd2dd7460e927a190fc606a252b42984d2c387d2"
+            "5758f1a91c1a4584ac20c1e4cd2dd7460e927a190fc606a252b42984d2c387d2",
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee"
           ]
         }
       }
@@ -8084,9 +8391,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Anticipo de curación de herida programado (orden 20)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -8099,9 +8407,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por gastritis del 2026-10-04",
           "source_sha256": [
-            "08f29a57844f774b5e08cd9c379cccafaa25b9653bff3b296801985c6cc706fb"
+            "08f29a57844f774b5e08cd9c379cccafaa25b9653bff3b296801985c6cc706fb",
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee"
           ]
         }
       }
@@ -8114,9 +8423,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Anticipo de química sanguínea programado (orden 21)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -8129,8 +8439,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por rinitis alérgica del 2026-10-04",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "9c804128b7b7025be991f880268135896135b95d278c5e8224b64ce70b0477b8"
           ]
         }
@@ -8144,9 +8455,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Anticipo de ultrasonido abdominal programado (orden 22)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -8159,8 +8471,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por control de hipertensión arterial del 2026-10-04",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "859204d238d720c9dc14929ea7ad9f8ebcbcb7a12e7499a4ca905f606112b6b8"
           ]
         }
@@ -8174,9 +8487,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Anticipo de colecistectomía programado (orden 23)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -8189,8 +8503,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por dolor articular del 2026-10-04",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "900da1f173065f08be0adbbc25a8b53ec4ac053e5a3ddb4c6c08f32e38e3db96"
           ]
         }
@@ -8204,9 +8519,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Anticipo de curación de herida programado (orden 24)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -8219,8 +8535,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por infección respiratoria de vías superiores del 2026-10-05",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "7e25ddda735fde83bacd3f6d1bdb37cf18a14b13490e41f9f50cfef67c6b43b4"
           ]
         }
@@ -8234,9 +8551,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Anticipo de química sanguínea programado (orden 25)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -8249,9 +8567,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por gastritis del 2026-10-05",
           "source_sha256": [
-            "2a33701b00b162d6bb69a4a6a3f70d0de2f69691c755bdd836123851dfef0e57"
+            "2a33701b00b162d6bb69a4a6a3f70d0de2f69691c755bdd836123851dfef0e57",
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee"
           ]
         }
       }
@@ -8264,9 +8583,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Anticipo de ultrasonido abdominal programado (orden 26)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -8279,8 +8599,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por rinitis alérgica del 2026-10-05",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "ac32dcdf2813f0e134743aab4fd1e0aa8ebc0d10a1009fd8b5e0eac9ea3c5d00"
           ]
         }
@@ -8294,9 +8615,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Anticipo de colecistectomía programado (orden 27)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -8309,8 +8631,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por control de hipertensión arterial del 2026-10-05",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "d0f8d13f8cb2530f3df20a562c751fdd3afdf6e22a28b46b3c946a1c2513246d"
           ]
         }
@@ -8324,9 +8647,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Gestión de cancelación de curación de herida (orden 28)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }
@@ -8339,8 +8663,9 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Consulta médica de seguimiento",
+          "value": "Consulta por dolor articular del 2026-10-05",
           "source_sha256": [
+            "64a262ab5f356c450199ffdd4375c281b870be6c2744ed87a1472f30c469f9ee",
             "b3882a88e475f7f41366c7ab90c2a5803541a2ea57d10ab9abedd65f1b12edc3"
           ]
         }
@@ -8354,9 +8679,10 @@
       },
       "fields": {
         "descripcion": {
-          "value": "Servicio de diagnóstico y procedimiento",
+          "value": "Anticipo de química sanguínea programado (orden 29)",
           "source_sha256": [
-            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9"
+            "91d776fe2151457dba44e47c71039d4b545aed9aa462a9587ce5d80221b885a9",
+            "96db5e6b7fa44871780a9ed40598634ee39e79c5fed706ff82400324e87e6d25"
           ]
         }
       }

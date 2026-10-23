@@ -1,5 +1,5 @@
 {
-  "fecha_utc": "2026-10-22T17:34:03.634514+00:00",
+  "fecha_utc": "2026-10-23T18:13:56.872033+00:00",
   "estado": "APROBADO",
   "resumen": {
     "total": 24,
@@ -8,7 +8,7 @@
   },
   "sin_mysql": true,
   "huellas_sha256": {
-    "app_hospital/main.py": "4ff957ae5354f6f1737ee98faec81481786ca01e9cf3a98e96d2f8ccd9a73456",
+    "app_hospital/main.py": "5f801838b562b39f64f4c28c168134a47971009f6ddbfd414bdaa2f53847c0a8",
     "app_hospital/tests/test_forms.py": "f7c81554386116fec33a3406839ff98cb040867d8f5ef81291fbf4acdad03bcd"
   }
 }

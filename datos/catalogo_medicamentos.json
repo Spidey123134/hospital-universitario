@@ -6,9 +6,7 @@
     "concentracion": "500 mg",
     "presentacion": "Tableta",
     "unidad_inventario": "tableta",
-    "via_administracion": "Oral",
-    "dosis_texto": "1 tableta",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Oral"
   },
   {
     "medicamento_id": 2,
@@ -17,9 +15,7 @@
     "concentracion": "400 mg",
     "presentacion": "Tableta recubierta",
     "unidad_inventario": "tableta",
-    "via_administracion": "Oral",
-    "dosis_texto": "1 tableta",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Oral"
   },
   {
     "medicamento_id": 3,
@@ -28,9 +24,7 @@
     "concentracion": "250 mg/5 mL",
     "presentacion": "Polvo para suspensión oral, frasco de 100 mL",
     "unidad_inventario": "frasco",
-    "via_administracion": "Oral",
-    "dosis_texto": "5 mL",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Oral"
   },
   {
     "medicamento_id": 4,
@@ -39,9 +33,7 @@
     "concentracion": "20 mg",
     "presentacion": "Cápsula gastrorresistente",
     "unidad_inventario": "cápsula",
-    "via_administracion": "Oral",
-    "dosis_texto": "1 cápsula",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Oral"
   },
   {
     "medicamento_id": 5,
@@ -50,9 +42,7 @@
     "concentracion": "30 mg/mL",
     "presentacion": "Solución inyectable, ampolla de 1 mL",
     "unidad_inventario": "ampolla",
-    "via_administracion": "Intravenosa",
-    "dosis_texto": "Según orden médica",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Intravenosa"
   },
   {
     "medicamento_id": 6,
@@ -61,9 +51,7 @@
     "concentracion": "100 microgramos/dosis",
     "presentacion": "Inhalador de 200 dosis",
     "unidad_inventario": "inhalador",
-    "via_administracion": "Inhalatoria",
-    "dosis_texto": "1 inhalación",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Inhalatoria"
   },
   {
     "medicamento_id": 7,
@@ -72,9 +60,7 @@
     "concentracion": "10 mg",
     "presentacion": "Tableta",
     "unidad_inventario": "tableta",
-    "via_administracion": "Oral",
-    "dosis_texto": "1 tableta",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Oral"
   },
   {
     "medicamento_id": 8,
@@ -83,9 +69,7 @@
     "concentracion": "850 mg de hidrocloruro de metformina",
     "presentacion": "Tableta recubierta",
     "unidad_inventario": "tableta",
-    "via_administracion": "Oral",
-    "dosis_texto": "1 tableta",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Oral"
   },
   {
     "medicamento_id": 9,
@@ -94,9 +78,7 @@
     "concentracion": "50 mg",
     "presentacion": "Tableta recubierta",
     "unidad_inventario": "tableta",
-    "via_administracion": "Oral",
-    "dosis_texto": "1 tableta",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Oral"
   },
   {
     "medicamento_id": 10,
@@ -105,9 +87,7 @@
     "concentracion": "10 mg/g (1 %)",
     "presentacion": "Gel, tubo de 60 g",
     "unidad_inventario": "tubo",
-    "via_administracion": "Cutánea",
-    "dosis_texto": "1 aplicación",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Cutánea"
   },
   {
     "medicamento_id": 11,
@@ -116,9 +96,7 @@
     "concentracion": "100 UI/mL",
     "presentacion": "Solución inyectable, vial de 10 mL",
     "unidad_inventario": "vial",
-    "via_administracion": "Subcutánea",
-    "dosis_texto": "Según orden médica",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Subcutánea"
   },
   {
     "medicamento_id": 12,
@@ -127,9 +105,7 @@
     "concentracion": "1 g por vial",
     "presentacion": "Polvo para solución inyectable, vial",
     "unidad_inventario": "vial",
-    "via_administracion": "Intravenosa",
-    "dosis_texto": "Según orden médica",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Intravenosa"
   },
   {
     "medicamento_id": 13,
@@ -138,9 +114,7 @@
     "concentracion": "10 mg/2 mL",
     "presentacion": "Solución inyectable, ampolla de 2 mL",
     "unidad_inventario": "ampolla",
-    "via_administracion": "Intramuscular",
-    "dosis_texto": "Según orden médica",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Intramuscular"
   },
   {
     "medicamento_id": 14,
@@ -149,9 +123,7 @@
     "concentracion": "100 mg por vial",
     "presentacion": "Polvo y disolvente para solución inyectable, vial",
     "unidad_inventario": "vial",
-    "via_administracion": "Intravenosa",
-    "dosis_texto": "Según orden médica",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Intravenosa"
   },
   {
     "medicamento_id": 15,
@@ -160,8 +132,6 @@
     "concentracion": "40 mg",
     "presentacion": "Tableta",
     "unidad_inventario": "tableta",
-    "via_administracion": "Oral",
-    "dosis_texto": "1 tableta",
-    "frecuencia_texto": "Según orden médica"
+    "via_administracion": "Oral"
   }
 ]

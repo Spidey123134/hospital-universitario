@@ -149,5 +149,7 @@
     },
     "plan_sha256": "ccd5165575f94c481501ae1d889566e9d6b8327c896a613df51767cbbfef108e"
   },
-  "verificado_tras_reiniciar_mysql": true
+  "verificado_tras_reiniciar_mysql": true,
+  "tipo": "Evidencia histórica de la actualización del 22 de octubre de 2026",
+  "revision_actual": "REVISION_CALIDAD_DATOS.json"
 }

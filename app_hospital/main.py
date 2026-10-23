@@ -433,20 +433,35 @@ class HospitalApp(tk.Tk):
             if self.read_only: raise ValueError('Esta actualización necesita una cuenta de MySQL con permisos de escritura y administración de reglas.')
         except ValueError as exc: return self._error(str(exc))
         from .data_cleanup import preview_cleanup, apply_cleanup
-        def preview_ready(result):
+        from .tests.audit_data import scan_service, cleanup_review_message
+        def show_review(plan_report,audit_report,*,applied=False,audit_error=None):
+            review=cleanup_review_message(plan_report,audit_report,applied=applied,audit_error=audit_error)
+            self.status.set(review['status'])
+            show=messagebox.showwarning if review['warning'] else messagebox.showinfo
+            show(review['title'],review['message'],parent=self)
+        def preview_task():
+            return preview_cleanup(service.settings),scan_service(service.settings)
+        def preview_ready(review):
+            result,audit=review
             if not result['cells']:
-                self.status.set('Los datos iniciales del proyecto ya están completos. Los campos editados por el equipo se conservaron.')
-                messagebox.showinfo('Datos completos','No quedan valores iniciales pendientes de esta actualización. No se modificó ningún registro.',parent=self)
+                show_review(result,audit)
                 return
             path=filedialog.asksaveasfilename(parent=self,title='Guardar respaldo antes de completar los datos',defaultextension='.hospital.json',initialfile='antes_de_completar_'+datetime.now().strftime('%Y%m%d_%H%M%S')+'.hospital.json',filetypes=[('Respaldo completo del hospital','*.hospital.json')])
             if not path: return
-            if not messagebox.askyesno('Completar datos del proyecto',f"Se completarán {result['cells']} campos en {result['rows']} registros de {len(result['tables'])} tablas. Primero se guardará un respaldo completo. Se conservarán los identificadores, cantidades, fechas y campos que el equipo ya haya personalizado.\n\nCierra otras ventanas o programas conectados a esta base durante la actualización. ¿Continuar?",parent=self): return
-            def success(report):
-                self.status.set(f"Se completaron {report['cells']} campos. El respaldo anterior quedó guardado en la ubicación elegida.")
-                messagebox.showinfo('Datos actualizados','Se completaron los valores iniciales y se comprobaron los registros y las reglas de la base. El respaldo anterior se conserva. Pulsa Actualizar para revisar las tablas.',parent=self)
+            audit_note=f"La búsqueda encontró {audit['matching_cells']} campos con marcadores de relleno. Se volverá a revisar toda la base al terminar."
+            if result.get('skipped_cells'):
+                audit_note+=f" Se conservarán {result['skipped_cells']} campos que difieren del plan para que el equipo los revise."
+            if not messagebox.askyesno('Completar datos del proyecto',f"Se actualizarán {result['cells']} campos reconocidos en {result['rows']} registros de {len(result['tables'])} tablas. Primero se guardará un respaldo completo. Se conservarán los identificadores, cantidades, fechas y campos que el equipo ya haya personalizado.\n\n{audit_note}\n\nCierra otras ventanas o programas conectados a esta base durante la actualización. ¿Continuar?",parent=self): return
+            def apply_and_review():
+                report=apply_cleanup(service.settings,path)
+                try: return report,scan_service(service.settings),None
+                except (ServiceError,ValueError,OSError) as exc: return report,None,str(exc)
+            def success(review):
+                report,after,error=review
+                show_review(report,after,applied=True,audit_error=error)
                 self.load_records()
-            self._run('Guardando respaldo y completando los datos del proyecto...',lambda:apply_cleanup(service.settings,path),success)
-        self._run('Revisando los datos iniciales pendientes...',lambda:preview_cleanup(service.settings),preview_ready)
+            self._run('Guardando respaldo y actualizando los datos reconocidos...',apply_and_review,success)
+        self._run('Revisando el plan y buscando marcadores en toda la base...',preview_task,preview_ready)
 
     def _show_counts(self,counts):
         total=sum(counts.values()); empty=sum(n==0 for n in counts.values())

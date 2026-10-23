@@ -1,7 +1,7 @@
 {
   "estado": "APROBADO",
-  "fecha_utc": "2026-10-22T17:31:30.291587+00:00",
-  "version_datos": "valores_completos_2026_10_22",
+  "fecha_utc": "2026-10-23T18:20:27.644160+00:00",
+  "version_datos": "contenido_revisado_2026_10_23",
   "telefonos_formato_10_digitos": 95,
   "correos_example_com": 59,
   "datos_ficticios": true,
@@ -9,6 +9,6 @@
   "medicos_del_equipo_conservados": 15,
   "actualizacion_07_para_contactos_administrativos": true,
   "instalaciones_nuevas_ya_completas": true,
-  "limpieza_completa_documentada_en": "REVISION_DATOS_COMPLETOS.json",
+  "limpieza_completa_documentada_en": "REVISION_CALIDAD_DATOS.json",
   "script_sha256": "46833460c11b27271b186b2de293625855d0fbd17ba0bb69ee1efd3552aa7bed"
 }

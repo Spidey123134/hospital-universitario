@@ -1,59 +1,35 @@
 {
-  "inicio_utc": "2026-10-22T17:25:29+00:00",
-  "base_temporal": "hospital_prueba_06c6e50704ed4511bcaf22738abbe083",
+  "inicio_utc": "2026-10-23T18:14:14+00:00",
+  "base_temporal": "hospital_prueba_41dd21b77ab84fb18992f18cfaa502e2",
   "etapa": "completada",
   "vista_previa": {
-    "version": "2026-10-22",
-    "cells": 755,
-    "rows": 523,
+    "version": "2026-10-23-contenido-completo",
+    "cells": 277,
+    "rows": 260,
     "tables": {
-      "citas": {
-        "rows": 54,
-        "cells": 54
-      },
       "consultas": {
         "rows": 45,
-        "cells": 90
-      },
-      "diagnosticos": {
-        "rows": 8,
-        "cells": 16
+        "cells": 45
       },
       "consulta_diagnosticos": {
         "rows": 40,
         "cells": 40
       },
-      "alergias_paciente": {
-        "rows": 9,
-        "cells": 18
-      },
       "hospitalizaciones": {
-        "rows": 11,
-        "cells": 15
+        "rows": 4,
+        "cells": 4
       },
       "notas_enfermeria": {
         "rows": 21,
         "cells": 21
       },
-      "medicamentos": {
-        "rows": 15,
-        "cells": 75
-      },
       "recetas": {
-        "rows": 40,
-        "cells": 40
+        "rows": 25,
+        "cells": 25
       },
       "receta_detalle": {
-        "rows": 64,
-        "cells": 162
-      },
-      "movimientos_inventario": {
-        "rows": 38,
-        "cells": 38
-      },
-      "procedimientos": {
-        "rows": 8,
-        "cells": 16
+        "rows": 30,
+        "cells": 47
       },
       "ordenes_procedimiento": {
         "rows": 29,
@@ -63,83 +39,43 @@
         "rows": 15,
         "cells": 15
       },
-      "facturas": {
-        "rows": 29,
-        "cells": 29
-      },
       "factura_detalle": {
-        "rows": 60,
-        "cells": 60
-      },
-      "pagos": {
-        "rows": 24,
-        "cells": 24
-      },
-      "roles": {
-        "rows": 6,
-        "cells": 6
-      },
-      "usuarios": {
-        "rows": 7,
-        "cells": 7
+        "rows": 51,
+        "cells": 51
       }
     },
-    "already_complete": 484,
+    "already_complete": 966,
     "skipped_cells": 0,
     "missing_rows": 0
   },
   "resultado": {
-    "version": "2026-10-22",
-    "cells": 755,
-    "rows": 523,
+    "version": "2026-10-23-contenido-completo",
+    "cells": 277,
+    "rows": 260,
     "tables": {
-      "citas": {
-        "rows": 54,
-        "cells": 54
-      },
       "consultas": {
         "rows": 45,
-        "cells": 90
-      },
-      "diagnosticos": {
-        "rows": 8,
-        "cells": 16
+        "cells": 45
       },
       "consulta_diagnosticos": {
         "rows": 40,
         "cells": 40
       },
-      "alergias_paciente": {
-        "rows": 9,
-        "cells": 18
-      },
       "hospitalizaciones": {
-        "rows": 11,
-        "cells": 15
+        "rows": 4,
+        "cells": 4
       },
       "notas_enfermeria": {
         "rows": 21,
         "cells": 21
       },
-      "medicamentos": {
-        "rows": 15,
-        "cells": 75
-      },
       "recetas": {
-        "rows": 40,
-        "cells": 40
+        "rows": 25,
+        "cells": 25
       },
       "receta_detalle": {
-        "rows": 64,
-        "cells": 162
-      },
-      "movimientos_inventario": {
-        "rows": 38,
-        "cells": 38
-      },
-      "procedimientos": {
-        "rows": 8,
-        "cells": 16
+        "rows": 30,
+        "cells": 47
       },
       "ordenes_procedimiento": {
         "rows": 29,
@@ -149,28 +85,12 @@
         "rows": 15,
         "cells": 15
       },
-      "facturas": {
-        "rows": 29,
-        "cells": 29
-      },
       "factura_detalle": {
-        "rows": 60,
-        "cells": 60
-      },
-      "pagos": {
-        "rows": 24,
-        "cells": 24
-      },
-      "roles": {
-        "rows": 6,
-        "cells": 6
-      },
-      "usuarios": {
-        "rows": 7,
-        "cells": 7
+        "rows": 51,
+        "cells": 51
       }
     },
-    "already_complete": 484,
+    "already_complete": 966,
     "skipped_cells": 0,
     "missing_rows": 0,
     "success": true,
@@ -181,7 +101,7 @@
     "total_rows": 789,
     "recovery_log_updated": true
   },
-  "fin_utc": "2026-10-22T17:27:28+00:00",
+  "fin_utc": "2026-10-23T18:17:04+00:00",
   "estado": "APROBADO",
   "resumen": {
     "total": 22,
@@ -238,7 +158,7 @@
       "correcta": true
     },
     {
-      "prueba": "Claves, relaciones, fechas, estados, importes y cantidades se conservan",
+      "prueba": "Claves, relaciones, fechas, estados, importes y cantidades se conservan; solo cambian textos y duraciones autorizadas",
       "correcta": true
     },
     {
@@ -279,14 +199,8 @@
     }
   ],
   "huellas_sha256": {
-    "app_hospital/tests/integration_cleanup.py": "af6b1ec4948303a2f2d764801fe11e61680ae88dbb5a3128aebccae93a78d62b",
-    "app_hospital/data_cleanup.py": "03a0f07889bb36d66a2deba0f649684d055601ad6c6d2384c93a4576bf229ee1",
-    "datos/valores_completos.json": "ccd5165575f94c481501ae1d889566e9d6b8327c896a613df51767cbbfef108e"
-  },
-  "comparacion_canonica_independiente": {
-    "tablas": 36,
-    "filas": 789,
-    "coinciden": true,
-    "metodo": "El resultado esperado sobre el respaldo anterior coincide con las 36 tablas del conjunto canónico; la copia ejecutada coincide íntegramente con ese resultado esperado."
+    "app_hospital/tests/integration_cleanup.py": "44ee841ba7ef0c39b2667e4d85a68191791775e916c19ef7522e62a765f88ff4",
+    "app_hospital/data_cleanup.py": "31a7fcfcb8c696d29e1d856b3e3a40fda3e5bce60626eef4c569e095b5ce1c4f",
+    "datos/valores_completos.json": "3573c94e0deffd1b785035841141e21d3c8417b67e19751326b9acea9382d8e8"
   }
 }

@@ -2,7 +2,7 @@
 
 La entrega principal es una **base de datos MySQL con 36 tablas relacionadas y 789 registros ficticios**, incluidos 30 pacientes, 18 médicos, 15 medicamentos y 40 recetas. Está creada en un servidor local permanente y se incluye su respaldo exportado para instalar una copia en la computadora de cada integrante.
 
-El respaldo incluye la revisión completa de los textos de **19 tablas**: nombres, contactos, domicilios, medicamentos, motivos de consulta, notas, recetas, estudios y conceptos de cobro. Los registros muestran datos completos, sin valores como «domicilio ficticio» o «dosis simulada». Se conservan **95 teléfonos de diez dígitos, 59 correos personalizados y los 15 médicos aportados por el compañero**. [Qué se completó y cómo actualizar una copia anterior](DATOS_DEL_PROYECTO.md).
+La revisión del **23 de octubre de 2026** corrige también el relleno que no usaba la palabra «ficticio»: notas repetidas, referencias vagas, dosis sin cantidad e informes sin resultados. Los textos se relacionan con su consulta, medicamento, estudio o factura. Se conservan **95 teléfonos de diez dígitos, 59 correos personalizados y los 15 médicos aportados por el compañero**. [Qué se corrigió y cómo actualizar una copia anterior](DATOS_DEL_PROYECTO.md).
 
 El conjunto sigue siendo académico: las personas, contactos y operaciones no corresponden a un hospital real; las recetas no son indicaciones de tratamiento. La aclaración se mantiene aquí y en la documentación, en lugar de repetirse como relleno dentro de cada campo.
 
@@ -41,8 +41,8 @@ La base y la aplicación son entregas separadas. La interfaz de escritorio de [a
 1. Extrae **todo** el proyecto y comprueba que MySQL Server esté iniciado.
 2. Abre **ABRIR_HOSPITAL.bat**. Requiere Python 3.10 o posterior con Tkinter; la primera vez descarga las dependencias de `requirements.txt`.
 3. Escribe los datos de tu MySQL y pulsa **Probar conexión**. La aplicación indica si encontró una base compatible, si la base falta o si su estructura necesita revisión.
-4. Si ya tienes la base del proyecto, pulsa **Abrir hospital**. Si no existe, **Crear base con ejemplos** prepara una copia independiente con las 36 tablas, los 789 registros y los textos completos de la versión actual.
-5. Si abriste una copia anterior que todavía muestra textos de relleno, entra a **Inicio → Completar datos del proyecto**. La aplicación guarda un respaldo antes de actualizar; cambia los valores conocidos de las versiones anteriores y conserva los campos que el equipo ya editó. No elimina ni vuelve a crear la base.
+4. Si ya tienes la base del proyecto, pulsa **Abrir hospital**. Si no existe, **Crear base con ejemplos** prepara una copia independiente con las 36 tablas y los 789 registros de la versión actual.
+5. Para revisar una copia anterior, entra a **Inicio → Completar datos del proyecto**. La aplicación guarda un respaldo antes de actualizar los valores que reconoce; conserva los campos editados por el equipo e informa los que necesitan revisión manual. Lee el resultado aunque no haya actualizaciones automáticas pendientes.
 
 El [tutorial paso a paso](tutorial_interfaz/TUTORIAL.md) y el [PDF actualizado](tutorial_interfaz/tutorial_interfaz_hospital.pdf) explican los formularios y un ejercicio completo. **Probar conexión solo revisa; no instala ni modifica la base.** La aplicación conserva las bases existentes.
 

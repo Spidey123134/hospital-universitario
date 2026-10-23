@@ -907,11 +907,11 @@ INSERT INTO citas (cita_id, paciente_id, medico_id, inicio, fin, motivo, estado)
   (6, 3, 3, '2026-10-09 11:00:00', '2026-10-09 11:30:00', 'Consulta de seguimiento y revisión de evolución', 'CANCELADA');
 
 INSERT INTO consultas (consulta_id, cita_id, paciente_id, medico_id, fecha, tipo, motivo, notas, peso_kg, talla_cm, temperatura_c) VALUES
-  (1, 1, 1, 1, '2026-10-06 09:05:00', 'PROGRAMADA', 'Valoración por cefalea', 'Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.', 60.0, 160.0, 36.5),
-  (2, 2, 2, 2, '2026-10-07 10:05:00', 'PROGRAMADA', 'Valoración por dolor abdominal', 'Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.', 75.0, 175.0, 36.6),
-  (3, NULL, 3, 3, '2026-10-08 11:00:00', 'URGENCIA', 'Valoración por dolor lumbar', 'Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.', 65.0, 168.0, 36.7),
-  (4, 3, 4, 1, '2026-10-08 09:05:00', 'PROGRAMADA', 'Valoración por cefalea', 'Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.', 40.0, 145.0, 36.5),
-  (5, NULL, 5, 2, '2026-10-09 14:00:00', 'URGENCIA', 'Valoración por dolor lumbar', 'Se registraron antecedentes y signos vitales. La valoración y los documentos de atención quedan integrados al expediente.', 80.0, 172.0, 36.8);
+  (1, 1, 1, 1, '2026-10-06 09:05:00', 'PROGRAMADA', 'Valoración por cefalea', 'Daniela Serrano, 28 años. Dolor frontal opresivo desde la tarde anterior, asociado a una jornada prolongada frente a la pantalla. También refiere molestia epigástrica ocasional después de comer; niega vómito y traumatismo y permanece alerta y orientada. Mediciones del encuentro: peso 60 kg, talla 160 cm, temperatura 36.5 °C.', 60.0, 160.0, 36.5),
+  (2, 2, 2, 2, '2026-10-07 10:05:00', 'PROGRAMADA', 'Valoración por dolor abdominal', 'Arturo Valdés, 46 años. Dolor en la parte alta del abdomen después de comer, acompañado de distensión. A la palpación refiere molestia epigástrica sin rigidez abdominal. Mediciones del encuentro: peso 75 kg, talla 175 cm, temperatura 36.6 °C.', 75.0, 175.0, 36.6),
+  (3, NULL, 3, 3, '2026-10-08 11:00:00', 'URGENCIA', 'Valoración por dolor lumbar', 'Alex Rojas, 24 años. Dolor lumbar tras levantar una caja, que aumenta al incorporarse. Camina con lentitud y niega pérdida de fuerza; antecedente de urticaria con ibuprofeno. Comenta que está concluyendo el tratamiento de una infección dental; la receta de este encuentro cubre el último día del ciclo y no corresponde al dolor lumbar. Mediciones del encuentro: peso 65 kg, talla 168 cm, temperatura 36.7 °C.', 65.0, 168.0, 36.7),
+  (4, 3, 4, 1, '2026-10-08 09:05:00', 'PROGRAMADA', 'Valoración por cefalea', 'Lucía Navarro, 12 años. Acude acompañada por su madre por dolor de cabeza al salir de la escuela. Niega caída, vómito y alteración visual; responde al interrogatorio de acuerdo con su edad. Mediciones del encuentro: peso 40 kg, talla 145 cm, temperatura 36.5 °C.', 40.0, 145.0, 36.5),
+  (5, NULL, 5, 2, '2026-10-09 14:00:00', 'URGENCIA', 'Valoración por dolor lumbar', 'Ricardo Espinosa, 53 años. Dolor en región lumbar que dificulta girar el tronco. No refiere caída ni adormecimiento de piernas; se solicita observación por limitación para caminar. Mediciones del encuentro: peso 80 kg, talla 172 cm, temperatura 36.8 °C.', 80.0, 172.0, 36.8);
 
 INSERT INTO diagnosticos (diagnostico_id, codigo, descripcion) VALUES
   (1, 'DX-001', 'Cefalea'),
@@ -919,19 +919,19 @@ INSERT INTO diagnosticos (diagnostico_id, codigo, descripcion) VALUES
   (3, 'DX-003', 'Dolor lumbar');
 
 INSERT INTO consulta_diagnosticos (consulta_id, diagnostico_id, es_principal, observaciones) VALUES
-  (1, 1, 1, 'Diagnóstico principal registrado en la consulta.'),
-  (1, 2, 0, 'Diagnóstico complementario registrado en el expediente.'),
-  (2, 2, 1, 'Diagnóstico principal registrado en la consulta.'),
-  (3, 3, 1, 'Diagnóstico principal registrado en la consulta.'),
-  (4, 1, 1, 'Diagnóstico principal registrado en la consulta.'),
-  (5, 3, 1, 'Diagnóstico principal registrado en la consulta.');
+  (1, 1, 1, 'Dolor frontal opresivo desde la tarde anterior, asociado a una jornada prolongada frente a la pantalla.'),
+  (1, 2, 0, 'Molestia epigástrica ocasional después de comer, secundaria a la cefalea que motiva el encuentro.'),
+  (2, 2, 1, 'Dolor en la parte alta del abdomen después de comer, acompañado de distensión.'),
+  (3, 3, 1, 'Dolor lumbar tras levantar una caja, que aumenta al incorporarse.'),
+  (4, 1, 1, 'Acude acompañada por su madre por dolor de cabeza al salir de la escuela.'),
+  (5, 3, 1, 'Dolor en región lumbar que dificulta girar el tronco.');
 
 INSERT INTO alergias_paciente (alergia_id, paciente_id, sustancia, reaccion, fecha_registro) VALUES
   (1, 1, 'Penicilina', 'Erupción cutánea', '2026-09-01'),
   (2, 3, 'Ibuprofeno', 'Urticaria', '2026-09-02');
 
 INSERT INTO hospitalizaciones (hospitalizacion_id, consulta_ingreso_id, paciente_id, medico_responsable_id, fecha_ingreso, fecha_alta, motivo, resumen_alta) VALUES
-  (1, 3, 3, 3, '2026-10-08 12:00:00', '2026-10-09 12:00:00', 'Observación hospitalaria por dolor lumbar', 'Alta registrada tras valoración del médico responsable. Resumen de atención integrado al expediente.'),
+  (1, 3, 3, 3, '2026-10-08 12:00:00', '2026-10-09 12:00:00', 'Observación hospitalaria por dolor lumbar', 'Observación de Alex Rojas del 08/10 al 09/10 por dolor lumbar posterior a esfuerzo. Al egreso puede incorporarse y caminar con menor limitación; no refiere pérdida de fuerza. Se informa a su acompañante el antecedente de urticaria con ibuprofeno y se entrega el resumen de atención.'),
   (2, 5, 5, 2, '2026-10-09 15:00:00', NULL, 'Observación hospitalaria por dolor lumbar', NULL);
 
 INSERT INTO asignaciones_camilla (asignacion_id, hospitalizacion_id, camilla_id, inicio, fin) VALUES
@@ -940,9 +940,9 @@ INSERT INTO asignaciones_camilla (asignacion_id, hospitalizacion_id, camilla_id,
   (3, 2, 2, '2026-10-09 15:00:00', NULL);
 
 INSERT INTO notas_enfermeria (nota_id, hospitalizacion_id, personal_id, fecha, observacion) VALUES
-  (1, 1, 4, '2026-10-08 12:30:00', 'Se verificó identificación del paciente y ubicación en la camilla asignada.'),
-  (2, 1, 5, '2026-10-08 18:30:00', 'Se registró la entrega de turno y la continuidad de los cuidados indicados.'),
-  (3, 2, 4, '2026-10-09 15:30:00', 'Se registraron signos vitales y cuidados del turno en la hoja de enfermería.');
+  (1, 1, 4, '2026-10-08 12:30:00', 'Alex Rojas, camilla 1. Ingresa por dolor lumbar; se incorpora con apoyo y reconoce a la persona que lo acompaña. Se informa el antecedente de urticaria con ibuprofeno en la entrega inicial.'),
+  (2, 1, 5, '2026-10-08 18:30:00', 'Alex Rojas, camilla 3. Tras el cambio de camilla, refiere menor molestia al permanecer de lado y utiliza el timbre para solicitar ayuda al levantarse. Se entrega el turno con la alergia a ibuprofeno identificada.'),
+  (3, 2, 4, '2026-10-09 15:30:00', 'Ricardo Espinosa, camilla 2. Permanece en observación por dolor lumbar y pide apoyo para cambiar de posición. Acepta líquidos por vía oral y conserva comunicación clara durante el cuidado de ingreso.');
 
 INSERT INTO medicamentos (medicamento_id, codigo, principio_activo, concentracion, presentacion, unidad_inventario, stock_minimo) VALUES
   (1, 'MED-001', 'Paracetamol', '500 mg', 'Tableta', 'tableta', 20),
@@ -960,14 +960,14 @@ INSERT INTO lotes_medicamento (lote_id, medicamento_id, proveedor_id, numero_lot
   (4, 1, 2, 'LT-2026-0004', '2026-10-01', '2027-12-31', 13.0);
 
 INSERT INTO recetas (receta_id, consulta_id, fecha_prescripcion, observaciones) VALUES
-  (1, 1, '2026-10-06 09:20:00', 'Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.'),
-  (2, 3, '2026-10-08 11:30:00', 'Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.'),
-  (3, 4, '2026-10-08 09:20:00', 'Medicamentos e indicaciones registrados durante la consulta. Receta incorporada al expediente.');
+  (1, 1, '2026-10-06 09:20:00', 'Daniela Serrano. Paracetamol 500 mg: prescrito 8 tabletas, dispensado 8; Ibuprofeno 400 mg: prescrito 3 tabletas, dispensado 3. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.'),
+  (2, 3, '2026-10-08 11:30:00', 'Alex Rojas. Amoxicilina 250 mg/5 mL: prescrito 4 frascos, dispensado 0; Paracetamol 500 mg: prescrito 2 tabletas, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones. La amoxicilina cubre el último día del tratamiento dental concurrente.'),
+  (3, 4, '2026-10-08 09:20:00', 'Lucía Navarro. Ibuprofeno 400 mg: prescrito 2 tabletas, dispensado 0. Cantidades expresadas en unidades de inventario o envases; no equivalen al número de administraciones.');
 
 INSERT INTO receta_detalle (receta_id, renglon, medicamento_id, dosis, frecuencia, duracion_dias, via_administracion, cantidad_prescrita) VALUES
   (1, 1, 1, '1 tableta', 'Cada 24 horas', 1, 'Oral', 8),
   (1, 2, 2, '1 tableta', 'Cada 24 horas', 1, 'Oral', 3),
-  (2, 1, 3, '5 mL', 'Cada 24 horas', 1, 'Oral', 4),
+  (2, 1, 3, '500 mg (10 mL de suspensión de 250 mg/5 mL)', 'Cada 8 horas', 1, 'Oral', 4),
   (2, 2, 1, '1 tableta', 'Cada 24 horas', 1, 'Oral', 2),
   (3, 1, 2, '1 tableta', 'Cada 24 horas', 1, 'Oral', 2);
 
@@ -995,14 +995,14 @@ INSERT INTO procedimientos (procedimiento_id, codigo, nombre, tipo, precio_refer
   (4, 'PROC-004', 'Apendicectomía', 'CIRUGIA', 800.0);
 
 INSERT INTO ordenes_procedimiento (orden_id, consulta_id, procedimiento_id, fecha_solicitud, fecha_programada, estado, indicaciones) VALUES
-  (1, 1, 1, '2026-10-06 09:20:00', '2026-10-06 11:00:00', 'REALIZADA', 'Realizar biometría hemática y anexar el informe al expediente.'),
-  (2, 2, 2, '2026-10-07 10:20:00', '2026-10-13 11:00:00', 'PROGRAMADA', 'Realizar radiografía de tórax y anexar el informe al expediente.'),
-  (3, 3, 3, '2026-10-08 11:30:00', '2026-10-08 13:00:00', 'REALIZADA', 'Realizar electrocardiograma y anexar el informe al expediente.'),
-  (4, 5, 4, '2026-10-09 14:30:00', NULL, 'SOLICITADA', 'Realizar apendicectomía y anexar el informe al expediente.');
+  (1, 1, 1, '2026-10-06 09:20:00', '2026-10-06 11:00:00', 'REALIZADA', 'EXP-2026-0001. Biometría hemática en sangre venosa para la valoración del encuentro. Identificar la muestra con expediente y nombre; informar hemoglobina, hematocrito, leucocitos y plaquetas.'),
+  (2, 2, 2, '2026-10-07 10:20:00', '2026-10-13 11:00:00', 'PROGRAMADA', 'EXP-2026-0002. Radiografía de tórax en la fecha programada para completar la valoración. Verificar identidad y retirar objetos metálicos del campo antes de la adquisición; emitir descripción de las imágenes.'),
+  (3, 3, 3, '2026-10-08 11:30:00', '2026-10-08 13:00:00', 'REALIZADA', 'EXP-2026-0003. Electrocardiograma de 12 derivaciones durante la observación hospitalaria. Registrar frecuencia, intervalos y calidad del trazado con la identificación del expediente.'),
+  (4, 5, 4, '2026-10-09 14:30:00', NULL, 'SOLICITADA', 'EXP-2026-0005. Solicitud de apendicectomía para evaluación por el equipo quirúrgico. Confirmar indicación, consentimiento, valoración preoperatoria y disponibilidad de sala antes de fijar la fecha.');
 
 INSERT INTO resultados_procedimiento (resultado_id, orden_id, personal_id, fecha_resultado, informe) VALUES
-  (1, 1, 8, '2026-10-06 12:00:00', 'Informe de biometría hemática. Documento recibido y registrado en el expediente EXP-2026-0001.'),
-  (2, 3, 3, '2026-10-08 14:00:00', 'Informe de electrocardiograma. Documento recibido y registrado en el expediente EXP-2026-0003.');
+  (1, 1, 8, '2026-10-06 12:00:00', 'Biometría hemática en sangre venosa: hemoglobina 13.4 g/dL; hematocrito 40.1 %; leucocitos 6.8 × 10^9/L; neutrófilos 57 %; linfocitos 33 %; plaquetas 258 × 10^9/L. Muestra sin coágulos visibles al procesamiento.'),
+  (2, 3, 3, '2026-10-08 14:00:00', 'Electrocardiograma de 12 derivaciones: frecuencia 74 latidos/min; intervalo PR 160 ms; QRS 88 ms; QTc 410 ms. Ondas P preceden a cada complejo QRS y el trazado conserva una secuencia regular; sin artefactos que impidan la lectura.');
 
 INSERT INTO facturas (factura_id, folio, paciente_id, poliza_id, fecha, estado) VALUES
   (1, 'FAC-2026-00001', 1, 1, '2026-10-06 13:00:00', 'ABIERTA'),
@@ -1013,7 +1013,7 @@ INSERT INTO facturas (factura_id, folio, paciente_id, poliza_id, fecha, estado) 
 INSERT INTO factura_detalle (factura_id, renglon, descripcion, cantidad, precio_unitario, descuento) VALUES
   (1, 1, 'Consulta de medicina general', 1.0, 500.0, 50.0),
   (1, 2, 'Biometría hemática', 1.0, 300.0, 0.0),
-  (1, 3, 'Medicamento dispensado en farmacia', 8.0, 12.5, 0.0),
+  (1, 3, 'Paracetamol 500 mg, tableta; dispensación 1, renglón 1', 8.0, 12.5, 0.0),
   (2, 1, 'Consulta de medicina interna', 1.0, 600.0, 0.0),
   (2, 2, 'Radiografía de tórax', 1.0, 200.0, 0.0),
   (3, 1, 'Valoración médica de ingreso', 1.0, 450.0, 0.0),

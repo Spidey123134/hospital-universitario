@@ -84,6 +84,30 @@ class PlanTests(TestCase):
 
 
 class PreservationTests(TestCase):
+    def test_duration_correction_is_restricted_and_does_not_touch_team_recipes(self):
+        change = entry('receta_detalle', {'receta_id': 5, 'renglon': 1},
+                       'duracion_dias', old='4', new=2)
+        loaded = PlanTests().load(plan(change))
+        row = {'receta_id': 5, 'renglon': 1, 'medicamento_id': 5, 'duracion_dias': 4}
+        pending, report = cleanup._pending(loaded, snapshot('receta_detalle', row))
+        self.assertEqual(report['cells'], 1)
+        self.assertEqual(pending[0]['fields']['duracion_dias'], 2)
+        for recipe_id, target in ((26, 2), (5, 3), (5, True), (5, 0)):
+            bad = entry('receta_detalle', {'receta_id': recipe_id, 'renglon': 1},
+                        'duracion_dias', old='4', new=target)
+            with self.subTest(recipe_id=recipe_id, target=target), self.assertRaises(ServiceError):
+                PlanTests().load(plan(bad))
+
+    def test_duration_correction_preserves_custom_duration_and_changed_medicine(self):
+        change = entry('receta_detalle', {'receta_id': 5, 'renglon': 1},
+                       'duracion_dias', old='4', new=2)
+        for duration, medicine in ((3, 5), (4, 1)):
+            row = {'receta_id': 5, 'renglon': 1, 'medicamento_id': medicine,
+                   'duracion_dias': duration}
+            pending, report = cleanup._pending(plan(change), snapshot('receta_detalle', row))
+            self.assertEqual(pending, [])
+            self.assertEqual(report['skipped_cells'], 1)
+
     def test_only_exact_original_changes_and_team_edits_survive(self):
         change = entry()
         initial = snapshot(row={"paciente_id": 1, "domicilio": "Domicilio ficticio 1"})

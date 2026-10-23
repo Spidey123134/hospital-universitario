@@ -1,0 +1,14 @@
+{
+  "fecha_utc": "2026-10-23T18:13:56.953372+00:00",
+  "estado": "APROBADO",
+  "resumen": {
+    "total": 18,
+    "correctas": 18,
+    "fallidas": 0
+  },
+  "sin_mysql": true,
+  "huellas_sha256": {
+    "app_hospital/tests/audit_data.py": "828da626e0ea43a9f7a17191113e8cddbfbca63fe6400a12d2fd6142a627effc",
+    "app_hospital/tests/test_audit_data.py": "645c1d21a45a6919033f83761a79895b0c4f966e38392d425aaba1ced8840dc8"
+  }
+}

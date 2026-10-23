@@ -1,0 +1,239 @@
+{
+  "fecha_utc": "2026-10-23T18:20:11+00:00",
+  "estado": "APROBADO",
+  "alcance": "Contenido del conjunto académico y relaciones verificables; no certificación clínica.",
+  "tablas": 36,
+  "registros": 789,
+  "campos_textuales_revisados": 1696,
+  "marcadores_explicitos": 0,
+  "frases_genericas_anteriores": {
+    "consultas.notas": 0,
+    "consulta_diagnosticos.observaciones": 0,
+    "hospitalizaciones.resumen_alta": 0,
+    "recetas.observaciones": 0,
+    "factura_detalle.descripcion": 0
+  },
+  "resumen": {
+    "total": 17,
+    "correctas": 17,
+    "fallidas": 0
+  },
+  "pruebas": [
+    {
+      "nombre": "Las 36 tablas contienen registros",
+      "correcta": true
+    },
+    {
+      "nombre": "No hay marcadores explícitos en los textos",
+      "correcta": true,
+      "detalle": {
+        "campos_revisados": 1696,
+        "coincidencias": 0
+      }
+    },
+    {
+      "nombre": "Sin frase genérica anterior en consultas.notas",
+      "correcta": true,
+      "detalle": 0
+    },
+    {
+      "nombre": "Sin frase genérica anterior en consulta_diagnosticos.observaciones",
+      "correcta": true,
+      "detalle": 0
+    },
+    {
+      "nombre": "Sin frase genérica anterior en hospitalizaciones.resumen_alta",
+      "correcta": true,
+      "detalle": 0
+    },
+    {
+      "nombre": "Sin frase genérica anterior en recetas.observaciones",
+      "correcta": true,
+      "detalle": 0
+    },
+    {
+      "nombre": "Sin frase genérica anterior en factura_detalle.descripcion",
+      "correcta": true,
+      "detalle": 0
+    },
+    {
+      "nombre": "Las notas de las consultas no son una plantilla repetida",
+      "correcta": true,
+      "detalle": {
+        "notas": 45,
+        "textos_distintos": 45
+      }
+    },
+    {
+      "nombre": "No se afirma una captura de signos vitales inexistente",
+      "correcta": true,
+      "detalle": []
+    },
+    {
+      "nombre": "Los informes contienen resultados y no solo recepción de documentos",
+      "correcta": true,
+      "detalle": []
+    },
+    {
+      "nombre": "Las dosis no se sustituyen por Según orden médica",
+      "correcta": true,
+      "detalle": []
+    },
+    {
+      "nombre": "Los ejemplos propios de ketorolaco parenteral no superan dos días",
+      "correcta": true,
+      "detalle": []
+    },
+    {
+      "nombre": "Las cantidades entregadas no superan las prescritas",
+      "correcta": true
+    },
+    {
+      "nombre": "Los resultados corresponden a órdenes realizadas",
+      "correcta": true
+    },
+    {
+      "nombre": "Las altas abiertas conservan resumen nulo y las cerradas tienen resumen",
+      "correcta": true
+    },
+    {
+      "nombre": "Se conservan los 15 nombres, apellidos y cédulas del equipo",
+      "correcta": true
+    },
+    {
+      "nombre": "Se conservan exactamente las 15 dosis, vías y observaciones del equipo",
+      "correcta": true
+    }
+  ],
+  "huellas_sha256": {
+    "app_hospital/tests/audit_quality.py": "e74f77c218ea65e4ce2027b4ebfa26c406af131634d3ee218d700d3e9ed942c4",
+    "app_hospital/tests/audit_data.py": "828da626e0ea43a9f7a17191113e8cddbfbca63fe6400a12d2fd6142a627effc",
+    "datos/valores_completos.json": "3573c94e0deffd1b785035841141e21d3c8417b67e19751326b9acea9382d8e8",
+    "03_datos_demo.sql": "bfab6a283ae6da6d8ff19130e9b482c42f761b52811900d563b4017ad8a2ac20",
+    "05_datos_demo_ampliados.sql": "5dd37755cfcea00fa93c3a7917a08d62205f34b9c6a5bb16358beddd6f674b4b"
+  },
+  "version_datos": "contenido_revisado_2026_10_23",
+  "actualizacion": {
+    "estado": "APROBADO",
+    "fecha_utc": "2026-10-23T18:20:11.833897+00:00",
+    "modo": "apply",
+    "campos_actualizados": 277,
+    "textos_actualizados": 273,
+    "duraciones_actualizadas": 4,
+    "registros_actualizados": 260,
+    "tablas_actualizadas": {
+      "consultas": {
+        "rows": 45,
+        "cells": 45
+      },
+      "consulta_diagnosticos": {
+        "rows": 40,
+        "cells": 40
+      },
+      "hospitalizaciones": {
+        "rows": 4,
+        "cells": 4
+      },
+      "notas_enfermeria": {
+        "rows": 21,
+        "cells": 21
+      },
+      "recetas": {
+        "rows": 25,
+        "cells": 25
+      },
+      "receta_detalle": {
+        "rows": 30,
+        "cells": 47
+      },
+      "ordenes_procedimiento": {
+        "rows": 29,
+        "cells": 29
+      },
+      "resultados_procedimiento": {
+        "rows": 15,
+        "cells": 15
+      },
+      "factura_detalle": {
+        "rows": 51,
+        "cells": 51
+      }
+    },
+    "filas_identicas_al_snapshot_revisado": true,
+    "actualizacion_idempotente": true,
+    "reglas_restauradas_exactamente": true,
+    "reglas": 23,
+    "plan_sha256": "3573c94e0deffd1b785035841141e21d3c8417b67e19751326b9acea9382d8e8",
+    "auditoria_calidad": {
+      "total": 17,
+      "correctas": 17,
+      "fallidas": 0
+    }
+  },
+  "duraciones_corregidas": [
+    {
+      "table": "receta_detalle",
+      "keys": {
+        "receta_id": 5,
+        "renglon": 1
+      },
+      "column": "duracion_dias",
+      "old": 4,
+      "new": 2,
+      "source": "https://cima.aemps.es/cima/dochtml/ft/84357/FT_84357.html",
+      "reason": "La ficha técnica limita el ketorolaco parenteral a dos días."
+    },
+    {
+      "table": "receta_detalle",
+      "keys": {
+        "receta_id": 13,
+        "renglon": 2
+      },
+      "column": "duracion_dias",
+      "old": 7,
+      "new": 2,
+      "source": "https://cima.aemps.es/cima/dochtml/ft/84357/FT_84357.html",
+      "reason": "La ficha técnica limita el ketorolaco parenteral a dos días."
+    },
+    {
+      "table": "receta_detalle",
+      "keys": {
+        "receta_id": 17,
+        "renglon": 1
+      },
+      "column": "duracion_dias",
+      "old": 6,
+      "new": 2,
+      "source": "https://cima.aemps.es/cima/dochtml/ft/84357/FT_84357.html",
+      "reason": "La ficha técnica limita el ketorolaco parenteral a dos días."
+    },
+    {
+      "table": "receta_detalle",
+      "keys": {
+        "receta_id": 25,
+        "renglon": 2
+      },
+      "column": "duracion_dias",
+      "old": 4,
+      "new": 2,
+      "source": "https://cima.aemps.es/cima/dochtml/ft/84357/FT_84357.html",
+      "reason": "La ficha técnica limita el ketorolaco parenteral a dos días."
+    }
+  ],
+  "fuentes_de_formulacion": [
+    "https://cima.aemps.es/cima/dochtml/ft/84357/FT_84357.html",
+    "https://cima.aemps.es/cima/dochtml/ft/02230003/FT_02230003.html",
+    "https://cima.aemps.es/cima/dochtml/ft/66753/FichaTecnica_66753.html",
+    "https://cima.aemps.es/cima/dochtml/ft/39943/FichaTecnica_39943.html",
+    "https://cima.aemps.es/cima/dochtml/ft/88465/FT_88465.html",
+    "https://cima.aemps.es/cima/dochtml/ft/63946/FT_63946.html",
+    "https://cima.aemps.es/cima/dochtml/ft/74958/FT_74958.html",
+    "https://cima.aemps.es/cima/dochtml/ft/83588/FT_83588.html",
+    "https://cima.aemps.es/cima/dochtml/ft/68167/FichaTecnica_68167.html",
+    "https://cima.aemps.es/cima/dochtml/ft/89319/FT_89319.html"
+  ],
+  "respaldo_previo_json_sql_y_reglas_guardado_fuera_del_repositorio": true,
+  "sin_cambios_en_ids_relaciones_fechas_cantidades_importes_estados": true,
+  "comparacion_independiente_de_todas_las_filas": true,
+  "verificado_tras_reiniciar_mysql": true
+}

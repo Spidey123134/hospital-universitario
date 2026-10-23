@@ -1,7 +1,7 @@
 {
   "proyecto": "Hospital universitario",
-  "base_temporal": "hospital_prueba_14427726c8fb4b8eacc34605ba4fe984",
-  "inicio_utc": "2026-10-22T17:22:47+00:00",
+  "base_temporal": "hospital_prueba_4c96922da7274554b28cd8b267a817a0",
+  "inicio_utc": "2026-10-23T18:14:13+00:00",
   "servidor": {
     "host": "127.0.0.1",
     "port": 3307
@@ -11,7 +11,7 @@
     "detalle": "Base temporal eliminada.",
     "error_mysql": null
   },
-  "fin_utc": "2026-10-22T17:24:57+00:00",
+  "fin_utc": "2026-10-23T18:16:32+00:00",
   "estado": "APROBADO",
   "resumen": {
     "total": 82,

@@ -25,6 +25,10 @@ from .db import HospitalService, PROJECT, ServiceError, Settings, expected_struc
 
 PLAN_PATH = PROJECT / "datos" / "valores_completos.json"
 TEXT_TYPES = frozenset(("char", "varchar", "tinytext", "text", "mediumtext", "longtext"))
+# Única corrección numérica del conjunto académico: limitar la duración de las
+# recetas originales generadas por el proyecto. No habilita importes, cantidades,
+# claves, estados ni las recetas 26..40 transcritas por el equipo.
+INTEGER_CORRECTIONS = frozenset({('receta_detalle', 'duracion_dias')})
 PRIMARY_KEYS = {
     "departamentos": ("departamento_id",), "especialidades": ("especialidad_id",),
     "personal": ("personal_id",), "medicos": ("medico_id",),
@@ -60,7 +64,15 @@ HEX_DIGEST = re.compile(r"[a-f0-9]{64}\Z")
 
 
 def _digest(value):
+    if type(value) is int:
+        value = str(value)
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+def _integer_correction(table, keys, column, value):
+    return ((table, column) in INTEGER_CORRECTIONS
+            and type(keys.get('receta_id')) is int and 1 <= keys['receta_id'] <= 25
+            and type(value) is int and 1 <= value <= 2)
 
 
 def _load_plan():
@@ -91,8 +103,9 @@ def _load_plan():
         for column, spec in fields.items():
             quote(column)
             if (not isinstance(spec, dict) or set(spec) != {"value", "source_sha256"}
-                    or not isinstance(spec["value"], str) or not spec["value"]
-                    or "\x00" in spec["value"] or not isinstance(spec["source_sha256"], list)
+                    or not ((isinstance(spec["value"], str) and spec["value"] and "\x00" not in spec["value"])
+                            or _integer_correction(table, keys, column, spec["value"]))
+                    or not isinstance(spec["source_sha256"], list)
                     or not spec["source_sha256"] or len(spec["source_sha256"]) > 100
                     or any(not isinstance(h, str) or not HEX_DIGEST.fullmatch(h)
                            for h in spec["source_sha256"])):
@@ -130,10 +143,13 @@ def _validate_fields(plan, metadata, foreign):
         table = change["table"]
         for column, spec in change["fields"].items():
             field = metadata[table].get(column)
-            if (not field or field["data_type"] not in TEXT_TYPES or field["generated"]
+            numeric = _integer_correction(table, change['keys'], column, spec['value'])
+            if (not field or not ((field["data_type"] in TEXT_TYPES and isinstance(spec['value'], str))
+                                  or (numeric and field['data_type'] in ('tinyint', 'smallint', 'mediumint', 'int')))
+                    or field["generated"]
                     or column in PRIMARY_KEYS[table] or column in foreign[table]):
-                raise ServiceError("El plan intenta cambiar una clave, fecha, estado o cantidad. No se modificó ningún dato.")
-            if field["max_length"] is not None and len(spec["value"]) > field["max_length"]:
+                raise ServiceError("El plan intenta cambiar un campo fuera de los textos y duraciones autorizados. No se modificó ningún dato.")
+            if isinstance(spec['value'], str) and field["max_length"] is not None and len(spec["value"]) > field["max_length"]:
                 raise ServiceError("Un texto del plan supera la longitud de su columna. No se modificó ningún dato.")
 
 
@@ -163,7 +179,10 @@ def _pending(plan, snapshot):
             current = row[name]
             if current == spec["value"]:
                 complete += 1
-            elif isinstance(current, str) and _digest(current) in spec["source_sha256"]:
+            elif ((isinstance(current, str) or (type(current) is int
+                   and _integer_correction(table, keys, name, spec['value'])
+                   and row.get('medicamento_id') == 5))
+                  and _digest(current) in spec["source_sha256"]):
                 fields[name], old[name] = spec["value"], current
             else:
                 skipped += 1

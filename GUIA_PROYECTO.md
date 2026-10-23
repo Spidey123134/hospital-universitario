@@ -10,7 +10,7 @@ Propuesta académica integral con **36 tablas**, diagramas físicos, diccionario
 
 **Demostración ampliada y aporte del equipo:** para una instalación nueva con más registros, usa `hospital_demostracion.sql`. Si ya cargaste la muestra inicial, agrega `05_datos_demo_ampliados.sql` una vez. [DATOS_DEMOSTRACION.md](DATOS_DEMOSTRACION.md) explica la carga y sus conteos; [aporte_equipo/README.md](aporte_equipo/README.md) documenta la fusión de las capturas. Los diagramas y el diccionario describen la misma estructura de 36 tablas. Los números del reporte y del tutorial corresponden a la muestra inicial; las 122 comprobaciones de la ampliación están en `VALIDACION_DATOS_AMPLIADOS.json`.
 
-Para estudiar el uso técnico de SQL en Workbench se conserva `tutorial/tutorial_hospital_principiantes.docx` y su PDF de 27 páginas. `tutorial/hospital_practica.sql` crea una base ficticia independiente para esos ejercicios. Su SQL pasó 28 de 28 comprobaciones. Para operar el hospital mediante formularios, usa el tutorial nuevo de `tutorial_interfaz`.
+Para estudiar el uso técnico de SQL en Workbench se conserva el [tutorial técnico](tutorial/README.md). Su Word y su PDF son material de una versión anterior; pueden mostrar nombres y ejemplos que ya cambiaron. Para los pasos y datos actuales, consulta [BASE_DE_DATOS.md](BASE_DE_DATOS.md) y [el tutorial de la interfaz](tutorial_interfaz/TUTORIAL.md). `tutorial/hospital_practica.sql` crea una base independiente para los ejercicios técnicos y tiene su propia evidencia de validación.
 
 1. Lee `REVISION.md` para entender qué había y qué se corrigió.
 2. Abre `diagramas/vision_modulos.svg` y `diagramas/er_completo.svg` en un navegador; usa zoom para el ER completo. Los SVG son vectoriales.
@@ -62,7 +62,7 @@ Los seis procedimientos de negocio gestionan sus propias transacciones. Invócal
 
 En inventario, captura movimientos por orden cronológico de cada lote; las rutinas rechazan fechas anteriores al último movimiento. Las correcciones se hacen con un nuevo AJUSTE y su motivo. No modifiques ni borres movimientos históricos. En cobros, crea la factura ABIERTA, agrega sus detalles y luego actualízala a EMITIDA; los pagos registrados son inmutables y no hay flujo de devolución en este alcance.
 
-Los usuarios ficticios se cargan inactivos y con hashes marcadores sin credenciales funcionales. La aplicación de escritorio utiliza la conexión MySQL y no implementa autenticación de empleados. Invoca los procedimientos para agenda, camas, inventario, entregas y pagos, y restringe las escrituras directas de esos historiales desde sus formularios.
+Las siete cuentas de ejemplo de `usuarios` se cargan inactivas y con hashes PBKDF2 válidos; no se distribuyen contraseñas para utilizarlas. La aplicación de escritorio utiliza la conexión MySQL y no implementa autenticación de empleados. Invoca los procedimientos para agenda, camas, inventario, entregas y pagos, y restringe las escrituras directas de esos historiales desde sus formularios.
 
 ## Guion para defender el proyecto
 

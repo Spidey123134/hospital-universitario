@@ -1,6 +1,6 @@
 {
   "estado": "APROBADO",
-  "fecha_utc": "2026-10-22T17:24:58+00:00",
+  "fecha_utc": "2026-10-23T18:16:36+00:00",
   "fecha_didactica": "2026-10-10",
   "servidor": {
     "version": "8.0.45",
@@ -8,7 +8,7 @@
     "puerto": 3307,
     "base_de_prueba_aislada_por_uuid": true
   },
-  "base_temporal": "hospital_tutorial_18f82849696946ed851d13ccc7fc5e3c",
+  "base_temporal": "hospital_tutorial_637bc0c0ebd848f88c13365d22dec2df",
   "base_temporal_eliminada": true,
   "instancia_detenida_al_final": false,
   "total": 28,
@@ -16,10 +16,10 @@
   "fallidas": 0,
   "alcance": "SQL del tutorial sobre copia UUID propia; no valida la interfaz de Workbench ni Reverse Engineer.",
   "huellas_sha256_originales": {
-    "hospital_completo.sql": "09690887e8f5455b209ece9c6da1f51043c5e02e41be59d8eddfe6628499207f",
+    "hospital_completo.sql": "2a0117c9616460841151052ef95b4060366ba0415cecbe093c18c39edff6472b",
     "01_esquema.sql": "bbe9ed69d896dfbfbb60c9aaec783b4116ec07cf3266eeaba03c2383ca4dfec1",
     "02_reglas.sql": "a506582fb8fa5c142520acabfc336ab720dee06e196445e8d8b32b1902a3b484",
-    "03_datos_demo.sql": "447164a593158faaf210cea84173f92868c6fcacba270ff1ad5a9cdc19e7cda9",
+    "03_datos_demo.sql": "bfab6a283ae6da6d8ff19130e9b482c42f761b52811900d563b4017ad8a2ac20",
     "04_consultas.sql": "34b39f2b0ec66dc37792fc2f9a0a6b5fc96eaa362062a4b144939fe2bf02e86d"
   },
   "resultados": [
@@ -43,8 +43,8 @@
       "categoria": "ejercicio",
       "correcta": true,
       "detalle": "Resultado esperado confirmado.",
-      "esperado": "hospital_tutorial_18f82849696946ed851d13ccc7fc5e3c",
-      "obtenido": "hospital_tutorial_18f82849696946ed851d13ccc7fc5e3c",
+      "esperado": "hospital_tutorial_637bc0c0ebd848f88c13365d22dec2df",
+      "obtenido": "hospital_tutorial_637bc0c0ebd848f88c13365d22dec2df",
       "error_mysql": null
     },
     {

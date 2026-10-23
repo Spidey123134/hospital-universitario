@@ -493,7 +493,7 @@ Los seis procedimientos de negocio gestionan sus propias transacciones. Invócal
 
 En inventario, captura movimientos por orden cronológico de cada lote; las rutinas rechazan fechas anteriores al último movimiento. Las correcciones se hacen con un nuevo AJUSTE y su motivo. No modifiques ni borres movimientos históricos. En cobros, crea la factura ABIERTA, agrega sus detalles y luego actualízala a EMITIDA; los pagos registrados son inmutables y no hay flujo de devolución en este alcance.
 
-Los usuarios ficticios se cargan inactivos y con hashes marcadores sin credenciales funcionales. La propuesta no implementa autenticación. Las reglas de agenda, camas y saldos que se implementan en procedimientos requieren que la aplicación futura use esas operaciones y restrinja escrituras directas.
+Las siete cuentas de ejemplo de usuarios se cargan inactivas y con hashes PBKDF2 válidos; no se distribuyen contraseñas para utilizarlas. La aplicación de escritorio usa la conexión MySQL y no implementa autenticación de empleados. Sus formularios invocan los procedimientos de agenda, camas, inventario, entregas y pagos y restringen la modificación directa de esos historiales.
 
 ## Guion para defender el proyecto
 
@@ -638,7 +638,7 @@ def pdf_report(tables, original):
     para('Interoperabilidad HL7/FHIR, PACS/DICOM, expediente firmado y versionado, consentimientos, auditoría integral, respaldo operativo, autenticación y permisos reales, nómina, compras completas, guardias/turnos, triaje especializado, reclamaciones de seguros y operación multisede. Esas ampliaciones requieren requisitos y pruebas específicos.')
     heading('Uso y estado de pruebas',2)
     para('En MySQL Workbench, elegir una instalación: hospital_completo.sql una vez, o 01_esquema.sql → 02_reglas.sql → 03_datos_demo.sql. No ejecutar ambas opciones. Después ejecutar las 20 consultas de 04_consultas.sql. La base requerida es MySQL 8.0.16 o posterior, con InnoDB y utf8mb4; no se da por compatible con MariaDB.')
-    para('02_reglas.sql aporta 6 vistas, 6 procedimientos y 23 triggers. Los CALL de negocio gestionan sus propias transacciones y se ejecutan como operaciones autónomas, fuera de otra transacción. Sus parámetros de fecha permiten controlar los casos. Los usuarios ficticios están inactivos y sus hashes son marcadores; no existen credenciales funcionales ni autenticación implementada.')
+    para('02_reglas.sql aporta 6 vistas, 6 procedimientos y 23 triggers. Los CALL de negocio gestionan sus propias transacciones y se ejecutan como operaciones autónomas, fuera de otra transacción. Sus parámetros de fecha permiten controlar los casos. Las siete cuentas de ejemplo están inactivas y contienen hashes PBKDF2 válidos; no se distribuyen sus contraseñas. La aplicación usa una conexión MySQL y no implementa autenticación de empleados.')
     para('Versión validada: '+VERSION_VALIDADA)
     para(ESTADO_PRUEBAS)
     para('La generación documental comprueba 36 tablas, PK presentes y FKs que apuntan a tablas/columnas existentes. Esta inspección estática no sustituye la compilación del SQL, la carga de datos, las pruebas de rechazo ni pruebas concurrentes en servidor.')

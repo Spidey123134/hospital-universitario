@@ -60,7 +60,7 @@ def main():
         with connection.cursor() as cur:
             cur.execute('SELECT COUNT(*) FROM information_schema.schemata WHERE schema_name=%s',(database,))
             check('La base UUID esta libre',cur.fetchone()[0]==0)
-        with patch.object(ui,'CONFIG',qa/'conexion_prueba.json'),patch.object(ui.messagebox,'showerror',side_effect=lambda title,text,**k:dialogs.append(('error',title,text))),patch.object(ui.messagebox,'showinfo',side_effect=lambda title,text,**k:dialogs.append(('info',title,text))),patch.object(ui.messagebox,'askyesno',return_value=True):
+        with patch.object(ui,'CONFIG',qa/'conexion_prueba.json'),patch.object(ui.messagebox,'showerror',side_effect=lambda title,text,**k:dialogs.append(('error',title,text))),patch.object(ui.messagebox,'showinfo',side_effect=lambda title,text,**k:dialogs.append(('info',title,text))),patch.object(ui.messagebox,'showwarning',side_effect=lambda title,text,**k:dialogs.append(('warning',title,text))),patch.object(ui.messagebox,'askyesno',return_value=True):
             app=ui.HospitalApp(); app.geometry('1280x850+30+20'); app.update()
             capture(app,'01_conexion.png')
             for key,value in dict(host=args.host,port=str(args.port),user=args.user,password=password,database=database).items(): app.connection_vars[key].set(value)
@@ -77,6 +77,29 @@ def main():
                 app.complete_project_data(); wait(app)
                 check('Completar datos en una base limpia informa sin modificar ni pedir respaldo',not cleanup_backup.called and any(item[0]=='info' and 'No quedan valores iniciales pendientes' in item[2] for item in dialogs[dialogs_before:]),str({'respaldo_solicitado':cleanup_backup.called,'dialogos':dialogs[dialogs_before:]}))
             check('Completar datos conserva las 36 tablas sin relleno',scan_service(app.service.settings)['matching_cells']==0)
+            # El marcador no existe en ninguna huella del plan: una edición del
+            # equipo debe advertirse, conservarse y poder corregirse a mano.
+            # Esta comprobación escribe SOLO en la base UUID creada arriba.
+            check('El escenario de marcador desconocido usa solo la base UUID propia',owned and app.service.settings.database==database and database.startswith('hospital_prueba_'))
+            patient_before=next(row for row in app.service.browse('pacientes',limit=200)['rows'] if row['paciente_id']==1)
+            custom_marker='Domicilio fictio editado por equipo'
+            try:
+                app.service.update('pacientes',{'paciente_id':1},{'domicilio':custom_marker})
+                marker_audit=scan_service(app.service.settings)
+                check('La auditoria reconoce fictio sin confundir el resto de la base',marker_audit['matching_cells']==1 and any(row['table']=='pacientes' and row['column']=='domicilio' for row in marker_audit['examples']))
+                dialogs_before=len(dialogs)
+                with patch.object(ui.filedialog,'asksaveasfilename') as cleanup_backup:
+                    app.complete_project_data(); wait(app)
+                    marker_dialogs=dialogs[dialogs_before:]
+                    check('Plan sin cambios advierte marcador desconocido y campo personalizado sin pedir respaldo',not cleanup_backup.called and any(item[0]=='warning' and item[1]=='Revisión con pendientes' and 'marcadores de relleno' in item[2] and 'campo que difiere del plan' in item[2] and 'pacientes (paciente_id=1): domicilio' in item[2] for item in marker_dialogs),str(marker_dialogs))
+                    check('La advertencia no promete que los expedientes esten completos',not any(item[0]=='info' for item in marker_dialogs) and any('no comprueba que cada expediente' in item[2] for item in marker_dialogs))
+                patient_after=next(row for row in app.service.browse('pacientes',limit=200)['rows'] if row['paciente_id']==1)
+                check('Completar datos conserva el domicilio personalizado y todos los demas campos',patient_after=={**patient_before,'domicilio':custom_marker})
+            finally:
+                if app.service.settings.database!=database:
+                    raise AssertionError('El escenario de datos propios cambio inesperadamente de base.')
+                app.service.update('pacientes',{'paciente_id':1},{'domicilio':patient_before['domicilio']})
+            check('La correccion manual restaura el paciente de la copia y deja cero marcadores',next(row for row in app.service.browse('pacientes',limit=200)['rows'] if row['paciente_id']==1)==patient_before and scan_service(app.service.settings)['matching_cells']==0)
             first_doctor=next(row for row in app.service.browse('personal',limit=200)['rows'] if row['personal_id']==1)
             check('La instalacion muestra Elena y su correo coherente',first_doctor['nombre']=='Elena' and first_doctor['apellido_paterno']=='Márquez' and first_doctor['email']=='elena.marquez.1@example.com')
             check('Inicio muestra 789 registros',app.card_vars['_total'].get()=='789')
@@ -195,7 +218,8 @@ def main():
             checks.append({'nombre':'Solo se elimina la base UUID propia','correcta':cur.fetchone()[0]==0,'detalle':database})
         connection.close()
     passed=sum(x['correcta'] for x in checks)
-    report={'fecha_utc':datetime.now(timezone.utc).isoformat(),'estado':'APROBADO' if passed==len(checks) else 'FALLIDO','resumen':{'total':len(checks),'correctas':passed,'fallidas':len(checks)-passed},'pruebas':checks,'huellas_sha256':{'app_hospital/main.py':hashlib.sha256((ROOT/'main.py').read_bytes()).hexdigest()}}
+    sources=('app_hospital/main.py','app_hospital/data_cleanup.py','app_hospital/tests/audit_data.py','app_hospital/tests/gui_smoke.py','datos/valores_completos.json','03_datos_demo.sql','05_datos_demo_ampliados.sql','hospital_demostracion.sql')
+    report={'fecha_utc':datetime.now(timezone.utc).isoformat(),'estado':'APROBADO' if passed==len(checks) else 'FALLIDO','resumen':{'total':len(checks),'correctas':passed,'fallidas':len(checks)-passed},'pruebas':checks,'huellas_sha256':{name:hashlib.sha256((ROOT.parent/name).read_bytes()).hexdigest() for name in sources}}
     (ROOT.parent/'VALIDACION_INTERFAZ.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,ensure_ascii=True))
     return 0 if passed==len(checks) else 1

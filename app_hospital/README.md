@@ -18,9 +18,9 @@ En la laptop donde se preparó la base local del proyecto, el servidor se inicia
 4. Si la base del proyecto ya existe y es compatible, pulsa **Abrir hospital**.
 5. Si no existe, pulsa **Crear base con ejemplos**, confirma y espera. Después abre el hospital.
 
-La creación carga 789 registros repartidos en las 36 tablas con los textos completos: nombres, domicilios, medicamentos, notas, recetas y estudios. Incluye 95 teléfonos de diez dígitos y 59 correos personalizados, y conserva los aportes del equipo. Una base existente no se sustituye ni recibe esta carga otra vez. El archivo 07 se conserva como antecedente histórico de la primera actualización de contactos.
+La creación carga 789 registros repartidos en las 36 tablas. Incluye la revisión del 23 de octubre de 2026: notas relacionadas con cada caso, cantidades en las dosis propias del proyecto, resultados de estudios y descripciones de los servicios facturados. Conserva 95 teléfonos de diez dígitos, 59 correos personalizados y los aportes del equipo. Una base existente no se sustituye ni recibe esta carga otra vez. El archivo 07 se conserva como antecedente histórico de la primera actualización de contactos.
 
-Si ya tienes una copia con los valores anteriores, entra a **Inicio → Completar datos del proyecto**. La aplicación revisa los campos, te pide dónde guardar un respaldo y lo crea antes de actualizar. Sustituye solamente los valores conocidos de versiones anteriores; conserva los campos que el equipo ya haya personalizado, los identificadores, las relaciones, fechas y cantidades. Si la base ya está completa, informa que no hay cambios pendientes y no pide crear otro respaldo. Los detalles están en [Datos del proyecto](../DATOS_DEL_PROYECTO.md).
+Para revisar una copia anterior, entra a **Inicio → Completar datos del proyecto**. La aplicación busca valores reconocidos y marcadores de relleno en las 36 tablas. Si hay cambios automáticos, pide dónde guardar el respaldo y lo crea antes de actualizar. Conserva los campos que el equipo ya personalizó, los identificadores, las relaciones, las fechas y las cantidades. Si no hay cambios reconocidos, muestra igualmente el resultado de la revisión; puede indicar valores distintos o marcadores que necesitan revisión manual. Ese resultado no certifica que los expedientes estén completos. Los detalles están en [Datos del proyecto](../DATOS_DEL_PROYECTO.md).
 
 ## Funciones
 
@@ -62,7 +62,7 @@ En otros sistemas, usa el ejecutable Python del entorno correspondiente. La inte
 | `catalog.py` | Tablas permitidas, etiquetas, restricciones, operaciones y reportes |
 | `tests/integration_mysql.py` | Pruebas reales del servicio, incluido el ejercicio del tutorial |
 | `tests/gui_smoke.py` | Recorrido de las ventanas reales y capturas de la propia aplicación |
-| `tests/audit_data.py` | Revisión de todos los campos de texto de las 36 tablas; detecta relleno y oculta valores sensibles |
+| `tests/audit_data.py` | Revisión de todos los campos de texto de las 36 tablas; detecta marcadores y frases genéricas conocidas y oculta valores sensibles |
 | `tests/test_forms.py` | Pruebas de validación de formularios con Tkinter, sin conexión a MySQL |
 
 Se puede consultar y agregar información en los módulos del hospital. Algunas relaciones dependen de más de un campo: una consulta vinculada a una cita debe usar el mismo paciente y médico; un lote debe coincidir con el medicamento de la receta. Las listas ayudan a elegir y la base valida esas relaciones al guardar. No se afirma que la aplicación cubra todos los procesos de un hospital real.

@@ -127,7 +127,7 @@ class CleanupQA:
             self.check("Se actualizan únicamente los textos reconocidos por clave y huella", result["cells"] == preview["cells"])
             after = self.rows(self.database)
             self.check("Todas las filas coinciden con el plan sin cambios adicionales", after == expected)
-            self.check("Claves, relaciones, fechas, estados, importes y cantidades se conservan", self.only_text_changes(baseline, after, pending))
+            self.check("Claves, relaciones, fechas, estados, importes y cantidades se conservan; solo cambian textos y duraciones autorizadas", self.only_text_changes(baseline, after, pending))
             self.check("Las 23 reglas conservan sus definiciones y contexto exactos", self.triggers() == guards)
             self.check("La auditoría de textos de relleno queda en cero", not self.bad_values(after))
             self.check("Una segunda vista previa tiene cero cambios", cleanup.preview_cleanup(self.settings)["cells"] == 0)
@@ -173,8 +173,12 @@ class CleanupQA:
             for key, row in rows.items():
                 for name, old in row.items():
                     new = after[table][key][name]
-                    if old != new and ((table, key, name) not in allowed or not isinstance(old, str) or not isinstance(new, str)):
-                        return False
+                    if old != new:
+                        permitted_type = (isinstance(old, str) and isinstance(new, str)) or (
+                            type(old) is int and row.get('medicamento_id') == 5
+                            and cleanup._integer_correction(table, dict(zip(cleanup.PRIMARY_KEYS[table], key)), name, new))
+                        if (table, key, name) not in allowed or not permitted_type:
+                            return False
         return True
 
     @staticmethod

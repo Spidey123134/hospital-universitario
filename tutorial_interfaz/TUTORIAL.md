@@ -2,6 +2,8 @@
 
 Esta guía enseña a abrir la aplicación de Python, conectarla con tu base MySQL y trabajar mediante botones y formularios. Está escrita para alguien que nunca ha usado estas herramientas. Puedes registrar pacientes, citas, recetas y cobros de práctica sin escribir instrucciones SQL.
 
+Versión revisada: **23 de octubre de 2026**. El PDF y este texto son las guías actuales. El Word de esta carpeta se conserva como una versión anterior.
+
 La aplicación es un programa de escritorio hecho en Python. MySQL guarda la información y la aplicación presenta las pantallas para consultarla y modificarla. Ambos deben estar disponibles en la computadora donde harás la demostración.
 
 ## Ruta para la primera vez
@@ -126,7 +128,7 @@ Si es la primera instalación y todavía no existe `hospital_universitario`:
 4. Espera a que termine. No cierres la ventana durante el proceso.
 5. Pulsa **Abrir hospital**.
 
-**Resultado esperado:** la aplicación muestra el hospital con 36 tablas y 789 filas en total, incluidas 30 personas en pacientes, 18 médicos, 15 medicamentos y 40 recetas. La copia nueva ya incluye los textos completos: nombres, domicilios, notas, catálogo de medicamentos, recetas y estudios. También conserva 95 teléfonos de diez dígitos y 59 correos personalizados bajo `example.com`.
+**Resultado esperado:** la aplicación muestra el hospital con 36 tablas y 789 filas en total, incluidas 30 personas en pacientes, 18 médicos, 15 medicamentos y 40 recetas. La copia nueva incluye los textos revisados de nombres, domicilios, notas, medicamentos, recetas, estudios y cobros. También conserva 95 teléfonos de diez dígitos y 59 correos personalizados bajo `example.com`.
 
 Esos números describen la carga inicial. Cambiarán cuando el equipo agregue sus registros. Todas las tablas contienen ejemplos; cada tabla tiene la cantidad que corresponde a sus relaciones. Una receta puede tener varios renglones de medicamentos.
 
@@ -136,15 +138,19 @@ Si la base ya existe, utiliza **Abrir hospital**. No necesitas borrar una base p
 
 ## Actualizar una copia que todavía tiene textos de relleno
 
-Si al abrir tablas aparecen valores como «domicilio ficticio» o «dosis simulada», estás usando datos de una versión anterior. Descargar los archivos nuevos no cambia automáticamente los registros guardados en MySQL.
+Las versiones anteriores pueden contener etiquetas como «domicilio ficticio» y también frases que parecen completas pero no aportan el dato, como «Según orden médica» en el campo dosis o el mismo texto en muchas notas. Descargar los archivos nuevos no cambia automáticamente los registros guardados en MySQL.
 
 1. Abre la versión actual de la aplicación y entra a tu hospital existente.
 2. Pulsa **Inicio → Completar datos del proyecto**.
-3. Revisa el mensaje y la ubicación donde se guardará el respaldo previo.
-4. Confirma la actualización y espera a que termine. Si no se puede guardar el respaldo, la aplicación no debe comenzar a cambiar los datos.
-5. Lee el resumen y vuelve a abrir las tablas en **Registros**. Comprueba domicilios, medicamentos, notas y recetas.
+3. Lee la revisión. Si hay valores que puede actualizar, elige dónde se guardará el respaldo previo.
+4. Confirma la actualización y espera a que termine. Si no se puede guardar el respaldo, la aplicación no comienza a cambiar los datos.
+5. Lee el resumen, incluidos los campos que todavía requieren revisión. Vuelve a abrir las tablas en **Registros** y comprueba las ubicaciones señaladas.
 
-La revisión abarca 19 tablas con textos anteriores y comprueba los campos de texto de las 36 tablas. Cambia solamente valores conocidos de versiones previas y conserva los campos que tu equipo ya modificó. No vuelve a crear la base, no agrega otra copia de las filas y no borra el trabajo. El archivo 07 de contactos queda como antecedente histórico; no tienes que ejecutarlo para usar este botón.
+La revisión comprueba los campos de texto de las 36 tablas. Cambia solamente valores conocidos de versiones previas y conserva los campos que tu equipo ya modificó. No vuelve a crear la base, no agrega otra copia de las filas y no borra el trabajo. El archivo 07 de contactos queda como antecedente histórico; no tienes que ejecutarlo para usar este botón.
+
+Si no hay actualizaciones automáticas pendientes, el botón muestra de todos modos la revisión de textos. Puede indicar marcadores desconocidos, valores distintos de los originales o filas que ya no existen. Consulta los campos señalados antes de presentar el proyecto. Una cifra de cero marcadores significa que no se encontraron las frases que busca el programa; no demuestra que todos los datos necesarios estén registrados ni valida un tratamiento.
+
+No llenes un signo vital vacío con un número inventado para quitar el hueco. Un campo opcional vacío indica que ese dato no se registró. Si necesitas corregir un historial que aparece como solo lectura, conserva el respaldo y pide a quien mantiene la base que revise ese caso.
 
 ## Ideas que te ayudarán al llenar formularios
 

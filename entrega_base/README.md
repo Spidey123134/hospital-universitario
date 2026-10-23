@@ -2,7 +2,7 @@
 
 `hospital_universitario_respaldo.sql` fue exportado con mysqldump de una base real MySQL 8.0.45 creada y poblada. Incluye 36 tablas, 789 filas, seis vistas, seis procedimientos y 23 triggers.
 
-Este respaldo ya contiene la actualización `07_contactos_y_catalogos.sql`: nombres y datos administrativos completos, con 95 teléfonos de diez dígitos y 59 correos `example.com`, todos ficticios. Al importar este archivo no es necesario ejecutar esa actualización por separado. [Datos del proyecto](../DATOS_DEL_PROYECTO.md) explica qué cambió y qué se conservó.
+Este respaldo incluye la revisión del 23 de octubre de 2026: notas individuales, informes de estudios con contenido, dosis explícitas y conceptos de cobro identificados. También conserva los 95 teléfonos de diez dígitos y 59 correos `example.com` del conjunto académico. No requiere aplicar actualizaciones después de importarlo. [Datos del proyecto](../DATOS_DEL_PROYECTO.md) explica los cambios y [REVISION_CALIDAD_DATOS.json](REVISION_CALIDAD_DATOS.json) documenta las comprobaciones actuales.
 
 Cada integrante importa este archivo en su propio MySQL Server mediante MySQL Workbench: **Server → Data Import → Import from Self-Contained File → Start Import**. La base de destino `hospital_universitario` no debe existir con trabajo anterior. El archivo incluye la creación del esquema; no requiere Python.
 

@@ -1,9 +1,9 @@
 {
-  "fecha_utc": "2026-10-22T17:31:04.576086+00:00",
+  "fecha_utc": "2026-10-23T18:18:51.580407+00:00",
   "estado": "APROBADO",
   "resumen": {
-    "total": 38,
-    "correctas": 38,
+    "total": 44,
+    "correctas": 44,
     "fallidas": 0
   },
   "pruebas": [
@@ -35,10 +35,40 @@
     {
       "nombre": "Completar datos en una base limpia informa sin modificar ni pedir respaldo",
       "correcta": true,
-      "detalle": "{'respaldo_solicitado': False, 'dialogos': [('info', 'Datos completos', 'No quedan valores iniciales pendientes de esta actualización. No se modificó ningún registro.')]}"
+      "detalle": "{'respaldo_solicitado': False, 'dialogos': [('info', 'Revisión de datos', 'No quedan valores iniciales pendientes de esta actualización. No se modificó ningún registro.\\n\\nLa búsqueda revisó 1696 campos de texto y no encontró marcadores de relleno.\\n\\nEsta búsqueda reconoce marcadores explícitos; no comprueba que cada expediente o resultado clínico esté completo.')]}"
     },
     {
       "nombre": "Completar datos conserva las 36 tablas sin relleno",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "El escenario de marcador desconocido usa solo la base UUID propia",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "La auditoria reconoce fictio sin confundir el resto de la base",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Plan sin cambios advierte marcador desconocido y campo personalizado sin pedir respaldo",
+      "correcta": true,
+      "detalle": "[('warning', 'Revisión con pendientes', 'No quedan valores iniciales pendientes de esta actualización. No se modificó ningún registro.\\n\\nSe conservó 1 campo que difiere del plan: pueden ser cambios del equipo y deben revisarse manualmente si todavía contienen relleno.\\n\\nLa búsqueda en 1696 campos de texto encontró 1 campo con marcadores de relleno. Los que no coinciden exactamente con el plan se conservan; revísalos en Registros.\\n\\nUbicaciones para revisar:\\n• pacientes (paciente_id=1): domicilio\\n\\nEsta búsqueda reconoce marcadores explícitos; no comprueba que cada expediente o resultado clínico esté completo.')]"
+    },
+    {
+      "nombre": "La advertencia no promete que los expedientes esten completos",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Completar datos conserva el domicilio personalizado y todos los demas campos",
+      "correcta": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "La correccion manual restaura el paciente de la copia y deja cero marcadores",
       "correcta": true,
       "detalle": ""
     },
@@ -195,10 +225,17 @@
     {
       "nombre": "Solo se elimina la base UUID propia",
       "correcta": true,
-      "detalle": "hospital_prueba_8f1d7f2d9041479fa9f35bd1c042fd0d"
+      "detalle": "hospital_prueba_1310eb649ce74c73a617f9396e570d60"
     }
   ],
   "huellas_sha256": {
-    "app_hospital/main.py": "4ff957ae5354f6f1737ee98faec81481786ca01e9cf3a98e96d2f8ccd9a73456"
+    "app_hospital/main.py": "5f801838b562b39f64f4c28c168134a47971009f6ddbfd414bdaa2f53847c0a8",
+    "app_hospital/data_cleanup.py": "31a7fcfcb8c696d29e1d856b3e3a40fda3e5bce60626eef4c569e095b5ce1c4f",
+    "app_hospital/tests/audit_data.py": "828da626e0ea43a9f7a17191113e8cddbfbca63fe6400a12d2fd6142a627effc",
+    "app_hospital/tests/gui_smoke.py": "6dace176c4897e8f333a5b1ca30000b76b85772b1465e449574360c3345c2dc2",
+    "datos/valores_completos.json": "3573c94e0deffd1b785035841141e21d3c8417b67e19751326b9acea9382d8e8",
+    "03_datos_demo.sql": "bfab6a283ae6da6d8ff19130e9b482c42f761b52811900d563b4017ad8a2ac20",
+    "05_datos_demo_ampliados.sql": "5dd37755cfcea00fa93c3a7917a08d62205f34b9c6a5bb16358beddd6f674b4b",
+    "hospital_demostracion.sql": "c1fa2852d5e0154e5f6827e600b25624f23c3320d6bfce092f7f62f705dc07a6"
   }
 }

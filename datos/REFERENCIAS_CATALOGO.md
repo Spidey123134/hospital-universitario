@@ -6,7 +6,7 @@ Los identificadores 1 a 15 y los códigos `MED-001` a `MED-015` sirven para inte
 
 El catálogo fue completado para el proyecto. Las capturas del compañero muestran identificadores y textos de recetas, pero no permiten recuperar con certeza el nombre del medicamento asociado a cada identificador. Por ello, esta correspondencia no se presenta como una transcripción de aquellos productos.
 
-Todos los expedientes y las operaciones del proyecto son ficticios. Las cantidades de `dosis_texto` son ejemplos de la forma en que se captura un dato (tableta, cápsula, mililitros, inhalación o aplicación), no una prescripción. No se inventó una pauta fija para insulina e inyectables. La frecuencia `Según orden médica` exige una instrucción individual registrada y evita que el catálogo asigne automáticamente una pauta a cualquier paciente. Las recetas de la práctica no deben utilizarse para atender personas.
+Todos los expedientes y las operaciones del proyecto son ficticios. El catálogo describe productos y no contiene pautas predeterminadas: `dosis` y `frecuencia` pertenecen al detalle de cada receta. La dosis expresa la cantidad por administración y la frecuencia indica cada cuánto se repite. La revisión del 23 de octubre sustituye el texto incompleto «Según orden médica» por cantidades explícitas en los registros propios del proyecto. Los textos del compañero se conservan como fueron transcritos en sus CSV. Las fichas enlazadas verifican formulación y presentación; no validan la selección, dosis, frecuencia, duración ni combinación de los tratamientos de esta práctica. Las recetas no deben utilizarse para atender personas.
 
 | ID | Producto del catálogo | Característica comprobada y fuente oficial |
 |---|---|---|

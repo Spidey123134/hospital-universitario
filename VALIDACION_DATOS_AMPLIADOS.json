@@ -1,9 +1,9 @@
 {
   "proyecto": "Hospital universitario: fusion del equipo",
-  "inicio_utc": "2026-10-22T17:27:24+00:00",
+  "inicio_utc": "2026-10-23T18:14:13+00:00",
   "bases_temporales": [
-    "hospital_prueba_c811873762054c2080b1b0c9c6a09f30",
-    "hospital_prueba_bc851c89b04747e999351f75895c627f"
+    "hospital_prueba_7c298393335142e289abc75352ee3aa8",
+    "hospital_prueba_ffdf6ee1797645e2916919e83659b9ae"
   ],
   "mysql_version": "8.0.45",
   "filas_por_tabla": {
@@ -47,12 +47,12 @@
   "huellas_sha256": {
     "01_esquema.sql": "bbe9ed69d896dfbfbb60c9aaec783b4116ec07cf3266eeaba03c2383ca4dfec1",
     "02_reglas.sql": "a506582fb8fa5c142520acabfc336ab720dee06e196445e8d8b32b1902a3b484",
-    "03_datos_demo.sql": "447164a593158faaf210cea84173f92868c6fcacba270ff1ad5a9cdc19e7cda9",
-    "hospital_completo.sql": "09690887e8f5455b209ece9c6da1f51043c5e02e41be59d8eddfe6628499207f",
-    "05_datos_demo_ampliados.sql": "eb32426c68c378b31938ac4efc1138e392f118d12c7a9e81a540ddf15eefc83f",
-    "hospital_demostracion.sql": "16203fe40cd1a9a107faf8e3effaba1fc5e71a30e4aeb12ec3aa67f45549ade7",
+    "03_datos_demo.sql": "bfab6a283ae6da6d8ff19130e9b482c42f761b52811900d563b4017ad8a2ac20",
+    "hospital_completo.sql": "2a0117c9616460841151052ef95b4060366ba0415cecbe093c18c39edff6472b",
+    "05_datos_demo_ampliados.sql": "5dd37755cfcea00fa93c3a7917a08d62205f34b9c6a5bb16358beddd6f674b4b",
+    "hospital_demostracion.sql": "c1fa2852d5e0154e5f6827e600b25624f23c3320d6bfce092f7f62f705dc07a6",
     "06_ver_datos.sql": "6f7ebc0b06ecca8260add56890045df0dafc5d146e429c29549ff44026c349b6",
-    "generar_datos_ampliados.py": "89f532cdae81e534b47d36df7cb4b390cdef6d8e5c28f6dd96e9f7dab76c76e2",
+    "generar_datos_ampliados.py": "296326af26e3fa053f2c2647eb79c8e152741ef5bad982c177a5c1ed87a87586",
     "validar_datos_ampliados.py": "caf671506aa4f6a1c4249dcea5a82da3e291e186976ca64dd7c055d6e3e54426",
     "aporte_equipo/medicos_captura.csv": "8559a76b9df94eb48d91323e3c1e0597e7a38674a009a99bcded64f4041f6245",
     "aporte_equipo/recetas_captura.csv": "93d355537338b12eb9f8c446921bfc6908e2bce1701baa4f9647090c42cc2661"
@@ -60,7 +60,7 @@
   "filas_iniciales": 143,
   "filas_agregadas": 646,
   "filas_totales": 789,
-  "fin_utc": "2026-10-22T17:30:00+00:00",
+  "fin_utc": "2026-10-23T18:18:49+00:00",
   "estado": "APROBADO",
   "resumen": {
     "total": 122,

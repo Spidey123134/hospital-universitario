@@ -2,7 +2,7 @@
 
 La estructura mantiene sus **36 tablas**. La demostración ampliada contiene **789 filas** repartidas entre ellas. Incluye los 15 médicos y 15 recetas adaptadas de las capturas del equipo, además de casos ficticios de citas, hospitalización, farmacia, estudios y cobros.
 
-Para instalar la versión completa, utiliza el [respaldo actual](entrega_base/hospital_universitario_respaldo.sql) y sigue [BASE_DE_DATOS.md](BASE_DE_DATOS.md). También puedes usar los instaladores descritos aquí: `03_datos_demo.sql`, `05_datos_demo_ampliados.sql` y los archivos consolidados ya contienen textos completos; no necesitan ejecutar `07_contactos_y_catalogos.sql` después. Si conservas una copia anterior con valores de relleno, usa **Inicio > Completar datos del proyecto** en la interfaz actual. [DATOS_DEL_PROYECTO.md](DATOS_DEL_PROYECTO.md) explica cómo se crea el respaldo y se respetan las modificaciones del equipo.
+Para instalar la versión actual, utiliza el [respaldo actual](entrega_base/hospital_universitario_respaldo.sql) y sigue [BASE_DE_DATOS.md](BASE_DE_DATOS.md). También puedes usar los instaladores descritos aquí: `03_datos_demo.sql`, `05_datos_demo_ampliados.sql` y los archivos consolidados incluyen la revisión de contenido del 23 de octubre de 2026. No necesitan ejecutar `07_contactos_y_catalogos.sql` después. Para revisar una copia anterior, usa **Inicio > Completar datos del proyecto** en la interfaz actual. [DATOS_DEL_PROYECTO.md](DATOS_DEL_PROYECTO.md) explica el respaldo previo, los cambios reconocidos y la revisión manual de valores distintos.
 
 | Datos | Muestra inicial del tutorial | Demostración ampliada |
 | --- | ---: | ---: |
@@ -60,7 +60,7 @@ La [explicación de la fusión](aporte_equipo/README.md) y sus dos CSV conservan
 
 Las capturas no muestran los nombres de los pacientes ni de los medicamentos. Para completar las relaciones se usaron los pacientes del proyecto y el [catálogo documentado de medicamentos](datos/REFERENCIAS_CATALOGO.md). La correspondencia con las capturas se explica en los CSV y en la documentación del aporte. Las observaciones, dosis y vías transcritas se conservaron; las cantidades y duraciones no especificadas se completaron para el ejercicio académico, sin validación clínica.
 
-Los ejercicios del tutorial siguen usando `tutorial/hospital_practica.sql`, con la muestra pequeña y sus resultados esperados. La ampliación se usa para demostrar más registros y relaciones en `hospital_universitario`.
+Los ejercicios técnicos usan `tutorial/hospital_practica.sql`, con una muestra pequeña independiente. El Word y el PDF antiguos de ese tutorial pueden mostrar nombres y textos anteriores; para operar con las ventanas y los registros actuales utiliza [el tutorial de la interfaz](tutorial_interfaz/TUTORIAL.md). La ampliación se usa para demostrar más registros y relaciones en `hospital_universitario`.
 
 ## Verificación y reproducción
 

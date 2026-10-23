@@ -16,8 +16,10 @@ import unicodedata
 
 ROOT = Path(__file__).resolve().parent
 BAD_VALUE = re.compile(
-    r"fictici|simulad|placeholder|demostraci|did[aá]ctic|acad[eé]mic|docente|inventad|"
-    r"(?:^|[\W_])demo(?:$|[\W_])|\bprueba\b|\bmarcador\b|"
+    r"ficti(?:ci|ti|o\b)|simulad|placeholder|demostraci|did[aá]ctic|acad[eé]mic|docente|inventad|"
+    r"(?:^|[\W_])(?:demo|dummy|tbd|xxx)(?:$|[\W_])|\bmarcador\b|"
+    r"\b(?:dato|texto|domicilio|direcci[oó]n|nombre|nota|registro|paciente|medicamento) de prueba\b|"
+    r"\bpor (?:completar|definir|llenar)\b|"
     r"TEL-(?:PAC-|CON-|ASEG-|PROV-)?|example\.invalid|"
     r"ver texto de dosis|\bAPORTE EQUIPO\b|\bpaciente fuente\b|\bcamilla fuente\b",
     re.I,
@@ -39,6 +41,54 @@ def lit(value):
 
 def normalize(text):
     return "".join(char for char in unicodedata.normalize("NFKD", text) if not unicodedata.combining(char)).casefold()
+
+
+def sql_strings(source):
+    """Lee literales sin confundir comentarios SQL con datos almacenados."""
+    index = 0
+    while index < len(source):
+        char = source[index]
+        if source.startswith('/*', index):
+            end = source.find('*/', index + 2)
+            if end < 0:
+                raise ValueError('Comentario SQL incompleto en la carga inicial.')
+            index = end + 2
+            continue
+        if char == '#' or (source.startswith('--', index)
+                           and (index + 2 == len(source) or source[index + 2].isspace())):
+            end = source.find('\n', index)
+            index = len(source) if end < 0 else end + 1
+            continue
+        if char not in "'\"`":
+            index += 1
+            continue
+        delimiter, value = char, []
+        index += 1
+        while index < len(source):
+            char = source[index]
+            if char == '\\' and index + 1 < len(source):
+                value.append(source[index + 1])
+                index += 2
+                continue
+            if char == delimiter:
+                if index + 1 < len(source) and source[index + 1] == delimiter:
+                    value.append(char)
+                    index += 2
+                    continue
+                index += 1
+                break
+            value.append(char)
+            index += 1
+        else:
+            raise ValueError('Literal SQL incompleto en la carga inicial.')
+        if delimiter != '`':
+            yield ''.join(value)
+
+
+def validate_initial(source):
+    for value in sql_strings(source):
+        if BAD_VALUE.search(value):
+            raise ValueError('Texto de relleno rechazado en 03_datos_demo.sql: ' + value[:100])
 
 
 def find_row(batches, table, keys):
@@ -111,6 +161,8 @@ def generate():
     batches = payload["batches"]
     use_team_sources(batches)
     additions = validate(batches)
+    initial_source = (ROOT / '03_datos_demo.sql').read_text(encoding='utf-8-sig')
+    validate_initial(initial_source)
     header = ("-- CARGA AMPLIADA DEL HOSPITAL UNIVERSITARIO.\n"
               "-- Conjunto académico con identidades y operaciones inventadas, sin datos de pacientes reales.\n"
               "-- Agrega 646 registros a los 143 de 03_datos_demo.sql. Ejecutar una sola vez.\n"
@@ -120,8 +172,9 @@ def generate():
     expanded = header + "\n".join(map(sql_batch, batches)) + "\nCOMMIT;\n"
     core_header = ("-- INSTALACIÓN INICIAL: estructura, reglas y 143 registros.\n"
                    "-- Conjunto académico con datos inventados; no corresponde a pacientes reales.\n")
-    core = core_header + "\n\n".join((ROOT / name).read_text(encoding="utf-8-sig")
-                                       for name in ("01_esquema.sql", "02_reglas.sql", "03_datos_demo.sql"))
+    core = core_header + "\n\n".join(
+        [(ROOT / name).read_text(encoding="utf-8-sig") for name in ('01_esquema.sql', '02_reglas.sql')]
+        + [initial_source])
     combined_header = ("-- INSTALACIÓN COMPLETA CON 789 REGISTROS EN 36 TABLAS.\n"
                        "-- Ejecutar una sola vez en una base nueva; no ejecutar también hospital_completo.sql.\n")
     # Validar todo antes de reemplazar los tres archivos reproducibles.

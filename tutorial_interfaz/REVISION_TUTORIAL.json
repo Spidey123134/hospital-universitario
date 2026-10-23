@@ -1,6 +1,6 @@
 {
   "documento": "tutorial_interfaz_hospital",
-  "version": "2026-10-22",
+  "version": "2026-10-23",
   "formato_actual": "PDF y Markdown",
   "paginas": 18,
   "tamano": "Carta 8.5 x 11 pulgadas",
@@ -31,33 +31,31 @@
   "sin_paginas_vacias": true,
   "sin_recortes_ni_solapamientos_en_revision_visual": true,
   "generacion_pdf": "ReportLab desde TUTORIAL.md con seis capturas exclusivas de las ventanas de la aplicación",
-  "renderizacion": "Poppler pdftoppm 130 dpi",
+  "renderizacion": "Poppler pdftoppm 110 dpi; revisión visual de las 18 páginas",
   "auditoria_instalacion": {
-    "tablas": 36,
-    "celdas_texto_revisadas": 1696,
-    "marcadores_de_relleno": 0
+    "informe": "../entrega_base/REVISION_CALIDAD_DATOS.json",
+    "alcance": "Revisión de contenido de las 36 tablas; consultar el informe para los conteos y hallazgos verificados."
   },
   "pruebas_interfaz": {
-    "total": 38,
-    "correctas": 38,
-    "fallidas": 0
+    "informe": "../VALIDACION_INTERFAZ.json",
+    "alcance": "El resultado y la versión de los archivos comprobados se registran en el informe de ejecución."
   },
   "notas": [
     "Se distingue abrir una base existente de crear una nueva; Probar conexión solo verifica.",
-    "Las copias nuevas incluyen textos completos. La revisión de relleno recorre las 36 tablas.",
+    "La versión del 23 de octubre explica la revisión de notas repetidas, dosis vagas y descripciones sin contenido propio del registro.",
     "Inicio > Completar datos del proyecto revisa una copia anterior, crea un respaldo antes de actualizar valores reconocidos y conserva los campos editados por el equipo.",
-    "El botón también se comprobó sobre una base ya completa: no modifica registros ni solicita otro respaldo.",
-    "La receta del tutorial usa una captura coherente de Loratadina 10 mg, con cantidad, vía y frecuencia naturales; se conserva la aclaración global de uso académico.",
+    "Sin cambios automáticos pendientes, el botón igualmente revisa los textos y puede señalar valores distintos o marcadores desconocidos para revisión manual.",
+    "No encontrar marcadores no certifica expedientes completos ni valida tratamientos. Los campos opcionales vacíos no se rellenan con mediciones inventadas.",
     "CSV guarda las filas mostradas; respaldo y restauración usan JSON completo de las 36 tablas.",
-    "Las capturas se obtuvieron por identificador HWND con Pillow 12.3.0; no son recortes del escritorio ni incluyen otras aplicaciones.",
-    "Las capturas usan una base UUID propia de pruebas en el puerto 3307. Los dos destinos UUID de la prueba se eliminaron al terminar.",
-    "El Word de la carpeta es una versión anterior, identificada como tal en README; no se regeneró ni se presenta como guía actual.",
+    "Se conservan seis capturas propias verificadas el 22 de octubre por identificador HWND con Pillow 12.3.0; no son recortes del escritorio ni incluyen otras aplicaciones.",
+    "Las capturas muestran los mismos botones y ventanas, con una base UUID de pruebas en el puerto 3307. Los destinos de aquella prueba se eliminaron.",
+    "El Word de la carpeta es una versión anterior identificada en README; no se regeneró ni se presenta como guía actual.",
     "Se normaliza el separador de navegación a > en el PDF para que no dependa de la fuente Symbol."
   ],
   "sha256": {
-    "TUTORIAL.md": "7ededf7efdb6227cbec48868f10d17e383f9549d17a493746c4e3dda4daad6e0",
+    "TUTORIAL.md": "c7b75fd5a075687109ad5fbac54649613ea09152bac69280f7fe9d1d8fc7014e",
     "generar_pdf.py": "1c29101c1fe4d49ac0eb6396f80319183bc509c3bc42c8e934c2e29574f65995",
-    "tutorial_interfaz_hospital.pdf": "95f1391188916796561c717ba7e6795faedacb5478290716202989fd881393e4",
+    "tutorial_interfaz_hospital.pdf": "c9483ecb7287739a3235ea58dff1a8a8d7de3eac8cfd5155e9a2dcd4a034aceb",
     "imagenes/01_conexion.png": "3140737d5b8c8e06b88cac6bf37c47f4df1df25914721b19417ba92601f9db70",
     "imagenes/02_inicio.png": "f5a316fae93d0a2ae55f00e9cd1364fc3850fd7ea61dbb912d4a4aa3c3fb42a8",
     "imagenes/03_pacientes.png": "3cf5a19ae2283f49121ba4a42e9b53b7c022ad89028be8e293c9594dc5d20637",
